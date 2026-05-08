@@ -5,7 +5,7 @@ provider: Retell AI
 providerId: retell-ai
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Voice
@@ -13,29 +13,128 @@ tags:
 - Realtime
 - Conversational
 - Plans
-description: Placeholder plans/pricing artifact for Retell AI. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled.
+description: >-
+  Retell AI uses a usage-based pay-as-you-go model with $10 in free credits, plus optional
+  enterprise contracts. Voice agent pricing is component-based: a flat Retell infrastructure
+  fee plus pass-through TTS, LLM, and telephony charges. Chat agents are priced per message.
+notes: Reconciled from Retell's published pricing page (May 2026); component prices vary by selected provider.
 sources:
-- https://www.retellai.com/
+- https://www.retellai.com/pricing
 plans:
-- id: retell-ai-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: retell-ai-pay-as-you-go
+  name: Pay-as-you-go
+  type: usage
+  description: $0 to start with $10 free credits; pay only for what you use.
   entries:
-  - label: API Access
-    name: api_access
-    type: flat
-    metric: varies
+  - label: Retell Voice Infrastructure
+    name: voice_infra
+    type: per_minute
+    metric: minute
     limit: -1
     timeFrame: usage
     geo: global
     unit: 1
-    price: see https://www.retellai.com/
+    price: 0.055 USD/min
+    userMultiplied: false
+  - label: Text-to-Speech (pass-through)
+    name: tts
+    type: per_minute
+    metric: minute
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0.015 USD/min (varies by provider)
+    userMultiplied: false
+  - label: LLM (pass-through)
+    name: llm
+    type: per_minute
+    metric: minute
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0.003 - 0.080 USD/min (varies by model)
+    userMultiplied: false
+  - label: Telephony (pass-through)
+    name: telephony
+    type: per_minute
+    metric: minute
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0.00 - 0.015 USD/min (country-dependent)
+    userMultiplied: false
+  - label: Voice Agent Bundled Range
+    name: voice_agent_range
+    type: per_minute
+    metric: minute
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0.07 - 0.31 USD/min
+    userMultiplied: false
+  - label: Chat Agent
+    name: chat_agent
+    type: per_message
+    metric: message
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0.002+ USD/msg
+    userMultiplied: false
+  - label: Concurrent Call Slot (additional)
+    name: concurrency_addon
+    type: subscription
+    metric: concurrent_call
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 8.00 USD/concurrency/month
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: 20 free concurrent calls
+  - name: First 10 knowledge bases free
+  - name: First 100 minutes of AI Quality Assurance free
+- id: retell-ai-trial
+  name: Free Trial
+  type: free
+  description: $10 in free credits at signup with no annual contract.
+  entries:
+  - label: Trial Credits
+    name: trial_credits
+    type: flat
+    metric: USD
+    limit: 10
+    timeFrame: trial
+    geo: global
+    unit: 1
+    price: 0 USD
+    userMultiplied: false
+  elements:
+  - name: 20 free concurrent calls
+- id: retell-ai-enterprise
+  name: Enterprise
+  type: enterprise
+  description: Custom contracts for high-volume customers.
+  entries:
+  - label: Enterprise Contract
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: annual
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Volume discounts
+  - name: Dedicated support
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

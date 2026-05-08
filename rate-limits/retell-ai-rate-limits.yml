@@ -5,7 +5,7 @@ provider: Retell AI
 providerId: retell-ai
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: partial
 tags:
 - AI
 - Voice
@@ -15,21 +15,42 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Retell AI. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Retell rate-limits primarily through concurrent call entitlements: 20 free concurrent calls
+  with each additional concurrency slot priced at $8/month. Knowledge bases get the first 10
+  free. Per-RPS HTTP rate limits are not publicly documented.
+notes: Concurrency is the documented scaling lever; HTTP RPS quotas should be confirmed with Retell support.
 sources:
-- https://www.retellai.com/
+- https://www.retellai.com/pricing
+- https://docs.retellai.com/
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: Concurrent Calls (free tier)
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: concurrent_calls
+  limit: 20
+  notes: 20 free concurrent calls included by default.
+- name: Concurrent Calls (add-on)
+  scope: account
+  metric: concurrent_calls
+  limit: -1
+  notes: Additional concurrency at $8.00/concurrency/month.
+- name: Knowledge Bases (free)
+  scope: account
+  metric: knowledge_bases
+  limit: 10
+  notes: First 10 knowledge bases free.
+- name: HTTP Requests
+  scope: account
+  metric: requests
+  limit: not publicly documented
+  notes: Verify with Retell support; standard 429 backoff applies.
 policies:
 - name: Backoff Strategy
   description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+- name: Concurrency Provisioning
+  description: Pre-purchase concurrency slots ahead of high-volume campaigns to avoid throttling.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

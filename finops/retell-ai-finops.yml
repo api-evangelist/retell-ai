@@ -5,7 +5,7 @@ provider: Retell AI
 providerId: retell-ai
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Voice
@@ -15,10 +15,14 @@ tags:
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Retell AI. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps view of Retell AI. Retell uses a component-based per-minute model:
+  Retell infrastructure fee plus pass-through TTS, LLM, and telephony charges. Chat agents
+  are priced per message. Concurrent call slots over 20 are billed monthly at $8/slot.
+notes: Choice of LLM and TTS provider materially changes per-minute cost; FinOps optimization usually centers on those.
 sources:
-- https://www.retellai.com/
+- https://www.retellai.com/pricing
+- https://docs.retellai.com/
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -29,7 +33,7 @@ alignedWith:
 publisherName: Retell AI
 serviceCategory: AI
 billingModel:
-  pricingCategory: To Be Reconciled
+  pricingCategory: Usage-Based (Per Minute Components + Per Message)
   billingFrequency: Monthly
   billingCurrency: USD
   chargeCategories:
@@ -37,7 +41,7 @@ billingModel:
   - Purchase
   - Adjustment
 focusColumns:
-  ServiceName: Retell AI
+  ServiceName: Retell AI Voice and Chat Agents
   ServiceCategory: AI
   ProviderName: Retell AI
   PublisherName: Retell AI
@@ -45,22 +49,56 @@ focusColumns:
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: voice_infrastructure_minutes
+  description: Retell platform per-minute fee (~$0.055/min).
+  unit: minute
   aggregation: sum
   dimensions:
   - account
-  - resource
+  - call_id
+- name: tts_minutes
+  description: Pass-through TTS cost per minute.
+  unit: minute
+  aggregation: sum
+  dimensions:
+  - account
+  - voice_provider
+- name: llm_minutes
+  description: Pass-through LLM cost per minute.
+  unit: minute
+  aggregation: sum
+  dimensions:
+  - account
+  - model
+- name: telephony_minutes
+  description: Pass-through telephony cost per minute.
+  unit: minute
+  aggregation: sum
+  dimensions:
+  - account
+  - country
+- name: chat_messages
+  description: Per-message charge for chat agent usage.
+  unit: message
+  aggregation: sum
+  dimensions:
+  - account
+  - chat_agent
+- name: concurrency_slots
+  description: Monthly fee for additional concurrent call slots beyond the included 20.
+  unit: slot-month
+  aggregation: sum
+  dimensions:
+  - account
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Use Retell call analytics and per-call cost breakdowns (product_costs, combined_cost) returned by the API.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Tag agents and phone numbers to business units to allocate per-call cost.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Switch LLM models and TTS voices to control cost per minute; right-size concurrency slot purchases.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Assign owners for each component vendor (TTS, LLM, telephony) since pricing flows through.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
