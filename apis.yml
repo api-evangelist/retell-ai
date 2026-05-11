@@ -55,6 +55,16 @@ common:
     url: rate-limits/retell-ai-rate-limits.yml
   - type: FinOps
     url: finops/retell-ai-finops.yml
+  - type: Integrations
+    url: https://www.retellai.com/integrations
+integrations:
+  - name: Twillio
+  - name: Vonage
+  - name: Go High Level
+  - name: n8n
+  - name: HubSpot
+  - name: Retell Integration
+  - name: Unofficial Connector
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
