@@ -1,7 +1,7 @@
 aid: retell-ai
 url: https://raw.githubusercontent.com/api-evangelist/retell-ai/refs/heads/main/apis.yml
 name: Retell AI
-x-type: company
+kind: company
 description: >-
   Retell AI provides voice AI infrastructure for building conversational agents with
   low-latency turn detection, interruption handling, tool calling, knowledge bases, and
