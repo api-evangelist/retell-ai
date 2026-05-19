@@ -2,69 +2,69 @@ aid: retell-ai
 url: https://raw.githubusercontent.com/api-evangelist/retell-ai/refs/heads/main/apis.yml
 name: Retell AI
 kind: company
-description: >-
-  Retell AI provides voice AI infrastructure for building conversational agents with
-  low-latency turn detection, interruption handling, tool calling, knowledge bases, and
-  conversation flows. The Retell SDK exposes a published OpenAPI spec covering agents,
-  calls, voices, knowledge bases, conversation flows, batches, and chat agents.
+description: Retell AI provides voice AI infrastructure for building conversational agents with low-latency turn detection,
+  interruption handling, tool calling, knowledge bases, and conversation flows. The Retell SDK exposes a published OpenAPI
+  spec covering agents, calls, voices, knowledge bases, conversation flows, batches, and chat agents.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - AI
-  - Voice
-  - Agents
-  - Realtime
-  - Conversational
+- AI
+- Voice
+- Agents
+- Realtime
+- Conversational
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: retell-ai:platform
-    name: Retell AI Platform API
-    description: >-
-      REST API at https://api.retellai.com for managing agents, conversation flows, calls
-      (phone and chat), voices, knowledge bases, retell LLM, batch calls, and call analyses.
-      Auth is bearer token. OpenAPI spec is published at https://docs.retellai.com/openapi.yaml.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.retellai.com/api-references
-    baseURL: https://api.retellai.com
-    tags:
-      - Voice
-      - Agents
-      - Calls
-      - Knowledge Base
-      - Conversation Flow
-    properties:
-      - type: Documentation
-        url: https://docs.retellai.com/api-references
-      - type: OpenAPI
-        url: openapi/retell-ai-openapi.yml
-      - type: SignUp
-        url: https://dashboard.retellai.com/
-      - type: Pricing
-        url: https://www.retellai.com/pricing
-common:
-  - type: Website
-    url: https://www.retellai.com/
+- aid: retell-ai:platform
+  name: Retell AI Platform API
+  description: REST API at https://api.retellai.com for managing agents, conversation flows, calls (phone and chat), voices,
+    knowledge bases, retell LLM, batch calls, and call analyses. Auth is bearer token. OpenAPI spec is published at https://docs.retellai.com/openapi.yaml.
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Voice
+  - Agents
+  - Calls
+  - Knowledge Base
+  - Conversation Flow
+  properties:
   - type: Documentation
-    url: https://docs.retellai.com/
+    url: https://docs.retellai.com/api-references
   - type: OpenAPI
     url: openapi/retell-ai-openapi.yml
-  - type: Plans
-    url: plans/retell-ai-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/retell-ai-rate-limits.yml
-  - type: FinOps
-    url: finops/retell-ai-finops.yml
-  - type: Integrations
-    url: https://www.retellai.com/integrations
+  - type: SignUp
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+  - type: NaftikoCapability
+    url: capabilities/retell-ai.yaml
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/retellai
+- type: Website
+  url: https://www.retellai.com/
+- type: Documentation
+  url: https://docs.retellai.com/
+- type: OpenAPI
+  url: openapi/retell-ai-openapi.yml
+- type: Plans
+  url: plans/retell-ai-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/retell-ai-rate-limits.yml
+- type: FinOps
+  url: finops/retell-ai-finops.yml
+- type: Integrations
+  url: https://www.retellai.com/integrations
 integrations:
-  - name: Twillio
-  - name: Vonage
-  - name: Go High Level
-  - name: n8n
-  - name: HubSpot
-  - name: Retell Integration
-  - name: Unofficial Connector
+- name: Twillio
+- name: Vonage
+- name: Go High Level
+- name: n8n
+- name: HubSpot
+- name: Retell Integration
+- name: Unofficial Connector
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

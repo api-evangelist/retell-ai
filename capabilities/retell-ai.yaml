@@ -1,0 +1,3893 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Retell SDK
+  description: 'Retell SDK. 86 operations. Lead operation: Retell SDK. Self-contained Naftiko capability covering one Retell
+    Ai business surface.'
+  tags:
+  - Retell Ai
+  - Retell SDK
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    RETELL_AI_API_KEY: RETELL_AI_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: retell-ai
+    baseUri: https://api.retellai.com
+    description: Retell SDK business capability. Self-contained, no shared references.
+    resources:
+    - name: add-community-voice
+      path: /add-community-voice
+      operations:
+      - name: addcommunityvoice
+        method: POST
+        description: Add a community voice to the voice library
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: add-knowledge-base-sources-knowledge_base_id
+      path: /add-knowledge-base-sources/{knowledge_base_id}
+      operations:
+      - name: addknowledgebasesources
+        method: POST
+        description: Add sources to a knowledge base
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: knowledge_base_id
+          in: path
+          type: string
+          description: The knowledge base id to delete source from.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: agent-playground-completion-agent_id
+      path: /agent-playground-completion/{agent_id}
+      operations:
+      - name: agentplaygroundcompletion
+        method: POST
+        description: Stateless playground completion. Send the full conversation history (same shape as chat completion messages)
+          and receive only the newly generated messages. Nothing is persisted server-side — the caller manages conversation
+          state.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the agent.
+          required: true
+        - name: version
+          in: query
+          type: integer
+          description: Agent version to use. Defaults to latest.
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: clone-voice
+      path: /clone-voice
+      operations:
+      - name: clonevoice
+        method: POST
+        description: Clone a voice from audio files
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-agent
+      path: /create-agent
+      operations:
+      - name: createagent
+        method: POST
+        description: Create a new agent
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-agent-version-agent_id
+      path: /create-agent-version/{agent_id}
+      operations:
+      - name: createagentversion
+        method: POST
+        description: Create a new draft agent version from a base version.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the agent.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-batch-call
+      path: /create-batch-call
+      operations:
+      - name: createbatchcall
+        method: POST
+        description: Create a batch call
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-batch-test
+      path: /create-batch-test
+      operations:
+      - name: createbatchtest
+        method: POST
+        description: Create a batch test to run multiple test cases
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-chat
+      path: /create-chat
+      operations:
+      - name: createchat
+        method: POST
+        description: Create a chat session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-chat-agent
+      path: /create-chat-agent
+      operations:
+      - name: createchatagent
+        method: POST
+        description: Create a new chat agent
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-chat-completion
+      path: /create-chat-completion
+      operations:
+      - name: createchatcompletion
+        method: POST
+        description: Create a chat completion message
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-conversation-flow
+      path: /create-conversation-flow
+      operations:
+      - name: createconversationflow
+        method: POST
+        description: Create a new Conversation Flow that can be attached to an agent. This is used to generate response output
+          for the agent.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-conversation-flow-component
+      path: /create-conversation-flow-component
+      operations:
+      - name: createconversationflowcomponent
+        method: POST
+        description: Create a new shared conversation flow component
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-knowledge-base
+      path: /create-knowledge-base
+      operations:
+      - name: createknowledgebase
+        method: POST
+        description: Create a new knowledge base
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-phone-number
+      path: /create-phone-number
+      operations:
+      - name: createphonenumber
+        method: POST
+        description: Buy a new phone number & Bind agents
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-retell-llm
+      path: /create-retell-llm
+      operations:
+      - name: createretellllm
+        method: POST
+        description: Create a new Retell LLM Response Engine that can be attached to an agent. This is used to generate response
+          output for the agent.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-sms-chat
+      path: /create-sms-chat
+      operations:
+      - name: createsmschat
+        method: POST
+        description: Start an outbound SMS chat conversation with a phone number using the specified agent. The agent must
+          be configured for chat mode. The initial SMS message will be automatically generated and sent based on the agent's
+          configuration.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create-test-case-definition
+      path: /create-test-case-definition
+      operations:
+      - name: createtestcasedefinition
+        method: POST
+        description: Create a new test case definition
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: delete-agent-version-agent_id
+      path: /delete-agent-version/{agent_id}
+      operations:
+      - name: deleteagentversion
+        method: DELETE
+        description: Delete a specific agent version.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the agent.
+          required: true
+        - name: version
+          in: query
+          type: integer
+          description: Version to delete.
+          required: true
+    - name: delete-agent-agent_id
+      path: /delete-agent/{agent_id}
+      operations:
+      - name: deleteagent
+        method: DELETE
+        description: Delete an existing agent
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the agent to be deleted. Deletes all versions of the agent.
+          required: true
+    - name: delete-chat-agent-agent_id
+      path: /delete-chat-agent/{agent_id}
+      operations:
+      - name: deletechatagent
+        method: DELETE
+        description: Delete an existing chat agent
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the chat agent to be deleted. Deletes all versions of the chat agent.
+          required: true
+    - name: delete-conversation-flow-component-conversation_flow_component_id
+      path: /delete-conversation-flow-component/{conversation_flow_component_id}
+      operations:
+      - name: deleteconversationflowcomponent
+        method: DELETE
+        description: Delete a shared conversation flow component. When deleting a shared component, creates local copies for
+          all linked conversation flows.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: conversation_flow_component_id
+          in: path
+          type: string
+          description: ID of the component to delete
+          required: true
+    - name: delete-conversation-flow-conversation_flow_id
+      path: /delete-conversation-flow/{conversation_flow_id}
+      operations:
+      - name: deleteconversationflow
+        method: DELETE
+        description: Delete a conversation flow and all its versions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: conversation_flow_id
+          in: path
+          type: string
+          description: Unique id of the conversation flow to be deleted.
+          required: true
+    - name: delete-knowledge-base-source-knowledge_base_id-source-source_id
+      path: /delete-knowledge-base-source/{knowledge_base_id}/source/{source_id}
+      operations:
+      - name: deleteknowledgebasesource
+        method: DELETE
+        description: Delete an existing source from knowledge base
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: knowledge_base_id
+          in: path
+          type: string
+          description: The knowledge base id to delete source from.
+          required: true
+        - name: source_id
+          in: path
+          type: string
+          description: The source id to delete.
+          required: true
+    - name: delete-knowledge-base-knowledge_base_id
+      path: /delete-knowledge-base/{knowledge_base_id}
+      operations:
+      - name: deleteknowledgebase
+        method: DELETE
+        description: Delete an existing knowledge base
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: knowledge_base_id
+          in: path
+          type: string
+          description: The knowledge base id to delete.
+          required: true
+    - name: delete-phone-number-phone_number
+      path: /delete-phone-number/{phone_number}
+      operations:
+      - name: deletephonenumber
+        method: DELETE
+        description: Delete an existing phone number
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: phone_number
+          in: path
+          type: string
+          description: E.164 format of the number (+country code, then number with no space, no special characters), used
+            as the unique identifier for phone number APIs.
+          required: true
+    - name: delete-retell-llm-llm_id
+      path: /delete-retell-llm/{llm_id}
+      operations:
+      - name: deleteretellllm
+        method: DELETE
+        description: Delete an existing Retell LLM Response Engine
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: llm_id
+          in: path
+          type: string
+          description: Unique id of the Retell LLM Response Engine to be deleted. Deletes all versions of the Retell LLM Response
+            Engine.
+          required: true
+    - name: delete-test-case-definition-test_case_definition_id
+      path: /delete-test-case-definition/{test_case_definition_id}
+      operations:
+      - name: deletetestcasedefinition
+        method: DELETE
+        description: Delete a test case definition
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: test_case_definition_id
+          in: path
+          type: string
+          description: ID of the test case definition to delete
+          required: true
+    - name: end-chat-chat_id
+      path: /end-chat/{chat_id}
+      operations:
+      - name: endchat
+        method: PATCH
+        description: End an ongoing chat
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: chat_id
+          in: path
+          type: string
+          description: Unique id of the chat to be ended
+          required: true
+    - name: get-agent-versions-agent_id
+      path: /get-agent-versions/{agent_id}
+      operations:
+      - name: getagentversions
+        method: GET
+        description: Get all versions of an agent
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the agent versions to be retrieved.
+          required: true
+    - name: get-agent-agent_id
+      path: /get-agent/{agent_id}
+      operations:
+      - name: getagent
+        method: GET
+        description: Retrieve details of a specific agent
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the agent to be retrieved.
+          required: true
+        - name: version
+          in: query
+          type: integer
+          description: Optional version of the API to use for this request. If not provided, will default to latest version.
+    - name: get-batch-test-test_case_batch_job_id
+      path: /get-batch-test/{test_case_batch_job_id}
+      operations:
+      - name: getbatchtest
+        method: GET
+        description: Get a batch test job by ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: test_case_batch_job_id
+          in: path
+          type: string
+          description: ID of the batch test job to retrieve
+          required: true
+    - name: get-chat-agent-versions-agent_id
+      path: /get-chat-agent-versions/{agent_id}
+      operations:
+      - name: getchatagentversions
+        method: GET
+        description: Get all versions of a chat agent
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the chat agent versions to be retrieved.
+          required: true
+    - name: get-chat-agent-agent_id
+      path: /get-chat-agent/{agent_id}
+      operations:
+      - name: getchatagent
+        method: GET
+        description: Retrieve details of a specific chat agent
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the chat agent to be retrieved.
+          required: true
+        - name: version
+          in: query
+          type: integer
+          description: Optional version of the API to use for this request. If not provided, will default to latest version.
+    - name: get-chat-chat_id
+      path: /get-chat/{chat_id}
+      operations:
+      - name: getchat
+        method: GET
+        description: Retrieve details of a specific chat
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: chat_id
+          in: path
+          type: string
+          description: Unique id of the chat to be retrieved
+          required: true
+    - name: get-concurrency
+      path: /get-concurrency
+      operations:
+      - name: getconcurrency
+        method: GET
+        description: Get the current concurrency and concurrency limit of the org
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: get-conversation-flow-component-conversation_flow_component_id
+      path: /get-conversation-flow-component/{conversation_flow_component_id}
+      operations:
+      - name: getconversationflowcomponent
+        method: GET
+        description: Get a shared conversation flow component
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: conversation_flow_component_id
+          in: path
+          type: string
+          description: ID of the component to retrieve
+          required: true
+    - name: get-conversation-flow-conversation_flow_id
+      path: /get-conversation-flow/{conversation_flow_id}
+      operations:
+      - name: getconversationflow
+        method: GET
+        description: Retrieve details of a specific Conversation Flow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: conversation_flow_id
+          in: path
+          type: string
+          description: Unique id of the conversation flow to be retrieved.
+          required: true
+        - name: version
+          in: query
+          type: integer
+          description: Optional version of the conversation flow to retrieve. Default to latest version.
+    - name: get-knowledge-base-knowledge_base_id
+      path: /get-knowledge-base/{knowledge_base_id}
+      operations:
+      - name: getknowledgebase
+        method: GET
+        description: Retrieve details of a specific knowledge base
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: knowledge_base_id
+          in: path
+          type: string
+          description: The knowledge base id to retrieve.
+          required: true
+    - name: get-mcp-tools-agent_id
+      path: /get-mcp-tools/{agent_id}
+      operations:
+      - name: getmcptools
+        method: GET
+        description: Get MCP tools for a specific agent
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the agent to get MCP tools for.
+          required: true
+        - name: version
+          in: query
+          type: integer
+          description: Optional version of the agent to use for this request. Default to latest version.
+        - name: mcp_id
+          in: query
+          type: string
+          description: The ID of the MCP server to get tools from.
+          required: true
+        - name: component_id
+          in: query
+          type: string
+          description: The ID of the component if the MCP server is configured under a component.
+    - name: get-phone-number-phone_number
+      path: /get-phone-number/{phone_number}
+      operations:
+      - name: getphonenumber
+        method: GET
+        description: Retrieve details of a specific phone number
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: phone_number
+          in: path
+          type: string
+          description: E.164 format of the number (+country code, then number with no space, no special characters), used
+            as the unique identifier for phone number APIs.
+          required: true
+    - name: get-retell-llm-llm_id
+      path: /get-retell-llm/{llm_id}
+      operations:
+      - name: getretellllm
+        method: GET
+        description: Retrieve details of a specific Retell LLM Response Engine
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: llm_id
+          in: path
+          type: string
+          description: Unique id of the Retell LLM Response Engine to be retrieved.
+          required: true
+        - name: version
+          in: query
+          type: integer
+          description: Optional version of the API to use for this request. Default to latest version.
+    - name: get-test-case-definition-test_case_definition_id
+      path: /get-test-case-definition/{test_case_definition_id}
+      operations:
+      - name: gettestcasedefinition
+        method: GET
+        description: Get a test case definition by ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: test_case_definition_id
+          in: path
+          type: string
+          description: ID of the test case definition to retrieve
+          required: true
+    - name: get-test-run-test_case_job_id
+      path: /get-test-run/{test_case_job_id}
+      operations:
+      - name: gettestrun
+        method: GET
+        description: Get a test case job (test run) by ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: test_case_job_id
+          in: path
+          type: string
+          description: ID of the test case job to retrieve
+          required: true
+    - name: get-voice-voice_id
+      path: /get-voice/{voice_id}
+      operations:
+      - name: getvoice
+        method: GET
+        description: Retrieve details of a specific voice
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: voice_id
+          in: path
+          type: string
+          description: Unique id for the voice.
+          required: true
+    - name: import-phone-number
+      path: /import-phone-number
+      operations:
+      - name: importphonenumber
+        method: POST
+        description: Import a phone number from custom telephony & Bind agents
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: list-agents
+      path: /list-agents
+      operations:
+      - name: listagents
+        method: GET
+        description: List all agents
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: A limit on the number of objects to be returned. Limit can range between 1 and 1000, and the default
+            is 1000.
+        - name: pagination_key
+          in: query
+          type: string
+          description: 'The pagination key to continue fetching the next page of agents. Pagination key is represented by
+            a agent id, pagination key and version pair is exclusive (not '
+        - name: pagination_key_version
+          in: query
+          type: integer
+          description: Specifies the version of the agent associated with the pagination_key. When paginating, both the pagination_key
+            and its version must be provided to ensure consi
+        - name: is_latest
+          in: query
+          type: boolean
+          description: If true, only return the latest version of each agent.
+    - name: list-batch-tests
+      path: /list-batch-tests
+      operations:
+      - name: listbatchtests
+        method: GET
+        description: List batch test jobs for a response engine
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: type
+          in: query
+          type: string
+          description: Type of response engine
+          required: true
+        - name: llm_id
+          in: query
+          type: string
+          description: LLM ID (required when type is retell-llm)
+        - name: conversation_flow_id
+          in: query
+          type: string
+          description: Conversation flow ID (required when type is conversation-flow)
+        - name: version
+          in: query
+          type: integer
+          description: Version of the response engine (defaults to latest)
+    - name: list-chat
+      path: /list-chat
+      operations:
+      - name: listchat
+        method: GET
+        description: List all chats
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sort_order
+          in: query
+          type: string
+          description: The chats will be sorted by `start_timestamp`, whether to return the chats in ascending or descending
+            order.
+        - name: limit
+          in: query
+          type: integer
+          description: Limit the number of chats returned. Default 50, Max 1000. To retrieve more than 1000, use pagination_key
+            to continue fetching the next page.
+        - name: pagination_key
+          in: query
+          type: string
+          description: The pagination key to continue fetching the next page of chats. Pagination key is represented by a
+            chat id here, and it's exclusive (not included in the fetched
+    - name: list-chat-agents
+      path: /list-chat-agents
+      operations:
+      - name: listchatagents
+        method: GET
+        description: List all chat agents
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: A limit on the number of objects to be returned. Limit can range between 1 and 1000, and the default
+            is 1000.
+        - name: pagination_key
+          in: query
+          type: string
+          description: 'The pagination key to continue fetching the next page of agents. Pagination key is represented by
+            a agent id, pagination key and version pair is exclusive (not '
+        - name: pagination_key_version
+          in: query
+          type: integer
+          description: Specifies the version of the agent associated with the pagination_key. When paginating, both the pagination_key
+            and its version must be provided to ensure consi
+        - name: is_latest
+          in: query
+          type: boolean
+          description: If true, only return the latest version of each chat agent.
+    - name: list-conversation-flow-components
+      path: /list-conversation-flow-components
+      operations:
+      - name: listconversationflowcomponents
+        method: GET
+        description: List shared conversation flow components
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: list-conversation-flows
+      path: /list-conversation-flows
+      operations:
+      - name: listconversationflows
+        method: GET
+        description: List all conversation flows that can be attached to an agent.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: Limit the number of conversation flows returned. Default 1000, Max 1000. To retrieve more than 1000,
+            use pagination_key to continue fetching the next page.
+        - name: pagination_key
+          in: query
+          type: string
+          description: The pagination key to continue fetching the next page of conversation flows. Pagination key is represented
+            by a conversation flow id here, and it's exclusive (n
+        - name: pagination_key_version
+          in: query
+          type: integer
+          description: 'Specifies the version of the conversation flow associated with the pagination_key. When paginating,
+            both the pagination_key and its version must be provided to '
+    - name: list-knowledge-bases
+      path: /list-knowledge-bases
+      operations:
+      - name: listknowledgebases
+        method: GET
+        description: List all knowledge bases
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: list-phone-numbers
+      path: /list-phone-numbers
+      operations:
+      - name: listphonenumbers
+        method: GET
+        description: List all phone numbers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: list-retell-llms
+      path: /list-retell-llms
+      operations:
+      - name: listretellllm
+        method: GET
+        description: List all Retell LLM Response Engines that can be attached to an agent.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: A limit on the number of objects to be returned. Limit can range between 1 and 1000, and the default
+            is 1000.
+        - name: pagination_key
+          in: query
+          type: string
+          description: The pagination key to continue fetching the next page of LLMs. Pagination key is represented by a llm
+            id, pagination key and version pair is exclusive (not incl
+        - name: pagination_key_version
+          in: query
+          type: integer
+          description: Specifies the version of the llm associated with the pagination_key. When paginating, both the pagination_key
+            and its version must be provided to ensure consist
+    - name: list-test-case-definitions
+      path: /list-test-case-definitions
+      operations:
+      - name: listtestcasedefinitions
+        method: GET
+        description: List test case definitions for a response engine
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: type
+          in: query
+          type: string
+          description: Type of response engine
+          required: true
+        - name: llm_id
+          in: query
+          type: string
+          description: LLM ID (required when type is retell-llm)
+        - name: conversation_flow_id
+          in: query
+          type: string
+          description: Conversation flow ID (required when type is conversation-flow)
+    - name: list-test-runs-test_case_batch_job_id
+      path: /list-test-runs/{test_case_batch_job_id}
+      operations:
+      - name: listtestruns
+        method: GET
+        description: List all test case jobs (test runs) for a batch test job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: test_case_batch_job_id
+          in: path
+          type: string
+          description: ID of the batch test job
+          required: true
+    - name: list-voices
+      path: /list-voices
+      operations:
+      - name: listvoices
+        method: GET
+        description: List all voices available to the user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: publish-agent-version-agent_id
+      path: /publish-agent-version/{agent_id}
+      operations:
+      - name: publishagentversion
+        method: POST
+        description: Publish an existing draft version in place.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the agent.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: search-community-voice
+      path: /search-community-voice
+      operations:
+      - name: searchcommunityvoice
+        method: POST
+        description: Search for community voices from voice providers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update-agent-agent_id
+      path: /update-agent/{agent_id}
+      operations:
+      - name: updateagent
+        method: PATCH
+        description: Update an existing agent's latest draft version
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the agent to be updated.
+          required: true
+        - name: version
+          in: query
+          type: integer
+          description: Optional version of the API to use for this request. Default to latest version.
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update-chat-agent-agent_id
+      path: /update-chat-agent/{agent_id}
+      operations:
+      - name: updatechatagent
+        method: PATCH
+        description: Update an existing chat agent
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agent_id
+          in: path
+          type: string
+          description: Unique id of the chat agent to be updated.
+          required: true
+        - name: version
+          in: query
+          type: integer
+          description: Optional version of the API to use for this request. Default to latest version.
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update-chat-chat_id
+      path: /update-chat/{chat_id}
+      operations:
+      - name: updatechatmetadata
+        method: PATCH
+        description: Update metadata and sensitive data storage settings for an existing chat.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: chat_id
+          in: path
+          type: string
+          description: The chat id of the chat to be updated.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update-conversation-flow-component-conversation_flow_component_id
+      path: /update-conversation-flow-component/{conversation_flow_component_id}
+      operations:
+      - name: updateconversationflowcomponent
+        method: PATCH
+        description: Update an existing shared conversation flow component
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: conversation_flow_component_id
+          in: path
+          type: string
+          description: ID of the component to update
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update-conversation-flow-conversation_flow_id
+      path: /update-conversation-flow/{conversation_flow_id}
+      operations:
+      - name: updateconversationflow
+        method: PATCH
+        description: Update an existing conversation flow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: conversation_flow_id
+          in: path
+          type: string
+          description: Unique id of the conversation flow to be updated.
+          required: true
+        - name: version
+          in: query
+          type: integer
+          description: Optional version of the conversation flow to update. Default to latest version.
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update-phone-number-phone_number
+      path: /update-phone-number/{phone_number}
+      operations:
+      - name: updatephonenumber
+        method: PATCH
+        description: Update agent bound to a purchased phone number
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: phone_number
+          in: path
+          type: string
+          description: E.164 format of the number (+country code, then number with no space, no special characters), used
+            as the unique identifier for phone number APIs.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update-retell-llm-llm_id
+      path: /update-retell-llm/{llm_id}
+      operations:
+      - name: updateretellllm
+        method: PATCH
+        description: Update an existing Retell LLM Response Engine
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: llm_id
+          in: path
+          type: string
+          description: Unique id of the Retell LLM Response Engine to be updated.
+          required: true
+        - name: version
+          in: query
+          type: integer
+          description: Optional version of the API to use for this request. Default to latest version.
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update-test-case-definition-test_case_definition_id
+      path: /update-test-case-definition/{test_case_definition_id}
+      operations:
+      - name: updatetestcasedefinition
+        method: PUT
+        description: Update a test case definition
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: test_case_definition_id
+          in: path
+          type: string
+          description: ID of the test case definition to update
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-create-phone-call
+      path: /v2/create-phone-call
+      operations:
+      - name: createphonecall
+        method: POST
+        description: Create a new outbound phone call
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-create-web-call
+      path: /v2/create-web-call
+      operations:
+      - name: createwebcall
+        method: POST
+        description: Create a new web call
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-delete-call-call_id
+      path: /v2/delete-call/{call_id}
+      operations:
+      - name: deletecall
+        method: DELETE
+        description: Delete a specific call and its associated data
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: call_id
+          in: path
+          type: string
+          description: The call id to delete.
+          required: true
+    - name: v2-get-call-call_id
+      path: /v2/get-call/{call_id}
+      operations:
+      - name: getcall
+        method: GET
+        description: Retrieve details of a specific call
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: call_id
+          in: path
+          type: string
+          description: The call id to retrieve call history for.
+          required: true
+    - name: v2-list-batch-tests
+      path: /v2/list-batch-tests
+      operations:
+      - name: listbatchtestsv2
+        method: GET
+        description: List batch test jobs with pagination
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: type
+          in: query
+          type: string
+          description: Type of response engine
+          required: true
+        - name: llm_id
+          in: query
+          type: string
+          description: LLM ID (required when type is retell-llm)
+        - name: conversation_flow_id
+          in: query
+          type: string
+          description: Conversation flow ID (required when type is conversation-flow)
+        - name: version
+          in: query
+          type: integer
+          description: Version of the response engine (defaults to latest)
+    - name: v2-list-calls
+      path: /v2/list-calls
+      operations:
+      - name: listcalls
+        method: POST
+        description: Retrieve call details
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-list-conversation-flow-components
+      path: /v2/list-conversation-flow-components
+      operations:
+      - name: listconversationflowcomponentsv2
+        method: GET
+        description: List shared conversation flow components with pagination
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-list-conversation-flows
+      path: /v2/list-conversation-flows
+      operations:
+      - name: listconversationflowsv2
+        method: GET
+        description: List conversation flows with pagination
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-list-export-requests
+      path: /v2/list-export-requests
+      operations:
+      - name: listexportrequestsv2
+        method: GET
+        description: List export requests with pagination
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-list-phone-numbers
+      path: /v2/list-phone-numbers
+      operations:
+      - name: listphonenumbersv2
+        method: GET
+        description: List phone numbers with pagination
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-list-retell-llms
+      path: /v2/list-retell-llms
+      operations:
+      - name: listretellllmv2
+        method: GET
+        description: List Retell LLM Response Engines with pagination
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-list-test-case-definitions
+      path: /v2/list-test-case-definitions
+      operations:
+      - name: listtestcasedefinitionsv2
+        method: GET
+        description: List test case definitions with pagination
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: type
+          in: query
+          type: string
+          description: Type of response engine
+          required: true
+        - name: llm_id
+          in: query
+          type: string
+          description: LLM ID (required when type is retell-llm)
+        - name: conversation_flow_id
+          in: query
+          type: string
+          description: Conversation flow ID (required when type is conversation-flow)
+    - name: v2-list-test-runs-test_case_batch_job_id
+      path: /v2/list-test-runs/{test_case_batch_job_id}
+      operations:
+      - name: listtestrunsv2
+        method: GET
+        description: List test case jobs (test runs) for a batch test job with pagination
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: test_case_batch_job_id
+          in: path
+          type: string
+          description: ID of the batch test job
+          required: true
+    - name: v2-register-phone-call
+      path: /v2/register-phone-call
+      operations:
+      - name: registerphonecall
+        method: POST
+        description: Register a new phone call for custom telephony
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v2-stop-call-call_id
+      path: /v2/stop-call/{call_id}
+      operations:
+      - name: stopcall
+        method: POST
+        description: Stop an ongoing call.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: call_id
+          in: path
+          type: string
+          description: The call id of the ongoing call to be stopped.
+          required: true
+    - name: v2-update-call-call_id
+      path: /v2/update-call/{call_id}
+      operations:
+      - name: updatecallmetadata
+        method: PATCH
+        description: Update metadata and sensitive data storage settings for an existing call.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: call_id
+          in: path
+          type: string
+          description: The call id of the call to be updated.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v3-list-calls
+      path: /v3/list-calls
+      operations:
+      - name: listcallsv3
+        method: POST
+        description: List calls with unified cursor pagination response.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: v3-list-chats
+      path: /v3/list-chats
+      operations:
+      - name: listchatsv3
+        method: POST
+        description: List chats with unified cursor pagination response.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: bearer
+      token: '{{env.RETELL_AI_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: retell-ai-rest
+    port: 8080
+    description: REST adapter for Retell SDK. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/add-community-voice
+      name: add-community-voice
+      description: REST surface for add-community-voice.
+      operations:
+      - method: POST
+        name: addcommunityvoice
+        description: Add a community voice to the voice library
+        call: retell-ai.addcommunityvoice
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/add-knowledge-base-sources/{knowledge-base-id}
+      name: add-knowledge-base-sources-knowledge-base-id
+      description: REST surface for add-knowledge-base-sources-knowledge_base_id.
+      operations:
+      - method: POST
+        name: addknowledgebasesources
+        description: Add sources to a knowledge base
+        call: retell-ai.addknowledgebasesources
+        with:
+          knowledge_base_id: rest.knowledge_base_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/agent-playground-completion/{agent-id}
+      name: agent-playground-completion-agent-id
+      description: REST surface for agent-playground-completion-agent_id.
+      operations:
+      - method: POST
+        name: agentplaygroundcompletion
+        description: Stateless playground completion. Send the full conversation history (same shape as chat completion messages)
+          and receive only the newly generated messages. Nothing is persisted server-side — the caller manages conversation
+          state.
+        call: retell-ai.agentplaygroundcompletion
+        with:
+          agent_id: rest.agent_id
+          version: rest.version
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/clone-voice
+      name: clone-voice
+      description: REST surface for clone-voice.
+      operations:
+      - method: POST
+        name: clonevoice
+        description: Clone a voice from audio files
+        call: retell-ai.clonevoice
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-agent
+      name: create-agent
+      description: REST surface for create-agent.
+      operations:
+      - method: POST
+        name: createagent
+        description: Create a new agent
+        call: retell-ai.createagent
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-agent-version/{agent-id}
+      name: create-agent-version-agent-id
+      description: REST surface for create-agent-version-agent_id.
+      operations:
+      - method: POST
+        name: createagentversion
+        description: Create a new draft agent version from a base version.
+        call: retell-ai.createagentversion
+        with:
+          agent_id: rest.agent_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-batch-call
+      name: create-batch-call
+      description: REST surface for create-batch-call.
+      operations:
+      - method: POST
+        name: createbatchcall
+        description: Create a batch call
+        call: retell-ai.createbatchcall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-batch-test
+      name: create-batch-test
+      description: REST surface for create-batch-test.
+      operations:
+      - method: POST
+        name: createbatchtest
+        description: Create a batch test to run multiple test cases
+        call: retell-ai.createbatchtest
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-chat
+      name: create-chat
+      description: REST surface for create-chat.
+      operations:
+      - method: POST
+        name: createchat
+        description: Create a chat session
+        call: retell-ai.createchat
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-chat-agent
+      name: create-chat-agent
+      description: REST surface for create-chat-agent.
+      operations:
+      - method: POST
+        name: createchatagent
+        description: Create a new chat agent
+        call: retell-ai.createchatagent
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-chat-completion
+      name: create-chat-completion
+      description: REST surface for create-chat-completion.
+      operations:
+      - method: POST
+        name: createchatcompletion
+        description: Create a chat completion message
+        call: retell-ai.createchatcompletion
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-conversation-flow
+      name: create-conversation-flow
+      description: REST surface for create-conversation-flow.
+      operations:
+      - method: POST
+        name: createconversationflow
+        description: Create a new Conversation Flow that can be attached to an agent. This is used to generate response output
+          for the agent.
+        call: retell-ai.createconversationflow
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-conversation-flow-component
+      name: create-conversation-flow-component
+      description: REST surface for create-conversation-flow-component.
+      operations:
+      - method: POST
+        name: createconversationflowcomponent
+        description: Create a new shared conversation flow component
+        call: retell-ai.createconversationflowcomponent
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-knowledge-base
+      name: create-knowledge-base
+      description: REST surface for create-knowledge-base.
+      operations:
+      - method: POST
+        name: createknowledgebase
+        description: Create a new knowledge base
+        call: retell-ai.createknowledgebase
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-phone-number
+      name: create-phone-number
+      description: REST surface for create-phone-number.
+      operations:
+      - method: POST
+        name: createphonenumber
+        description: Buy a new phone number & Bind agents
+        call: retell-ai.createphonenumber
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-retell-llm
+      name: create-retell-llm
+      description: REST surface for create-retell-llm.
+      operations:
+      - method: POST
+        name: createretellllm
+        description: Create a new Retell LLM Response Engine that can be attached to an agent. This is used to generate response
+          output for the agent.
+        call: retell-ai.createretellllm
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-sms-chat
+      name: create-sms-chat
+      description: REST surface for create-sms-chat.
+      operations:
+      - method: POST
+        name: createsmschat
+        description: Start an outbound SMS chat conversation with a phone number using the specified agent. The agent must
+          be configured for chat mode. The initial SMS message will be automatically generated and sent based on the agent's
+          configuration.
+        call: retell-ai.createsmschat
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-test-case-definition
+      name: create-test-case-definition
+      description: REST surface for create-test-case-definition.
+      operations:
+      - method: POST
+        name: createtestcasedefinition
+        description: Create a new test case definition
+        call: retell-ai.createtestcasedefinition
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/delete-agent-version/{agent-id}
+      name: delete-agent-version-agent-id
+      description: REST surface for delete-agent-version-agent_id.
+      operations:
+      - method: DELETE
+        name: deleteagentversion
+        description: Delete a specific agent version.
+        call: retell-ai.deleteagentversion
+        with:
+          agent_id: rest.agent_id
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/delete-agent/{agent-id}
+      name: delete-agent-agent-id
+      description: REST surface for delete-agent-agent_id.
+      operations:
+      - method: DELETE
+        name: deleteagent
+        description: Delete an existing agent
+        call: retell-ai.deleteagent
+        with:
+          agent_id: rest.agent_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/delete-chat-agent/{agent-id}
+      name: delete-chat-agent-agent-id
+      description: REST surface for delete-chat-agent-agent_id.
+      operations:
+      - method: DELETE
+        name: deletechatagent
+        description: Delete an existing chat agent
+        call: retell-ai.deletechatagent
+        with:
+          agent_id: rest.agent_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/delete-conversation-flow-component/{conversation-flow-component-id}
+      name: delete-conversation-flow-component-conversation-flow-component-id
+      description: REST surface for delete-conversation-flow-component-conversation_flow_component_id.
+      operations:
+      - method: DELETE
+        name: deleteconversationflowcomponent
+        description: Delete a shared conversation flow component. When deleting a shared component, creates local copies for
+          all linked conversation flows.
+        call: retell-ai.deleteconversationflowcomponent
+        with:
+          conversation_flow_component_id: rest.conversation_flow_component_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/delete-conversation-flow/{conversation-flow-id}
+      name: delete-conversation-flow-conversation-flow-id
+      description: REST surface for delete-conversation-flow-conversation_flow_id.
+      operations:
+      - method: DELETE
+        name: deleteconversationflow
+        description: Delete a conversation flow and all its versions
+        call: retell-ai.deleteconversationflow
+        with:
+          conversation_flow_id: rest.conversation_flow_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/delete-knowledge-base-source/{knowledge-base-id}/source/{source-id}
+      name: delete-knowledge-base-source-knowledge-base-id-source-source-id
+      description: REST surface for delete-knowledge-base-source-knowledge_base_id-source-source_id.
+      operations:
+      - method: DELETE
+        name: deleteknowledgebasesource
+        description: Delete an existing source from knowledge base
+        call: retell-ai.deleteknowledgebasesource
+        with:
+          knowledge_base_id: rest.knowledge_base_id
+          source_id: rest.source_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/delete-knowledge-base/{knowledge-base-id}
+      name: delete-knowledge-base-knowledge-base-id
+      description: REST surface for delete-knowledge-base-knowledge_base_id.
+      operations:
+      - method: DELETE
+        name: deleteknowledgebase
+        description: Delete an existing knowledge base
+        call: retell-ai.deleteknowledgebase
+        with:
+          knowledge_base_id: rest.knowledge_base_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/delete-phone-number/{phone-number}
+      name: delete-phone-number-phone-number
+      description: REST surface for delete-phone-number-phone_number.
+      operations:
+      - method: DELETE
+        name: deletephonenumber
+        description: Delete an existing phone number
+        call: retell-ai.deletephonenumber
+        with:
+          phone_number: rest.phone_number
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/delete-retell-llm/{llm-id}
+      name: delete-retell-llm-llm-id
+      description: REST surface for delete-retell-llm-llm_id.
+      operations:
+      - method: DELETE
+        name: deleteretellllm
+        description: Delete an existing Retell LLM Response Engine
+        call: retell-ai.deleteretellllm
+        with:
+          llm_id: rest.llm_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/delete-test-case-definition/{test-case-definition-id}
+      name: delete-test-case-definition-test-case-definition-id
+      description: REST surface for delete-test-case-definition-test_case_definition_id.
+      operations:
+      - method: DELETE
+        name: deletetestcasedefinition
+        description: Delete a test case definition
+        call: retell-ai.deletetestcasedefinition
+        with:
+          test_case_definition_id: rest.test_case_definition_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/end-chat/{chat-id}
+      name: end-chat-chat-id
+      description: REST surface for end-chat-chat_id.
+      operations:
+      - method: PATCH
+        name: endchat
+        description: End an ongoing chat
+        call: retell-ai.endchat
+        with:
+          chat_id: rest.chat_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-agent-versions/{agent-id}
+      name: get-agent-versions-agent-id
+      description: REST surface for get-agent-versions-agent_id.
+      operations:
+      - method: GET
+        name: getagentversions
+        description: Get all versions of an agent
+        call: retell-ai.getagentversions
+        with:
+          agent_id: rest.agent_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-agent/{agent-id}
+      name: get-agent-agent-id
+      description: REST surface for get-agent-agent_id.
+      operations:
+      - method: GET
+        name: getagent
+        description: Retrieve details of a specific agent
+        call: retell-ai.getagent
+        with:
+          agent_id: rest.agent_id
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-batch-test/{test-case-batch-job-id}
+      name: get-batch-test-test-case-batch-job-id
+      description: REST surface for get-batch-test-test_case_batch_job_id.
+      operations:
+      - method: GET
+        name: getbatchtest
+        description: Get a batch test job by ID
+        call: retell-ai.getbatchtest
+        with:
+          test_case_batch_job_id: rest.test_case_batch_job_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-chat-agent-versions/{agent-id}
+      name: get-chat-agent-versions-agent-id
+      description: REST surface for get-chat-agent-versions-agent_id.
+      operations:
+      - method: GET
+        name: getchatagentversions
+        description: Get all versions of a chat agent
+        call: retell-ai.getchatagentversions
+        with:
+          agent_id: rest.agent_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-chat-agent/{agent-id}
+      name: get-chat-agent-agent-id
+      description: REST surface for get-chat-agent-agent_id.
+      operations:
+      - method: GET
+        name: getchatagent
+        description: Retrieve details of a specific chat agent
+        call: retell-ai.getchatagent
+        with:
+          agent_id: rest.agent_id
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-chat/{chat-id}
+      name: get-chat-chat-id
+      description: REST surface for get-chat-chat_id.
+      operations:
+      - method: GET
+        name: getchat
+        description: Retrieve details of a specific chat
+        call: retell-ai.getchat
+        with:
+          chat_id: rest.chat_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-concurrency
+      name: get-concurrency
+      description: REST surface for get-concurrency.
+      operations:
+      - method: GET
+        name: getconcurrency
+        description: Get the current concurrency and concurrency limit of the org
+        call: retell-ai.getconcurrency
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-conversation-flow-component/{conversation-flow-component-id}
+      name: get-conversation-flow-component-conversation-flow-component-id
+      description: REST surface for get-conversation-flow-component-conversation_flow_component_id.
+      operations:
+      - method: GET
+        name: getconversationflowcomponent
+        description: Get a shared conversation flow component
+        call: retell-ai.getconversationflowcomponent
+        with:
+          conversation_flow_component_id: rest.conversation_flow_component_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-conversation-flow/{conversation-flow-id}
+      name: get-conversation-flow-conversation-flow-id
+      description: REST surface for get-conversation-flow-conversation_flow_id.
+      operations:
+      - method: GET
+        name: getconversationflow
+        description: Retrieve details of a specific Conversation Flow
+        call: retell-ai.getconversationflow
+        with:
+          conversation_flow_id: rest.conversation_flow_id
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-knowledge-base/{knowledge-base-id}
+      name: get-knowledge-base-knowledge-base-id
+      description: REST surface for get-knowledge-base-knowledge_base_id.
+      operations:
+      - method: GET
+        name: getknowledgebase
+        description: Retrieve details of a specific knowledge base
+        call: retell-ai.getknowledgebase
+        with:
+          knowledge_base_id: rest.knowledge_base_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-mcp-tools/{agent-id}
+      name: get-mcp-tools-agent-id
+      description: REST surface for get-mcp-tools-agent_id.
+      operations:
+      - method: GET
+        name: getmcptools
+        description: Get MCP tools for a specific agent
+        call: retell-ai.getmcptools
+        with:
+          agent_id: rest.agent_id
+          version: rest.version
+          mcp_id: rest.mcp_id
+          component_id: rest.component_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-phone-number/{phone-number}
+      name: get-phone-number-phone-number
+      description: REST surface for get-phone-number-phone_number.
+      operations:
+      - method: GET
+        name: getphonenumber
+        description: Retrieve details of a specific phone number
+        call: retell-ai.getphonenumber
+        with:
+          phone_number: rest.phone_number
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-retell-llm/{llm-id}
+      name: get-retell-llm-llm-id
+      description: REST surface for get-retell-llm-llm_id.
+      operations:
+      - method: GET
+        name: getretellllm
+        description: Retrieve details of a specific Retell LLM Response Engine
+        call: retell-ai.getretellllm
+        with:
+          llm_id: rest.llm_id
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-test-case-definition/{test-case-definition-id}
+      name: get-test-case-definition-test-case-definition-id
+      description: REST surface for get-test-case-definition-test_case_definition_id.
+      operations:
+      - method: GET
+        name: gettestcasedefinition
+        description: Get a test case definition by ID
+        call: retell-ai.gettestcasedefinition
+        with:
+          test_case_definition_id: rest.test_case_definition_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-test-run/{test-case-job-id}
+      name: get-test-run-test-case-job-id
+      description: REST surface for get-test-run-test_case_job_id.
+      operations:
+      - method: GET
+        name: gettestrun
+        description: Get a test case job (test run) by ID
+        call: retell-ai.gettestrun
+        with:
+          test_case_job_id: rest.test_case_job_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-voice/{voice-id}
+      name: get-voice-voice-id
+      description: REST surface for get-voice-voice_id.
+      operations:
+      - method: GET
+        name: getvoice
+        description: Retrieve details of a specific voice
+        call: retell-ai.getvoice
+        with:
+          voice_id: rest.voice_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/import-phone-number
+      name: import-phone-number
+      description: REST surface for import-phone-number.
+      operations:
+      - method: POST
+        name: importphonenumber
+        description: Import a phone number from custom telephony & Bind agents
+        call: retell-ai.importphonenumber
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-agents
+      name: list-agents
+      description: REST surface for list-agents.
+      operations:
+      - method: GET
+        name: listagents
+        description: List all agents
+        call: retell-ai.listagents
+        with:
+          limit: rest.limit
+          pagination_key: rest.pagination_key
+          pagination_key_version: rest.pagination_key_version
+          is_latest: rest.is_latest
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-batch-tests
+      name: list-batch-tests
+      description: REST surface for list-batch-tests.
+      operations:
+      - method: GET
+        name: listbatchtests
+        description: List batch test jobs for a response engine
+        call: retell-ai.listbatchtests
+        with:
+          type: rest.type
+          llm_id: rest.llm_id
+          conversation_flow_id: rest.conversation_flow_id
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-chat
+      name: list-chat
+      description: REST surface for list-chat.
+      operations:
+      - method: GET
+        name: listchat
+        description: List all chats
+        call: retell-ai.listchat
+        with:
+          sort_order: rest.sort_order
+          limit: rest.limit
+          pagination_key: rest.pagination_key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-chat-agents
+      name: list-chat-agents
+      description: REST surface for list-chat-agents.
+      operations:
+      - method: GET
+        name: listchatagents
+        description: List all chat agents
+        call: retell-ai.listchatagents
+        with:
+          limit: rest.limit
+          pagination_key: rest.pagination_key
+          pagination_key_version: rest.pagination_key_version
+          is_latest: rest.is_latest
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-conversation-flow-components
+      name: list-conversation-flow-components
+      description: REST surface for list-conversation-flow-components.
+      operations:
+      - method: GET
+        name: listconversationflowcomponents
+        description: List shared conversation flow components
+        call: retell-ai.listconversationflowcomponents
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-conversation-flows
+      name: list-conversation-flows
+      description: REST surface for list-conversation-flows.
+      operations:
+      - method: GET
+        name: listconversationflows
+        description: List all conversation flows that can be attached to an agent.
+        call: retell-ai.listconversationflows
+        with:
+          limit: rest.limit
+          pagination_key: rest.pagination_key
+          pagination_key_version: rest.pagination_key_version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-knowledge-bases
+      name: list-knowledge-bases
+      description: REST surface for list-knowledge-bases.
+      operations:
+      - method: GET
+        name: listknowledgebases
+        description: List all knowledge bases
+        call: retell-ai.listknowledgebases
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-phone-numbers
+      name: list-phone-numbers
+      description: REST surface for list-phone-numbers.
+      operations:
+      - method: GET
+        name: listphonenumbers
+        description: List all phone numbers
+        call: retell-ai.listphonenumbers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-retell-llms
+      name: list-retell-llms
+      description: REST surface for list-retell-llms.
+      operations:
+      - method: GET
+        name: listretellllm
+        description: List all Retell LLM Response Engines that can be attached to an agent.
+        call: retell-ai.listretellllm
+        with:
+          limit: rest.limit
+          pagination_key: rest.pagination_key
+          pagination_key_version: rest.pagination_key_version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-test-case-definitions
+      name: list-test-case-definitions
+      description: REST surface for list-test-case-definitions.
+      operations:
+      - method: GET
+        name: listtestcasedefinitions
+        description: List test case definitions for a response engine
+        call: retell-ai.listtestcasedefinitions
+        with:
+          type: rest.type
+          llm_id: rest.llm_id
+          conversation_flow_id: rest.conversation_flow_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-test-runs/{test-case-batch-job-id}
+      name: list-test-runs-test-case-batch-job-id
+      description: REST surface for list-test-runs-test_case_batch_job_id.
+      operations:
+      - method: GET
+        name: listtestruns
+        description: List all test case jobs (test runs) for a batch test job
+        call: retell-ai.listtestruns
+        with:
+          test_case_batch_job_id: rest.test_case_batch_job_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-voices
+      name: list-voices
+      description: REST surface for list-voices.
+      operations:
+      - method: GET
+        name: listvoices
+        description: List all voices available to the user
+        call: retell-ai.listvoices
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/publish-agent-version/{agent-id}
+      name: publish-agent-version-agent-id
+      description: REST surface for publish-agent-version-agent_id.
+      operations:
+      - method: POST
+        name: publishagentversion
+        description: Publish an existing draft version in place.
+        call: retell-ai.publishagentversion
+        with:
+          agent_id: rest.agent_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/search-community-voice
+      name: search-community-voice
+      description: REST surface for search-community-voice.
+      operations:
+      - method: POST
+        name: searchcommunityvoice
+        description: Search for community voices from voice providers
+        call: retell-ai.searchcommunityvoice
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-agent/{agent-id}
+      name: update-agent-agent-id
+      description: REST surface for update-agent-agent_id.
+      operations:
+      - method: PATCH
+        name: updateagent
+        description: Update an existing agent's latest draft version
+        call: retell-ai.updateagent
+        with:
+          agent_id: rest.agent_id
+          version: rest.version
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-chat-agent/{agent-id}
+      name: update-chat-agent-agent-id
+      description: REST surface for update-chat-agent-agent_id.
+      operations:
+      - method: PATCH
+        name: updatechatagent
+        description: Update an existing chat agent
+        call: retell-ai.updatechatagent
+        with:
+          agent_id: rest.agent_id
+          version: rest.version
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-chat/{chat-id}
+      name: update-chat-chat-id
+      description: REST surface for update-chat-chat_id.
+      operations:
+      - method: PATCH
+        name: updatechatmetadata
+        description: Update metadata and sensitive data storage settings for an existing chat.
+        call: retell-ai.updatechatmetadata
+        with:
+          chat_id: rest.chat_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-conversation-flow-component/{conversation-flow-component-id}
+      name: update-conversation-flow-component-conversation-flow-component-id
+      description: REST surface for update-conversation-flow-component-conversation_flow_component_id.
+      operations:
+      - method: PATCH
+        name: updateconversationflowcomponent
+        description: Update an existing shared conversation flow component
+        call: retell-ai.updateconversationflowcomponent
+        with:
+          conversation_flow_component_id: rest.conversation_flow_component_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-conversation-flow/{conversation-flow-id}
+      name: update-conversation-flow-conversation-flow-id
+      description: REST surface for update-conversation-flow-conversation_flow_id.
+      operations:
+      - method: PATCH
+        name: updateconversationflow
+        description: Update an existing conversation flow
+        call: retell-ai.updateconversationflow
+        with:
+          conversation_flow_id: rest.conversation_flow_id
+          version: rest.version
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-phone-number/{phone-number}
+      name: update-phone-number-phone-number
+      description: REST surface for update-phone-number-phone_number.
+      operations:
+      - method: PATCH
+        name: updatephonenumber
+        description: Update agent bound to a purchased phone number
+        call: retell-ai.updatephonenumber
+        with:
+          phone_number: rest.phone_number
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-retell-llm/{llm-id}
+      name: update-retell-llm-llm-id
+      description: REST surface for update-retell-llm-llm_id.
+      operations:
+      - method: PATCH
+        name: updateretellllm
+        description: Update an existing Retell LLM Response Engine
+        call: retell-ai.updateretellllm
+        with:
+          llm_id: rest.llm_id
+          version: rest.version
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-test-case-definition/{test-case-definition-id}
+      name: update-test-case-definition-test-case-definition-id
+      description: REST surface for update-test-case-definition-test_case_definition_id.
+      operations:
+      - method: PUT
+        name: updatetestcasedefinition
+        description: Update a test case definition
+        call: retell-ai.updatetestcasedefinition
+        with:
+          test_case_definition_id: rest.test_case_definition_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/create-phone-call
+      name: v2-create-phone-call
+      description: REST surface for v2-create-phone-call.
+      operations:
+      - method: POST
+        name: createphonecall
+        description: Create a new outbound phone call
+        call: retell-ai.createphonecall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/create-web-call
+      name: v2-create-web-call
+      description: REST surface for v2-create-web-call.
+      operations:
+      - method: POST
+        name: createwebcall
+        description: Create a new web call
+        call: retell-ai.createwebcall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/delete-call/{call-id}
+      name: v2-delete-call-call-id
+      description: REST surface for v2-delete-call-call_id.
+      operations:
+      - method: DELETE
+        name: deletecall
+        description: Delete a specific call and its associated data
+        call: retell-ai.deletecall
+        with:
+          call_id: rest.call_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/get-call/{call-id}
+      name: v2-get-call-call-id
+      description: REST surface for v2-get-call-call_id.
+      operations:
+      - method: GET
+        name: getcall
+        description: Retrieve details of a specific call
+        call: retell-ai.getcall
+        with:
+          call_id: rest.call_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/list-batch-tests
+      name: v2-list-batch-tests
+      description: REST surface for v2-list-batch-tests.
+      operations:
+      - method: GET
+        name: listbatchtestsv2
+        description: List batch test jobs with pagination
+        call: retell-ai.listbatchtestsv2
+        with:
+          type: rest.type
+          llm_id: rest.llm_id
+          conversation_flow_id: rest.conversation_flow_id
+          version: rest.version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/list-calls
+      name: v2-list-calls
+      description: REST surface for v2-list-calls.
+      operations:
+      - method: POST
+        name: listcalls
+        description: Retrieve call details
+        call: retell-ai.listcalls
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/list-conversation-flow-components
+      name: v2-list-conversation-flow-components
+      description: REST surface for v2-list-conversation-flow-components.
+      operations:
+      - method: GET
+        name: listconversationflowcomponentsv2
+        description: List shared conversation flow components with pagination
+        call: retell-ai.listconversationflowcomponentsv2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/list-conversation-flows
+      name: v2-list-conversation-flows
+      description: REST surface for v2-list-conversation-flows.
+      operations:
+      - method: GET
+        name: listconversationflowsv2
+        description: List conversation flows with pagination
+        call: retell-ai.listconversationflowsv2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/list-export-requests
+      name: v2-list-export-requests
+      description: REST surface for v2-list-export-requests.
+      operations:
+      - method: GET
+        name: listexportrequestsv2
+        description: List export requests with pagination
+        call: retell-ai.listexportrequestsv2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/list-phone-numbers
+      name: v2-list-phone-numbers
+      description: REST surface for v2-list-phone-numbers.
+      operations:
+      - method: GET
+        name: listphonenumbersv2
+        description: List phone numbers with pagination
+        call: retell-ai.listphonenumbersv2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/list-retell-llms
+      name: v2-list-retell-llms
+      description: REST surface for v2-list-retell-llms.
+      operations:
+      - method: GET
+        name: listretellllmv2
+        description: List Retell LLM Response Engines with pagination
+        call: retell-ai.listretellllmv2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/list-test-case-definitions
+      name: v2-list-test-case-definitions
+      description: REST surface for v2-list-test-case-definitions.
+      operations:
+      - method: GET
+        name: listtestcasedefinitionsv2
+        description: List test case definitions with pagination
+        call: retell-ai.listtestcasedefinitionsv2
+        with:
+          type: rest.type
+          llm_id: rest.llm_id
+          conversation_flow_id: rest.conversation_flow_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/list-test-runs/{test-case-batch-job-id}
+      name: v2-list-test-runs-test-case-batch-job-id
+      description: REST surface for v2-list-test-runs-test_case_batch_job_id.
+      operations:
+      - method: GET
+        name: listtestrunsv2
+        description: List test case jobs (test runs) for a batch test job with pagination
+        call: retell-ai.listtestrunsv2
+        with:
+          test_case_batch_job_id: rest.test_case_batch_job_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/register-phone-call
+      name: v2-register-phone-call
+      description: REST surface for v2-register-phone-call.
+      operations:
+      - method: POST
+        name: registerphonecall
+        description: Register a new phone call for custom telephony
+        call: retell-ai.registerphonecall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/stop-call/{call-id}
+      name: v2-stop-call-call-id
+      description: REST surface for v2-stop-call-call_id.
+      operations:
+      - method: POST
+        name: stopcall
+        description: Stop an ongoing call.
+        call: retell-ai.stopcall
+        with:
+          call_id: rest.call_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/update-call/{call-id}
+      name: v2-update-call-call-id
+      description: REST surface for v2-update-call-call_id.
+      operations:
+      - method: PATCH
+        name: updatecallmetadata
+        description: Update metadata and sensitive data storage settings for an existing call.
+        call: retell-ai.updatecallmetadata
+        with:
+          call_id: rest.call_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v3/list-calls
+      name: v3-list-calls
+      description: REST surface for v3-list-calls.
+      operations:
+      - method: POST
+        name: listcallsv3
+        description: List calls with unified cursor pagination response.
+        call: retell-ai.listcallsv3
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v3/list-chats
+      name: v3-list-chats
+      description: REST surface for v3-list-chats.
+      operations:
+      - method: POST
+        name: listchatsv3
+        description: List chats with unified cursor pagination response.
+        call: retell-ai.listchatsv3
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: retell-ai-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Retell SDK. One tool per consumed operation, routed inline through this capability's consumes
+      block.
+    tools:
+    - name: add-community-voice-voice-library
+      description: Add a community voice to the voice library
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.addcommunityvoice
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: add-sources-knowledge-base
+      description: Add sources to a knowledge base
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.addknowledgebasesources
+      with:
+        knowledge_base_id: tools.knowledge_base_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: stateless-playground-completion-send-full
+      description: Stateless playground completion. Send the full conversation history (same shape as chat completion messages)
+        and receive only the newly generated messages. Nothing is persisted server-side — the caller manages conversation
+        state.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.agentplaygroundcompletion
+      with:
+        agent_id: tools.agent_id
+        version: tools.version
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: clone-voice-audio-files
+      description: Clone a voice from audio files
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.clonevoice
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-new-agent
+      description: Create a new agent
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createagent
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-new-draft-agent-version
+      description: Create a new draft agent version from a base version.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createagentversion
+      with:
+        agent_id: tools.agent_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-batch-call
+      description: Create a batch call
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createbatchcall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-batch-test-run-multiple
+      description: Create a batch test to run multiple test cases
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: retell-ai.createbatchtest
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-chat-session
+      description: Create a chat session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createchat
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-new-chat-agent
+      description: Create a new chat agent
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createchatagent
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-chat-completion-message
+      description: Create a chat completion message
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createchatcompletion
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-new-conversation-flow-that
+      description: Create a new Conversation Flow that can be attached to an agent. This is used to generate response output
+        for the agent.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createconversationflow
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-new-shared-conversation-flow
+      description: Create a new shared conversation flow component
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createconversationflowcomponent
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-new-knowledge-base
+      description: Create a new knowledge base
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createknowledgebase
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: buy-new-phone-number-bind
+      description: Buy a new phone number & Bind agents
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createphonenumber
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-new-retell-llm-response
+      description: Create a new Retell LLM Response Engine that can be attached to an agent. This is used to generate response
+        output for the agent.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createretellllm
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: start-outbound-sms-chat-conversation
+      description: Start an outbound SMS chat conversation with a phone number using the specified agent. The agent must be
+        configured for chat mode. The initial SMS message will be automatically generated and sent based on the agent's configuration.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createsmschat
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-new-test-case-definition
+      description: Create a new test case definition
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: retell-ai.createtestcasedefinition
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-specific-agent-version
+      description: Delete a specific agent version.
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: retell-ai.deleteagentversion
+      with:
+        agent_id: tools.agent_id
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-existing-agent
+      description: Delete an existing agent
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: retell-ai.deleteagent
+      with:
+        agent_id: tools.agent_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-existing-chat-agent
+      description: Delete an existing chat agent
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: retell-ai.deletechatagent
+      with:
+        agent_id: tools.agent_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-shared-conversation-flow-component
+      description: Delete a shared conversation flow component. When deleting a shared component, creates local copies for
+        all linked conversation flows.
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: retell-ai.deleteconversationflowcomponent
+      with:
+        conversation_flow_component_id: tools.conversation_flow_component_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-conversation-flow-and-all
+      description: Delete a conversation flow and all its versions
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: retell-ai.deleteconversationflow
+      with:
+        conversation_flow_id: tools.conversation_flow_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-existing-source-knowledge-base
+      description: Delete an existing source from knowledge base
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: retell-ai.deleteknowledgebasesource
+      with:
+        knowledge_base_id: tools.knowledge_base_id
+        source_id: tools.source_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-existing-knowledge-base
+      description: Delete an existing knowledge base
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: retell-ai.deleteknowledgebase
+      with:
+        knowledge_base_id: tools.knowledge_base_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-existing-phone-number
+      description: Delete an existing phone number
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: retell-ai.deletephonenumber
+      with:
+        phone_number: tools.phone_number
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-existing-retell-llm-response
+      description: Delete an existing Retell LLM Response Engine
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: retell-ai.deleteretellllm
+      with:
+        llm_id: tools.llm_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-test-case-definition
+      description: Delete a test case definition
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: retell-ai.deletetestcasedefinition
+      with:
+        test_case_definition_id: tools.test_case_definition_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: end-ongoing-chat
+      description: End an ongoing chat
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: retell-ai.endchat
+      with:
+        chat_id: tools.chat_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-versions-agent
+      description: Get all versions of an agent
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getagentversions
+      with:
+        agent_id: tools.agent_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-details-specific-agent
+      description: Retrieve details of a specific agent
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getagent
+      with:
+        agent_id: tools.agent_id
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-batch-test-job-id
+      description: Get a batch test job by ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getbatchtest
+      with:
+        test_case_batch_job_id: tools.test_case_batch_job_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-all-versions-chat-agent
+      description: Get all versions of a chat agent
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getchatagentversions
+      with:
+        agent_id: tools.agent_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-details-specific-chat-agent
+      description: Retrieve details of a specific chat agent
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getchatagent
+      with:
+        agent_id: tools.agent_id
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-details-specific-chat
+      description: Retrieve details of a specific chat
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getchat
+      with:
+        chat_id: tools.chat_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-current-concurrency-and-concurrency
+      description: Get the current concurrency and concurrency limit of the org
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getconcurrency
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-shared-conversation-flow-component
+      description: Get a shared conversation flow component
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getconversationflowcomponent
+      with:
+        conversation_flow_component_id: tools.conversation_flow_component_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-details-specific-conversation-flow
+      description: Retrieve details of a specific Conversation Flow
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getconversationflow
+      with:
+        conversation_flow_id: tools.conversation_flow_id
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-details-specific-knowledge-base
+      description: Retrieve details of a specific knowledge base
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getknowledgebase
+      with:
+        knowledge_base_id: tools.knowledge_base_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-mcp-tools-specific-agent
+      description: Get MCP tools for a specific agent
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getmcptools
+      with:
+        agent_id: tools.agent_id
+        version: tools.version
+        mcp_id: tools.mcp_id
+        component_id: tools.component_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-details-specific-phone-number
+      description: Retrieve details of a specific phone number
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getphonenumber
+      with:
+        phone_number: tools.phone_number
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-details-specific-retell-llm
+      description: Retrieve details of a specific Retell LLM Response Engine
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getretellllm
+      with:
+        llm_id: tools.llm_id
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-test-case-definition-id
+      description: Get a test case definition by ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.gettestcasedefinition
+      with:
+        test_case_definition_id: tools.test_case_definition_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-test-case-job-test
+      description: Get a test case job (test run) by ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.gettestrun
+      with:
+        test_case_job_id: tools.test_case_job_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-details-specific-voice
+      description: Retrieve details of a specific voice
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getvoice
+      with:
+        voice_id: tools.voice_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: import-phone-number-custom-telephony
+      description: Import a phone number from custom telephony & Bind agents
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.importphonenumber
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-agents
+      description: List all agents
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listagents
+      with:
+        limit: tools.limit
+        pagination_key: tools.pagination_key
+        pagination_key_version: tools.pagination_key_version
+        is_latest: tools.is_latest
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-batch-test-jobs-response
+      description: List batch test jobs for a response engine
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listbatchtests
+      with:
+        type: tools.type
+        llm_id: tools.llm_id
+        conversation_flow_id: tools.conversation_flow_id
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-chats
+      description: List all chats
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listchat
+      with:
+        sort_order: tools.sort_order
+        limit: tools.limit
+        pagination_key: tools.pagination_key
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-chat-agents
+      description: List all chat agents
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listchatagents
+      with:
+        limit: tools.limit
+        pagination_key: tools.pagination_key
+        pagination_key_version: tools.pagination_key_version
+        is_latest: tools.is_latest
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-shared-conversation-flow-components
+      description: List shared conversation flow components
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listconversationflowcomponents
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-conversation-flows-that
+      description: List all conversation flows that can be attached to an agent.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listconversationflows
+      with:
+        limit: tools.limit
+        pagination_key: tools.pagination_key
+        pagination_key_version: tools.pagination_key_version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-knowledge-bases
+      description: List all knowledge bases
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listknowledgebases
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-phone-numbers
+      description: List all phone numbers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listphonenumbers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-retell-llm-response
+      description: List all Retell LLM Response Engines that can be attached to an agent.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listretellllm
+      with:
+        limit: tools.limit
+        pagination_key: tools.pagination_key
+        pagination_key_version: tools.pagination_key_version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-test-case-definitions-response
+      description: List test case definitions for a response engine
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listtestcasedefinitions
+      with:
+        type: tools.type
+        llm_id: tools.llm_id
+        conversation_flow_id: tools.conversation_flow_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-test-case-jobs
+      description: List all test case jobs (test runs) for a batch test job
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listtestruns
+      with:
+        test_case_batch_job_id: tools.test_case_batch_job_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-voices-available-user
+      description: List all voices available to the user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listvoices
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: publish-existing-draft-version-place
+      description: Publish an existing draft version in place.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.publishagentversion
+      with:
+        agent_id: tools.agent_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: search-community-voices-voice-providers
+      description: Search for community voices from voice providers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: retell-ai.searchcommunityvoice
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-existing-agent-s-latest-draft
+      description: Update an existing agent's latest draft version
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: retell-ai.updateagent
+      with:
+        agent_id: tools.agent_id
+        version: tools.version
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-existing-chat-agent
+      description: Update an existing chat agent
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: retell-ai.updatechatagent
+      with:
+        agent_id: tools.agent_id
+        version: tools.version
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-metadata-and-sensitive-data
+      description: Update metadata and sensitive data storage settings for an existing chat.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: retell-ai.updatechatmetadata
+      with:
+        chat_id: tools.chat_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-existing-shared-conversation-flow
+      description: Update an existing shared conversation flow component
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: retell-ai.updateconversationflowcomponent
+      with:
+        conversation_flow_component_id: tools.conversation_flow_component_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-existing-conversation-flow
+      description: Update an existing conversation flow
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: retell-ai.updateconversationflow
+      with:
+        conversation_flow_id: tools.conversation_flow_id
+        version: tools.version
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-agent-bound-purchased-phone
+      description: Update agent bound to a purchased phone number
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: retell-ai.updatephonenumber
+      with:
+        phone_number: tools.phone_number
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-existing-retell-llm-response
+      description: Update an existing Retell LLM Response Engine
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: retell-ai.updateretellllm
+      with:
+        llm_id: tools.llm_id
+        version: tools.version
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-test-case-definition
+      description: Update a test case definition
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: retell-ai.updatetestcasedefinition
+      with:
+        test_case_definition_id: tools.test_case_definition_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-new-outbound-phone-call
+      description: Create a new outbound phone call
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createphonecall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-new-web-call
+      description: Create a new web call
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.createwebcall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-specific-call-and-its
+      description: Delete a specific call and its associated data
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: retell-ai.deletecall
+      with:
+        call_id: tools.call_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-details-specific-call
+      description: Retrieve details of a specific call
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.getcall
+      with:
+        call_id: tools.call_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-batch-test-jobs-pagination
+      description: List batch test jobs with pagination
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listbatchtestsv2
+      with:
+        type: tools.type
+        llm_id: tools.llm_id
+        conversation_flow_id: tools.conversation_flow_id
+        version: tools.version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-call-details
+      description: Retrieve call details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: retell-ai.listcalls
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-shared-conversation-flow-components-2
+      description: List shared conversation flow components with pagination
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listconversationflowcomponentsv2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-conversation-flows-pagination
+      description: List conversation flows with pagination
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listconversationflowsv2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-export-requests-pagination
+      description: List export requests with pagination
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listexportrequestsv2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-phone-numbers-pagination
+      description: List phone numbers with pagination
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listphonenumbersv2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-retell-llm-response-engines
+      description: List Retell LLM Response Engines with pagination
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listretellllmv2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-test-case-definitions-pagination
+      description: List test case definitions with pagination
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listtestcasedefinitionsv2
+      with:
+        type: tools.type
+        llm_id: tools.llm_id
+        conversation_flow_id: tools.conversation_flow_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-test-case-jobs-test
+      description: List test case jobs (test runs) for a batch test job with pagination
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: retell-ai.listtestrunsv2
+      with:
+        test_case_batch_job_id: tools.test_case_batch_job_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: register-new-phone-call-custom
+      description: Register a new phone call for custom telephony
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.registerphonecall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: stop-ongoing-call
+      description: Stop an ongoing call.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: retell-ai.stopcall
+      with:
+        call_id: tools.call_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-metadata-and-sensitive-data-2
+      description: Update metadata and sensitive data storage settings for an existing call.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: retell-ai.updatecallmetadata
+      with:
+        call_id: tools.call_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-calls-unified-cursor-pagination
+      description: List calls with unified cursor pagination response.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: retell-ai.listcallsv3
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-chats-unified-cursor-pagination
+      description: List chats with unified cursor pagination response.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: retell-ai.listchatsv3
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
