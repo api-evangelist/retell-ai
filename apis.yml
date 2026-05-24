@@ -59,6 +59,8 @@ common:
     url: finops/retell-ai-finops.yml
   - type: Integrations
     url: https://www.retellai.com/integrations
+  - type: LLMsTxt
+    url: https://docs.retellai.com/llms.txt
 integrations:
   - name: Twillio
   - name: Vonage
