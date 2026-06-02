@@ -1,0 +1,716 @@
+asyncapi: '2.6.0'
+info:
+  title: Retell AI WebSocket APIs
+  version: '1.0.0'
+  description: |
+    AsyncAPI 2.6 description of Retell AI's publicly documented WebSocket
+    surfaces. All events are sourced from the official Retell AI documentation
+    (https://docs.retellai.com) and cover:
+
+      * Custom LLM WebSocket - bidirectional channel between Retell's voice
+        infrastructure and a developer-operated LLM server. Retell connects
+        out to the developer's server using the call_id as a path parameter.
+        Source: https://docs.retellai.com/api-references/llm-websocket
+                https://docs.retellai.com/integrate-llm/setup-websocket-server
+      * Audio WebSocket (deprecated) - bidirectional audio/control channel
+        between a frontend client and Retell, hosted at
+        wss://api.retellai.com/audio-websocket/{call_id}.
+        Source: https://docs.retellai.com/api-references/audio-websocket
+
+    The Web Call experience is delivered through the RetellWebClient SDK and
+    does not expose a publicly documented WebSocket protocol; it is therefore
+    not modeled here. Only events documented by Retell AI are included - no
+    fabricated fields.
+  contact:
+    name: API Evangelist
+    url: https://apievangelist.com
+    email: kin@apievangelist.com
+  license:
+    name: Documentation Reference
+    url: https://docs.retellai.com
+
+defaultContentType: application/json
+
+servers:
+  custom_llm_websocket:
+    url: '{scheme}://{host}/llm-websocket'
+    protocol: wss
+    description: |
+      Developer-hosted Custom LLM WebSocket server. Retell AI connects to
+      this server using the call_id as a trailing path parameter (see the
+      `custom_llm` channel). The endpoint format documented by Retell is
+      `wss://your_domain_name/llm-websocket/{call_id}` (or
+      `ws://localhost:3000/llm-websocket/{call_id}` during local testing).
+    variables:
+      scheme:
+        description: WebSocket scheme - wss in production, ws for local testing.
+        enum:
+          - wss
+          - ws
+        default: wss
+      host:
+        description: Fully-qualified host of the developer's Custom LLM WebSocket server.
+        default: your_domain_name
+  audio_websocket:
+    url: 'wss://api.retellai.com/audio-websocket'
+    protocol: wss
+    description: |
+      Retell-hosted Audio WebSocket (deprecated). Frontend clients connect
+      to `wss://api.retellai.com/audio-websocket/{call_id}` to stream
+      microphone audio to Retell and receive agent audio plus control events.
+
+channels:
+  custom_llm/{call_id}:
+    servers:
+      - custom_llm_websocket
+    description: |
+      Custom LLM WebSocket channel. Retell AI opens a connection to the
+      developer's WebSocket server and exchanges JSON messages identified
+      by `interaction_type` (Retell to LLM) or `response_type` (LLM to
+      Retell).
+    parameters:
+      call_id:
+        description: Unique identifier of the call.
+        schema:
+          type: string
+    publish:
+      summary: Messages sent from the LLM server to Retell.
+      operationId: llmToRetell
+      message:
+        oneOf:
+          - $ref: '#/components/messages/LlmConfig'
+          - $ref: '#/components/messages/LlmUpdateAgent'
+          - $ref: '#/components/messages/LlmPingPong'
+          - $ref: '#/components/messages/LlmResponse'
+          - $ref: '#/components/messages/LlmAgentInterrupt'
+          - $ref: '#/components/messages/LlmToolCallInvocation'
+          - $ref: '#/components/messages/LlmToolCallResult'
+          - $ref: '#/components/messages/LlmMetadata'
+    subscribe:
+      summary: Messages sent from Retell to the LLM server.
+      operationId: retellToLlm
+      message:
+        oneOf:
+          - $ref: '#/components/messages/RetellPingPong'
+          - $ref: '#/components/messages/RetellCallDetails'
+          - $ref: '#/components/messages/RetellUpdateOnly'
+          - $ref: '#/components/messages/RetellResponseRequired'
+          - $ref: '#/components/messages/RetellReminderRequired'
+
+  audio/{call_id}:
+    servers:
+      - audio_websocket
+    description: |
+      Audio WebSocket channel (deprecated). Carries raw audio bytes from
+      the frontend microphone to Retell, and a mix of raw audio bytes plus
+      JSON / string control events from Retell back to the frontend.
+    parameters:
+      call_id:
+        description: Identifies the call and authenticates the connection.
+        schema:
+          type: string
+    bindings:
+      ws:
+        query:
+          type: object
+          properties:
+            enable_update:
+              type: boolean
+              default: false
+              description: When true, Retell sends live call updates including transcripts.
+            enable_audio_alignment:
+              type: boolean
+              default: false
+              description: When true, Retell encodes agent audio as base64 JSON with aligned text.
+    publish:
+      summary: Messages sent from the frontend client to Retell.
+      operationId: clientToRetell
+      message:
+        $ref: '#/components/messages/ClientAudioFrame'
+    subscribe:
+      summary: Messages sent from Retell to the frontend client.
+      operationId: retellToClient
+      message:
+        oneOf:
+          - $ref: '#/components/messages/AgentAudioFrame'
+          - $ref: '#/components/messages/AudioClear'
+          - $ref: '#/components/messages/AudioUpdate'
+          - $ref: '#/components/messages/AudioAlignment'
+          - $ref: '#/components/messages/AudioMetadata'
+
+components:
+  messages:
+    # ---- Retell -> LLM (Custom LLM WebSocket) ----
+    RetellPingPong:
+      name: RetellPingPong
+      title: Ping Pong (Retell -> LLM)
+      summary: Heartbeat ping sent by Retell to the LLM server.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/RetellPingPongPayload'
+
+    RetellCallDetails:
+      name: RetellCallDetails
+      title: Call Details (Retell -> LLM)
+      summary: |
+        Initial call metadata sent by Retell when `call_details` is enabled
+        via the LLM-side config message.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/RetellCallDetailsPayload'
+
+    RetellUpdateOnly:
+      name: RetellUpdateOnly
+      title: Update Only (Retell -> LLM)
+      summary: Transcript / turn-taking update that does not require an LLM response.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/RetellUpdateOnlyPayload'
+
+    RetellResponseRequired:
+      name: RetellResponseRequired
+      title: Response Required (Retell -> LLM)
+      summary: Retell expects the LLM server to produce a response.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/RetellResponseRequiredPayload'
+
+    RetellReminderRequired:
+      name: RetellReminderRequired
+      title: Reminder Required (Retell -> LLM)
+      summary: Retell signals that a reminder response is required after silence.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/RetellReminderRequiredPayload'
+
+    # ---- LLM -> Retell (Custom LLM WebSocket) ----
+    LlmConfig:
+      name: LlmConfig
+      title: Config (LLM -> Retell)
+      summary: LLM server-side configuration sent to Retell.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/LlmConfigPayload'
+
+    LlmUpdateAgent:
+      name: LlmUpdateAgent
+      title: Update Agent (LLM -> Retell)
+      summary: Update agent-level runtime settings.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/LlmUpdateAgentPayload'
+
+    LlmPingPong:
+      name: LlmPingPong
+      title: Ping Pong (LLM -> Retell)
+      summary: Heartbeat ping sent from the LLM server to Retell.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/LlmPingPongPayload'
+
+    LlmResponse:
+      name: LlmResponse
+      title: Response (LLM -> Retell)
+      summary: Streamed agent response chunk.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/LlmResponsePayload'
+
+    LlmAgentInterrupt:
+      name: LlmAgentInterrupt
+      title: Agent Interrupt (LLM -> Retell)
+      summary: Agent-initiated interruption.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/LlmAgentInterruptPayload'
+
+    LlmToolCallInvocation:
+      name: LlmToolCallInvocation
+      title: Tool Call Invocation (LLM -> Retell)
+      summary: LLM reports a tool / function call invocation.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/LlmToolCallInvocationPayload'
+
+    LlmToolCallResult:
+      name: LlmToolCallResult
+      title: Tool Call Result (LLM -> Retell)
+      summary: LLM reports the result of a tool / function call.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/LlmToolCallResultPayload'
+
+    LlmMetadata:
+      name: LlmMetadata
+      title: Metadata (LLM -> Retell)
+      summary: Custom metadata sent by the LLM server to Retell.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/LlmMetadataPayload'
+
+    # ---- Audio WebSocket ----
+    ClientAudioFrame:
+      name: ClientAudioFrame
+      title: Client Audio Frame (Frontend -> Retell)
+      summary: Raw microphone audio bytes streamed in 20-250ms chunks.
+      contentType: application/octet-stream
+      payload:
+        type: string
+        format: binary
+        description: Unencoded microphone audio bytes.
+
+    AgentAudioFrame:
+      name: AgentAudioFrame
+      title: Agent Audio Frame (Retell -> Frontend)
+      summary: |
+        Raw binary agent audio response bytes, emitted when
+        `enable_audio_alignment=false`.
+      contentType: application/octet-stream
+      payload:
+        type: string
+        format: binary
+        description: Raw agent audio bytes.
+
+    AudioClear:
+      name: AudioClear
+      title: Clear (Retell -> Frontend)
+      summary: |
+        String literal "clear" sent when the user interrupts the agent so the
+        client can flush any buffered agent audio.
+      contentType: text/plain
+      payload:
+        type: string
+        enum:
+          - clear
+
+    AudioUpdate:
+      name: AudioUpdate
+      title: Update (Retell -> Frontend)
+      summary: Live call update containing transcript and optional turn-taking info.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/AudioUpdatePayload'
+
+    AudioAlignment:
+      name: AudioAlignment
+      title: Audio Alignment (Retell -> Frontend)
+      summary: |
+        Emitted when `enable_audio_alignment=true`. JSON envelope containing
+        base64-encoded agent audio aligned with the corresponding text.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/AudioAlignmentPayload'
+
+    AudioMetadata:
+      name: AudioMetadata
+      title: Metadata (Retell -> Frontend)
+      summary: Custom metadata forwarded from the LLM server to the frontend.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/AudioMetadataPayload'
+
+  schemas:
+    # ---- Shared sub-objects ----
+    Word:
+      type: object
+      description: Word-level timing inside an Utterance.
+      properties:
+        word:
+          type: string
+          description: The word text.
+        start:
+          type: number
+          description: Start time in seconds from call start.
+        end:
+          type: number
+          description: End time in seconds from call start.
+
+    Utterance:
+      type: object
+      description: A single transcript utterance.
+      properties:
+        role:
+          type: string
+          enum:
+            - agent
+            - user
+          description: Speaker role.
+        content:
+          type: string
+          description: Utterance text content.
+        words:
+          type: array
+          description: Word-level timing for the utterance.
+          items:
+            $ref: '#/components/schemas/Word'
+
+    Call:
+      type: object
+      description: Call metadata delivered with the `call_details` event.
+      properties:
+        call_type:
+          type: string
+          description: Type of call (e.g. `phone_call`).
+        from_number:
+          type: string
+          description: Originating phone number in E.164 format.
+        to_number:
+          type: string
+          description: Destination phone number in E.164 format.
+        direction:
+          type: string
+          description: Call direction (e.g. `inbound`, `outbound`).
+        call_id:
+          type: string
+          description: Unique identifier for the call.
+        agent_id:
+          type: string
+          description: Identifier of the Retell agent handling the call.
+        call_status:
+          type: string
+          description: Lifecycle status of the call (e.g. `registered`).
+        metadata:
+          type: object
+          description: Arbitrary metadata associated with the call.
+          additionalProperties: true
+        retell_llm_dynamic_variables:
+          type: object
+          description: Dynamic variables supplied for the Retell LLM.
+          additionalProperties: true
+
+    # ---- Retell -> LLM payloads ----
+    RetellPingPongPayload:
+      type: object
+      required:
+        - interaction_type
+        - timestamp
+      properties:
+        interaction_type:
+          type: string
+          enum:
+            - ping_pong
+        timestamp:
+          type: integer
+          format: int64
+          description: Millisecond epoch timestamp.
+
+    RetellCallDetailsPayload:
+      type: object
+      required:
+        - interaction_type
+        - call
+      properties:
+        interaction_type:
+          type: string
+          enum:
+            - call_details
+        call:
+          $ref: '#/components/schemas/Call'
+
+    RetellUpdateOnlyPayload:
+      type: object
+      required:
+        - interaction_type
+      properties:
+        interaction_type:
+          type: string
+          enum:
+            - update_only
+        transcript:
+          type: array
+          items:
+            $ref: '#/components/schemas/Utterance'
+        transcript_with_tool_calls:
+          type: array
+          description: Transcript including any embedded tool call entries.
+          items:
+            type: object
+            additionalProperties: true
+        turntaking:
+          type: string
+          enum:
+            - agent_turn
+            - user_turn
+          description: Indicates whose turn it is in the conversation.
+
+    RetellResponseRequiredPayload:
+      type: object
+      required:
+        - interaction_type
+        - response_id
+      properties:
+        interaction_type:
+          type: string
+          enum:
+            - response_required
+        response_id:
+          type: integer
+          description: Identifier the LLM should echo back when responding.
+        transcript:
+          type: array
+          items:
+            $ref: '#/components/schemas/Utterance'
+        transcript_with_tool_calls:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+
+    RetellReminderRequiredPayload:
+      type: object
+      required:
+        - interaction_type
+        - response_id
+      properties:
+        interaction_type:
+          type: string
+          enum:
+            - reminder_required
+        response_id:
+          type: integer
+          description: Identifier the LLM should echo back when responding.
+        transcript:
+          type: array
+          items:
+            $ref: '#/components/schemas/Utterance'
+        transcript_with_tool_calls:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+
+    # ---- LLM -> Retell payloads ----
+    LlmConfigPayload:
+      type: object
+      required:
+        - response_type
+        - config
+      properties:
+        response_type:
+          type: string
+          enum:
+            - config
+        config:
+          type: object
+          properties:
+            auto_reconnect:
+              type: boolean
+              description: When true, Retell will attempt to reconnect to the LLM server on disconnect.
+            call_details:
+              type: boolean
+              description: When true, Retell will emit a `call_details` event at the start of the call.
+            transcript_with_tool_calls:
+              type: boolean
+              description: When true, Retell will include `transcript_with_tool_calls` in update events.
+
+    LlmUpdateAgentPayload:
+      type: object
+      required:
+        - response_type
+        - agent_config
+      properties:
+        response_type:
+          type: string
+          enum:
+            - update_agent
+        agent_config:
+          type: object
+          properties:
+            responsiveness:
+              type: number
+              description: Agent responsiveness factor.
+            interruption_sensitivity:
+              type: number
+              description: Sensitivity for detecting user interruption.
+            reminder_trigger_ms:
+              type: number
+              description: Milliseconds of silence before a reminder is triggered.
+            reminder_max_count:
+              type: number
+              description: Maximum number of reminders to emit in a single silence window.
+
+    LlmPingPongPayload:
+      type: object
+      required:
+        - response_type
+        - timestamp
+      properties:
+        response_type:
+          type: string
+          enum:
+            - ping_pong
+        timestamp:
+          type: integer
+          format: int64
+          description: Millisecond epoch timestamp.
+
+    LlmResponsePayload:
+      type: object
+      required:
+        - response_type
+        - response_id
+      properties:
+        response_type:
+          type: string
+          enum:
+            - response
+        response_id:
+          type: integer
+          description: Echoes the `response_id` from the triggering Retell event.
+        content:
+          type: string
+          description: Streamed text chunk of the agent response.
+        content_complete:
+          type: boolean
+          description: True on the final chunk of the response.
+        no_interruption_allowed:
+          type: boolean
+          description: When true, the user cannot interrupt this response.
+        end_call:
+          type: boolean
+          description: When true, the call should be ended after this response.
+        transfer_number:
+          type: string
+          description: When set, transfer the call to this number after this response.
+        show_transferee_as_caller:
+          type: boolean
+          description: When transferring, show the original caller as the caller ID.
+        digit_to_press:
+          type: string
+          description: DTMF digit to press during this response.
+
+    LlmAgentInterruptPayload:
+      type: object
+      required:
+        - response_type
+        - interrupt_id
+      properties:
+        response_type:
+          type: string
+          enum:
+            - agent_interrupt
+        interrupt_id:
+          type: integer
+          description: Identifier for this agent-initiated interruption.
+        content:
+          type: string
+          description: Text content to speak as the interruption.
+        content_complete:
+          type: boolean
+          description: True on the final chunk of the interruption.
+        no_interruption_allowed:
+          type: boolean
+          description: When true, the user cannot interrupt this interruption.
+        end_call:
+          type: boolean
+          description: When true, the call should be ended after this interruption.
+        transfer_number:
+          type: string
+          description: When set, transfer the call to this number after this interruption.
+        digit_to_press:
+          type: string
+          description: DTMF digit to press during this interruption.
+
+    LlmToolCallInvocationPayload:
+      type: object
+      required:
+        - response_type
+        - tool_call_id
+        - name
+        - arguments
+      properties:
+        response_type:
+          type: string
+          enum:
+            - tool_call_invocation
+        tool_call_id:
+          type: string
+          description: Identifier for this tool call.
+        name:
+          type: string
+          description: Name of the tool / function being invoked.
+        arguments:
+          type: string
+          description: Stringified JSON of the arguments passed to the tool.
+
+    LlmToolCallResultPayload:
+      type: object
+      required:
+        - response_type
+        - tool_call_id
+        - content
+      properties:
+        response_type:
+          type: string
+          enum:
+            - tool_call_result
+        tool_call_id:
+          type: string
+          description: Identifier of the originating tool call.
+        content:
+          type: string
+          description: Stringified result of the tool call.
+
+    LlmMetadataPayload:
+      type: object
+      required:
+        - response_type
+        - metadata
+      properties:
+        response_type:
+          type: string
+          enum:
+            - metadata
+        metadata:
+          type: object
+          description: Arbitrary metadata payload.
+          additionalProperties: true
+
+    # ---- Audio WebSocket payloads ----
+    AudioUpdatePayload:
+      type: object
+      required:
+        - event_type
+      properties:
+        event_type:
+          type: string
+          enum:
+            - update
+        transcript:
+          type: array
+          items:
+            $ref: '#/components/schemas/Utterance'
+        turntaking:
+          type: string
+          enum:
+            - agent_turn
+            - user_turn
+
+    AudioAlignmentPayload:
+      type: object
+      description: |
+        JSON envelope emitted when `enable_audio_alignment=true`. Contains
+        base64-encoded agent audio aligned with the corresponding text.
+      properties:
+        audio:
+          type: string
+          format: byte
+          description: Base64-encoded agent audio bytes.
+        text:
+          type: string
+          description: Text aligned with the encoded audio.
+
+    AudioMetadataPayload:
+      type: object
+      required:
+        - event_type
+        - metadata
+      properties:
+        event_type:
+          type: string
+          enum:
+            - metadata
+        metadata:
+          type: object
+          description: Custom metadata forwarded from the LLM server.
+          additionalProperties: true

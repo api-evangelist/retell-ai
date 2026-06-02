@@ -13,7 +13,7 @@ tags:
   - Realtime
   - Conversational
 created: '2026-05-08'
-modified: '2026-05-19'
+modified: '2026-05-29'
 specificationVersion: '0.19'
 apis:
   - aid: retell-ai:platform
@@ -34,6 +34,8 @@ apis:
       url: https://docs.retellai.com/api-references
     - type: OpenAPI
       url: openapi/retell-ai-openapi.yml
+    - type: AsyncAPI
+      url: asyncapi/retell-ai-asyncapi.yml
     - type: SignUp
       url: https://dashboard.retellai.com/
     - type: Pricing
