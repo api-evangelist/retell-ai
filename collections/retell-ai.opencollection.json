@@ -1,0 +1,1898 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "addKnowledgeBaseSources",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/add-knowledge-base-sources/:knowledge_base_id",
+        "params": [
+          {
+            "name": "knowledge_base_id",
+            "value": "",
+            "type": "path",
+            "description": "The knowledge base id to delete source from."
+          }
+        ],
+        "body": {
+          "type": "multipart-form",
+          "data": []
+        }
+      },
+      "docs": "Add sources to a knowledge base"
+    },
+    {
+      "info": {
+        "name": "createAgent",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-agent",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a new agent"
+    },
+    {
+      "info": {
+        "name": "createBatchCall",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-batch-call",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a batch call"
+    },
+    {
+      "info": {
+        "name": "createBatchTest",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-batch-test",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a batch test to run multiple test cases"
+    },
+    {
+      "info": {
+        "name": "createTestCaseDefinition",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-test-case-definition",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a new test case definition"
+    },
+    {
+      "info": {
+        "name": "deleteTestCaseDefinition",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.retellai.com/delete-test-case-definition/:test_case_definition_id",
+        "params": [
+          {
+            "name": "test_case_definition_id",
+            "value": "",
+            "type": "path",
+            "description": "ID of the test case definition to delete"
+          }
+        ]
+      },
+      "docs": "Delete a test case definition"
+    },
+    {
+      "info": {
+        "name": "getTestCaseDefinition",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-test-case-definition/:test_case_definition_id",
+        "params": [
+          {
+            "name": "test_case_definition_id",
+            "value": "",
+            "type": "path",
+            "description": "ID of the test case definition to retrieve"
+          }
+        ]
+      },
+      "docs": "Get a test case definition by ID"
+    },
+    {
+      "info": {
+        "name": "listTestCaseDefinitions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-test-case-definitions",
+        "params": [
+          {
+            "name": "type",
+            "value": "",
+            "type": "query",
+            "description": "Type of response engine"
+          },
+          {
+            "name": "llm_id",
+            "value": "",
+            "type": "query",
+            "description": "LLM ID (required when type is retell-llm)"
+          },
+          {
+            "name": "conversation_flow_id",
+            "value": "",
+            "type": "query",
+            "description": "Conversation flow ID (required when type is conversation-flow)"
+          }
+        ]
+      },
+      "docs": "List test case definitions for a response engine"
+    },
+    {
+      "info": {
+        "name": "listTestCaseDefinitionsV2",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/v2/list-test-case-definitions",
+        "params": [
+          {
+            "name": "type",
+            "value": "",
+            "type": "query",
+            "description": "Type of response engine"
+          },
+          {
+            "name": "llm_id",
+            "value": "",
+            "type": "query",
+            "description": "LLM ID (required when type is retell-llm)"
+          },
+          {
+            "name": "conversation_flow_id",
+            "value": "",
+            "type": "query",
+            "description": "Conversation flow ID (required when type is conversation-flow)"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Maximum number of items to return."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "Pagination key for fetching the next page."
+          }
+        ]
+      },
+      "docs": "List test case definitions with pagination"
+    },
+    {
+      "info": {
+        "name": "updateTestCaseDefinition",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://api.retellai.com/update-test-case-definition/:test_case_definition_id",
+        "params": [
+          {
+            "name": "test_case_definition_id",
+            "value": "",
+            "type": "path",
+            "description": "ID of the test case definition to update"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update a test case definition"
+    },
+    {
+      "info": {
+        "name": "getBatchTest",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-batch-test/:test_case_batch_job_id",
+        "params": [
+          {
+            "name": "test_case_batch_job_id",
+            "value": "",
+            "type": "path",
+            "description": "ID of the batch test job to retrieve"
+          }
+        ]
+      },
+      "docs": "Get a batch test job by ID"
+    },
+    {
+      "info": {
+        "name": "listBatchTests",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-batch-tests",
+        "params": [
+          {
+            "name": "type",
+            "value": "",
+            "type": "query",
+            "description": "Type of response engine"
+          },
+          {
+            "name": "llm_id",
+            "value": "",
+            "type": "query",
+            "description": "LLM ID (required when type is retell-llm)"
+          },
+          {
+            "name": "conversation_flow_id",
+            "value": "",
+            "type": "query",
+            "description": "Conversation flow ID (required when type is conversation-flow)"
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Version of the response engine (defaults to latest)"
+          }
+        ]
+      },
+      "docs": "List batch test jobs for a response engine"
+    },
+    {
+      "info": {
+        "name": "listBatchTestsV2",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/v2/list-batch-tests",
+        "params": [
+          {
+            "name": "type",
+            "value": "",
+            "type": "query",
+            "description": "Type of response engine"
+          },
+          {
+            "name": "llm_id",
+            "value": "",
+            "type": "query",
+            "description": "LLM ID (required when type is retell-llm)"
+          },
+          {
+            "name": "conversation_flow_id",
+            "value": "",
+            "type": "query",
+            "description": "Conversation flow ID (required when type is conversation-flow)"
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Version of the response engine (defaults to latest)"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Maximum number of items to return."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "Pagination key for fetching the next page."
+          }
+        ]
+      },
+      "docs": "List batch test jobs with pagination"
+    },
+    {
+      "info": {
+        "name": "getTestRun",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-test-run/:test_case_job_id",
+        "params": [
+          {
+            "name": "test_case_job_id",
+            "value": "",
+            "type": "path",
+            "description": "ID of the test case job to retrieve"
+          }
+        ]
+      },
+      "docs": "Get a test case job (test run) by ID"
+    },
+    {
+      "info": {
+        "name": "listTestRuns",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-test-runs/:test_case_batch_job_id",
+        "params": [
+          {
+            "name": "test_case_batch_job_id",
+            "value": "",
+            "type": "path",
+            "description": "ID of the batch test job"
+          }
+        ]
+      },
+      "docs": "List all test case jobs (test runs) for a batch test job"
+    },
+    {
+      "info": {
+        "name": "listTestRunsV2",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/v2/list-test-runs/:test_case_batch_job_id",
+        "params": [
+          {
+            "name": "test_case_batch_job_id",
+            "value": "",
+            "type": "path",
+            "description": "ID of the batch test job"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Maximum number of items to return."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "Pagination key for fetching the next page."
+          }
+        ]
+      },
+      "docs": "List test case jobs (test runs) for a batch test job with pagination"
+    },
+    {
+      "info": {
+        "name": "createChatAgent",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-chat-agent",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a new chat agent"
+    },
+    {
+      "info": {
+        "name": "agentPlaygroundCompletion",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/agent-playground-completion/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the agent."
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Agent version to use. Defaults to latest."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Stateless playground completion. Send the full conversation history (same shape as chat completion messages) and receive only the newly generated messages. Nothing is persisted server-side — the caller manages conversation state."
+    },
+    {
+      "info": {
+        "name": "createChatCompletion",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-chat-completion",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a chat completion message"
+    },
+    {
+      "info": {
+        "name": "createChat",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-chat",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a chat session"
+    },
+    {
+      "info": {
+        "name": "createConversationFlowComponent",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-conversation-flow-component",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a new shared conversation flow component"
+    },
+    {
+      "info": {
+        "name": "createConversationFlow",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-conversation-flow",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a new Conversation Flow that can be attached to an agent. This is used to generate response output for the agent."
+    },
+    {
+      "info": {
+        "name": "createKnowledgeBase",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-knowledge-base",
+        "body": {
+          "type": "multipart-form",
+          "data": []
+        }
+      },
+      "docs": "Create a new knowledge base"
+    },
+    {
+      "info": {
+        "name": "createPhoneNumber",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-phone-number",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Buy a new phone number & Bind agents"
+    },
+    {
+      "info": {
+        "name": "createRetellLLM",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-retell-llm",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a new Retell LLM Response Engine that can be attached to an agent. This is used to generate response output for the agent."
+    },
+    {
+      "info": {
+        "name": "createSmsChat",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-sms-chat",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Start an outbound SMS chat conversation with a phone number using the specified agent. The agent must be configured for chat mode. The initial SMS message will be automatically generated and sent based on the agent's configuration."
+    },
+    {
+      "info": {
+        "name": "deleteAgent",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.retellai.com/delete-agent/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the agent to be deleted. Deletes all versions of the agent."
+          }
+        ]
+      },
+      "docs": "Delete an existing agent"
+    },
+    {
+      "info": {
+        "name": "deleteChatAgent",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.retellai.com/delete-chat-agent/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the chat agent to be deleted. Deletes all versions of the chat agent."
+          }
+        ]
+      },
+      "docs": "Delete an existing chat agent"
+    },
+    {
+      "info": {
+        "name": "deleteConversationFlowComponent",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.retellai.com/delete-conversation-flow-component/:conversation_flow_component_id",
+        "params": [
+          {
+            "name": "conversation_flow_component_id",
+            "value": "",
+            "type": "path",
+            "description": "ID of the component to delete"
+          }
+        ]
+      },
+      "docs": "Delete a shared conversation flow component. When deleting a shared component, creates local copies for all linked conversation flows."
+    },
+    {
+      "info": {
+        "name": "deleteConversationFlow",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.retellai.com/delete-conversation-flow/:conversation_flow_id",
+        "params": [
+          {
+            "name": "conversation_flow_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the conversation flow to be deleted."
+          }
+        ]
+      },
+      "docs": "Delete a conversation flow and all its versions"
+    },
+    {
+      "info": {
+        "name": "deleteKnowledgeBaseSource",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.retellai.com/delete-knowledge-base-source/:knowledge_base_id/source/:source_id",
+        "params": [
+          {
+            "name": "knowledge_base_id",
+            "value": "",
+            "type": "path",
+            "description": "The knowledge base id to delete source from."
+          },
+          {
+            "name": "source_id",
+            "value": "",
+            "type": "path",
+            "description": "The source id to delete."
+          }
+        ]
+      },
+      "docs": "Delete an existing source from knowledge base"
+    },
+    {
+      "info": {
+        "name": "deleteKnowledgeBase",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.retellai.com/delete-knowledge-base/:knowledge_base_id",
+        "params": [
+          {
+            "name": "knowledge_base_id",
+            "value": "",
+            "type": "path",
+            "description": "The knowledge base id to delete."
+          }
+        ]
+      },
+      "docs": "Delete an existing knowledge base"
+    },
+    {
+      "info": {
+        "name": "deletePhoneNumber",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.retellai.com/delete-phone-number/:phone_number",
+        "params": [
+          {
+            "name": "phone_number",
+            "value": "",
+            "type": "path",
+            "description": "E.164 format of the number (+country code, then number with no space, no special characters), used as the unique identifier for phone number APIs."
+          }
+        ]
+      },
+      "docs": "Delete an existing phone number"
+    },
+    {
+      "info": {
+        "name": "deleteRetellLLM",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.retellai.com/delete-retell-llm/:llm_id",
+        "params": [
+          {
+            "name": "llm_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the Retell LLM Response Engine to be deleted. Deletes all versions of the Retell LLM Response Engine."
+          }
+        ]
+      },
+      "docs": "Delete an existing Retell LLM Response Engine"
+    },
+    {
+      "info": {
+        "name": "endChat",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.retellai.com/end-chat/:chat_id",
+        "params": [
+          {
+            "name": "chat_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the chat to be ended"
+          }
+        ]
+      },
+      "docs": "End an ongoing chat"
+    },
+    {
+      "info": {
+        "name": "getAgentVersions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-agent-versions/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the agent versions to be retrieved."
+          }
+        ]
+      },
+      "docs": "Get all versions of an agent"
+    },
+    {
+      "info": {
+        "name": "getAgent",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-agent/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the agent to be retrieved."
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Optional version of the API to use for this request. If not provided, will default to latest version."
+          }
+        ]
+      },
+      "docs": "Retrieve details of a specific agent"
+    },
+    {
+      "info": {
+        "name": "getChatAgentVersions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-chat-agent-versions/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the chat agent versions to be retrieved."
+          }
+        ]
+      },
+      "docs": "Get all versions of a chat agent"
+    },
+    {
+      "info": {
+        "name": "getChatAgent",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-chat-agent/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the chat agent to be retrieved."
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Optional version of the API to use for this request. If not provided, will default to latest version."
+          }
+        ]
+      },
+      "docs": "Retrieve details of a specific chat agent"
+    },
+    {
+      "info": {
+        "name": "getChat",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-chat/:chat_id",
+        "params": [
+          {
+            "name": "chat_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the chat to be retrieved"
+          }
+        ]
+      },
+      "docs": "Retrieve details of a specific chat"
+    },
+    {
+      "info": {
+        "name": "getConcurrency",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-concurrency"
+      },
+      "docs": "Get the current concurrency and concurrency limit of the org"
+    },
+    {
+      "info": {
+        "name": "getConversationFlowComponent",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-conversation-flow-component/:conversation_flow_component_id",
+        "params": [
+          {
+            "name": "conversation_flow_component_id",
+            "value": "",
+            "type": "path",
+            "description": "ID of the component to retrieve"
+          }
+        ]
+      },
+      "docs": "Get a shared conversation flow component"
+    },
+    {
+      "info": {
+        "name": "getConversationFlow",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-conversation-flow/:conversation_flow_id",
+        "params": [
+          {
+            "name": "conversation_flow_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the conversation flow to be retrieved."
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Optional version of the conversation flow to retrieve. Default to latest version."
+          }
+        ]
+      },
+      "docs": "Retrieve details of a specific Conversation Flow"
+    },
+    {
+      "info": {
+        "name": "getKnowledgeBase",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-knowledge-base/:knowledge_base_id",
+        "params": [
+          {
+            "name": "knowledge_base_id",
+            "value": "",
+            "type": "path",
+            "description": "The knowledge base id to retrieve."
+          }
+        ]
+      },
+      "docs": "Retrieve details of a specific knowledge base"
+    },
+    {
+      "info": {
+        "name": "getMCPTools",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-mcp-tools/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the agent to get MCP tools for."
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Optional version of the agent to use for this request. Default to latest version."
+          },
+          {
+            "name": "mcp_id",
+            "value": "",
+            "type": "query",
+            "description": "The ID of the MCP server to get tools from."
+          },
+          {
+            "name": "component_id",
+            "value": "",
+            "type": "query",
+            "description": "The ID of the component if the MCP server is configured under a component."
+          }
+        ]
+      },
+      "docs": "Get MCP tools for a specific agent"
+    },
+    {
+      "info": {
+        "name": "getPhoneNumber",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-phone-number/:phone_number",
+        "params": [
+          {
+            "name": "phone_number",
+            "value": "",
+            "type": "path",
+            "description": "E.164 format of the number (+country code, then number with no space, no special characters), used as the unique identifier for phone number APIs."
+          }
+        ]
+      },
+      "docs": "Retrieve details of a specific phone number"
+    },
+    {
+      "info": {
+        "name": "getRetellLLM",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-retell-llm/:llm_id",
+        "params": [
+          {
+            "name": "llm_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the Retell LLM Response Engine to be retrieved."
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Optional version of the API to use for this request. Default to latest version."
+          }
+        ]
+      },
+      "docs": "Retrieve details of a specific Retell LLM Response Engine"
+    },
+    {
+      "info": {
+        "name": "getVoice",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/get-voice/:voice_id",
+        "params": [
+          {
+            "name": "voice_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id for the voice."
+          }
+        ]
+      },
+      "docs": "Retrieve details of a specific voice"
+    },
+    {
+      "info": {
+        "name": "cloneVoice",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/clone-voice",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "files",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "voice_name",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "voice_provider",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Clone a voice from audio files"
+    },
+    {
+      "info": {
+        "name": "addCommunityVoice",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/add-community-voice",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Add a community voice to the voice library"
+    },
+    {
+      "info": {
+        "name": "searchCommunityVoice",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/search-community-voice",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Search for community voices from voice providers"
+    },
+    {
+      "info": {
+        "name": "importPhoneNumber",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/import-phone-number",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Import a phone number from custom telephony & Bind agents"
+    },
+    {
+      "info": {
+        "name": "listAgents",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-agents",
+        "params": [
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "A limit on the number of objects to be returned. Limit can range between 1 and 1000, and the default is 1000."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "The pagination key to continue fetching the next page of agents. Pagination key is represented by a agent id, pagination key and version pair is exclusive (not included in the fetched page). If not set, will start from the beginning."
+          },
+          {
+            "name": "pagination_key_version",
+            "value": "",
+            "type": "query",
+            "description": "Specifies the version of the agent associated with the pagination_key. When paginating, both the pagination_key and its version must be provided to ensure consistent ordering and to fetch the next page correctly."
+          },
+          {
+            "name": "is_latest",
+            "value": "",
+            "type": "query",
+            "description": "If true, only return the latest version of each agent."
+          }
+        ]
+      },
+      "docs": "List all agents"
+    },
+    {
+      "info": {
+        "name": "listChatAgents",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-chat-agents",
+        "params": [
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "A limit on the number of objects to be returned. Limit can range between 1 and 1000, and the default is 1000."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "The pagination key to continue fetching the next page of agents. Pagination key is represented by a agent id, pagination key and version pair is exclusive (not included in the fetched page). If not set, will start from the beginning."
+          },
+          {
+            "name": "pagination_key_version",
+            "value": "",
+            "type": "query",
+            "description": "Specifies the version of the agent associated with the pagination_key. When paginating, both the pagination_key and its version must be provided to ensure consistent ordering and to fetch the next page correctly."
+          },
+          {
+            "name": "is_latest",
+            "value": "",
+            "type": "query",
+            "description": "If true, only return the latest version of each chat agent."
+          }
+        ]
+      },
+      "docs": "List all chat agents"
+    },
+    {
+      "info": {
+        "name": "listChat",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-chat",
+        "params": [
+          {
+            "name": "sort_order",
+            "value": "",
+            "type": "query",
+            "description": "The chats will be sorted by `start_timestamp`, whether to return the chats in ascending or descending order."
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Limit the number of chats returned. Default 50, Max 1000. To retrieve more than 1000, use pagination_key to continue fetching the next page."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "The pagination key to continue fetching the next page of chats. Pagination key is represented by a chat id here, and it's exclusive (not included in the fetched chats). The last chat id from the list chats is usually used as pagination key here. If not set, will start from the beginning."
+          }
+        ]
+      },
+      "docs": "List all chats"
+    },
+    {
+      "info": {
+        "name": "listChatsV3",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v3/list-chats",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "List chats with unified cursor pagination response."
+    },
+    {
+      "info": {
+        "name": "listConversationFlowComponentsV2",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/v2/list-conversation-flow-components",
+        "params": [
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Maximum number of items to return."
+          },
+          {
+            "name": "sort_order",
+            "value": "",
+            "type": "query",
+            "description": "Sort order for results."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "Pagination key for fetching the next page."
+          }
+        ]
+      },
+      "docs": "List shared conversation flow components with pagination"
+    },
+    {
+      "info": {
+        "name": "listConversationFlowComponents",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-conversation-flow-components"
+      },
+      "docs": "List shared conversation flow components"
+    },
+    {
+      "info": {
+        "name": "listConversationFlowsV2",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/v2/list-conversation-flows",
+        "params": [
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Maximum number of items to return."
+          },
+          {
+            "name": "sort_order",
+            "value": "",
+            "type": "query",
+            "description": "Sort order for results."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "Pagination key for fetching the next page."
+          }
+        ]
+      },
+      "docs": "List conversation flows with pagination"
+    },
+    {
+      "info": {
+        "name": "listConversationFlows",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-conversation-flows",
+        "params": [
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Limit the number of conversation flows returned. Default 1000, Max 1000. To retrieve more than 1000, use pagination_key to continue fetching the next page."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "The pagination key to continue fetching the next page of conversation flows. Pagination key is represented by a conversation flow id here, and it's exclusive (not included in the fetched conversation flows). The last conversation flow id from the list conversation flows is usually used as pagination key here. If not set, will start from the beginning."
+          },
+          {
+            "name": "pagination_key_version",
+            "value": "",
+            "type": "query",
+            "description": "Specifies the version of the conversation flow associated with the pagination_key. When paginating, both the pagination_key and its version must be provided to ensure consistent ordering and to fetch the next page correctly."
+          }
+        ]
+      },
+      "docs": "List all conversation flows that can be attached to an agent."
+    },
+    {
+      "info": {
+        "name": "listKnowledgeBases",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-knowledge-bases"
+      },
+      "docs": "List all knowledge bases"
+    },
+    {
+      "info": {
+        "name": "listPhoneNumbersV2",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/v2/list-phone-numbers",
+        "params": [
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Maximum number of items to return."
+          },
+          {
+            "name": "sort_order",
+            "value": "",
+            "type": "query",
+            "description": "Sort order for results."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "Pagination key for fetching the next page."
+          }
+        ]
+      },
+      "docs": "List phone numbers with pagination"
+    },
+    {
+      "info": {
+        "name": "listPhoneNumbers",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-phone-numbers"
+      },
+      "docs": "List all phone numbers"
+    },
+    {
+      "info": {
+        "name": "listRetellLLM",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-retell-llms",
+        "params": [
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "A limit on the number of objects to be returned. Limit can range between 1 and 1000, and the default is 1000."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "The pagination key to continue fetching the next page of LLMs. Pagination key is represented by a llm id, pagination key and version pair is exclusive (not included in the fetched page). If not set, will start from the beginning."
+          },
+          {
+            "name": "pagination_key_version",
+            "value": "",
+            "type": "query",
+            "description": "Specifies the version of the llm associated with the pagination_key. When paginating, both the pagination_key and its version must be provided to ensure consistent ordering and to fetch the next page correctly."
+          }
+        ]
+      },
+      "docs": "List all Retell LLM Response Engines that can be attached to an agent."
+    },
+    {
+      "info": {
+        "name": "listRetellLLMV2",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/v2/list-retell-llms",
+        "params": [
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Maximum number of items to return."
+          },
+          {
+            "name": "sort_order",
+            "value": "",
+            "type": "query",
+            "description": "Sort order for results."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "Pagination key for fetching the next page."
+          }
+        ]
+      },
+      "docs": "List Retell LLM Response Engines with pagination"
+    },
+    {
+      "info": {
+        "name": "listVoices",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/list-voices"
+      },
+      "docs": "List all voices available to the user"
+    },
+    {
+      "info": {
+        "name": "createAgentVersion",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/create-agent-version/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the agent."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a new draft agent version from a base version."
+    },
+    {
+      "info": {
+        "name": "publishAgentVersion",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/publish-agent-version/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the agent."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Publish an existing draft version in place."
+    },
+    {
+      "info": {
+        "name": "deleteAgentVersion",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.retellai.com/delete-agent-version/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the agent."
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Version to delete."
+          }
+        ]
+      },
+      "docs": "Delete a specific agent version."
+    },
+    {
+      "info": {
+        "name": "updateAgent",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.retellai.com/update-agent/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the agent to be updated."
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Optional version of the API to use for this request. Default to latest version."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update an existing agent's latest draft version"
+    },
+    {
+      "info": {
+        "name": "updateChatAgent",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.retellai.com/update-chat-agent/:agent_id",
+        "params": [
+          {
+            "name": "agent_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the chat agent to be updated."
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Optional version of the API to use for this request. Default to latest version."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update an existing chat agent"
+    },
+    {
+      "info": {
+        "name": "updateChatMetadata",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.retellai.com/update-chat/:chat_id",
+        "params": [
+          {
+            "name": "chat_id",
+            "value": "",
+            "type": "path",
+            "description": "The chat id of the chat to be updated."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update metadata and sensitive data storage settings for an existing chat."
+    },
+    {
+      "info": {
+        "name": "updateConversationFlowComponent",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.retellai.com/update-conversation-flow-component/:conversation_flow_component_id",
+        "params": [
+          {
+            "name": "conversation_flow_component_id",
+            "value": "",
+            "type": "path",
+            "description": "ID of the component to update"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update an existing shared conversation flow component"
+    },
+    {
+      "info": {
+        "name": "updateConversationFlow",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.retellai.com/update-conversation-flow/:conversation_flow_id",
+        "params": [
+          {
+            "name": "conversation_flow_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the conversation flow to be updated."
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Optional version of the conversation flow to update. Default to latest version."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update an existing conversation flow"
+    },
+    {
+      "info": {
+        "name": "updatePhoneNumber",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.retellai.com/update-phone-number/:phone_number",
+        "params": [
+          {
+            "name": "phone_number",
+            "value": "",
+            "type": "path",
+            "description": "E.164 format of the number (+country code, then number with no space, no special characters), used as the unique identifier for phone number APIs."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update agent bound to a purchased phone number"
+    },
+    {
+      "info": {
+        "name": "updateRetellLLM",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.retellai.com/update-retell-llm/:llm_id",
+        "params": [
+          {
+            "name": "llm_id",
+            "value": "",
+            "type": "path",
+            "description": "Unique id of the Retell LLM Response Engine to be updated."
+          },
+          {
+            "name": "version",
+            "value": "",
+            "type": "query",
+            "description": "Optional version of the API to use for this request. Default to latest version."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update an existing Retell LLM Response Engine"
+    },
+    {
+      "info": {
+        "name": "createPhoneCall",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/create-phone-call",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a new outbound phone call"
+    },
+    {
+      "info": {
+        "name": "createWebCall",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/create-web-call",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a new web call"
+    },
+    {
+      "info": {
+        "name": "deleteCall",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.retellai.com/v2/delete-call/:call_id",
+        "params": [
+          {
+            "name": "call_id",
+            "value": "",
+            "type": "path",
+            "description": "The call id to delete."
+          }
+        ]
+      },
+      "docs": "Delete a specific call and its associated data"
+    },
+    {
+      "info": {
+        "name": "getCall",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/v2/get-call/:call_id",
+        "params": [
+          {
+            "name": "call_id",
+            "value": "",
+            "type": "path",
+            "description": "The call id to retrieve call history for."
+          }
+        ]
+      },
+      "docs": "Retrieve details of a specific call"
+    },
+    {
+      "info": {
+        "name": "listCalls",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/list-calls",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Retrieve call details"
+    },
+    {
+      "info": {
+        "name": "listCallsV3",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v3/list-calls",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "List calls with unified cursor pagination response."
+    },
+    {
+      "info": {
+        "name": "listExportRequestsV2",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.retellai.com/v2/list-export-requests",
+        "params": [
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query",
+            "description": "Maximum number of items to return."
+          },
+          {
+            "name": "sort_order",
+            "value": "",
+            "type": "query",
+            "description": "Sort order for results."
+          },
+          {
+            "name": "pagination_key",
+            "value": "",
+            "type": "query",
+            "description": "Pagination key for fetching the next page."
+          }
+        ]
+      },
+      "docs": "List export requests with pagination"
+    },
+    {
+      "info": {
+        "name": "registerPhoneCall",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/register-phone-call",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Register a new phone call for custom telephony"
+    },
+    {
+      "info": {
+        "name": "updateCallMetadata",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.retellai.com/v2/update-call/:call_id",
+        "params": [
+          {
+            "name": "call_id",
+            "value": "",
+            "type": "path",
+            "description": "The call id of the call to be updated."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update metadata and sensitive data storage settings for an existing call."
+    },
+    {
+      "info": {
+        "name": "stopCall",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/stop-call/:call_id",
+        "params": [
+          {
+            "name": "call_id",
+            "value": "",
+            "type": "path",
+            "description": "The call id of the ongoing call to be stopped."
+          }
+        ]
+      },
+      "docs": "Stop an ongoing call."
+    }
+  ],
+  "bundled": true
+}
