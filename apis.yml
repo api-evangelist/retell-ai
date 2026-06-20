@@ -6,7 +6,7 @@ description: >-
   Retell AI provides voice AI infrastructure for building conversational agents with low-latency turn detection,
   interruption handling, tool calling, knowledge bases, and conversation flows. The Retell SDK exposes a published
   OpenAPI spec covering agents, calls, voices, knowledge bases, conversation flows, batches, and chat agents.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - Voice
@@ -23,7 +23,7 @@ apis:
       REST API at https://api.retellai.com for managing agents, conversation flows, calls (phone and chat), voices,
       knowledge bases, retell LLM, batch calls, and call analyses. Auth is bearer token. OpenAPI spec is published at
       https://docs.retellai.com/openapi.yaml.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.retellai.com/api-references
     baseURL: https://api.retellai.com
     tags:
