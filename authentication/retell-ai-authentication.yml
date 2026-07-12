@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/retell-ai-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: api_key
+  type: http
+  scheme: bearer
+  bearerFormat: string
+  description: Authentication header containing API key (find it in dashboard). The format is
+    "Bearer YOUR_API_KEY"
+  sources:
+  - openapi/retell-ai-openapi.yml

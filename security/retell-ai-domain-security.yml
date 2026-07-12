@@ -1,0 +1,29 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.retellai.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 28 05:15:21 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: docs.retellai.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 26 15:59:11 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+- host: api.retellai.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Mar 17 23:59:59 2027 GMT
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: retellai.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
