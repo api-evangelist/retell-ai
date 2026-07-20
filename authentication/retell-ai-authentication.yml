@@ -10,6 +10,6 @@ schemes:
   scheme: bearer
   bearerFormat: string
   description: Authentication header containing API key (find it in dashboard). The format is
-    "Bearer YOUR_API_KEY"
+    "Bearer [example key]"
   sources:
   - openapi/retell-ai-openapi.yml
