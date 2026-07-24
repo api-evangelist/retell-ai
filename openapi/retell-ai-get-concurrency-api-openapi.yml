@@ -1,0 +1,106 @@
+openapi: 3.0.3
+info:
+  title: Retell SDK Add Community Voice Get Concurrency API
+  version: 3.0.0
+  contact:
+    name: Retell Support
+    url: https://www.retellai.com/
+    email: support@retellai.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://api.retellai.com
+  description: The production server.
+security:
+- api_key: []
+tags:
+- name: Get Concurrency
+paths:
+  /get-concurrency:
+    get:
+      description: Get the current concurrency and concurrency limit of the org
+      operationId: getConcurrency
+      responses:
+        '200':
+          description: Successfully retrieved a voice.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  current_concurrency:
+                    type: integer
+                    example: 10
+                    description: The current concurrency (amount of ongoing calls) of the org.
+                  concurrency_limit:
+                    type: integer
+                    example: 100
+                    description: The total concurrency limit (at max how many ongoing calls one can make) of the org. This should be the sum of `base_concurrency` and `purchased_concurrency`.
+                  base_concurrency:
+                    type: integer
+                    example: 20
+                    description: The free concurrency limit of the org.
+                  purchased_concurrency:
+                    type: integer
+                    example: 80
+                    description: The amount of concurrency that the org has already purchased.
+                  concurrency_purchase_limit:
+                    type: integer
+                    example: 100
+                    description: The maximum amount of concurrency that the org can purchase.
+                  remaining_purchase_limit:
+                    type: integer
+                    example: 20
+                    description: The remaining amount of concurrency that the org can purchase. This is the difference between `concurrency_purchase_limit` and `purchased_concurrency`.
+                  concurrency_burst_enabled:
+                    type: boolean
+                    example: true
+                    description: Whether burst concurrency mode is enabled. When enabled, allows the org to exceed their normal concurrency limit with a surcharge.
+                  concurrency_burst_limit:
+                    type: integer
+                    example: 60
+                    readOnly: true
+                    description: The maximum concurrency limit when burst mode is enabled. This is calculated as min(3x normal limit, normal limit + 300). Returns 0 if burst mode is disabled.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      tags:
+      - Get Concurrency
+components:
+  responses:
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
+  securitySchemes:
+    api_key:
+      type: http
+      scheme: bearer
+      bearerFormat: string
+      description: Authentication header containing API key (find it in dashboard). The format is "Bearer YOUR_API_KEY"

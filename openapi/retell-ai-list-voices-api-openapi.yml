@@ -1,0 +1,122 @@
+openapi: 3.0.3
+info:
+  title: Retell SDK Add Community Voice List Voices API
+  version: 3.0.0
+  contact:
+    name: Retell Support
+    url: https://www.retellai.com/
+    email: support@retellai.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://api.retellai.com
+  description: The production server.
+security:
+- api_key: []
+tags:
+- name: List Voices
+paths:
+  /list-voices:
+    get:
+      description: List all voices available to the user
+      operationId: listVoices
+      responses:
+        '200':
+          description: Successfully retrieved all voices.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VoiceResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      tags:
+      - List Voices
+components:
+  schemas:
+    VoiceResponse:
+      type: object
+      required:
+      - voice_id
+      - voice_name
+      - provider
+      - gender
+      properties:
+        voice_id:
+          type: string
+          example: retell-Cimo
+          description: Unique id for the voice.
+        voice_name:
+          type: string
+          example: Adrian
+          description: Name of the voice.
+        provider:
+          type: string
+          enum:
+          - elevenlabs
+          - openai
+          - deepgram
+          - cartesia
+          - minimax
+          - fish_audio
+          - platform
+          example: elevenlabs
+          description: Indicates the provider of voice.
+        accent:
+          type: string
+          example: American
+          description: Accent annotation of the voice.
+        gender:
+          type: string
+          enum:
+          - male
+          - female
+          example: male
+          description: Gender of voice.
+        age:
+          type: string
+          example: Young
+          description: Age annotation of the voice.
+        preview_audio_url:
+          type: string
+          example: https://retell-utils-public.s3.us-west-2.amazonaws.com/adrian.mp3
+          description: URL to the preview audio of the voice.
+  responses:
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
+  securitySchemes:
+    api_key:
+      type: http
+      scheme: bearer
+      bearerFormat: string
+      description: Authentication header containing API key (find it in dashboard). The format is "Bearer YOUR_API_KEY"

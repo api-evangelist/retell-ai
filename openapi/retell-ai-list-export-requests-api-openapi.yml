@@ -1,0 +1,171 @@
+openapi: 3.0.3
+info:
+  title: Retell SDK Add Community Voice List Export Requests API
+  version: 3.0.0
+  contact:
+    name: Retell Support
+    url: https://www.retellai.com/
+    email: support@retellai.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://api.retellai.com
+  description: The production server.
+security:
+- api_key: []
+tags:
+- name: List Export Requests
+paths:
+  /v2/list-export-requests:
+    get:
+      description: List export requests with pagination
+      operationId: listExportRequestsV2
+      parameters:
+      - $ref: '#/components/parameters/LimitParam'
+      - $ref: '#/components/parameters/SortOrderParam'
+      - $ref: '#/components/parameters/PaginationKeyParam'
+      responses:
+        '200':
+          description: Export requests retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/PaginatedResponseBase'
+                - type: object
+                  properties:
+                    items:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          export_request_id:
+                            type: string
+                          channel:
+                            type: string
+                            enum:
+                            - call
+                            - chat
+                          status:
+                            type: string
+                            enum:
+                            - created
+                            - processing
+                            - completed
+                            - error
+                          url:
+                            type: string
+                          created_timestamp:
+                            type: integer
+                          timezone:
+                            type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      tags:
+      - List Export Requests
+components:
+  responses:
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Invalid request format, please check API reference.
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
+  schemas:
+    PaginatedResponseBase:
+      type: object
+      properties:
+        pagination_key:
+          type: string
+          description: Pagination key for the next page.
+        has_more:
+          type: boolean
+          description: Whether more results are available.
+  parameters:
+    SortOrderParam:
+      in: query
+      name: sort_order
+      schema:
+        type: string
+        enum:
+        - ascending
+        - descending
+        default: descending
+      description: Sort order for results.
+    PaginationKeyParam:
+      in: query
+      name: pagination_key
+      schema:
+        type: string
+      description: Pagination key for fetching the next page.
+    LimitParam:
+      in: query
+      name: limit
+      schema:
+        type: integer
+        default: 50
+        maximum: 1000
+      description: Maximum number of items to return.
+  securitySchemes:
+    api_key:
+      type: http
+      scheme: bearer
+      bearerFormat: string
+      description: Authentication header containing API key (find it in dashboard). The format is "Bearer YOUR_API_KEY"

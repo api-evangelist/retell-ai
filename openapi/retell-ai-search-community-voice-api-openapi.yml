@@ -1,0 +1,145 @@
+openapi: 3.0.3
+info:
+  title: Retell SDK Add Community Voice Search Community Voice API
+  version: 3.0.0
+  contact:
+    name: Retell Support
+    url: https://www.retellai.com/
+    email: support@retellai.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://api.retellai.com
+  description: The production server.
+security:
+- api_key: []
+tags:
+- name: Search Community Voice
+paths:
+  /search-community-voice:
+    post:
+      description: Search for community voices from voice providers
+      operationId: searchCommunityVoice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - search_query
+              properties:
+                voice_provider:
+                  type: string
+                  enum:
+                  - elevenlabs
+                  - cartesia
+                  - minimax
+                  - fish_audio
+                  description: Voice provider to search.
+                search_query:
+                  type: string
+                  description: Search query to find voices by name, description, or ID.
+      responses:
+        '200':
+          description: Community voices retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - voices
+                properties:
+                  voices:
+                    type: array
+                    items:
+                      type: object
+                      description: Voices retrieved from the provider.
+                      properties:
+                        provider_voice_id:
+                          type: string
+                          description: id of the voice from the provider.
+                        name:
+                          type: string
+                          description: Name of the voice.
+                        description:
+                          type: string
+                          description: Description of the voice.
+                        public_user_id:
+                          type: string
+                          description: For elevenlabs only. User id of the voice owner.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      tags:
+      - Search Community Voice
+components:
+  responses:
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Invalid request format, please check API reference.
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
+  securitySchemes:
+    api_key:
+      type: http
+      scheme: bearer
+      bearerFormat: string
+      description: Authentication header containing API key (find it in dashboard). The format is "Bearer YOUR_API_KEY"

@@ -1,0 +1,341 @@
+openapi: 3.0.3
+info:
+  title: Retell SDK Add Community Voice Get Test Run API
+  version: 3.0.0
+  contact:
+    name: Retell Support
+    url: https://www.retellai.com/
+    email: support@retellai.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://api.retellai.com
+  description: The production server.
+security:
+- api_key: []
+tags:
+- name: Get Test Run
+paths:
+  /get-test-run/{test_case_job_id}:
+    get:
+      description: Get a test case job (test run) by ID
+      operationId: getTestRun
+      parameters:
+      - in: path
+        name: test_case_job_id
+        schema:
+          type: string
+        required: true
+        description: ID of the test case job to retrieve
+      responses:
+        '200':
+          description: Test case job retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestCaseJob'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      tags:
+      - Get Test Run
+components:
+  schemas:
+    ResponseEngineConversationFlow:
+      type: object
+      required:
+      - type
+      - conversation_flow_id
+      properties:
+        type:
+          type: string
+          enum:
+          - conversation-flow
+          description: type of the Response Engine.
+        conversation_flow_id:
+          type: string
+          description: ID of the Conversation Flow Response Engine.
+        version:
+          type: number
+          example: 0
+          description: Version of the Conversation Flow Response Engine.
+          nullable: true
+    ToolMock:
+      type: object
+      required:
+      - tool_name
+      - input_match_rule
+      - output
+      properties:
+        tool_name:
+          type: string
+          description: Name of the tool to mock
+        input_match_rule:
+          $ref: '#/components/schemas/ToolMockInputMatchRule'
+          description: Rule for matching tool calls
+        output:
+          type: string
+          maxLength: 15000
+          description: The output of the tool call that will be fed into the LLM. Should be a JSON string.
+        result:
+          type: boolean
+          nullable: true
+          description: For tool calls like transfer_call that require a boolean result. Optional for most tools.
+    TestCaseJob:
+      type: object
+      required:
+      - test_case_job_id
+      - status
+      - test_case_definition_id
+      - test_case_definition_snapshot
+      - creation_timestamp
+      - user_modified_timestamp
+      properties:
+        test_case_job_id:
+          type: string
+          description: Unique identifier for the test case job
+        status:
+          type: string
+          enum:
+          - in_progress
+          - pass
+          - fail
+          - error
+          description: Status of the test case job
+        test_case_definition_id:
+          type: string
+          description: ID of the test case definition used
+        test_case_definition_snapshot:
+          $ref: '#/components/schemas/TestCaseDefinition'
+          description: Snapshot of the test case definition at time of execution
+        transcript_snapshot:
+          type: object
+          nullable: true
+          description: Snapshot of the transcript generated during test execution. Can be either ConversationFlowPlaygroundSnapshot or RetellLlmPlaygroundSnapshot
+        result_explanation:
+          type: string
+          nullable: true
+          description: Explanation of the test result
+        creation_timestamp:
+          type: integer
+          description: Timestamp when the test case job was created (milliseconds since epoch)
+        user_modified_timestamp:
+          type: integer
+          description: Timestamp when the test case job was last modified (milliseconds since epoch)
+    TestCaseDefinitionInput:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the test case definition
+        response_engine:
+          $ref: '#/components/schemas/RetellResponseEngine'
+          description: Response engine to use for the test case. Custom LLM is not supported.
+        user_prompt:
+          type: string
+          description: User prompt to simulate in the test case
+        metrics:
+          type: array
+          items:
+            type: string
+          description: Array of metric names to evaluate
+        dynamic_variables:
+          type: object
+          additionalProperties:
+            type: string
+          description: Dynamic variables to inject into the response engine
+        tool_mocks:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolMock'
+          description: Mock tool calls for testing
+        llm_model:
+          $ref: '#/components/schemas/LLMModel'
+          description: LLM model to use for simulation
+    TestCaseDefinition:
+      allOf:
+      - $ref: '#/components/schemas/TestCaseDefinitionInput'
+      - type: object
+        required:
+        - name
+        - response_engine
+        - metrics
+        - user_prompt
+        - dynamic_variables
+        - tool_mocks
+        - llm_model
+        - test_case_definition_id
+        - type
+        - creation_timestamp
+        - user_modified_timestamp
+        properties:
+          test_case_definition_id:
+            type: string
+            description: Unique identifier for the test case definition
+          type:
+            type: string
+            enum:
+            - simulation
+            description: Type of test case definition
+          creation_timestamp:
+            type: integer
+            description: Timestamp when the test case definition was created (milliseconds since epoch)
+          user_modified_timestamp:
+            type: integer
+            description: Timestamp when the test case definition was last modified (milliseconds since epoch)
+    ToolMockInputMatchRule:
+      oneOf:
+      - type: object
+        required:
+        - type
+        properties:
+          type:
+            type: string
+            enum:
+            - any
+            description: Match any input of the tool
+      - type: object
+        required:
+        - type
+        - args
+        properties:
+          type:
+            type: string
+            enum:
+            - partial_match
+            description: Match only calls with specific arguments
+          args:
+            type: object
+            additionalProperties: true
+            description: Arguments to match. Only provided fields will be checked
+    LLMModel:
+      type: string
+      enum:
+      - gpt-4.1
+      - gpt-4.1-mini
+      - gpt-4.1-nano
+      - gpt-5
+      - gpt-5-mini
+      - gpt-5-nano
+      - gpt-5.1
+      - gpt-5.2
+      - gpt-5.4
+      - gpt-5.4-mini
+      - gpt-5.4-nano
+      - gpt-5.5
+      - claude-4.5-sonnet
+      - claude-4.6-sonnet
+      - claude-4.5-haiku
+      - gemini-2.5-flash-lite
+      - gemini-3.0-flash
+      - gemini-3.1-flash-lite
+      description: Available LLM models for agents.
+    ResponseEngineRetellLm:
+      type: object
+      required:
+      - type
+      - llm_id
+      properties:
+        type:
+          type: string
+          enum:
+          - retell-llm
+          description: type of the Response Engine.
+        llm_id:
+          type: string
+          description: id of the Retell LLM Response Engine.
+        version:
+          type: number
+          example: 0
+          description: Version of the Retell LLM Response Engine.
+          nullable: true
+    RetellResponseEngine:
+      oneOf:
+      - $ref: '#/components/schemas/ResponseEngineRetellLm'
+      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
+      description: Response engine for test cases. Custom LLM is not supported.
+  responses:
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Invalid request format, please check API reference.
+    NotFound:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: The requested resource was not found.
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
+  securitySchemes:
+    api_key:
+      type: http
+      scheme: bearer
+      bearerFormat: string
+      description: Authentication header containing API key (find it in dashboard). The format is "Bearer YOUR_API_KEY"
