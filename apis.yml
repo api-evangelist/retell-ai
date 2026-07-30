@@ -6,7 +6,20 @@ description: >-
   Retell AI provides voice AI infrastructure for building conversational agents with low-latency turn detection,
   interruption handling, tool calling, knowledge bases, and conversation flows. The Retell SDK exposes a published
   OpenAPI spec covering agents, calls, voices, knowledge bases, conversation flows, batches, and chat agents.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: true
+  try_now: true
+  public: false
+  label: Freemium (free trial) · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/retell-ai.png
 tags:
   - AI
   - Voice
@@ -17,32 +30,1435 @@ created: '2026-05-08'
 modified: '2026-05-29'
 specificationVersion: '0.19'
 apis:
-  - aid: retell-ai:platform
-    name: Retell AI Platform API
-    description: >-
-      REST API at https://api.retellai.com for managing agents, conversation flows, calls (phone and chat), voices,
-      knowledge bases, retell LLM, batch calls, and call analyses. Auth is bearer token. OpenAPI spec is published at
-      https://docs.retellai.com/openapi.yaml.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.retellai.com/api-references
-    baseURL: https://api.retellai.com
-    tags:
-      - Voice
-      - Agents
-      - Calls
-      - Knowledge Base
-      - Conversation Flow
-    properties:
-      - type: Documentation
-        url: https://docs.retellai.com/api-references
-      - type: OpenAPI
-        url: openapi/retell-ai-openapi.yml
-      - type: AsyncAPI
-        url: asyncapi/retell-ai-asyncapi.yml
-      - type: Signup
-        url: https://dashboard.retellai.com/
-      - type: Pricing
-        url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-add-community-voice-api
+  name: Retell AI Add Community Voice API
+  description: The Add Community Voice API from Retell AI — 1 operation(s) for add community voice.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Add Community Voice
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-add-community-voice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-add-knowledge-base-sources-api
+  name: Retell AI Add Knowledge Base Sources API
+  description: >-
+    The Add Knowledge Base Sources API from Retell AI — 1 operation(s) for add knowledge base sources.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Add Knowledge Base Sources
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-add-knowledge-base-sources-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-agent-playground-completion-api
+  name: Retell AI Agent Playground Completion API
+  description: >-
+    The Agent Playground Completion API from Retell AI — 1 operation(s) for agent playground completion.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Agent Playground Completion
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-agent-playground-completion-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-clone-voice-api
+  name: Retell AI Clone Voice API
+  description: The Clone Voice API from Retell AI — 1 operation(s) for clone voice.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Clone Voice
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-clone-voice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-agent-api
+  name: Retell AI Create Agent API
+  description: The Create Agent API from Retell AI — 1 operation(s) for create agent.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Agent
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-agent-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-agent-version-api
+  name: Retell AI Create Agent Version API
+  description: The Create Agent Version API from Retell AI — 1 operation(s) for create agent version.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Agent Version
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-agent-version-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-batch-call-api
+  name: Retell AI Create Batch Call API
+  description: The Create Batch Call API from Retell AI — 1 operation(s) for create batch call.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Batch Call
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-batch-call-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-batch-test-api
+  name: Retell AI Create Batch Test API
+  description: The Create Batch Test API from Retell AI — 1 operation(s) for create batch test.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Batch Test
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-batch-test-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-chat-agent-api
+  name: Retell AI Create Chat Agent API
+  description: The Create Chat Agent API from Retell AI — 1 operation(s) for create chat agent.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Chat Agent
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-chat-agent-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-chat-api
+  name: Retell AI Create Chat API
+  description: The Create Chat API from Retell AI — 1 operation(s) for create chat.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-chat-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-chat-completion-api
+  name: Retell AI Create Chat Completion API
+  description: >-
+    The Create Chat Completion API from Retell AI — 1 operation(s) for create chat completion.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Chat Completion
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-chat-completion-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-conversation-flow-api
+  name: Retell AI Create Conversation Flow API
+  description: >-
+    The Create Conversation Flow API from Retell AI — 1 operation(s) for create conversation flow.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Conversation Flow
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-conversation-flow-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-conversation-flow-component-api
+  name: Retell AI Create Conversation Flow Component API
+  description: >-
+    The Create Conversation Flow Component API from Retell AI — 1 operation(s) for create conversation
+    flow component.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Conversation Flow Component
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-conversation-flow-component-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-knowledge-base-api
+  name: Retell AI Create Knowledge Base API
+  description: The Create Knowledge Base API from Retell AI — 1 operation(s) for create knowledge base.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Knowledge Base
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-knowledge-base-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-phone-call-api
+  name: Retell AI Create Phone Call API
+  description: The Create Phone Call API from Retell AI — 1 operation(s) for create phone call.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Phone Call
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-phone-call-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-phone-number-api
+  name: Retell AI Create Phone Number API
+  description: The Create Phone Number API from Retell AI — 1 operation(s) for create phone number.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Phone Number
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-phone-number-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-retell-llm-api
+  name: Retell AI Create Retell Llm API
+  description: The Create Retell Llm API from Retell AI — 1 operation(s) for create retell llm.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Retell Llm
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-retell-llm-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-sms-chat-api
+  name: Retell AI Create Sms Chat API
+  description: The Create Sms Chat API from Retell AI — 1 operation(s) for create sms chat.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Sms Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-sms-chat-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-test-case-definition-api
+  name: Retell AI Create Test Case Definition API
+  description: >-
+    The Create Test Case Definition API from Retell AI — 1 operation(s) for create test case definition.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Test Case Definition
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-test-case-definition-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-create-web-call-api
+  name: Retell AI Create Web Call API
+  description: The Create Web Call API from Retell AI — 1 operation(s) for create web call.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Create Web Call
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-create-web-call-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-delete-agent-api
+  name: Retell AI Delete Agent API
+  description: The Delete Agent API from Retell AI — 1 operation(s) for delete agent.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Delete Agent
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-delete-agent-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-delete-agent-version-api
+  name: Retell AI Delete Agent Version API
+  description: The Delete Agent Version API from Retell AI — 1 operation(s) for delete agent version.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Delete Agent Version
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-delete-agent-version-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-delete-call-api
+  name: Retell AI Delete Call API
+  description: The Delete Call API from Retell AI — 1 operation(s) for delete call.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Delete Call
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-delete-call-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-delete-chat-agent-api
+  name: Retell AI Delete Chat Agent API
+  description: The Delete Chat Agent API from Retell AI — 1 operation(s) for delete chat agent.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Delete Chat Agent
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-delete-chat-agent-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-delete-conversation-flow-api
+  name: Retell AI Delete Conversation Flow API
+  description: >-
+    The Delete Conversation Flow API from Retell AI — 1 operation(s) for delete conversation flow.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Delete Conversation Flow
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-delete-conversation-flow-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-delete-conversation-flow-component-api
+  name: Retell AI Delete Conversation Flow Component API
+  description: >-
+    The Delete Conversation Flow Component API from Retell AI — 1 operation(s) for delete conversation
+    flow component.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Delete Conversation Flow Component
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-delete-conversation-flow-component-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-delete-knowledge-base-api
+  name: Retell AI Delete Knowledge Base API
+  description: The Delete Knowledge Base API from Retell AI — 1 operation(s) for delete knowledge base.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Delete Knowledge Base
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-delete-knowledge-base-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-delete-knowledge-base-source-api
+  name: Retell AI Delete Knowledge Base Source API
+  description: >-
+    The Delete Knowledge Base Source API from Retell AI — 1 operation(s) for delete knowledge base source.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Delete Knowledge Base Source
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-delete-knowledge-base-source-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-delete-phone-number-api
+  name: Retell AI Delete Phone Number API
+  description: The Delete Phone Number API from Retell AI — 1 operation(s) for delete phone number.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Delete Phone Number
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-delete-phone-number-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-delete-retell-llm-api
+  name: Retell AI Delete Retell Llm API
+  description: The Delete Retell Llm API from Retell AI — 1 operation(s) for delete retell llm.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Delete Retell Llm
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-delete-retell-llm-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-delete-test-case-definition-api
+  name: Retell AI Delete Test Case Definition API
+  description: >-
+    The Delete Test Case Definition API from Retell AI — 1 operation(s) for delete test case definition.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Delete Test Case Definition
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-delete-test-case-definition-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-end-chat-api
+  name: Retell AI End Chat API
+  description: The End Chat API from Retell AI — 1 operation(s) for end chat.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - End Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-end-chat-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-agent-api
+  name: Retell AI Get Agent API
+  description: The Get Agent API from Retell AI — 1 operation(s) for get agent.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Agent
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-agent-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-agent-versions-api
+  name: Retell AI Get Agent Versions API
+  description: The Get Agent Versions API from Retell AI — 1 operation(s) for get agent versions.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Agent Versions
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-agent-versions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-batch-test-api
+  name: Retell AI Get Batch Test API
+  description: The Get Batch Test API from Retell AI — 1 operation(s) for get batch test.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Batch Test
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-batch-test-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-call-api
+  name: Retell AI Get Call API
+  description: The Get Call API from Retell AI — 1 operation(s) for get call.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Call
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-call-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-chat-agent-api
+  name: Retell AI Get Chat Agent API
+  description: The Get Chat Agent API from Retell AI — 1 operation(s) for get chat agent.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Chat Agent
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-chat-agent-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-chat-agent-versions-api
+  name: Retell AI Get Chat Agent Versions API
+  description: >-
+    The Get Chat Agent Versions API from Retell AI — 1 operation(s) for get chat agent versions.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Chat Agent Versions
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-chat-agent-versions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-chat-api
+  name: Retell AI Get Chat API
+  description: The Get Chat API from Retell AI — 1 operation(s) for get chat.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-chat-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-concurrency-api
+  name: Retell AI Get Concurrency API
+  description: The Get Concurrency API from Retell AI — 1 operation(s) for get concurrency.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Concurrency
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-concurrency-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-conversation-flow-api
+  name: Retell AI Get Conversation Flow API
+  description: The Get Conversation Flow API from Retell AI — 1 operation(s) for get conversation flow.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Conversation Flow
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-conversation-flow-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-conversation-flow-component-api
+  name: Retell AI Get Conversation Flow Component API
+  description: >-
+    The Get Conversation Flow Component API from Retell AI — 1 operation(s) for get conversation flow
+    component.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Conversation Flow Component
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-conversation-flow-component-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-knowledge-base-api
+  name: Retell AI Get Knowledge Base API
+  description: The Get Knowledge Base API from Retell AI — 1 operation(s) for get knowledge base.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Knowledge Base
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-knowledge-base-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-mcp-tools-api
+  name: Retell AI Get Mcp Tools API
+  description: The Get Mcp Tools API from Retell AI — 1 operation(s) for get mcp tools.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Mcp Tools
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-mcp-tools-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-phone-number-api
+  name: Retell AI Get Phone Number API
+  description: The Get Phone Number API from Retell AI — 1 operation(s) for get phone number.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Phone Number
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-phone-number-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-retell-llm-api
+  name: Retell AI Get Retell Llm API
+  description: The Get Retell Llm API from Retell AI — 1 operation(s) for get retell llm.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Retell Llm
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-retell-llm-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-test-case-definition-api
+  name: Retell AI Get Test Case Definition API
+  description: >-
+    The Get Test Case Definition API from Retell AI — 1 operation(s) for get test case definition.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Test Case Definition
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-test-case-definition-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-test-run-api
+  name: Retell AI Get Test Run API
+  description: The Get Test Run API from Retell AI — 1 operation(s) for get test run.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Test Run
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-test-run-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-get-voice-api
+  name: Retell AI Get Voice API
+  description: The Get Voice API from Retell AI — 1 operation(s) for get voice.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Get Voice
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-get-voice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-import-phone-number-api
+  name: Retell AI Import Phone Number API
+  description: The Import Phone Number API from Retell AI — 1 operation(s) for import phone number.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Import Phone Number
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-import-phone-number-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-agents-api
+  name: Retell AI List Agents API
+  description: The List Agents API from Retell AI — 1 operation(s) for list agents.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Agents
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-agents-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-batch-tests-api
+  name: Retell AI List Batch Tests API
+  description: The List Batch Tests API from Retell AI — 2 operation(s) for list batch tests.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Batch Tests
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-batch-tests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-calls-api
+  name: Retell AI List Calls API
+  description: The List Calls API from Retell AI — 2 operation(s) for list calls.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Calls
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-calls-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-chat-agents-api
+  name: Retell AI List Chat Agents API
+  description: The List Chat Agents API from Retell AI — 1 operation(s) for list chat agents.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Chat Agents
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-chat-agents-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-chat-api
+  name: Retell AI List Chat API
+  description: The List Chat API from Retell AI — 1 operation(s) for list chat.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-chat-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-chats-api
+  name: Retell AI List Chats API
+  description: The List Chats API from Retell AI — 1 operation(s) for list chats.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Chats
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-chats-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-conversation-flow-components-api
+  name: Retell AI List Conversation Flow Components API
+  description: >-
+    The List Conversation Flow Components API from Retell AI — 2 operation(s) for list conversation flow
+    components.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Conversation Flow Components
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-conversation-flow-components-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-conversation-flows-api
+  name: Retell AI List Conversation Flows API
+  description: >-
+    The List Conversation Flows API from Retell AI — 2 operation(s) for list conversation flows.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Conversation Flows
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-conversation-flows-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-export-requests-api
+  name: Retell AI List Export Requests API
+  description: The List Export Requests API from Retell AI — 1 operation(s) for list export requests.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Export Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-export-requests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-knowledge-bases-api
+  name: Retell AI List Knowledge Bases API
+  description: The List Knowledge Bases API from Retell AI — 1 operation(s) for list knowledge bases.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Knowledge Bases
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-knowledge-bases-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-phone-numbers-api
+  name: Retell AI List Phone Numbers API
+  description: The List Phone Numbers API from Retell AI — 2 operation(s) for list phone numbers.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Phone Numbers
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-phone-numbers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-retell-llms-api
+  name: Retell AI List Retell Llms API
+  description: The List Retell Llms API from Retell AI — 2 operation(s) for list retell llms.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Retell Llms
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-retell-llms-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-test-case-definitions-api
+  name: Retell AI List Test Case Definitions API
+  description: >-
+    The List Test Case Definitions API from Retell AI — 2 operation(s) for list test case definitions.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Test Case Definitions
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-test-case-definitions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-test-runs-api
+  name: Retell AI List Test Runs API
+  description: The List Test Runs API from Retell AI — 2 operation(s) for list test runs.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Test Runs
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-test-runs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-list-voices-api
+  name: Retell AI List Voices API
+  description: The List Voices API from Retell AI — 1 operation(s) for list voices.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - List Voices
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-list-voices-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-publish-agent-version-api
+  name: Retell AI Publish Agent Version API
+  description: The Publish Agent Version API from Retell AI — 1 operation(s) for publish agent version.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Publish Agent Version
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-publish-agent-version-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-register-phone-call-api
+  name: Retell AI Register Phone Call API
+  description: The Register Phone Call API from Retell AI — 1 operation(s) for register phone call.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Register Phone Call
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-register-phone-call-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-search-community-voice-api
+  name: Retell AI Search Community Voice API
+  description: >-
+    The Search Community Voice API from Retell AI — 1 operation(s) for search community voice.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Search Community Voice
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-search-community-voice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-stop-call-api
+  name: Retell AI Stop Call API
+  description: The Stop Call API from Retell AI — 1 operation(s) for stop call.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Stop Call
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-stop-call-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-update-agent-api
+  name: Retell AI Update Agent API
+  description: The Update Agent API from Retell AI — 1 operation(s) for update agent.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Update Agent
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-update-agent-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-update-call-api
+  name: Retell AI Update Call API
+  description: The Update Call API from Retell AI — 1 operation(s) for update call.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Update Call
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-update-call-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-update-chat-agent-api
+  name: Retell AI Update Chat Agent API
+  description: The Update Chat Agent API from Retell AI — 1 operation(s) for update chat agent.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Update Chat Agent
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-update-chat-agent-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-update-chat-api
+  name: Retell AI Update Chat API
+  description: The Update Chat API from Retell AI — 1 operation(s) for update chat.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Update Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-update-chat-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-update-conversation-flow-api
+  name: Retell AI Update Conversation Flow API
+  description: >-
+    The Update Conversation Flow API from Retell AI — 1 operation(s) for update conversation flow.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Update Conversation Flow
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-update-conversation-flow-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-update-conversation-flow-component-api
+  name: Retell AI Update Conversation Flow Component API
+  description: >-
+    The Update Conversation Flow Component API from Retell AI — 1 operation(s) for update conversation
+    flow component.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Update Conversation Flow Component
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-update-conversation-flow-component-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-update-phone-number-api
+  name: Retell AI Update Phone Number API
+  description: The Update Phone Number API from Retell AI — 1 operation(s) for update phone number.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Update Phone Number
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-update-phone-number-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-update-retell-llm-api
+  name: Retell AI Update Retell Llm API
+  description: The Update Retell Llm API from Retell AI — 1 operation(s) for update retell llm.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Update Retell Llm
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-update-retell-llm-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
+- aid: retell-ai:retell-ai-update-test-case-definition-api
+  name: Retell AI Update Test Case Definition API
+  description: >-
+    The Update Test Case Definition API from Retell AI — 1 operation(s) for update test case definition.
+  humanURL: https://docs.retellai.com/api-references
+  baseURL: https://api.retellai.com
+  tags:
+  - Update Test Case Definition
+  properties:
+  - type: OpenAPI
+    url: openapi/retell-ai-update-test-case-definition-api-openapi.yml
+  - type: Documentation
+    url: https://docs.retellai.com/api-references
+  - type: AsyncAPI
+    url: asyncapi/retell-ai-asyncapi.yml
+  - type: Signup
+    url: https://dashboard.retellai.com/
+  - type: Pricing
+    url: https://www.retellai.com/pricing
 common:
   - type: AgenticAccess
     url: agentic-access/retell-ai-agentic-access.yml
