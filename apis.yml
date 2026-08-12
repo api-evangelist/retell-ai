@@ -1475,7 +1475,7 @@ common:
   - type: Documentation
     url: https://docs.retellai.com/
   - type: OpenAPI
-    url: openapi/retell-ai-openapi.yml
+    url: openapi/_original/retell-ai-openapi.yml
   - type: Plans
     url: plans/retell-ai-plans-pricing.yml
   - type: RateLimits
