@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Get Test Case Definition API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Test Case Definition",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getTestCaseDefinition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/get-test-case-definition/:test_case_definition_id",
+            "params": [
+              {
+                "name": "test_case_definition_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the test case definition to retrieve"
+              }
+            ]
+          },
+          "docs": "Get a test case definition by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Get Conversation Flow API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Conversation Flow",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getConversationFlow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/get-conversation-flow/:conversation_flow_id",
+            "params": [
+              {
+                "name": "conversation_flow_id",
+                "value": "",
+                "type": "path",
+                "description": "Unique id of the conversation flow to be retrieved."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Optional version of the conversation flow to retrieve. Default to latest version."
+              }
+            ]
+          },
+          "docs": "Retrieve details of a specific Conversation Flow"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

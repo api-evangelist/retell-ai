@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Get Agent API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Agent",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getAgent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/get-agent/:agent_id",
+            "params": [
+              {
+                "name": "agent_id",
+                "value": "",
+                "type": "path",
+                "description": "Unique id of the agent to be retrieved."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Optional version of the API to use for this request. If not provided, will default to latest version."
+              }
+            ]
+          },
+          "docs": "Retrieve details of a specific agent"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

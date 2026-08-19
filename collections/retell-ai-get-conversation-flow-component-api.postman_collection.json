@@ -1,0 +1,345 @@
+{
+  "item": [
+    {
+      "id": "4ddb9f82-c7a8-4d84-81f8-f2c315b6f3bb",
+      "name": "Get Conversation Flow Component",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "beabfee9-0362-42ec-98db-31f22f4067a8",
+          "name": "get Conversation Flow Component",
+          "request": {
+            "name": "get Conversation Flow Component",
+            "description": {
+              "content": "Get a shared conversation flow component",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "get-conversation-flow-component",
+                ":conversation_flow_component_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "conversation_flow_component_id",
+                  "description": "(Required) ID of the component to retrieve"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b1f261d7-c537-4db8-aaa3-38582de8b650",
+              "name": "Successfully retrieved conversation flow component",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-conversation-flow-component",
+                    ":conversation_flow_component_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_flow_component_id",
+                      "description": "(Required) ID of the component to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"conversation_flow_component_id\": \"string\",\n  \"name\": \"Customer Information Collector\",\n  \"nodes\": [\n    {\n      \"type\": \"conversation\",\n      \"instruction\": {\n        \"type\": \"prompt\",\n        \"text\": \"Ask the customer for their name and contact information.\"\n      }\n    }\n  ],\n  \"user_modified_timestamp\": 6401,\n  \"tools\": [\n    {\n      \"type\": \"custom\",\n      \"name\": \"get_customer_info\",\n      \"description\": \"Get customer information from database\",\n      \"tool_id\": \"tool_001\",\n      \"url\": \"https://api.example.com/customer\",\n      \"method\": \"GET\"\n    }\n  ],\n  \"mcps\": [\n    {\n      \"name\": \"string\",\n      \"url\": \"string\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": 6055\n    },\n    {\n      \"name\": \"string\",\n      \"url\": \"string\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": 4015\n    }\n  ],\n  \"start_node_id\": \"collect_info\",\n  \"begin_tag_display_position\": {\n    \"x\": 100,\n    \"y\": 200\n  },\n  \"notes\": [\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    },\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    }\n  ],\n  \"linked_conversation_flow_ids\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e12d8328-7d19-469f-89ff-3eb812fcc516",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-conversation-flow-component",
+                    ":conversation_flow_component_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_flow_component_id",
+                      "description": "(Required) ID of the component to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6f3cf47-988a-467c-88da-17ee8bae2f76",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-conversation-flow-component",
+                    ":conversation_flow_component_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_flow_component_id",
+                      "description": "(Required) ID of the component to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"The requested resource was not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "534e34d2-7d8c-4729-ac42-c7214b327ea9",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-conversation-flow-component",
+                    ":conversation_flow_component_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_flow_component_id",
+                      "description": "(Required) ID of the component to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Account rate limited, please throttle your requests.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "80a834b8-ab57-4c64-85b8-9be52a97d868",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-conversation-flow-component",
+                    ":conversation_flow_component_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_flow_component_id",
+                      "description": "(Required) ID of the component to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "699b850d-7be8-4737-8201-5a192c66aca7",
+    "name": "Retell SDK Add Community Voice Get Conversation Flow Component API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

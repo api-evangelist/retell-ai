@@ -1,0 +1,345 @@
+{
+  "item": [
+    {
+      "id": "937557ba-ab33-4fd9-90c4-494da74dd374",
+      "name": "Get Agent Versions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4e973e47-6fac-467c-8188-b017e604943d",
+          "name": "get Agent Versions",
+          "request": {
+            "name": "get Agent Versions",
+            "description": {
+              "content": "Get all versions of an agent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "get-agent-versions",
+                ":agent_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agent_id",
+                  "description": "(Required) Unique id of the agent versions to be retrieved."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b585f503-4eda-4379-add4-e0628b392c8f",
+              "name": "Successfully retrieved all versions of an agent.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-agent-versions",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent versions to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n    \"last_modification_timestamp\": 1703413636133,\n    \"version\": 0,\n    \"base_version\": 12,\n    \"assigned_tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"is_published\": false,\n    \"response_engine\": {\n      \"type\": \"retell-llm\",\n      \"llm_id\": \"string\",\n      \"version\": 0\n    },\n    \"agent_name\": \"Jarvis\",\n    \"version_description\": \"Customer support agent for handling product inquiries\",\n    \"voice_id\": \"retell-Cimo\",\n    \"voice_model\": \"eleven_multilingual_v2\",\n    \"fallback_voice_ids\": [\n      \"cartesia-Cimo\",\n      \"minimax-Cimo\"\n    ],\n    \"voice_temperature\": 1,\n    \"voice_speed\": 1,\n    \"enable_dynamic_voice_speed\": true,\n    \"enable_dynamic_responsiveness\": true,\n    \"volume\": 1,\n    \"voice_emotion\": \"calm\",\n    \"responsiveness\": 1,\n    \"interruption_sensitivity\": 1,\n    \"enable_backchannel\": true,\n    \"backchannel_frequency\": 0.9,\n    \"backchannel_words\": [\n      \"yeah\",\n      \"uh-huh\"\n    ],\n    \"reminder_trigger_ms\": 10000,\n    \"reminder_max_count\": 2,\n    \"ambient_sound\": \"call-center\",\n    \"ambient_sound_volume\": 1,\n    \"language\": \"en-US\",\n    \"webhook_url\": \"https://webhook-url-here\",\n    \"webhook_events\": [\n      \"transfer_started\",\n      \"transfer_started\"\n    ],\n    \"webhook_timeout_ms\": 10000,\n    \"boosted_keywords\": [\n      \"retell\",\n      \"kroger\"\n    ],\n    \"data_storage_setting\": \"everything\",\n    \"data_storage_retention_days\": 30,\n    \"opt_in_signed_url\": true,\n    \"signed_url_expiration_ms\": 86400000,\n    \"pronunciation_dictionary\": [\n      {\n        \"word\": \"actually\",\n        \"alphabet\": \"ipa\",\n        \"phoneme\": \"ˈæktʃuəli\"\n      },\n      {\n        \"word\": \"actually\",\n        \"alphabet\": \"ipa\",\n        \"phoneme\": \"ˈæktʃuəli\"\n      }\n    ],\n    \"end_call_after_silence_ms\": 600000,\n    \"max_call_duration_ms\": 3600000,\n    \"voicemail_message\": \"Hi, please give us a callback.\",\n    \"voicemail_detection_timeout_ms\": 30000,\n    \"voicemail_option\": {\n      \"action\": {\n        \"type\": \"static_text\",\n        \"text\": \"Please give us a callback tomorrow at 10am.\"\n      }\n    },\n    \"ivr_option\": {\n      \"action\": {\n        \"type\": \"hangup\"\n      }\n    },\n    \"call_screening_option\": {\n      \"agent_identity\": \"Acme Health scheduling team\",\n      \"call_purpose\": \"confirming your appointment for tomorrow\"\n    },\n    \"post_call_analysis_data\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"post_call_analysis_model\": \"gpt-4.1-mini\",\n    \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n    \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n    \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n    \"begin_message_delay_ms\": 1000,\n    \"ring_duration_ms\": 30000,\n    \"stt_mode\": \"fast\",\n    \"custom_stt_config\": {\n      \"provider\": \"soniox\",\n      \"endpointing_ms\": 5062\n    },\n    \"vocab_specialization\": \"general\",\n    \"allow_user_dtmf\": true,\n    \"allow_dtmf_interruption\": false,\n    \"user_dtmf_options\": {\n      \"digit_limit\": 7.050884292657334,\n      \"termination_key\": \"#\",\n      \"timeout_ms\": 2325\n    },\n    \"denoising_mode\": \"noise-cancellation\",\n    \"pii_config\": {\n      \"mode\": \"post_call\",\n      \"categories\": []\n    },\n    \"guardrail_config\": {\n      \"output_topics\": [\n        \"gambling\",\n        \"regulated_professional_advice\"\n      ],\n      \"input_topics\": [\n        \"platform_integrity_jailbreaking\"\n      ]\n    },\n    \"handbook_config\": {\n      \"default_personality\": true,\n      \"natural_filler_words\": true,\n      \"high_empathy\": false,\n      \"echo_verification\": true,\n      \"nato_phonetic_alphabet\": false,\n      \"speech_normalization\": false,\n      \"smart_matching\": true,\n      \"ai_disclosure\": false,\n      \"scope_boundaries\": false\n    },\n    \"timezone\": \"America/New_York\",\n    \"is_public\": false\n  },\n  {\n    \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n    \"last_modification_timestamp\": 1703413636133,\n    \"version\": 0,\n    \"base_version\": 12,\n    \"assigned_tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"is_published\": false,\n    \"response_engine\": {\n      \"type\": \"retell-llm\",\n      \"llm_id\": \"string\",\n      \"version\": 0\n    },\n    \"agent_name\": \"Jarvis\",\n    \"version_description\": \"Customer support agent for handling product inquiries\",\n    \"voice_id\": \"retell-Cimo\",\n    \"voice_model\": \"eleven_multilingual_v2\",\n    \"fallback_voice_ids\": [\n      \"cartesia-Cimo\",\n      \"minimax-Cimo\"\n    ],\n    \"voice_temperature\": 1,\n    \"voice_speed\": 1,\n    \"enable_dynamic_voice_speed\": true,\n    \"enable_dynamic_responsiveness\": true,\n    \"volume\": 1,\n    \"voice_emotion\": \"calm\",\n    \"responsiveness\": 1,\n    \"interruption_sensitivity\": 1,\n    \"enable_backchannel\": true,\n    \"backchannel_frequency\": 0.9,\n    \"backchannel_words\": [\n      \"yeah\",\n      \"uh-huh\"\n    ],\n    \"reminder_trigger_ms\": 10000,\n    \"reminder_max_count\": 2,\n    \"ambient_sound\": \"summer-outdoor\",\n    \"ambient_sound_volume\": 1,\n    \"language\": \"en-US\",\n    \"webhook_url\": \"https://webhook-url-here\",\n    \"webhook_events\": [\n      \"transfer_ended\",\n      \"call_ended\"\n    ],\n    \"webhook_timeout_ms\": 10000,\n    \"boosted_keywords\": [\n      \"retell\",\n      \"kroger\"\n    ],\n    \"data_storage_setting\": \"everything\",\n    \"data_storage_retention_days\": 30,\n    \"opt_in_signed_url\": true,\n    \"signed_url_expiration_ms\": 86400000,\n    \"pronunciation_dictionary\": [\n      {\n        \"word\": \"actually\",\n        \"alphabet\": \"ipa\",\n        \"phoneme\": \"ˈæktʃuəli\"\n      },\n      {\n        \"word\": \"actually\",\n        \"alphabet\": \"ipa\",\n        \"phoneme\": \"ˈæktʃuəli\"\n      }\n    ],\n    \"end_call_after_silence_ms\": 600000,\n    \"max_call_duration_ms\": 3600000,\n    \"voicemail_message\": \"Hi, please give us a callback.\",\n    \"voicemail_detection_timeout_ms\": 30000,\n    \"voicemail_option\": {\n      \"action\": {\n        \"type\": \"static_text\",\n        \"text\": \"Please give us a callback tomorrow at 10am.\"\n      }\n    },\n    \"ivr_option\": {\n      \"action\": {\n        \"type\": \"hangup\"\n      }\n    },\n    \"call_screening_option\": {\n      \"agent_identity\": \"Acme Health scheduling team\",\n      \"call_purpose\": \"confirming your appointment for tomorrow\"\n    },\n    \"post_call_analysis_data\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"post_call_analysis_model\": \"gpt-4.1-mini\",\n    \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n    \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n    \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n    \"begin_message_delay_ms\": 1000,\n    \"ring_duration_ms\": 30000,\n    \"stt_mode\": \"fast\",\n    \"custom_stt_config\": {\n      \"provider\": \"soniox\",\n      \"endpointing_ms\": 6830\n    },\n    \"vocab_specialization\": \"general\",\n    \"allow_user_dtmf\": true,\n    \"allow_dtmf_interruption\": false,\n    \"user_dtmf_options\": {\n      \"digit_limit\": 37.47392901922192,\n      \"termination_key\": \"#\",\n      \"timeout_ms\": 6149\n    },\n    \"denoising_mode\": \"noise-cancellation\",\n    \"pii_config\": {\n      \"mode\": \"post_call\",\n      \"categories\": []\n    },\n    \"guardrail_config\": {\n      \"output_topics\": [\n        \"illicit_and_harmful_activity\",\n        \"defense_and_national_security\"\n      ],\n      \"input_topics\": [\n        \"platform_integrity_jailbreaking\"\n      ]\n    },\n    \"handbook_config\": {\n      \"default_personality\": true,\n      \"natural_filler_words\": true,\n      \"high_empathy\": true,\n      \"echo_verification\": true,\n      \"nato_phonetic_alphabet\": false,\n      \"speech_normalization\": true,\n      \"smart_matching\": false,\n      \"ai_disclosure\": false,\n      \"scope_boundaries\": false\n    },\n    \"timezone\": \"America/New_York\",\n    \"is_public\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f537c636-cb2f-4ecc-92f3-7ece8f6f3594",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-agent-versions",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent versions to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8c53fa14-6350-4004-b022-1cc02670c24f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-agent-versions",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent versions to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cac631d6-120f-4dff-9af0-4d63cc3614e2",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-agent-versions",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent versions to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Cannot find requested asset under given api key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c6cf2b4-049b-4cbf-bf45-b2a299b578a8",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-agent-versions",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent versions to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9dac02ba-fbe2-4cd3-8099-d87189e5f3a9",
+    "name": "Retell SDK Add Community Voice Get Agent Versions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

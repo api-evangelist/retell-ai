@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Create Agent API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Create Agent",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "createAgent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.retellai.com/create-agent",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new agent"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

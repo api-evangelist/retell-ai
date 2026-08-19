@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Delete Call API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Delete Call",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "deleteCall",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.retellai.com/v2/delete-call/:call_id",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path",
+                "description": "The call id to delete."
+              }
+            ]
+          },
+          "docs": "Delete a specific call and its associated data"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

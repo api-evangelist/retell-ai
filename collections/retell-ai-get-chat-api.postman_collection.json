@@ -1,0 +1,345 @@
+{
+  "item": [
+    {
+      "id": "cfefdb84-5269-4ac2-84f2-4aa6b6823394",
+      "name": "Get Chat",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ecdca42a-e407-46a3-a5b2-c4eb1ccc889a",
+          "name": "get Chat",
+          "request": {
+            "name": "get Chat",
+            "description": {
+              "content": "Retrieve details of a specific chat",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "get-chat",
+                ":chat_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "chat_id",
+                  "description": "(Required) Unique id of the chat to be retrieved"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "32c27b12-45c4-4ba0-9620-5679df40c1dc",
+              "name": "Successfully retrieved an chat.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-chat",
+                    ":chat_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chat_id",
+                      "description": "(Required) Unique id of the chat to be retrieved"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"chat_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"chat_status\": \"ongoing\",\n  \"version\": 1,\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {}\n  },\n  \"collected_dynamic_variables\": {\n    \"key_0\": {}\n  },\n  \"chat_type\": \"api_chat\",\n  \"custom_attributes\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"start_timestamp\": 1703302407333,\n  \"end_timestamp\": 1703302428855,\n  \"transcript\": \"Agent: hi how are you doing?\\nUser: Doing pretty well. How are you?\\nAgent: That's great to hear! I'm doing well too, thanks! What's up?\\nUser: I don't have anything in particular.\\nAgent: Got it, just checking in!\\nUser: Alright. See you.\\nAgent: have a nice day\\n\",\n  \"message_with_tool_calls\": [\n    {\n      \"content\": \"hi how are you doing?\",\n      \"created_timestamp\": 1703302428855,\n      \"message_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n      \"role\": \"agent\"\n    },\n    {\n      \"content\": \"hi how are you doing?\",\n      \"created_timestamp\": 1703302428855,\n      \"message_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n      \"role\": \"agent\"\n    }\n  ],\n  \"metadata\": {},\n  \"chat_cost\": {\n    \"product_costs\": [\n      {\n        \"product\": \"elevenlabs_tts\",\n        \"cost\": 60,\n        \"unit_price\": 1,\n        \"is_transfer_leg_cost\": true\n      },\n      {\n        \"product\": \"elevenlabs_tts\",\n        \"cost\": 60,\n        \"unit_price\": 1,\n        \"is_transfer_leg_cost\": true\n      }\n    ],\n    \"combined_cost\": 70\n  },\n  \"chat_analysis\": {\n    \"chat_summary\": \"The agent messages user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.\",\n    \"user_sentiment\": \"Positive\",\n    \"chat_successful\": true,\n    \"custom_analysis_data\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0973af34-910d-4546-83be-832702ba397d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-chat",
+                    ":chat_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chat_id",
+                      "description": "(Required) Unique id of the chat to be retrieved"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10102eb4-003b-4046-aca1-18bad7fe7671",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-chat",
+                    ":chat_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chat_id",
+                      "description": "(Required) Unique id of the chat to be retrieved"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01f54026-26bc-49f4-b815-704d2f674a56",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-chat",
+                    ":chat_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chat_id",
+                      "description": "(Required) Unique id of the chat to be retrieved"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Cannot find requested asset under given api key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07bc0216-ed7a-4cda-b753-a8bbbfb82e63",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-chat",
+                    ":chat_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chat_id",
+                      "description": "(Required) Unique id of the chat to be retrieved"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "14a1a0d0-5e6c-447c-9120-60acb97a3b49",
+    "name": "Retell SDK Add Community Voice Get Chat API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

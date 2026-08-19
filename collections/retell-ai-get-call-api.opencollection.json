@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Get Call API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Call",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getCall",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/v2/get-call/:call_id",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path",
+                "description": "The call id to retrieve call history for."
+              }
+            ]
+          },
+          "docs": "Retrieve details of a specific call"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

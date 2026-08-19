@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Add Knowledge Base Sources API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Add Knowledge Base Sources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "addKnowledgeBaseSources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.retellai.com/add-knowledge-base-sources/:knowledge_base_id",
+            "params": [
+              {
+                "name": "knowledge_base_id",
+                "value": "",
+                "type": "path",
+                "description": "The knowledge base id to delete source from."
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          },
+          "docs": "Add sources to a knowledge base"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

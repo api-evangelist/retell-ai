@@ -1,0 +1,787 @@
+{
+  "item": [
+    {
+      "id": "06ff5523-7468-4062-97d2-f07c22a262f0",
+      "name": "Create Knowledge Base",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4b4d1ad2-7b9b-4f0e-9356-9045631ba9ca",
+          "name": "create Knowledge Base",
+          "request": {
+            "name": "create Knowledge Base",
+            "description": {
+              "content": "Create a new knowledge base",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "create-knowledge-base"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "knowledge_base_name",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Name of the knowledge base. Must be less than 40 characters."
+                },
+                {
+                  "key": "knowledge_base_texts",
+                  "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                  "type": "text",
+                  "description": "Texts to add to the knowledge base."
+                },
+                {
+                  "key": "knowledge_base_files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB."
+                },
+                {
+                  "key": "knowledge_base_urls",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "URLs to be scraped and added to the knowledge base. Must be valid urls."
+                },
+                {
+                  "key": "enable_auto_refresh",
+                  "value": "<boolean>",
+                  "type": "text",
+                  "description": "Whether to enable auto refresh for the knowledge base urls. If set to true, will retrieve the data from the specified url every 12 hours."
+                },
+                {
+                  "key": "max_chunk_size",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": "Maximum number of characters per chunk when splitting knowledge base. Default is 2000. content. Immutable after creation."
+                },
+                {
+                  "key": "min_chunk_size",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": "Minimum number of characters per chunk. Chunks smaller than this will be merged with adjacent chunks. Must be less than max_chunk_size. Immutable after creation. Default is 400."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "28ebccbb-0e28-461e-af1d-ffce711386e3",
+              "name": "Successfully created a new knowledge base.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-knowledge-base"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Name of the knowledge base. Must be less than 40 characters.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_name",
+                      "value": "Sample KB",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to enable auto refresh for the knowledge base urls. If set to true, will retrieve the data from the specified url every 12 hours.",
+                        "type": "text/plain"
+                      },
+                      "key": "enable_auto_refresh",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Maximum number of characters per chunk when splitting knowledge base. Default is 2000. content. Immutable after creation.",
+                        "type": "text/plain"
+                      },
+                      "key": "max_chunk_size",
+                      "value": "2000",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Minimum number of characters per chunk. Chunks smaller than this will be merged with adjacent chunks. Must be less than max_chunk_size. Immutable after creation. Default is 400.",
+                        "type": "text/plain"
+                      },
+                      "key": "min_chunk_size",
+                      "value": "400",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"knowledge_base_id\": \"knowledge_base_a456426614174000\",\n  \"knowledge_base_name\": \"Sample KB\",\n  \"status\": \"in_progress\",\n  \"max_chunk_size\": 2000,\n  \"min_chunk_size\": 400,\n  \"knowledge_base_sources\": [\n    {\n      \"type\": \"document\",\n      \"source_id\": \"string\",\n      \"filename\": \"string\",\n      \"file_url\": \"string\",\n      \"file_size\": true\n    },\n    {\n      \"type\": \"document\",\n      \"source_id\": \"string\",\n      \"filename\": \"string\",\n      \"file_url\": \"string\",\n      \"file_size\": \"string\"\n    }\n  ],\n  \"enable_auto_refresh\": true,\n  \"last_refreshed_timestamp\": 1703413636133\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fdb5075f-66e0-42dd-b02d-eb92a47fd172",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-knowledge-base"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Name of the knowledge base. Must be less than 40 characters.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_name",
+                      "value": "Sample KB",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to enable auto refresh for the knowledge base urls. If set to true, will retrieve the data from the specified url every 12 hours.",
+                        "type": "text/plain"
+                      },
+                      "key": "enable_auto_refresh",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Maximum number of characters per chunk when splitting knowledge base. Default is 2000. content. Immutable after creation.",
+                        "type": "text/plain"
+                      },
+                      "key": "max_chunk_size",
+                      "value": "2000",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Minimum number of characters per chunk. Chunks smaller than this will be merged with adjacent chunks. Must be less than max_chunk_size. Immutable after creation. Default is 400.",
+                        "type": "text/plain"
+                      },
+                      "key": "min_chunk_size",
+                      "value": "400",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b54d4bc-0e1a-419a-9d64-80b34c20c026",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-knowledge-base"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Name of the knowledge base. Must be less than 40 characters.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_name",
+                      "value": "Sample KB",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to enable auto refresh for the knowledge base urls. If set to true, will retrieve the data from the specified url every 12 hours.",
+                        "type": "text/plain"
+                      },
+                      "key": "enable_auto_refresh",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Maximum number of characters per chunk when splitting knowledge base. Default is 2000. content. Immutable after creation.",
+                        "type": "text/plain"
+                      },
+                      "key": "max_chunk_size",
+                      "value": "2000",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Minimum number of characters per chunk. Chunks smaller than this will be merged with adjacent chunks. Must be less than max_chunk_size. Immutable after creation. Default is 400.",
+                        "type": "text/plain"
+                      },
+                      "key": "min_chunk_size",
+                      "value": "400",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "333655a5-1485-40b4-a1b3-fe17311fff54",
+              "name": "Payment Required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-knowledge-base"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Name of the knowledge base. Must be less than 40 characters.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_name",
+                      "value": "Sample KB",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to enable auto refresh for the knowledge base urls. If set to true, will retrieve the data from the specified url every 12 hours.",
+                        "type": "text/plain"
+                      },
+                      "key": "enable_auto_refresh",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Maximum number of characters per chunk when splitting knowledge base. Default is 2000. content. Immutable after creation.",
+                        "type": "text/plain"
+                      },
+                      "key": "max_chunk_size",
+                      "value": "2000",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Minimum number of characters per chunk. Chunks smaller than this will be merged with adjacent chunks. Must be less than max_chunk_size. Immutable after creation. Default is 400.",
+                        "type": "text/plain"
+                      },
+                      "key": "min_chunk_size",
+                      "value": "400",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Trial has ended, please add payment method.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a353a53c-de92-4e0a-b7b4-74f62d9d6595",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-knowledge-base"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Name of the knowledge base. Must be less than 40 characters.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_name",
+                      "value": "Sample KB",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to enable auto refresh for the knowledge base urls. If set to true, will retrieve the data from the specified url every 12 hours.",
+                        "type": "text/plain"
+                      },
+                      "key": "enable_auto_refresh",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Maximum number of characters per chunk when splitting knowledge base. Default is 2000. content. Immutable after creation.",
+                        "type": "text/plain"
+                      },
+                      "key": "max_chunk_size",
+                      "value": "2000",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Minimum number of characters per chunk. Chunks smaller than this will be merged with adjacent chunks. Must be less than max_chunk_size. Immutable after creation. Default is 400.",
+                        "type": "text/plain"
+                      },
+                      "key": "min_chunk_size",
+                      "value": "400",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Account rate limited, please throttle your requests.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70d557f2-c22e-4b9a-bca2-7a2a8fce75f8",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-knowledge-base"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Name of the knowledge base. Must be less than 40 characters.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_name",
+                      "value": "Sample KB",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to enable auto refresh for the knowledge base urls. If set to true, will retrieve the data from the specified url every 12 hours.",
+                        "type": "text/plain"
+                      },
+                      "key": "enable_auto_refresh",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Maximum number of characters per chunk when splitting knowledge base. Default is 2000. content. Immutable after creation.",
+                        "type": "text/plain"
+                      },
+                      "key": "max_chunk_size",
+                      "value": "2000",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Minimum number of characters per chunk. Chunks smaller than this will be merged with adjacent chunks. Must be less than max_chunk_size. Immutable after creation. Default is 400.",
+                        "type": "text/plain"
+                      },
+                      "key": "min_chunk_size",
+                      "value": "400",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f280ace5-51d8-4308-b4a0-4c7957273d0f",
+    "name": "Retell SDK Add Community Voice Create Knowledge Base API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

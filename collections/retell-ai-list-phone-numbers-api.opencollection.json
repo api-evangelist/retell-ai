@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice List Phone Numbers API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List Phone Numbers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "listPhoneNumbersV2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/v2/list-phone-numbers",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return."
+              },
+              {
+                "name": "sort_order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order for results."
+              },
+              {
+                "name": "pagination_key",
+                "value": "",
+                "type": "query",
+                "description": "Pagination key for fetching the next page."
+              }
+            ]
+          },
+          "docs": "List phone numbers with pagination"
+        },
+        {
+          "info": {
+            "name": "listPhoneNumbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/list-phone-numbers"
+          },
+          "docs": "List all phone numbers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

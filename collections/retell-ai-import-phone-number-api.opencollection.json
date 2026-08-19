@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Import Phone Number API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Import Phone Number",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "importPhoneNumber",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.retellai.com/import-phone-number",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Import a phone number from custom telephony & Bind agents"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

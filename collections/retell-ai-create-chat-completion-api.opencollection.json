@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Create Chat Completion API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Create Chat Completion",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "createChatCompletion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.retellai.com/create-chat-completion",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a chat completion message"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

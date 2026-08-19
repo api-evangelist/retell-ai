@@ -1,0 +1,377 @@
+{
+  "item": [
+    {
+      "id": "8247c6db-9eef-4aa8-b8da-728d06a190ae",
+      "name": "Get Agent",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5860b1c1-9ad9-4f76-9e93-37dc77454151",
+          "name": "get Agent",
+          "request": {
+            "name": "get Agent",
+            "description": {
+              "content": "Retrieve details of a specific agent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "get-agent",
+                ":agent_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<integer>",
+                  "description": "Optional version of the API to use for this request. If not provided, will default to latest version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agent_id",
+                  "description": "(Required) Unique id of the agent to be retrieved."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7692093e-d38f-4aa8-b545-fc57172e2944",
+              "name": "Successfully retrieved an agent.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-agent",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"last_modification_timestamp\": 1703413636133,\n  \"version\": 0,\n  \"base_version\": 12,\n  \"assigned_tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"is_published\": false,\n  \"response_engine\": {\n    \"type\": \"retell-llm\",\n    \"llm_id\": \"string\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"version_description\": \"Customer support agent for handling product inquiries\",\n  \"voice_id\": \"retell-Cimo\",\n  \"voice_model\": \"gpt-4o-mini-tts\",\n  \"fallback_voice_ids\": [\n    \"cartesia-Cimo\",\n    \"minimax-Cimo\"\n  ],\n  \"voice_temperature\": 1,\n  \"voice_speed\": 1,\n  \"enable_dynamic_voice_speed\": true,\n  \"enable_dynamic_responsiveness\": true,\n  \"volume\": 1,\n  \"voice_emotion\": \"calm\",\n  \"responsiveness\": 1,\n  \"interruption_sensitivity\": 1,\n  \"enable_backchannel\": true,\n  \"backchannel_frequency\": 0.9,\n  \"backchannel_words\": [\n    \"yeah\",\n    \"uh-huh\"\n  ],\n  \"reminder_trigger_ms\": 10000,\n  \"reminder_max_count\": 2,\n  \"ambient_sound\": \"call-center\",\n  \"ambient_sound_volume\": 1,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"call_analyzed\",\n    \"call_analyzed\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"boosted_keywords\": [\n    \"retell\",\n    \"kroger\"\n  ],\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"pronunciation_dictionary\": [\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    },\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    }\n  ],\n  \"end_call_after_silence_ms\": 600000,\n  \"max_call_duration_ms\": 3600000,\n  \"voicemail_message\": \"Hi, please give us a callback.\",\n  \"voicemail_detection_timeout_ms\": 30000,\n  \"voicemail_option\": {\n    \"action\": {\n      \"type\": \"prompt\",\n      \"text\": \"Summarize the call in 2 sentences.\"\n    },\n    \"detection_prompt\": \"string\"\n  },\n  \"ivr_option\": {\n    \"action\": {\n      \"type\": \"hangup\"\n    }\n  },\n  \"call_screening_option\": {\n    \"agent_identity\": \"Acme Health scheduling team\",\n    \"call_purpose\": \"confirming your appointment for tomorrow\"\n  },\n  \"post_call_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_call_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"begin_message_delay_ms\": 1000,\n  \"ring_duration_ms\": 30000,\n  \"stt_mode\": \"fast\",\n  \"custom_stt_config\": {\n    \"provider\": \"deepgram\",\n    \"endpointing_ms\": 2740\n  },\n  \"vocab_specialization\": \"general\",\n  \"allow_user_dtmf\": true,\n  \"allow_dtmf_interruption\": false,\n  \"user_dtmf_options\": {\n    \"digit_limit\": 6.63728511575205,\n    \"termination_key\": \"#\",\n    \"timeout_ms\": 6156\n  },\n  \"denoising_mode\": \"noise-cancellation\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"child_safety_and_exploitation\",\n      \"sexual_exploitation\"\n    ],\n    \"input_topics\": [\n      \"platform_integrity_jailbreaking\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": false,\n    \"natural_filler_words\": true,\n    \"high_empathy\": true,\n    \"echo_verification\": false,\n    \"nato_phonetic_alphabet\": true,\n    \"speech_normalization\": false,\n    \"smart_matching\": false,\n    \"ai_disclosure\": true,\n    \"scope_boundaries\": false\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0be86b06-0d83-431f-bbe3-99d5ec3cff10",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-agent",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "775fef37-395e-4eff-9279-6531bde6325c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-agent",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca1813e4-350f-4281-bb5f-e9c158bdd20a",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-agent",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Cannot find requested asset under given api key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7f5de514-7f47-4a39-8913-2c014f541cb6",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-agent",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bb8e9214-c780-4382-b0ae-a4c6121d87df",
+    "name": "Retell SDK Add Community Voice Get Agent API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

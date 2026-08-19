@@ -1,0 +1,458 @@
+{
+  "item": [
+    {
+      "id": "e9c2dffc-dc6c-4f02-86bd-cbddabd6fbf8",
+      "name": "Update Test Case Definition",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "22f8209c-fa42-4ba2-8ecf-638a07fc1b30",
+          "name": "update Test Case Definition",
+          "request": {
+            "name": "update Test Case Definition",
+            "description": {
+              "content": "Update a test case definition",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "update-test-case-definition",
+                ":test_case_definition_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "test_case_definition_id",
+                  "description": "(Required) ID of the test case definition to update"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": \"<number>\"\n  },\n  \"user_prompt\": \"<string>\",\n  \"metrics\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dynamic_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"llm_model\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "28e18496-2f71-4f13-a39e-1b7b3896bf49",
+              "name": "Test case definition updated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-test-case-definition",
+                    ":test_case_definition_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "test_case_definition_id",
+                      "description": "(Required) ID of the test case definition to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"user_prompt\": \"<string>\",\n  \"metrics\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dynamic_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"llm_model\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"metrics\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"user_prompt\": \"<string>\",\n  \"dynamic_variables\": {\n    \"key_0\": \"<string>\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"llm_model\": \"<string>\",\n  \"test_case_definition_id\": \"string\",\n  \"type\": \"simulation\",\n  \"creation_timestamp\": 7425,\n  \"user_modified_timestamp\": 8940\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1226254c-eb70-46fe-8386-5d4f9ca22df4",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-test-case-definition",
+                    ":test_case_definition_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "test_case_definition_id",
+                      "description": "(Required) ID of the test case definition to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"user_prompt\": \"<string>\",\n  \"metrics\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dynamic_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"llm_model\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10bd3c7f-3748-4c1f-b210-d51485e957cd",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-test-case-definition",
+                    ":test_case_definition_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "test_case_definition_id",
+                      "description": "(Required) ID of the test case definition to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"user_prompt\": \"<string>\",\n  \"metrics\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dynamic_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"llm_model\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ef0ab56f-1ff9-486f-bcf6-d415bbdca8c2",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-test-case-definition",
+                    ":test_case_definition_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "test_case_definition_id",
+                      "description": "(Required) ID of the test case definition to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"user_prompt\": \"<string>\",\n  \"metrics\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dynamic_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"llm_model\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"The requested resource was not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "150e6430-f209-4613-a72d-db060958c4c6",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-test-case-definition",
+                    ":test_case_definition_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "test_case_definition_id",
+                      "description": "(Required) ID of the test case definition to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"user_prompt\": \"<string>\",\n  \"metrics\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dynamic_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"llm_model\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Account rate limited, please throttle your requests.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0ae8d365-5d19-4a47-a3ae-ef3d21097f8c",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-test-case-definition",
+                    ":test_case_definition_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "test_case_definition_id",
+                      "description": "(Required) ID of the test case definition to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"user_prompt\": \"<string>\",\n  \"metrics\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"dynamic_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"llm_model\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "dab9c024-345f-4c6d-b30e-41ac00d4066f",
+    "name": "Retell SDK Add Community Voice Update Test Case Definition API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

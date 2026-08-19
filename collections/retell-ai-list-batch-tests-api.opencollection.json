@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice List Batch Tests API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List Batch Tests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "listBatchTests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/list-batch-tests",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Type of response engine"
+              },
+              {
+                "name": "llm_id",
+                "value": "",
+                "type": "query",
+                "description": "LLM ID (required when type is retell-llm)"
+              },
+              {
+                "name": "conversation_flow_id",
+                "value": "",
+                "type": "query",
+                "description": "Conversation flow ID (required when type is conversation-flow)"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Version of the response engine (defaults to latest)"
+              }
+            ]
+          },
+          "docs": "List batch test jobs for a response engine"
+        },
+        {
+          "info": {
+            "name": "listBatchTestsV2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/v2/list-batch-tests",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Type of response engine"
+              },
+              {
+                "name": "llm_id",
+                "value": "",
+                "type": "query",
+                "description": "LLM ID (required when type is retell-llm)"
+              },
+              {
+                "name": "conversation_flow_id",
+                "value": "",
+                "type": "query",
+                "description": "Conversation flow ID (required when type is conversation-flow)"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Version of the response engine (defaults to latest)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return."
+              },
+              {
+                "name": "pagination_key",
+                "value": "",
+                "type": "query",
+                "description": "Pagination key for fetching the next page."
+              }
+            ]
+          },
+          "docs": "List batch test jobs with pagination"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

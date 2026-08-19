@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Create Conversation Flow API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Create Conversation Flow",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "createConversationFlow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.retellai.com/create-conversation-flow",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Conversation Flow that can be attached to an agent. This is used to generate response output for the agent."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

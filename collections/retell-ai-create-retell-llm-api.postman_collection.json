@@ -1,0 +1,293 @@
+{
+  "item": [
+    {
+      "id": "7646f2b1-9980-4f5c-a94d-90cc578c81c1",
+      "name": "Create Retell Llm",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "231f25af-2fb6-4eab-b4aa-38366d78d7cf",
+          "name": "create Retell LLM",
+          "request": {
+            "name": "create Retell LLM",
+            "description": {
+              "content": "Create a new Retell LLM Response Engine that can be attached to an agent. This is used to generate response output for the agent.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "create-retell-llm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"s2s_model\": \"<string>\",\n  \"model_temperature\": \"<number>\",\n  \"model_high_priority\": \"<boolean>\",\n  \"tool_call_strict_mode\": \"<boolean>\",\n  \"knowledge_base_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"kb_config\": {\n    \"top_k\": \"<integer>\",\n    \"filter_score\": \"<number>\"\n  },\n  \"start_speaker\": \"<string>\",\n  \"begin_after_user_silence_ms\": \"<integer>\",\n  \"begin_message\": \"<string>\",\n  \"general_prompt\": \"<string>\",\n  \"general_tools\": [\n    {\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"speak_during_execution\": \"<boolean>\",\n      \"execution_message_description\": \"<string>\",\n      \"execution_message_type\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"speak_during_execution\": \"<boolean>\",\n      \"execution_message_description\": \"<string>\",\n      \"execution_message_type\": \"<string>\"\n    }\n  ],\n  \"states\": [\n    {\n      \"name\": \"<string>\",\n      \"state_prompt\": \"<string>\",\n      \"edges\": [\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"state_prompt\": \"<string>\",\n      \"edges\": [\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ],\n  \"starting_state\": \"<string>\",\n  \"default_dynamic_variables\": {\n    \"key_0\": \"<string>\"\n  },\n  \"version\": \"<integer>\",\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      },\n      \"query_params\": {\n        \"key_0\": \"<string>\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\"\n      },\n      \"query_params\": {\n        \"key_0\": \"<string>\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "422cfc37-5b10-4192-a5ad-3193aeedb200",
+              "name": "Successfully created a new Retell LLM Response Engine.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-retell-llm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"gpt-4.1\",\n  \"s2s_model\": \"gpt-realtime-1.5\",\n  \"model_temperature\": 0,\n  \"model_high_priority\": true,\n  \"tool_call_strict_mode\": true,\n  \"knowledge_base_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"kb_config\": {\n    \"top_k\": 3,\n    \"filter_score\": 0.6\n  },\n  \"start_speaker\": \"<string>\",\n  \"begin_after_user_silence_ms\": 2000,\n  \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\",\n  \"general_prompt\": \"You are ...\",\n  \"general_tools\": [\n    {\n      \"type\": \"end_call\",\n      \"name\": \"end_call\",\n      \"description\": \"End the call with user.\"\n    }\n  ],\n  \"states\": [\n    {\n      \"name\": \"information_collection\",\n      \"state_prompt\": \"## Task\\nYou will follow the steps below...\",\n      \"edges\": [\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"information_collection\",\n      \"state_prompt\": \"## Task\\nYou will follow the steps below...\",\n      \"edges\": [\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ],\n  \"starting_state\": \"information_collection\",\n  \"default_dynamic_variables\": {\n    \"customer_name\": \"John Doe\"\n  },\n  \"version\": 1,\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"last_modification_timestamp\": 1703413636133,\n  \"llm_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"version\": 0,\n  \"is_published\": false,\n  \"model\": \"gpt-4.1\",\n  \"s2s_model\": \"gpt-realtime-1.5\",\n  \"model_temperature\": 0,\n  \"model_high_priority\": true,\n  \"tool_call_strict_mode\": true,\n  \"knowledge_base_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"kb_config\": {\n    \"top_k\": 3,\n    \"filter_score\": 0.6\n  },\n  \"start_speaker\": \"<string>\",\n  \"begin_after_user_silence_ms\": 2000,\n  \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\",\n  \"general_prompt\": \"You are ...\",\n  \"general_tools\": [\n    {\n      \"type\": \"end_call\",\n      \"name\": \"end_call\",\n      \"description\": \"End the call with user.\"\n    }\n  ],\n  \"states\": [\n    {\n      \"name\": \"information_collection\",\n      \"state_prompt\": \"## Task\\nYou will follow the steps below...\",\n      \"edges\": [\n        {\n          \"destination_state_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"parameters\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"destination_state_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"parameters\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    },\n    {\n      \"name\": \"information_collection\",\n      \"state_prompt\": \"## Task\\nYou will follow the steps below...\",\n      \"edges\": [\n        {\n          \"destination_state_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"parameters\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"destination_state_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"parameters\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    }\n  ],\n  \"starting_state\": \"information_collection\",\n  \"default_dynamic_variables\": {\n    \"customer_name\": \"John Doe\"\n  },\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8a81a44b-9ebe-41c7-8115-51c5df9b023d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-retell-llm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"gpt-4.1\",\n  \"s2s_model\": \"gpt-realtime-1.5\",\n  \"model_temperature\": 0,\n  \"model_high_priority\": true,\n  \"tool_call_strict_mode\": true,\n  \"knowledge_base_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"kb_config\": {\n    \"top_k\": 3,\n    \"filter_score\": 0.6\n  },\n  \"start_speaker\": \"<string>\",\n  \"begin_after_user_silence_ms\": 2000,\n  \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\",\n  \"general_prompt\": \"You are ...\",\n  \"general_tools\": [\n    {\n      \"type\": \"end_call\",\n      \"name\": \"end_call\",\n      \"description\": \"End the call with user.\"\n    }\n  ],\n  \"states\": [\n    {\n      \"name\": \"information_collection\",\n      \"state_prompt\": \"## Task\\nYou will follow the steps below...\",\n      \"edges\": [\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"information_collection\",\n      \"state_prompt\": \"## Task\\nYou will follow the steps below...\",\n      \"edges\": [\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ],\n  \"starting_state\": \"information_collection\",\n  \"default_dynamic_variables\": {\n    \"customer_name\": \"John Doe\"\n  },\n  \"version\": 1,\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b1c329ef-b9f7-4a54-9833-2aec4184b558",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-retell-llm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"gpt-4.1\",\n  \"s2s_model\": \"gpt-realtime-1.5\",\n  \"model_temperature\": 0,\n  \"model_high_priority\": true,\n  \"tool_call_strict_mode\": true,\n  \"knowledge_base_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"kb_config\": {\n    \"top_k\": 3,\n    \"filter_score\": 0.6\n  },\n  \"start_speaker\": \"<string>\",\n  \"begin_after_user_silence_ms\": 2000,\n  \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\",\n  \"general_prompt\": \"You are ...\",\n  \"general_tools\": [\n    {\n      \"type\": \"end_call\",\n      \"name\": \"end_call\",\n      \"description\": \"End the call with user.\"\n    }\n  ],\n  \"states\": [\n    {\n      \"name\": \"information_collection\",\n      \"state_prompt\": \"## Task\\nYou will follow the steps below...\",\n      \"edges\": [\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"information_collection\",\n      \"state_prompt\": \"## Task\\nYou will follow the steps below...\",\n      \"edges\": [\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ],\n  \"starting_state\": \"information_collection\",\n  \"default_dynamic_variables\": {\n    \"customer_name\": \"John Doe\"\n  },\n  \"version\": 1,\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3dcc4fd-4906-4c98-b9ff-73707b2ee419",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-retell-llm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"gpt-4.1\",\n  \"s2s_model\": \"gpt-realtime-1.5\",\n  \"model_temperature\": 0,\n  \"model_high_priority\": true,\n  \"tool_call_strict_mode\": true,\n  \"knowledge_base_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"kb_config\": {\n    \"top_k\": 3,\n    \"filter_score\": 0.6\n  },\n  \"start_speaker\": \"<string>\",\n  \"begin_after_user_silence_ms\": 2000,\n  \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\",\n  \"general_prompt\": \"You are ...\",\n  \"general_tools\": [\n    {\n      \"type\": \"end_call\",\n      \"name\": \"end_call\",\n      \"description\": \"End the call with user.\"\n    }\n  ],\n  \"states\": [\n    {\n      \"name\": \"information_collection\",\n      \"state_prompt\": \"## Task\\nYou will follow the steps below...\",\n      \"edges\": [\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"information_collection\",\n      \"state_prompt\": \"## Task\\nYou will follow the steps below...\",\n      \"edges\": [\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"destination_state_name\": \"<string>\",\n          \"description\": \"<string>\",\n          \"parameters\": {\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"properties\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"required\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"tools\": [\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"speak_during_execution\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"execution_message_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ]\n    }\n  ],\n  \"starting_state\": \"information_collection\",\n  \"default_dynamic_variables\": {\n    \"customer_name\": \"John Doe\"\n  },\n  \"version\": 1,\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "afd9ef21-2def-4c0b-a5b6-dc6642992b2b",
+    "name": "Retell SDK Add Community Voice Create Retell Llm API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

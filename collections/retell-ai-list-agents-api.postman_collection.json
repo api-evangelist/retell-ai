@@ -1,0 +1,281 @@
+{
+  "item": [
+    {
+      "id": "8e7f7e71-675b-4bac-b7ae-23fcfbe66296",
+      "name": "List Agents",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "28d17f00-f204-43cc-8813-e90db6bf1398",
+          "name": "list Agents",
+          "request": {
+            "name": "list Agents",
+            "description": {
+              "content": "List all agents",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "list-agents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "A limit on the number of objects to be returned. Limit can range between 1 and 1000, and the default is 1000."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination_key",
+                  "value": "<string>",
+                  "description": "The pagination key to continue fetching the next page of agents. Pagination key is represented by a agent id, pagination key and version pair is exclusive (not included in the fetched page). If not set, will start from the beginning."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination_key_version",
+                  "value": "<integer>",
+                  "description": "Specifies the version of the agent associated with the pagination_key. When paginating, both the pagination_key and its version must be provided to ensure consistent ordering and to fetch the next page correctly."
+                },
+                {
+                  "disabled": false,
+                  "key": "is_latest",
+                  "value": "<boolean>",
+                  "description": "If true, only return the latest version of each agent."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "269ccd95-93c0-4e21-ae5e-ffa53097a8bd",
+              "name": "Successfully retrieved all agents.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-agents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "agent_1ffdb9717444d0e77346838911"
+                    },
+                    {
+                      "key": "pagination_key_version",
+                      "value": "0"
+                    },
+                    {
+                      "key": "is_latest",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n    \"last_modification_timestamp\": 1703413636133,\n    \"version\": 0,\n    \"base_version\": 12,\n    \"assigned_tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"is_published\": false,\n    \"response_engine\": {\n      \"type\": \"retell-llm\",\n      \"llm_id\": \"string\",\n      \"version\": 0\n    },\n    \"agent_name\": \"Jarvis\",\n    \"version_description\": \"Customer support agent for handling product inquiries\",\n    \"voice_id\": \"retell-Cimo\",\n    \"voice_model\": \"sonic-3-latest\",\n    \"fallback_voice_ids\": [\n      \"cartesia-Cimo\",\n      \"minimax-Cimo\"\n    ],\n    \"voice_temperature\": 1,\n    \"voice_speed\": 1,\n    \"enable_dynamic_voice_speed\": true,\n    \"enable_dynamic_responsiveness\": true,\n    \"volume\": 1,\n    \"voice_emotion\": \"calm\",\n    \"responsiveness\": 1,\n    \"interruption_sensitivity\": 1,\n    \"enable_backchannel\": true,\n    \"backchannel_frequency\": 0.9,\n    \"backchannel_words\": [\n      \"yeah\",\n      \"uh-huh\"\n    ],\n    \"reminder_trigger_ms\": 10000,\n    \"reminder_max_count\": 2,\n    \"ambient_sound\": \"summer-outdoor\",\n    \"ambient_sound_volume\": 1,\n    \"language\": \"en-US\",\n    \"webhook_url\": \"https://webhook-url-here\",\n    \"webhook_events\": [\n      \"transfer_ended\",\n      \"call_analyzed\"\n    ],\n    \"webhook_timeout_ms\": 10000,\n    \"boosted_keywords\": [\n      \"retell\",\n      \"kroger\"\n    ],\n    \"data_storage_setting\": \"everything\",\n    \"data_storage_retention_days\": 30,\n    \"opt_in_signed_url\": true,\n    \"signed_url_expiration_ms\": 86400000,\n    \"pronunciation_dictionary\": [\n      {\n        \"word\": \"actually\",\n        \"alphabet\": \"ipa\",\n        \"phoneme\": \"ˈæktʃuəli\"\n      },\n      {\n        \"word\": \"actually\",\n        \"alphabet\": \"ipa\",\n        \"phoneme\": \"ˈæktʃuəli\"\n      }\n    ],\n    \"end_call_after_silence_ms\": 600000,\n    \"max_call_duration_ms\": 3600000,\n    \"voicemail_message\": \"Hi, please give us a callback.\",\n    \"voicemail_detection_timeout_ms\": 30000,\n    \"voicemail_option\": {\n      \"action\": {\n        \"type\": \"static_text\",\n        \"text\": \"Please give us a callback tomorrow at 10am.\"\n      }\n    },\n    \"ivr_option\": {\n      \"action\": {\n        \"type\": \"hangup\"\n      }\n    },\n    \"call_screening_option\": {\n      \"agent_identity\": \"Acme Health scheduling team\",\n      \"call_purpose\": \"confirming your appointment for tomorrow\"\n    },\n    \"post_call_analysis_data\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"post_call_analysis_model\": \"gpt-4.1-mini\",\n    \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n    \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n    \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n    \"begin_message_delay_ms\": 1000,\n    \"ring_duration_ms\": 30000,\n    \"stt_mode\": \"fast\",\n    \"custom_stt_config\": {\n      \"provider\": \"deepgram\",\n      \"endpointing_ms\": 3968\n    },\n    \"vocab_specialization\": \"general\",\n    \"allow_user_dtmf\": true,\n    \"allow_dtmf_interruption\": false,\n    \"user_dtmf_options\": {\n      \"digit_limit\": 12.558779835515216,\n      \"termination_key\": \"#\",\n      \"timeout_ms\": 5510\n    },\n    \"denoising_mode\": \"noise-cancellation\",\n    \"pii_config\": {\n      \"mode\": \"post_call\",\n      \"categories\": []\n    },\n    \"guardrail_config\": {\n      \"output_topics\": [\n        \"sexual_exploitation\",\n        \"illicit_and_harmful_activity\"\n      ],\n      \"input_topics\": [\n        \"platform_integrity_jailbreaking\"\n      ]\n    },\n    \"handbook_config\": {\n      \"default_personality\": false,\n      \"natural_filler_words\": false,\n      \"high_empathy\": false,\n      \"echo_verification\": false,\n      \"nato_phonetic_alphabet\": false,\n      \"speech_normalization\": false,\n      \"smart_matching\": false,\n      \"ai_disclosure\": true,\n      \"scope_boundaries\": false\n    },\n    \"timezone\": \"America/New_York\",\n    \"is_public\": false\n  },\n  {\n    \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n    \"last_modification_timestamp\": 1703413636133,\n    \"version\": 0,\n    \"base_version\": 12,\n    \"assigned_tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"is_published\": false,\n    \"response_engine\": {\n      \"type\": \"retell-llm\",\n      \"llm_id\": \"string\",\n      \"version\": 0\n    },\n    \"agent_name\": \"Jarvis\",\n    \"version_description\": \"Customer support agent for handling product inquiries\",\n    \"voice_id\": \"retell-Cimo\",\n    \"voice_model\": \"eleven_multilingual_v2\",\n    \"fallback_voice_ids\": [\n      \"cartesia-Cimo\",\n      \"minimax-Cimo\"\n    ],\n    \"voice_temperature\": 1,\n    \"voice_speed\": 1,\n    \"enable_dynamic_voice_speed\": true,\n    \"enable_dynamic_responsiveness\": true,\n    \"volume\": 1,\n    \"voice_emotion\": \"calm\",\n    \"responsiveness\": 1,\n    \"interruption_sensitivity\": 1,\n    \"enable_backchannel\": true,\n    \"backchannel_frequency\": 0.9,\n    \"backchannel_words\": [\n      \"yeah\",\n      \"uh-huh\"\n    ],\n    \"reminder_trigger_ms\": 10000,\n    \"reminder_max_count\": 2,\n    \"ambient_sound\": \"coffee-shop\",\n    \"ambient_sound_volume\": 1,\n    \"language\": \"en-US\",\n    \"webhook_url\": \"https://webhook-url-here\",\n    \"webhook_events\": [\n      \"call_started\",\n      \"call_started\"\n    ],\n    \"webhook_timeout_ms\": 10000,\n    \"boosted_keywords\": [\n      \"retell\",\n      \"kroger\"\n    ],\n    \"data_storage_setting\": \"everything\",\n    \"data_storage_retention_days\": 30,\n    \"opt_in_signed_url\": true,\n    \"signed_url_expiration_ms\": 86400000,\n    \"pronunciation_dictionary\": [\n      {\n        \"word\": \"actually\",\n        \"alphabet\": \"ipa\",\n        \"phoneme\": \"ˈæktʃuəli\"\n      },\n      {\n        \"word\": \"actually\",\n        \"alphabet\": \"ipa\",\n        \"phoneme\": \"ˈæktʃuəli\"\n      }\n    ],\n    \"end_call_after_silence_ms\": 600000,\n    \"max_call_duration_ms\": 3600000,\n    \"voicemail_message\": \"Hi, please give us a callback.\",\n    \"voicemail_detection_timeout_ms\": 30000,\n    \"voicemail_option\": {\n      \"action\": {\n        \"type\": \"static_text\",\n        \"text\": \"Please give us a callback tomorrow at 10am.\"\n      }\n    },\n    \"ivr_option\": {\n      \"action\": {\n        \"type\": \"hangup\"\n      }\n    },\n    \"call_screening_option\": {\n      \"agent_identity\": \"Acme Health scheduling team\",\n      \"call_purpose\": \"confirming your appointment for tomorrow\"\n    },\n    \"post_call_analysis_data\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"post_call_analysis_model\": \"gpt-4.1-mini\",\n    \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n    \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n    \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n    \"begin_message_delay_ms\": 1000,\n    \"ring_duration_ms\": 30000,\n    \"stt_mode\": \"fast\",\n    \"custom_stt_config\": {\n      \"provider\": \"deepgram\",\n      \"endpointing_ms\": 7253\n    },\n    \"vocab_specialization\": \"general\",\n    \"allow_user_dtmf\": true,\n    \"allow_dtmf_interruption\": false,\n    \"user_dtmf_options\": {\n      \"digit_limit\": 30.193195183375284,\n      \"termination_key\": \"#\",\n      \"timeout_ms\": 2110\n    },\n    \"denoising_mode\": \"noise-cancellation\",\n    \"pii_config\": {\n      \"mode\": \"post_call\",\n      \"categories\": []\n    },\n    \"guardrail_config\": {\n      \"output_topics\": [\n        \"harassment\",\n        \"illicit_and_harmful_activity\"\n      ],\n      \"input_topics\": [\n        \"platform_integrity_jailbreaking\"\n      ]\n    },\n    \"handbook_config\": {\n      \"default_personality\": false,\n      \"natural_filler_words\": false,\n      \"high_empathy\": false,\n      \"echo_verification\": false,\n      \"nato_phonetic_alphabet\": true,\n      \"speech_normalization\": true,\n      \"smart_matching\": true,\n      \"ai_disclosure\": true,\n      \"scope_boundaries\": false\n    },\n    \"timezone\": \"America/New_York\",\n    \"is_public\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a47fb362-22d5-456c-9dd5-e397ff4a351f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-agents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "agent_1ffdb9717444d0e77346838911"
+                    },
+                    {
+                      "key": "pagination_key_version",
+                      "value": "0"
+                    },
+                    {
+                      "key": "is_latest",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c66ee4d7-d1fb-4a48-b461-ac21ea5ce539",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-agents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "agent_1ffdb9717444d0e77346838911"
+                    },
+                    {
+                      "key": "pagination_key_version",
+                      "value": "0"
+                    },
+                    {
+                      "key": "is_latest",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4b1f5b90-b916-4190-8e72-b1f86ff87b08",
+    "name": "Retell SDK Add Community Voice List Agents API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

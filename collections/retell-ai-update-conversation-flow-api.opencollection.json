@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Update Conversation Flow API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Update Conversation Flow",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "updateConversationFlow",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.retellai.com/update-conversation-flow/:conversation_flow_id",
+            "params": [
+              {
+                "name": "conversation_flow_id",
+                "value": "",
+                "type": "path",
+                "description": "Unique id of the conversation flow to be updated."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Optional version of the conversation flow to update. Default to latest version."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing conversation flow"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

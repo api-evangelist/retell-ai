@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice List Test Case Definitions API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List Test Case Definitions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "listTestCaseDefinitions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/list-test-case-definitions",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Type of response engine"
+              },
+              {
+                "name": "llm_id",
+                "value": "",
+                "type": "query",
+                "description": "LLM ID (required when type is retell-llm)"
+              },
+              {
+                "name": "conversation_flow_id",
+                "value": "",
+                "type": "query",
+                "description": "Conversation flow ID (required when type is conversation-flow)"
+              }
+            ]
+          },
+          "docs": "List test case definitions for a response engine"
+        },
+        {
+          "info": {
+            "name": "listTestCaseDefinitionsV2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/v2/list-test-case-definitions",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Type of response engine"
+              },
+              {
+                "name": "llm_id",
+                "value": "",
+                "type": "query",
+                "description": "LLM ID (required when type is retell-llm)"
+              },
+              {
+                "name": "conversation_flow_id",
+                "value": "",
+                "type": "query",
+                "description": "Conversation flow ID (required when type is conversation-flow)"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return."
+              },
+              {
+                "name": "pagination_key",
+                "value": "",
+                "type": "query",
+                "description": "Pagination key for fetching the next page."
+              }
+            ]
+          },
+          "docs": "List test case definitions with pagination"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

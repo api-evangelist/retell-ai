@@ -1,0 +1,560 @@
+{
+  "item": [
+    {
+      "id": "213a75f2-5bac-4185-8c3c-b27b2b245c6d",
+      "name": "Agent Playground Completion",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3a62cc00-489a-4ec7-b678-48c66d093482",
+          "name": "agent Playground Completion",
+          "request": {
+            "name": "agent Playground Completion",
+            "description": {
+              "content": "Stateless playground completion. Send the full conversation history (same shape as chat completion messages) and receive only the newly generated messages. Nothing is persisted server-side — the caller manages conversation state.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "agent-playground-completion",
+                ":agent_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<integer>",
+                  "description": "Agent version to use. Defaults to latest."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agent_id",
+                  "description": "(Required) Unique id of the agent."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"message_id\": \"<string>\",\n      \"created_timestamp\": \"<integer>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"message_id\": \"<string>\",\n      \"created_timestamp\": \"<integer>\"\n    }\n  ],\n  \"dynamic_variables\": {\n    \"key_0\": \"<string>\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"current_state\": \"<string>\",\n  \"current_node_id\": \"<string>\",\n  \"component_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c3ac9ba2-723e-45ec-bc31-fc0ba8af6ee4",
+              "name": "Successfully generated playground completion.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-playground-completion",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Hi, I'd like to check my appointment.\"\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"Sure! Could you please provide your name?\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"My name is John Smith.\"\n    }\n  ],\n  \"dynamic_variables\": {\n    \"customer_name\": \"John Smith\",\n    \"customer_phone\": \"444-223-3564\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"current_state\": \"greeting\",\n  \"current_node_id\": \"start-node-abc123\",\n  \"component_id\": \"component_xyz789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"messages\": [\n    {\n      \"content\": \"hi how are you doing?\",\n      \"created_timestamp\": 1703302428855,\n      \"message_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n      \"role\": \"agent\"\n    },\n    {\n      \"content\": \"hi how are you doing?\",\n      \"created_timestamp\": 1703302428855,\n      \"message_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n      \"role\": \"agent\"\n    }\n  ],\n  \"current_state\": \"greeting\",\n  \"current_node_id\": \"node_abc123\",\n  \"dynamic_variables\": {\n    \"customer_name\": \"John Doe\"\n  },\n  \"call_ended\": false,\n  \"knowledge_base_retrieved_contents\": [\n    \"Our business hours are Monday through Friday, 9am to 5pm.\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc98a4cd-1130-4123-ad7b-3e1c70de9b23",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-playground-completion",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Hi, I'd like to check my appointment.\"\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"Sure! Could you please provide your name?\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"My name is John Smith.\"\n    }\n  ],\n  \"dynamic_variables\": {\n    \"customer_name\": \"John Smith\",\n    \"customer_phone\": \"444-223-3564\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"current_state\": \"greeting\",\n  \"current_node_id\": \"start-node-abc123\",\n  \"component_id\": \"component_xyz789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aefb396c-33ba-4bad-8733-b951ca471a9f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-playground-completion",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Hi, I'd like to check my appointment.\"\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"Sure! Could you please provide your name?\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"My name is John Smith.\"\n    }\n  ],\n  \"dynamic_variables\": {\n    \"customer_name\": \"John Smith\",\n    \"customer_phone\": \"444-223-3564\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"current_state\": \"greeting\",\n  \"current_node_id\": \"start-node-abc123\",\n  \"component_id\": \"component_xyz789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8717f47-61df-4012-9fb9-01b0b131ed08",
+              "name": "Payment Required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-playground-completion",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Hi, I'd like to check my appointment.\"\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"Sure! Could you please provide your name?\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"My name is John Smith.\"\n    }\n  ],\n  \"dynamic_variables\": {\n    \"customer_name\": \"John Smith\",\n    \"customer_phone\": \"444-223-3564\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"current_state\": \"greeting\",\n  \"current_node_id\": \"start-node-abc123\",\n  \"component_id\": \"component_xyz789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Trial has ended, please add payment method.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5604fbcc-e33e-46ef-a35f-ea27af96874a",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-playground-completion",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Hi, I'd like to check my appointment.\"\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"Sure! Could you please provide your name?\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"My name is John Smith.\"\n    }\n  ],\n  \"dynamic_variables\": {\n    \"customer_name\": \"John Smith\",\n    \"customer_phone\": \"444-223-3564\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"current_state\": \"greeting\",\n  \"current_node_id\": \"start-node-abc123\",\n  \"component_id\": \"component_xyz789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Cannot find requested asset under given api key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "518f754d-3a7e-4a04-b4f6-d33f4b8dbfb2",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-playground-completion",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Hi, I'd like to check my appointment.\"\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"Sure! Could you please provide your name?\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"My name is John Smith.\"\n    }\n  ],\n  \"dynamic_variables\": {\n    \"customer_name\": \"John Smith\",\n    \"customer_phone\": \"444-223-3564\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"current_state\": \"greeting\",\n  \"current_node_id\": \"start-node-abc123\",\n  \"component_id\": \"component_xyz789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Account rate limited, please throttle your requests.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "96144839-9bf1-4578-9646-eb2ace1544f6",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-playground-completion",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the agent."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Hi, I'd like to check my appointment.\"\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"Sure! Could you please provide your name?\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"My name is John Smith.\"\n    }\n  ],\n  \"dynamic_variables\": {\n    \"customer_name\": \"John Smith\",\n    \"customer_phone\": \"444-223-3564\"\n  },\n  \"tool_mocks\": [\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    },\n    {\n      \"tool_name\": \"<string>\",\n      \"input_match_rule\": {\n        \"type\": \"<string>\"\n      },\n      \"output\": \"<string>\",\n      \"result\": \"<boolean>\"\n    }\n  ],\n  \"current_state\": \"greeting\",\n  \"current_node_id\": \"start-node-abc123\",\n  \"component_id\": \"component_xyz789\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "17e3a168-f381-42d3-b67e-cc32f42ec79c",
+    "name": "Retell SDK Add Community Voice Agent Playground Completion API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

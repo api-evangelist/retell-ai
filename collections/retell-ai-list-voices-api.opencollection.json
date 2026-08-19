@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice List Voices API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List Voices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "listVoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/list-voices"
+          },
+          "docs": "List all voices available to the user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

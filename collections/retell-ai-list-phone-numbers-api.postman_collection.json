@@ -1,0 +1,431 @@
+{
+  "item": [
+    {
+      "id": "107df4f6-8da6-47a2-a0ca-6b65462e61a0",
+      "name": "List Phone Numbers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2ff95539-03ce-4acb-94e7-7928ab95f718",
+          "name": "list Phone Numbers V2",
+          "request": {
+            "name": "list Phone Numbers V2",
+            "description": {
+              "content": "List phone numbers with pagination",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "list-phone-numbers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Maximum number of items to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_order",
+                  "value": "descending",
+                  "description": "Sort order for results."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination_key",
+                  "value": "<string>",
+                  "description": "Pagination key for fetching the next page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3ae0de95-a8f7-49ab-8dff-1b1a91d384ae",
+              "name": "Successfully retrieved phone numbers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "list-phone-numbers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "descending"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pagination_key\": \"string\",\n  \"has_more\": true,\n  \"items\": [\n    {\n      \"phone_number\": \"+14157774444\",\n      \"phone_number_type\": \"retell-twilio\",\n      \"last_modification_timestamp\": 1703413636133,\n      \"phone_number_pretty\": \"+1 (415) 777-4444\",\n      \"allowed_inbound_country_list\": [\n        \"US\",\n        \"CA\",\n        \"GB\"\n      ],\n      \"allowed_outbound_country_list\": [\n        \"US\",\n        \"CA\"\n      ],\n      \"area_code\": 415,\n      \"inbound_agents\": [\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"outbound_agents\": [\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"inbound_sms_agents\": [\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"outbound_sms_agents\": [\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"nickname\": \"Frontdesk Number\",\n      \"inbound_webhook_url\": \"https://example.com/inbound-webhook\",\n      \"inbound_sms_webhook_url\": \"https://example.com/inbound-sms-webhook\",\n      \"sip_outbound_trunk_config\": {\n        \"termination_uri\": \"someuri.pstn.twilio.com\",\n        \"auth_username\": \"username\",\n        \"transport\": \"TCP\"\n      },\n      \"fallback_number\": \"+14155551234\"\n    },\n    {\n      \"phone_number\": \"+14157774444\",\n      \"phone_number_type\": \"retell-twilio\",\n      \"last_modification_timestamp\": 1703413636133,\n      \"phone_number_pretty\": \"+1 (415) 777-4444\",\n      \"allowed_inbound_country_list\": [\n        \"US\",\n        \"CA\",\n        \"GB\"\n      ],\n      \"allowed_outbound_country_list\": [\n        \"US\",\n        \"CA\"\n      ],\n      \"area_code\": 415,\n      \"inbound_agents\": [\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"outbound_agents\": [\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"inbound_sms_agents\": [\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"outbound_sms_agents\": [\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n          \"weight\": 0.5,\n          \"agent_version\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"nickname\": \"Frontdesk Number\",\n      \"inbound_webhook_url\": \"https://example.com/inbound-webhook\",\n      \"inbound_sms_webhook_url\": \"https://example.com/inbound-sms-webhook\",\n      \"sip_outbound_trunk_config\": {\n        \"termination_uri\": \"someuri.pstn.twilio.com\",\n        \"auth_username\": \"username\",\n        \"transport\": \"TCP\"\n      },\n      \"fallback_number\": \"+14155551234\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1b3d6c76-ea5c-4f27-9b2b-ec65f7a0c866",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "list-phone-numbers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "descending"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "460ee986-b1c8-4991-a8b7-b65c34b34398",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "list-phone-numbers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "descending"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "62e5b625-9c9b-49a1-86c8-0e4af1778309",
+          "name": "list Phone Numbers",
+          "request": {
+            "name": "list Phone Numbers",
+            "description": {
+              "content": "List all phone numbers",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "list-phone-numbers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "217515a5-b60f-4cfe-b598-a2d1f4207f2a",
+              "name": "Successfully retrieved all phone numbers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-phone-numbers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"phone_number\": \"+14157774444\",\n    \"phone_number_type\": \"retell-twilio\",\n    \"last_modification_timestamp\": 1703413636133,\n    \"phone_number_pretty\": \"+1 (415) 777-4444\",\n    \"allowed_inbound_country_list\": [\n      \"US\",\n      \"CA\",\n      \"GB\"\n    ],\n    \"allowed_outbound_country_list\": [\n      \"US\",\n      \"CA\"\n    ],\n    \"area_code\": 415,\n    \"inbound_agents\": [\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      },\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      }\n    ],\n    \"outbound_agents\": [\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      },\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      }\n    ],\n    \"inbound_sms_agents\": [\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      },\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      }\n    ],\n    \"outbound_sms_agents\": [\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      },\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      }\n    ],\n    \"nickname\": \"Frontdesk Number\",\n    \"inbound_webhook_url\": \"https://example.com/inbound-webhook\",\n    \"inbound_sms_webhook_url\": \"https://example.com/inbound-sms-webhook\",\n    \"sip_outbound_trunk_config\": {\n      \"termination_uri\": \"someuri.pstn.twilio.com\",\n      \"auth_username\": \"username\",\n      \"transport\": \"TCP\"\n    },\n    \"fallback_number\": \"+14155551234\"\n  },\n  {\n    \"phone_number\": \"+14157774444\",\n    \"phone_number_type\": \"retell-twilio\",\n    \"last_modification_timestamp\": 1703413636133,\n    \"phone_number_pretty\": \"+1 (415) 777-4444\",\n    \"allowed_inbound_country_list\": [\n      \"US\",\n      \"CA\",\n      \"GB\"\n    ],\n    \"allowed_outbound_country_list\": [\n      \"US\",\n      \"CA\"\n    ],\n    \"area_code\": 415,\n    \"inbound_agents\": [\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      },\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      }\n    ],\n    \"outbound_agents\": [\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      },\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      }\n    ],\n    \"inbound_sms_agents\": [\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      },\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      }\n    ],\n    \"outbound_sms_agents\": [\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      },\n      {\n        \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n        \"weight\": 0.5,\n        \"agent_version\": 1\n      }\n    ],\n    \"nickname\": \"Frontdesk Number\",\n    \"inbound_webhook_url\": \"https://example.com/inbound-webhook\",\n    \"inbound_sms_webhook_url\": \"https://example.com/inbound-sms-webhook\",\n    \"sip_outbound_trunk_config\": {\n      \"termination_uri\": \"someuri.pstn.twilio.com\",\n      \"auth_username\": \"username\",\n      \"transport\": \"TCP\"\n    },\n    \"fallback_number\": \"+14155551234\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc38013b-3f61-465e-a0d7-b146bdbf3f9a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-phone-numbers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c03dd4b9-6112-41be-98cc-b1902c38bb13",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-phone-numbers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ab3dd5f4-f825-4207-b07a-1e4495de8ffe",
+    "name": "Retell SDK Add Community Voice List Phone Numbers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

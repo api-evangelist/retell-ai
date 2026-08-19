@@ -1,0 +1,344 @@
+{
+  "item": [
+    {
+      "id": "67f594c1-2e14-4452-b619-fd2e2581d449",
+      "name": "Create Chat Agent",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1fc204b0-23e6-44f1-9e42-1b021040e954",
+          "name": "create Chat Agent",
+          "request": {
+            "name": "create Chat Agent",
+            "description": {
+              "content": "Create a new chat agent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "create-chat-agent"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": \"<number>\"\n  },\n  \"agent_name\": \"<string>\",\n  \"auto_close_message\": \"<string>\",\n  \"end_chat_after_silence_ms\": \"<integer>\",\n  \"language\": \"<string>\",\n  \"webhook_url\": \"<string>\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": \"<integer>\",\n  \"data_storage_setting\": \"<string>\",\n  \"data_storage_retention_days\": \"<integer>\",\n  \"opt_in_signed_url\": \"<boolean>\",\n  \"signed_url_expiration_ms\": \"<integer>\",\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_chat_analysis_model\": \"<string>\",\n  \"analysis_successful_prompt\": \"<string>\",\n  \"analysis_summary_prompt\": \"<string>\",\n  \"analysis_user_sentiment_prompt\": \"<string>\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"<string>\",\n  \"is_public\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3b0b9921-6501-440e-99b6-0333eaffc53b",
+              "name": "Successfully created a new chat agent.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-chat-agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"last_modification_timestamp\": 1703413636133,\n  \"version\": 0,\n  \"base_version\": 12,\n  \"assigned_tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"is_published\": false,\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e1ec82e-c0a8-451e-84cc-6e443f8dbd1b",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-chat-agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9ab2a692-640c-452a-a75b-c634033df196",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-chat-agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b10060f6-bf4c-43d0-a380-38de77ecf8d2",
+              "name": "Payment Required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-chat-agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Trial has ended, please add payment method.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71d48696-282e-44c3-b148-d7370014506e",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-chat-agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bf8c210a-d324-4c55-b8f7-a4ed1aa614e5",
+    "name": "Retell SDK Add Community Voice Create Chat Agent API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

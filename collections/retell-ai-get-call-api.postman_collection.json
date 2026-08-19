@@ -1,0 +1,351 @@
+{
+  "item": [
+    {
+      "id": "af3cfc8c-d2f2-49a2-ae3d-ff10b4bc11f9",
+      "name": "Get Call",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "35648cab-34f3-4660-af36-2d6e88116cf4",
+          "name": "get Call",
+          "request": {
+            "name": "get Call",
+            "description": {
+              "content": "Retrieve details of a specific call",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "get-call",
+                ":call_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "call_id",
+                  "description": "(Required) The call id to retrieve call history for."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a943279-da13-4464-8bbf-33d533fdc0eb",
+              "name": "Successfully retrieved a call.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "get-call",
+                    ":call_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "call_id",
+                      "description": "(Required) The call id to retrieve call history for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ2aWRlbyI6eyJyb29tSm9p\",\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"agent_version\": 1,\n  \"call_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n  \"call_status\": \"registered\",\n  \"call_type\": \"web_call\",\n  \"agent_name\": \"My Agent\",\n  \"metadata\": {},\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {}\n  },\n  \"collected_dynamic_variables\": {\n    \"key_0\": {}\n  },\n  \"custom_sip_headers\": {\n    \"X-Custom-Header\": \"Custom Value\"\n  },\n  \"data_storage_setting\": \"everything\",\n  \"opt_in_signed_url\": true,\n  \"start_timestamp\": 1703302407333,\n  \"end_timestamp\": 1703302428855,\n  \"transfer_end_timestamp\": 1703302628855,\n  \"duration_ms\": 10000,\n  \"transcript\": \"Agent: hi how are you doing?\\nUser: Doing pretty well. How are you?\\nAgent: That's great to hear! I'm doing well too, thanks! What's up?\\nUser: I don't have anything in particular.\\nAgent: Got it, just checking in!\\nUser: Alright. See you.\\nAgent: have a nice day\\n\",\n  \"transcript_object\": [\n    {\n      \"role\": \"agent\",\n      \"content\": \"hi how are you doing?\",\n      \"words\": [\n        {\n          \"word\": \"hi\",\n          \"start\": 0.7,\n          \"end\": 1.3\n        }\n      ]\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"hi how are you doing?\",\n      \"words\": [\n        {\n          \"word\": \"hi\",\n          \"start\": 0.7,\n          \"end\": 1.3\n        }\n      ]\n    }\n  ],\n  \"transcript_with_tool_calls\": [\n    {\n      \"role\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"content\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"words\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"role\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"content\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"words\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"scrubbed_transcript_with_tool_calls\": [\n    {\n      \"role\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"content\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"words\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"role\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"content\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"words\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"recording_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording.wav\",\n  \"recording_multi_channel_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording_multichannel.wav\",\n  \"scrubbed_recording_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording.wav\",\n  \"scrubbed_recording_multi_channel_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording_multichannel.wav\",\n  \"public_log_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/public_log.txt\",\n  \"knowledge_base_retrieved_contents_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/kb_retrieved_contents.txt\",\n  \"latency\": {\n    \"e2e\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        80.357833601159,\n        8416.037974129766\n      ]\n    },\n    \"asr\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        5569.771114939861,\n        606.1628967573085\n      ]\n    },\n    \"llm\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        8574.915234189957,\n        8429.499384719347\n      ]\n    },\n    \"llm_websocket_network_rtt\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        3317.228987264618,\n        5591.500930643236\n      ]\n    },\n    \"tts\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        5754.15299386379,\n        8939.430324651776\n      ]\n    },\n    \"knowledge_base\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        8947.311668255934,\n        7140.338388084295\n      ]\n    },\n    \"s2s\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        9796.000218090594,\n        3696.9361487281994\n      ]\n    }\n  },\n  \"disconnection_reason\": \"agent_hangup\",\n  \"transfer_destination\": \"+12137771234\",\n  \"call_analysis\": {\n    \"call_summary\": \"The agent called the user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.\",\n    \"in_voicemail\": false,\n    \"user_sentiment\": \"Positive\",\n    \"call_successful\": true,\n    \"custom_analysis_data\": {}\n  },\n  \"call_cost\": {\n    \"product_costs\": [\n      {\n        \"product\": \"elevenlabs_tts\",\n        \"cost\": 60,\n        \"unit_price\": 1,\n        \"is_transfer_leg_cost\": false\n      },\n      {\n        \"product\": \"elevenlabs_tts\",\n        \"cost\": 60,\n        \"unit_price\": 1,\n        \"is_transfer_leg_cost\": false\n      }\n    ],\n    \"total_duration_seconds\": 60,\n    \"total_duration_unit_price\": 1,\n    \"combined_cost\": 70\n  },\n  \"llm_token_usage\": {\n    \"values\": [\n      4482.788234952686,\n      1551.2749558600603\n    ],\n    \"average\": 3306.787813426815,\n    \"num_requests\": 1226.0345969495113\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "baa4560b-6b4e-4fe2-bd81-daee1d69cf33",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "get-call",
+                    ":call_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "call_id",
+                      "description": "(Required) The call id to retrieve call history for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c2a22bdd-1a83-4ee4-b7a5-5601176a3bee",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "get-call",
+                    ":call_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "call_id",
+                      "description": "(Required) The call id to retrieve call history for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "820e23a8-117f-4085-a761-a5de807919e4",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "get-call",
+                    ":call_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "call_id",
+                      "description": "(Required) The call id to retrieve call history for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Cannot find requested asset under given api key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b02d94af-1464-4abe-9cf8-c7bbc13271f3",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "get-call",
+                    ":call_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "call_id",
+                      "description": "(Required) The call id to retrieve call history for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "df4ad2c3-665a-46a7-8f42-7b2b86f84f58",
+    "name": "Retell SDK Add Community Voice Get Call API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

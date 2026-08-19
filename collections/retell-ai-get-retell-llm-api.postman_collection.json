@@ -1,0 +1,377 @@
+{
+  "item": [
+    {
+      "id": "54c078cb-77a0-45e3-9d73-40841b0a3412",
+      "name": "Get Retell Llm",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "04f5fdf1-65c5-4030-9647-f3a1a23618d8",
+          "name": "get Retell LLM",
+          "request": {
+            "name": "get Retell LLM",
+            "description": {
+              "content": "Retrieve details of a specific Retell LLM Response Engine",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "get-retell-llm",
+                ":llm_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<integer>",
+                  "description": "Optional version of the API to use for this request. Default to latest version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "llm_id",
+                  "description": "(Required) Unique id of the Retell LLM Response Engine to be retrieved."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90c1f29d-44c3-4721-9ad2-b5ed715522c5",
+              "name": "Successfully retrieved an Retell LLM Response Engine.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-retell-llm",
+                    ":llm_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "llm_id",
+                      "description": "(Required) Unique id of the Retell LLM Response Engine to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"last_modification_timestamp\": 1703413636133,\n  \"llm_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"version\": 0,\n  \"is_published\": false,\n  \"model\": \"gpt-4.1\",\n  \"s2s_model\": \"gpt-realtime-1.5\",\n  \"model_temperature\": 0,\n  \"model_high_priority\": true,\n  \"tool_call_strict_mode\": true,\n  \"knowledge_base_ids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"kb_config\": {\n    \"top_k\": 3,\n    \"filter_score\": 0.6\n  },\n  \"start_speaker\": \"user\",\n  \"begin_after_user_silence_ms\": 2000,\n  \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\",\n  \"general_prompt\": \"You are ...\",\n  \"general_tools\": [\n    {\n      \"type\": \"end_call\",\n      \"name\": \"end_call\",\n      \"description\": \"End the call with user.\"\n    }\n  ],\n  \"states\": [\n    {\n      \"name\": \"information_collection\",\n      \"state_prompt\": \"You will follow the steps below to collect information...\",\n      \"edges\": [\n        {\n          \"destination_state_name\": \"appointment_booking\",\n          \"description\": \"Transition to book an appointment.\"\n        }\n      ],\n      \"tools\": [\n        {\n          \"type\": \"transfer_call\",\n          \"name\": \"transfer_to_support\",\n          \"description\": \"Transfer to the support team.\",\n          \"transfer_destination\": {\n            \"type\": \"predefined\",\n            \"number\": \"16175551212\",\n            \"ignore_e164_validation\": false\n          },\n          \"transfer_option\": {\n            \"type\": \"cold_transfer\",\n            \"show_transferee_as_caller\": false\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"appointment_booking\",\n      \"state_prompt\": \"You will follow the steps below to book an appointment...\",\n      \"tools\": [\n        {\n          \"type\": \"book_appointment_cal\",\n          \"name\": \"book_appointment\",\n          \"description\": \"Book an annual check up.\",\n          \"cal_api_key\": \"cal_live_xxxxxxxxxxxx\",\n          \"event_type_id\": 60444,\n          \"timezone\": \"America/Los_Angeles\"\n        }\n      ]\n    }\n  ],\n  \"starting_state\": \"information_collection\",\n  \"default_dynamic_variables\": {\n    \"customer_name\": \"John Doe\"\n  },\n  \"mcps\": [\n    {\n      \"name\": \"string\",\n      \"url\": \"string\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": 2238\n    },\n    {\n      \"name\": \"string\",\n      \"url\": \"string\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": 3505\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "97d9d069-f212-4ee4-bac4-dfd4cd97b862",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-retell-llm",
+                    ":llm_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "llm_id",
+                      "description": "(Required) Unique id of the Retell LLM Response Engine to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3fa0a681-4f26-46be-9937-d2060698edf6",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-retell-llm",
+                    ":llm_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "llm_id",
+                      "description": "(Required) Unique id of the Retell LLM Response Engine to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ebdd1bbc-dd35-48be-9583-e7ed2780f8a0",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-retell-llm",
+                    ":llm_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "llm_id",
+                      "description": "(Required) Unique id of the Retell LLM Response Engine to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Cannot find requested asset under given api key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6f9f049-1f13-4eb5-86df-a68409f639a9",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-retell-llm",
+                    ":llm_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "llm_id",
+                      "description": "(Required) Unique id of the Retell LLM Response Engine to be retrieved."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c521f457-f6f7-4911-8d0d-8fb7fe6e5c9a",
+    "name": "Retell SDK Add Community Voice Get Retell Llm API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

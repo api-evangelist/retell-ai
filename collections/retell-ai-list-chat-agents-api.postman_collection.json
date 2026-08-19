@@ -1,0 +1,281 @@
+{
+  "item": [
+    {
+      "id": "16fa9b67-0149-4f84-909f-f00f3c981bd1",
+      "name": "List Chat Agents",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2f3aedc6-4fe0-4b3e-82c5-d3c01ac9911c",
+          "name": "list Chat Agents",
+          "request": {
+            "name": "list Chat Agents",
+            "description": {
+              "content": "List all chat agents",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "list-chat-agents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "A limit on the number of objects to be returned. Limit can range between 1 and 1000, and the default is 1000."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination_key",
+                  "value": "<string>",
+                  "description": "The pagination key to continue fetching the next page of agents. Pagination key is represented by a agent id, pagination key and version pair is exclusive (not included in the fetched page). If not set, will start from the beginning."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination_key_version",
+                  "value": "<integer>",
+                  "description": "Specifies the version of the agent associated with the pagination_key. When paginating, both the pagination_key and its version must be provided to ensure consistent ordering and to fetch the next page correctly."
+                },
+                {
+                  "disabled": false,
+                  "key": "is_latest",
+                  "value": "<boolean>",
+                  "description": "If true, only return the latest version of each chat agent."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "444d6c55-d674-4457-a77b-672376ca2a6b",
+              "name": "Successfully retrieved all chat agents.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-chat-agents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "16b980523634a6dc504898cda492e939"
+                    },
+                    {
+                      "key": "pagination_key_version",
+                      "value": "0"
+                    },
+                    {
+                      "key": "is_latest",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n    \"last_modification_timestamp\": 1703413636133,\n    \"version\": 0,\n    \"base_version\": 12,\n    \"assigned_tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"is_published\": false,\n    \"response_engine\": {\n      \"type\": \"retell-llm\",\n      \"llm_id\": \"string\",\n      \"version\": 0\n    },\n    \"agent_name\": \"Jarvis\",\n    \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n    \"end_chat_after_silence_ms\": 3600000,\n    \"language\": \"en-US\",\n    \"webhook_url\": \"https://webhook-url-here\",\n    \"webhook_events\": [\n      \"chat_ended\",\n      \"chat_ended\"\n    ],\n    \"webhook_timeout_ms\": 10000,\n    \"data_storage_setting\": \"everything\",\n    \"data_storage_retention_days\": 30,\n    \"opt_in_signed_url\": true,\n    \"signed_url_expiration_ms\": 86400000,\n    \"post_chat_analysis_data\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n    \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n    \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n    \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n    \"pii_config\": {\n      \"mode\": \"post_call\",\n      \"categories\": []\n    },\n    \"guardrail_config\": {\n      \"output_topics\": [\n        \"gambling\",\n        \"harassment\"\n      ],\n      \"input_topics\": [\n        \"platform_integrity_jailbreaking\"\n      ]\n    },\n    \"handbook_config\": {\n      \"default_personality\": false,\n      \"high_empathy\": true,\n      \"ai_disclosure\": true,\n      \"scope_boundaries\": true\n    },\n    \"timezone\": \"America/New_York\",\n    \"is_public\": false\n  },\n  {\n    \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n    \"last_modification_timestamp\": 1703413636133,\n    \"version\": 0,\n    \"base_version\": 12,\n    \"assigned_tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"is_published\": false,\n    \"response_engine\": {\n      \"type\": \"retell-llm\",\n      \"llm_id\": \"string\",\n      \"version\": 0\n    },\n    \"agent_name\": \"Jarvis\",\n    \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n    \"end_chat_after_silence_ms\": 3600000,\n    \"language\": \"en-US\",\n    \"webhook_url\": \"https://webhook-url-here\",\n    \"webhook_events\": [\n      \"chat_ended\",\n      \"chat_started\"\n    ],\n    \"webhook_timeout_ms\": 10000,\n    \"data_storage_setting\": \"everything\",\n    \"data_storage_retention_days\": 30,\n    \"opt_in_signed_url\": true,\n    \"signed_url_expiration_ms\": 86400000,\n    \"post_chat_analysis_data\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n    \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n    \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n    \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n    \"pii_config\": {\n      \"mode\": \"post_call\",\n      \"categories\": []\n    },\n    \"guardrail_config\": {\n      \"output_topics\": [\n        \"gambling\",\n        \"harassment\"\n      ],\n      \"input_topics\": [\n        \"platform_integrity_jailbreaking\"\n      ]\n    },\n    \"handbook_config\": {\n      \"default_personality\": true,\n      \"high_empathy\": true,\n      \"ai_disclosure\": true,\n      \"scope_boundaries\": true\n    },\n    \"timezone\": \"America/New_York\",\n    \"is_public\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c10ef08d-f471-4b64-87aa-c680ebbe75d2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-chat-agents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "16b980523634a6dc504898cda492e939"
+                    },
+                    {
+                      "key": "pagination_key_version",
+                      "value": "0"
+                    },
+                    {
+                      "key": "is_latest",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "53f42235-2196-4fc1-b7dd-4b6735daf34f",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-chat-agents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "16b980523634a6dc504898cda492e939"
+                    },
+                    {
+                      "key": "pagination_key_version",
+                      "value": "0"
+                    },
+                    {
+                      "key": "is_latest",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8aff29ee-1731-43de-a599-ec4fec15cfa8",
+    "name": "Retell SDK Add Community Voice List Chat Agents API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

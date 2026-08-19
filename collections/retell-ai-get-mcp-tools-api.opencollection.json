@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Get Mcp Tools API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Mcp Tools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getMCPTools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/get-mcp-tools/:agent_id",
+            "params": [
+              {
+                "name": "agent_id",
+                "value": "",
+                "type": "path",
+                "description": "Unique id of the agent to get MCP tools for."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Optional version of the agent to use for this request. Default to latest version."
+              },
+              {
+                "name": "mcp_id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the MCP server to get tools from."
+              },
+              {
+                "name": "component_id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the component if the MCP server is configured under a component."
+              }
+            ]
+          },
+          "docs": "Get MCP tools for a specific agent"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

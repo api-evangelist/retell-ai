@@ -1,0 +1,344 @@
+{
+  "item": [
+    {
+      "id": "6ce4e589-cc80-48e7-9120-f300ed421d4a",
+      "name": "Create Agent",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0fe6146a-f20f-45a4-bb3a-bbbc5dad2724",
+          "name": "create Agent",
+          "request": {
+            "name": "create Agent",
+            "description": {
+              "content": "Create a new agent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "create-agent"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": \"<number>\"\n  },\n  \"voice_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"version_description\": \"<string>\",\n  \"voice_model\": \"<string>\",\n  \"fallback_voice_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"voice_temperature\": \"<number>\",\n  \"voice_speed\": \"<number>\",\n  \"enable_dynamic_voice_speed\": \"<boolean>\",\n  \"enable_dynamic_responsiveness\": \"<boolean>\",\n  \"volume\": \"<number>\",\n  \"voice_emotion\": \"<string>\",\n  \"responsiveness\": \"<number>\",\n  \"interruption_sensitivity\": \"<number>\",\n  \"enable_backchannel\": \"<boolean>\",\n  \"backchannel_frequency\": \"<number>\",\n  \"backchannel_words\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"reminder_trigger_ms\": \"<number>\",\n  \"reminder_max_count\": \"<integer>\",\n  \"ambient_sound\": \"<string>\",\n  \"ambient_sound_volume\": \"<number>\",\n  \"language\": \"<string>\",\n  \"webhook_url\": \"<string>\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": \"<integer>\",\n  \"boosted_keywords\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"data_storage_setting\": \"<string>\",\n  \"data_storage_retention_days\": \"<integer>\",\n  \"opt_in_signed_url\": \"<boolean>\",\n  \"signed_url_expiration_ms\": \"<integer>\",\n  \"pronunciation_dictionary\": [\n    {\n      \"word\": \"<string>\",\n      \"alphabet\": \"<string>\",\n      \"phoneme\": \"<string>\"\n    },\n    {\n      \"word\": \"<string>\",\n      \"alphabet\": \"<string>\",\n      \"phoneme\": \"<string>\"\n    }\n  ],\n  \"end_call_after_silence_ms\": \"<integer>\",\n  \"max_call_duration_ms\": \"<integer>\",\n  \"voicemail_message\": \"<string>\",\n  \"voicemail_detection_timeout_ms\": \"<integer>\",\n  \"voicemail_option\": {\n    \"action\": {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\"\n    },\n    \"detection_prompt\": \"<string>\"\n  },\n  \"ivr_option\": {\n    \"action\": {\n      \"type\": \"<string>\"\n    },\n    \"detection_prompt\": \"<string>\"\n  },\n  \"call_screening_option\": {\n    \"agent_identity\": \"<string>\",\n    \"call_purpose\": \"<string>\"\n  },\n  \"post_call_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_call_analysis_model\": \"<string>\",\n  \"analysis_successful_prompt\": \"<string>\",\n  \"analysis_summary_prompt\": \"<string>\",\n  \"analysis_user_sentiment_prompt\": \"<string>\",\n  \"begin_message_delay_ms\": \"<integer>\",\n  \"ring_duration_ms\": \"<integer>\",\n  \"stt_mode\": \"<string>\",\n  \"custom_stt_config\": {\n    \"provider\": \"<string>\",\n    \"endpointing_ms\": \"<integer>\"\n  },\n  \"vocab_specialization\": \"<string>\",\n  \"allow_user_dtmf\": \"<boolean>\",\n  \"allow_dtmf_interruption\": \"<boolean>\",\n  \"user_dtmf_options\": {\n    \"digit_limit\": \"<number>\",\n    \"termination_key\": \"<string>\",\n    \"timeout_ms\": \"<integer>\"\n  },\n  \"denoising_mode\": \"<string>\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"natural_filler_words\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"echo_verification\": \"<boolean>\",\n    \"nato_phonetic_alphabet\": \"<boolean>\",\n    \"speech_normalization\": \"<boolean>\",\n    \"smart_matching\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"<string>\",\n  \"is_public\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7df0adf0-ea7a-4d44-9749-c93236161983",
+              "name": "Successfully created a new agent.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"voice_id\": \"retell-Cimo\",\n  \"agent_name\": \"Jarvis\",\n  \"version_description\": \"Customer support agent for handling product inquiries\",\n  \"voice_model\": \"<string>\",\n  \"fallback_voice_ids\": [\n    \"cartesia-Cimo\",\n    \"minimax-Cimo\"\n  ],\n  \"voice_temperature\": 1,\n  \"voice_speed\": 1,\n  \"enable_dynamic_voice_speed\": true,\n  \"enable_dynamic_responsiveness\": true,\n  \"volume\": 1,\n  \"voice_emotion\": \"calm\",\n  \"responsiveness\": 1,\n  \"interruption_sensitivity\": 1,\n  \"enable_backchannel\": true,\n  \"backchannel_frequency\": 0.9,\n  \"backchannel_words\": [\n    \"yeah\",\n    \"uh-huh\"\n  ],\n  \"reminder_trigger_ms\": 10000,\n  \"reminder_max_count\": 2,\n  \"ambient_sound\": \"<string>\",\n  \"ambient_sound_volume\": 1,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"boosted_keywords\": [\n    \"retell\",\n    \"kroger\"\n  ],\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"pronunciation_dictionary\": [\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    },\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    }\n  ],\n  \"end_call_after_silence_ms\": 600000,\n  \"max_call_duration_ms\": 3600000,\n  \"voicemail_message\": \"Hi, please give us a callback.\",\n  \"voicemail_detection_timeout_ms\": 30000,\n  \"voicemail_option\": {\n    \"action\": {\n      \"type\": \"prompt\",\n      \"text\": \"Summarize the call in 2 sentences.\"\n    },\n    \"detection_prompt\": \"<string>\"\n  },\n  \"ivr_option\": {\n    \"action\": {\n      \"type\": \"hangup\"\n    }\n  },\n  \"call_screening_option\": {\n    \"agent_identity\": \"Acme Health scheduling team\",\n    \"call_purpose\": \"confirming your appointment for tomorrow\"\n  },\n  \"post_call_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_call_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"begin_message_delay_ms\": 1000,\n  \"ring_duration_ms\": 30000,\n  \"stt_mode\": \"fast\",\n  \"custom_stt_config\": {\n    \"provider\": \"<string>\",\n    \"endpointing_ms\": \"<integer>\"\n  },\n  \"vocab_specialization\": \"general\",\n  \"allow_user_dtmf\": true,\n  \"allow_dtmf_interruption\": false,\n  \"user_dtmf_options\": {\n    \"digit_limit\": \"<number>\",\n    \"termination_key\": \"#\",\n    \"timeout_ms\": \"<integer>\"\n  },\n  \"denoising_mode\": \"noise-cancellation\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"natural_filler_words\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"echo_verification\": \"<boolean>\",\n    \"nato_phonetic_alphabet\": \"<boolean>\",\n    \"speech_normalization\": \"<boolean>\",\n    \"smart_matching\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"last_modification_timestamp\": 1703413636133,\n  \"version\": 0,\n  \"base_version\": 12,\n  \"assigned_tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"is_published\": false,\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"version_description\": \"Customer support agent for handling product inquiries\",\n  \"voice_id\": \"retell-Cimo\",\n  \"voice_model\": \"<string>\",\n  \"fallback_voice_ids\": [\n    \"cartesia-Cimo\",\n    \"minimax-Cimo\"\n  ],\n  \"voice_temperature\": 1,\n  \"voice_speed\": 1,\n  \"enable_dynamic_voice_speed\": true,\n  \"enable_dynamic_responsiveness\": true,\n  \"volume\": 1,\n  \"voice_emotion\": \"calm\",\n  \"responsiveness\": 1,\n  \"interruption_sensitivity\": 1,\n  \"enable_backchannel\": true,\n  \"backchannel_frequency\": 0.9,\n  \"backchannel_words\": [\n    \"yeah\",\n    \"uh-huh\"\n  ],\n  \"reminder_trigger_ms\": 10000,\n  \"reminder_max_count\": 2,\n  \"ambient_sound\": \"<string>\",\n  \"ambient_sound_volume\": 1,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"boosted_keywords\": [\n    \"retell\",\n    \"kroger\"\n  ],\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"pronunciation_dictionary\": [\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    },\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    }\n  ],\n  \"end_call_after_silence_ms\": 600000,\n  \"max_call_duration_ms\": 3600000,\n  \"voicemail_message\": \"Hi, please give us a callback.\",\n  \"voicemail_detection_timeout_ms\": 30000,\n  \"voicemail_option\": {\n    \"action\": {\n      \"type\": \"prompt\",\n      \"text\": \"Summarize the call in 2 sentences.\"\n    },\n    \"detection_prompt\": \"<string>\"\n  },\n  \"ivr_option\": {\n    \"action\": {\n      \"type\": \"hangup\"\n    }\n  },\n  \"call_screening_option\": {\n    \"agent_identity\": \"Acme Health scheduling team\",\n    \"call_purpose\": \"confirming your appointment for tomorrow\"\n  },\n  \"post_call_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_call_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"begin_message_delay_ms\": 1000,\n  \"ring_duration_ms\": 30000,\n  \"stt_mode\": \"fast\",\n  \"custom_stt_config\": {\n    \"provider\": \"<string>\",\n    \"endpointing_ms\": \"<integer>\"\n  },\n  \"vocab_specialization\": \"general\",\n  \"allow_user_dtmf\": true,\n  \"allow_dtmf_interruption\": false,\n  \"user_dtmf_options\": {\n    \"digit_limit\": \"<number>\",\n    \"termination_key\": \"#\",\n    \"timeout_ms\": \"<integer>\"\n  },\n  \"denoising_mode\": \"noise-cancellation\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"natural_filler_words\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"echo_verification\": \"<boolean>\",\n    \"nato_phonetic_alphabet\": \"<boolean>\",\n    \"speech_normalization\": \"<boolean>\",\n    \"smart_matching\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "301ff840-45a3-46e7-b360-8150c14eafed",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"voice_id\": \"retell-Cimo\",\n  \"agent_name\": \"Jarvis\",\n  \"version_description\": \"Customer support agent for handling product inquiries\",\n  \"voice_model\": \"<string>\",\n  \"fallback_voice_ids\": [\n    \"cartesia-Cimo\",\n    \"minimax-Cimo\"\n  ],\n  \"voice_temperature\": 1,\n  \"voice_speed\": 1,\n  \"enable_dynamic_voice_speed\": true,\n  \"enable_dynamic_responsiveness\": true,\n  \"volume\": 1,\n  \"voice_emotion\": \"calm\",\n  \"responsiveness\": 1,\n  \"interruption_sensitivity\": 1,\n  \"enable_backchannel\": true,\n  \"backchannel_frequency\": 0.9,\n  \"backchannel_words\": [\n    \"yeah\",\n    \"uh-huh\"\n  ],\n  \"reminder_trigger_ms\": 10000,\n  \"reminder_max_count\": 2,\n  \"ambient_sound\": \"<string>\",\n  \"ambient_sound_volume\": 1,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"boosted_keywords\": [\n    \"retell\",\n    \"kroger\"\n  ],\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"pronunciation_dictionary\": [\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    },\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    }\n  ],\n  \"end_call_after_silence_ms\": 600000,\n  \"max_call_duration_ms\": 3600000,\n  \"voicemail_message\": \"Hi, please give us a callback.\",\n  \"voicemail_detection_timeout_ms\": 30000,\n  \"voicemail_option\": {\n    \"action\": {\n      \"type\": \"prompt\",\n      \"text\": \"Summarize the call in 2 sentences.\"\n    },\n    \"detection_prompt\": \"<string>\"\n  },\n  \"ivr_option\": {\n    \"action\": {\n      \"type\": \"hangup\"\n    }\n  },\n  \"call_screening_option\": {\n    \"agent_identity\": \"Acme Health scheduling team\",\n    \"call_purpose\": \"confirming your appointment for tomorrow\"\n  },\n  \"post_call_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_call_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"begin_message_delay_ms\": 1000,\n  \"ring_duration_ms\": 30000,\n  \"stt_mode\": \"fast\",\n  \"custom_stt_config\": {\n    \"provider\": \"<string>\",\n    \"endpointing_ms\": \"<integer>\"\n  },\n  \"vocab_specialization\": \"general\",\n  \"allow_user_dtmf\": true,\n  \"allow_dtmf_interruption\": false,\n  \"user_dtmf_options\": {\n    \"digit_limit\": \"<number>\",\n    \"termination_key\": \"#\",\n    \"timeout_ms\": \"<integer>\"\n  },\n  \"denoising_mode\": \"noise-cancellation\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"natural_filler_words\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"echo_verification\": \"<boolean>\",\n    \"nato_phonetic_alphabet\": \"<boolean>\",\n    \"speech_normalization\": \"<boolean>\",\n    \"smart_matching\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a3f3ed3b-910d-4a34-905c-f7b995fa2111",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"voice_id\": \"retell-Cimo\",\n  \"agent_name\": \"Jarvis\",\n  \"version_description\": \"Customer support agent for handling product inquiries\",\n  \"voice_model\": \"<string>\",\n  \"fallback_voice_ids\": [\n    \"cartesia-Cimo\",\n    \"minimax-Cimo\"\n  ],\n  \"voice_temperature\": 1,\n  \"voice_speed\": 1,\n  \"enable_dynamic_voice_speed\": true,\n  \"enable_dynamic_responsiveness\": true,\n  \"volume\": 1,\n  \"voice_emotion\": \"calm\",\n  \"responsiveness\": 1,\n  \"interruption_sensitivity\": 1,\n  \"enable_backchannel\": true,\n  \"backchannel_frequency\": 0.9,\n  \"backchannel_words\": [\n    \"yeah\",\n    \"uh-huh\"\n  ],\n  \"reminder_trigger_ms\": 10000,\n  \"reminder_max_count\": 2,\n  \"ambient_sound\": \"<string>\",\n  \"ambient_sound_volume\": 1,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"boosted_keywords\": [\n    \"retell\",\n    \"kroger\"\n  ],\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"pronunciation_dictionary\": [\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    },\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    }\n  ],\n  \"end_call_after_silence_ms\": 600000,\n  \"max_call_duration_ms\": 3600000,\n  \"voicemail_message\": \"Hi, please give us a callback.\",\n  \"voicemail_detection_timeout_ms\": 30000,\n  \"voicemail_option\": {\n    \"action\": {\n      \"type\": \"prompt\",\n      \"text\": \"Summarize the call in 2 sentences.\"\n    },\n    \"detection_prompt\": \"<string>\"\n  },\n  \"ivr_option\": {\n    \"action\": {\n      \"type\": \"hangup\"\n    }\n  },\n  \"call_screening_option\": {\n    \"agent_identity\": \"Acme Health scheduling team\",\n    \"call_purpose\": \"confirming your appointment for tomorrow\"\n  },\n  \"post_call_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_call_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"begin_message_delay_ms\": 1000,\n  \"ring_duration_ms\": 30000,\n  \"stt_mode\": \"fast\",\n  \"custom_stt_config\": {\n    \"provider\": \"<string>\",\n    \"endpointing_ms\": \"<integer>\"\n  },\n  \"vocab_specialization\": \"general\",\n  \"allow_user_dtmf\": true,\n  \"allow_dtmf_interruption\": false,\n  \"user_dtmf_options\": {\n    \"digit_limit\": \"<number>\",\n    \"termination_key\": \"#\",\n    \"timeout_ms\": \"<integer>\"\n  },\n  \"denoising_mode\": \"noise-cancellation\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"natural_filler_words\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"echo_verification\": \"<boolean>\",\n    \"nato_phonetic_alphabet\": \"<boolean>\",\n    \"speech_normalization\": \"<boolean>\",\n    \"smart_matching\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "252115e0-6e00-40bd-8129-da66df2dc499",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"voice_id\": \"retell-Cimo\",\n  \"agent_name\": \"Jarvis\",\n  \"version_description\": \"Customer support agent for handling product inquiries\",\n  \"voice_model\": \"<string>\",\n  \"fallback_voice_ids\": [\n    \"cartesia-Cimo\",\n    \"minimax-Cimo\"\n  ],\n  \"voice_temperature\": 1,\n  \"voice_speed\": 1,\n  \"enable_dynamic_voice_speed\": true,\n  \"enable_dynamic_responsiveness\": true,\n  \"volume\": 1,\n  \"voice_emotion\": \"calm\",\n  \"responsiveness\": 1,\n  \"interruption_sensitivity\": 1,\n  \"enable_backchannel\": true,\n  \"backchannel_frequency\": 0.9,\n  \"backchannel_words\": [\n    \"yeah\",\n    \"uh-huh\"\n  ],\n  \"reminder_trigger_ms\": 10000,\n  \"reminder_max_count\": 2,\n  \"ambient_sound\": \"<string>\",\n  \"ambient_sound_volume\": 1,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"boosted_keywords\": [\n    \"retell\",\n    \"kroger\"\n  ],\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"pronunciation_dictionary\": [\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    },\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    }\n  ],\n  \"end_call_after_silence_ms\": 600000,\n  \"max_call_duration_ms\": 3600000,\n  \"voicemail_message\": \"Hi, please give us a callback.\",\n  \"voicemail_detection_timeout_ms\": 30000,\n  \"voicemail_option\": {\n    \"action\": {\n      \"type\": \"prompt\",\n      \"text\": \"Summarize the call in 2 sentences.\"\n    },\n    \"detection_prompt\": \"<string>\"\n  },\n  \"ivr_option\": {\n    \"action\": {\n      \"type\": \"hangup\"\n    }\n  },\n  \"call_screening_option\": {\n    \"agent_identity\": \"Acme Health scheduling team\",\n    \"call_purpose\": \"confirming your appointment for tomorrow\"\n  },\n  \"post_call_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_call_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"begin_message_delay_ms\": 1000,\n  \"ring_duration_ms\": 30000,\n  \"stt_mode\": \"fast\",\n  \"custom_stt_config\": {\n    \"provider\": \"<string>\",\n    \"endpointing_ms\": \"<integer>\"\n  },\n  \"vocab_specialization\": \"general\",\n  \"allow_user_dtmf\": true,\n  \"allow_dtmf_interruption\": false,\n  \"user_dtmf_options\": {\n    \"digit_limit\": \"<number>\",\n    \"termination_key\": \"#\",\n    \"timeout_ms\": \"<integer>\"\n  },\n  \"denoising_mode\": \"noise-cancellation\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"natural_filler_words\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"echo_verification\": \"<boolean>\",\n    \"nato_phonetic_alphabet\": \"<boolean>\",\n    \"speech_normalization\": \"<boolean>\",\n    \"smart_matching\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Cannot find requested asset under given api key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c13a3de-254b-41ab-aeea-2fac15e1bc2d",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create-agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"voice_id\": \"retell-Cimo\",\n  \"agent_name\": \"Jarvis\",\n  \"version_description\": \"Customer support agent for handling product inquiries\",\n  \"voice_model\": \"<string>\",\n  \"fallback_voice_ids\": [\n    \"cartesia-Cimo\",\n    \"minimax-Cimo\"\n  ],\n  \"voice_temperature\": 1,\n  \"voice_speed\": 1,\n  \"enable_dynamic_voice_speed\": true,\n  \"enable_dynamic_responsiveness\": true,\n  \"volume\": 1,\n  \"voice_emotion\": \"calm\",\n  \"responsiveness\": 1,\n  \"interruption_sensitivity\": 1,\n  \"enable_backchannel\": true,\n  \"backchannel_frequency\": 0.9,\n  \"backchannel_words\": [\n    \"yeah\",\n    \"uh-huh\"\n  ],\n  \"reminder_trigger_ms\": 10000,\n  \"reminder_max_count\": 2,\n  \"ambient_sound\": \"<string>\",\n  \"ambient_sound_volume\": 1,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"boosted_keywords\": [\n    \"retell\",\n    \"kroger\"\n  ],\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"pronunciation_dictionary\": [\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    },\n    {\n      \"word\": \"actually\",\n      \"alphabet\": \"ipa\",\n      \"phoneme\": \"ˈæktʃuəli\"\n    }\n  ],\n  \"end_call_after_silence_ms\": 600000,\n  \"max_call_duration_ms\": 3600000,\n  \"voicemail_message\": \"Hi, please give us a callback.\",\n  \"voicemail_detection_timeout_ms\": 30000,\n  \"voicemail_option\": {\n    \"action\": {\n      \"type\": \"prompt\",\n      \"text\": \"Summarize the call in 2 sentences.\"\n    },\n    \"detection_prompt\": \"<string>\"\n  },\n  \"ivr_option\": {\n    \"action\": {\n      \"type\": \"hangup\"\n    }\n  },\n  \"call_screening_option\": {\n    \"agent_identity\": \"Acme Health scheduling team\",\n    \"call_purpose\": \"confirming your appointment for tomorrow\"\n  },\n  \"post_call_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_call_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"begin_message_delay_ms\": 1000,\n  \"ring_duration_ms\": 30000,\n  \"stt_mode\": \"fast\",\n  \"custom_stt_config\": {\n    \"provider\": \"<string>\",\n    \"endpointing_ms\": \"<integer>\"\n  },\n  \"vocab_specialization\": \"general\",\n  \"allow_user_dtmf\": true,\n  \"allow_dtmf_interruption\": false,\n  \"user_dtmf_options\": {\n    \"digit_limit\": \"<number>\",\n    \"termination_key\": \"#\",\n    \"timeout_ms\": \"<integer>\"\n  },\n  \"denoising_mode\": \"noise-cancellation\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"natural_filler_words\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"echo_verification\": \"<boolean>\",\n    \"nato_phonetic_alphabet\": \"<boolean>\",\n    \"speech_normalization\": \"<boolean>\",\n    \"smart_matching\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "537eedd6-e5e8-4eea-a97b-c6e774b18a87",
+    "name": "Retell SDK Add Community Voice Create Agent API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

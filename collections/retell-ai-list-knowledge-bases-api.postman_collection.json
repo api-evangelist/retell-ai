@@ -1,0 +1,248 @@
+{
+  "item": [
+    {
+      "id": "1bf64b84-91b4-45dc-b78f-4a91a6e6919c",
+      "name": "List Knowledge Bases",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9fa4e1f8-82bd-4502-b6e9-cc9c2304c363",
+          "name": "list Knowledge Bases",
+          "request": {
+            "name": "list Knowledge Bases",
+            "description": {
+              "content": "List all knowledge bases",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "list-knowledge-bases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f2def519-78d5-4488-a6be-95073c3129fe",
+              "name": "Successfully retrieved all knowledge bases.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-knowledge-bases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"knowledge_base_id\": \"knowledge_base_a456426614174000\",\n    \"knowledge_base_name\": \"Sample KB\",\n    \"status\": \"in_progress\",\n    \"max_chunk_size\": 2000,\n    \"min_chunk_size\": 400,\n    \"knowledge_base_sources\": [\n      {\n        \"type\": \"document\",\n        \"source_id\": \"string\",\n        \"filename\": \"string\",\n        \"file_url\": \"string\",\n        \"file_size\": false\n      },\n      {\n        \"type\": \"document\",\n        \"source_id\": \"string\",\n        \"filename\": \"string\",\n        \"file_url\": \"string\",\n        \"file_size\": false\n      }\n    ],\n    \"enable_auto_refresh\": true,\n    \"last_refreshed_timestamp\": 1703413636133\n  },\n  {\n    \"knowledge_base_id\": \"knowledge_base_a456426614174000\",\n    \"knowledge_base_name\": \"Sample KB\",\n    \"status\": \"in_progress\",\n    \"max_chunk_size\": 2000,\n    \"min_chunk_size\": 400,\n    \"knowledge_base_sources\": [\n      {\n        \"type\": \"document\",\n        \"source_id\": \"string\",\n        \"filename\": \"string\",\n        \"file_url\": \"string\",\n        \"file_size\": 831.8579214858113\n      },\n      {\n        \"type\": \"document\",\n        \"source_id\": \"string\",\n        \"filename\": \"string\",\n        \"file_url\": \"string\",\n        \"file_size\": \"string\"\n      }\n    ],\n    \"enable_auto_refresh\": true,\n    \"last_refreshed_timestamp\": 1703413636133\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0d0db4a2-7241-4acc-bd7f-e48453698492",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-knowledge-bases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "66b9e56c-b01f-4149-bdfe-69cf7b072567",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-knowledge-bases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Account rate limited, please throttle your requests.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3e235f7d-5dd5-4df4-a450-5e12e609942f",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-knowledge-bases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c1b3ceb1-5625-40b6-b155-0b1390d7d1a9",
+    "name": "Retell SDK Add Community Voice List Knowledge Bases API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

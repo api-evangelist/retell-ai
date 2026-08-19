@@ -1,0 +1,350 @@
+{
+  "item": [
+    {
+      "id": "8adf0d63-7dda-482c-b701-ec32cc7709cd",
+      "name": "List Chats",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9d4670c3-eefe-43ca-b856-2ffbe58c8dce",
+          "name": "list Chats V3",
+          "request": {
+            "name": "list Chats V3",
+            "description": {
+              "content": "List chats with unified cursor pagination response.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "list-chats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filter_criteria\": {\n    \"key_0\": \"string\"\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3663b694-566b-42cf-a752-f4b0942046d9",
+              "name": "Successfully retrieved chats.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "list-chats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"key_0\": true\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pagination_key\": \"string\",\n  \"has_more\": true,\n  \"items\": [\n    {\n      \"chat_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"chat_status\": \"ongoing\",\n      \"version\": 1,\n      \"retell_llm_dynamic_variables\": {\n        \"key_0\": {}\n      },\n      \"collected_dynamic_variables\": {\n        \"key_0\": {}\n      },\n      \"chat_type\": \"api_chat\",\n      \"custom_attributes\": {\n        \"key_0\": \"string\"\n      },\n      \"start_timestamp\": 1703302407333,\n      \"end_timestamp\": 1703302428855,\n      \"transcript\": \"Agent: hi how are you doing?\\nUser: Doing pretty well. How are you?\\nAgent: That's great to hear! I'm doing well too, thanks! What's up?\\nUser: I don't have anything in particular.\\nAgent: Got it, just checking in!\\nUser: Alright. See you.\\nAgent: have a nice day\\n\",\n      \"message_with_tool_calls\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"metadata\": {},\n      \"chat_cost\": {\n        \"product_costs\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"combined_cost\": 70\n      },\n      \"chat_analysis\": {\n        \"chat_summary\": \"The agent messages user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.\",\n        \"user_sentiment\": \"Positive\",\n        \"chat_successful\": true,\n        \"custom_analysis_data\": {}\n      }\n    },\n    {\n      \"chat_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"chat_status\": \"ongoing\",\n      \"version\": 1,\n      \"retell_llm_dynamic_variables\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"collected_dynamic_variables\": {\n        \"key_0\": {},\n        \"key_1\": {},\n        \"key_2\": {}\n      },\n      \"chat_type\": \"api_chat\",\n      \"custom_attributes\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"start_timestamp\": 1703302407333,\n      \"end_timestamp\": 1703302428855,\n      \"transcript\": \"Agent: hi how are you doing?\\nUser: Doing pretty well. How are you?\\nAgent: That's great to hear! I'm doing well too, thanks! What's up?\\nUser: I don't have anything in particular.\\nAgent: Got it, just checking in!\\nUser: Alright. See you.\\nAgent: have a nice day\\n\",\n      \"message_with_tool_calls\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"metadata\": {},\n      \"chat_cost\": {\n        \"product_costs\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"combined_cost\": 70\n      },\n      \"chat_analysis\": {\n        \"chat_summary\": \"The agent messages user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.\",\n        \"user_sentiment\": \"Positive\",\n        \"chat_successful\": true,\n        \"custom_analysis_data\": {}\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2d5cb029-df20-48af-a411-c4a0bba500e9",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "list-chats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"key_0\": true\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "35bbbcce-79bd-43ee-9ad6-5b5f434039da",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "list-chats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"key_0\": true\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "03a07c50-49ca-4acc-a20b-8076f138162e",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "list-chats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"key_0\": true\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Account rate limited, please throttle your requests.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32d2ea6d-4e8e-4081-93db-23351a81bd0b",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "list-chats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"key_0\": true\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0348ab47-b4f3-4130-a932-cb215fa5bcfc",
+    "name": "Retell SDK Add Community Voice List Chats API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

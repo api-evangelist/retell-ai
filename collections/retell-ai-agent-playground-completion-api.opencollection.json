@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Agent Playground Completion API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Agent Playground Completion",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "agentPlaygroundCompletion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.retellai.com/agent-playground-completion/:agent_id",
+            "params": [
+              {
+                "name": "agent_id",
+                "value": "",
+                "type": "path",
+                "description": "Unique id of the agent."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Agent version to use. Defaults to latest."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Stateless playground completion. Send the full conversation history (same shape as chat completion messages) and receive only the newly generated messages. Nothing is persisted server-side — the caller manages conversation state."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

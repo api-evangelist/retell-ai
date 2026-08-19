@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Get Retell Llm API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Retell Llm",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getRetellLLM",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/get-retell-llm/:llm_id",
+            "params": [
+              {
+                "name": "llm_id",
+                "value": "",
+                "type": "path",
+                "description": "Unique id of the Retell LLM Response Engine to be retrieved."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Optional version of the API to use for this request. Default to latest version."
+              }
+            ]
+          },
+          "docs": "Retrieve details of a specific Retell LLM Response Engine"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

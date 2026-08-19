@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Create Conversation Flow Component API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Create Conversation Flow Component",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "createConversationFlowComponent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.retellai.com/create-conversation-flow-component",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new shared conversation flow component"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

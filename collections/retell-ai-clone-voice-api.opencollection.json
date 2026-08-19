@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Clone Voice API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Clone Voice",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "cloneVoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.retellai.com/clone-voice",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "files",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "voice_name",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "voice_provider",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Clone a voice from audio files"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

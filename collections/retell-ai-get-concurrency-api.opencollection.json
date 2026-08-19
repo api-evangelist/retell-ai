@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Get Concurrency API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Concurrency",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getConcurrency",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/get-concurrency"
+          },
+          "docs": "Get the current concurrency and concurrency limit of the org"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

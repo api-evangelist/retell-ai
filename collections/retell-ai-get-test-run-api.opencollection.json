@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Get Test Run API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Test Run",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getTestRun",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/get-test-run/:test_case_job_id",
+            "params": [
+              {
+                "name": "test_case_job_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the test case job to retrieve"
+              }
+            ]
+          },
+          "docs": "Get a test case job (test run) by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

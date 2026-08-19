@@ -1,0 +1,263 @@
+{
+  "item": [
+    {
+      "id": "d9f3e07d-81f5-449e-9eea-5f7c6f161c43",
+      "name": "List Chat",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2f529132-1548-484c-84cb-4b91672e09a2",
+          "name": "list Chat",
+          "request": {
+            "name": "list Chat",
+            "description": {
+              "content": "List all chats",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "list-chat"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sort_order",
+                  "value": "descending",
+                  "description": "The chats will be sorted by `start_timestamp`, whether to return the chats in ascending or descending order."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Limit the number of chats returned. Default 50, Max 1000. To retrieve more than 1000, use pagination_key to continue fetching the next page."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination_key",
+                  "value": "<string>",
+                  "description": "The pagination key to continue fetching the next page of chats. Pagination key is represented by a chat id here, and it's exclusive (not included in the fetched chats). The last chat id from the list chats is usually used as pagination key here. If not set, will start from the beginning."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "69b4c071-e47e-49b8-b302-69897f3e7976",
+              "name": "Successfully retrieved all chats.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-chat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort_order",
+                      "value": "descending"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"chat_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n    \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n    \"chat_status\": \"ongoing\",\n    \"version\": 1,\n    \"retell_llm_dynamic_variables\": {\n      \"key_0\": {}\n    },\n    \"collected_dynamic_variables\": {\n      \"key_0\": {}\n    },\n    \"chat_type\": \"api_chat\",\n    \"custom_attributes\": {\n      \"key_0\": \"string\"\n    },\n    \"start_timestamp\": 1703302407333,\n    \"end_timestamp\": 1703302428855,\n    \"transcript\": \"Agent: hi how are you doing?\\nUser: Doing pretty well. How are you?\\nAgent: That's great to hear! I'm doing well too, thanks! What's up?\\nUser: I don't have anything in particular.\\nAgent: Got it, just checking in!\\nUser: Alright. See you.\\nAgent: have a nice day\\n\",\n    \"message_with_tool_calls\": [\n      {\n        \"content\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"created_timestamp\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"message_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"role\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"content\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"created_timestamp\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"message_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"role\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"metadata\": {},\n    \"chat_cost\": {\n      \"product_costs\": [\n        {\n          \"product\": \"elevenlabs_tts\",\n          \"cost\": 60,\n          \"unit_price\": 1,\n          \"is_transfer_leg_cost\": true\n        },\n        {\n          \"product\": \"elevenlabs_tts\",\n          \"cost\": 60,\n          \"unit_price\": 1,\n          \"is_transfer_leg_cost\": true\n        }\n      ],\n      \"combined_cost\": 70\n    },\n    \"chat_analysis\": {\n      \"chat_summary\": \"The agent messages user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.\",\n      \"user_sentiment\": \"Positive\",\n      \"chat_successful\": true,\n      \"custom_analysis_data\": {}\n    }\n  },\n  {\n    \"chat_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n    \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n    \"chat_status\": \"ongoing\",\n    \"version\": 1,\n    \"retell_llm_dynamic_variables\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    },\n    \"collected_dynamic_variables\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    \"chat_type\": \"api_chat\",\n    \"custom_attributes\": {\n      \"key_0\": \"string\"\n    },\n    \"start_timestamp\": 1703302407333,\n    \"end_timestamp\": 1703302428855,\n    \"transcript\": \"Agent: hi how are you doing?\\nUser: Doing pretty well. How are you?\\nAgent: That's great to hear! I'm doing well too, thanks! What's up?\\nUser: I don't have anything in particular.\\nAgent: Got it, just checking in!\\nUser: Alright. See you.\\nAgent: have a nice day\\n\",\n    \"message_with_tool_calls\": [\n      {\n        \"content\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"created_timestamp\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"message_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"role\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"content\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"created_timestamp\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"message_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"role\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"metadata\": {},\n    \"chat_cost\": {\n      \"product_costs\": [\n        {\n          \"product\": \"elevenlabs_tts\",\n          \"cost\": 60,\n          \"unit_price\": 1,\n          \"is_transfer_leg_cost\": true\n        },\n        {\n          \"product\": \"elevenlabs_tts\",\n          \"cost\": 60,\n          \"unit_price\": 1,\n          \"is_transfer_leg_cost\": true\n        }\n      ],\n      \"combined_cost\": 70\n    },\n    \"chat_analysis\": {\n      \"chat_summary\": \"The agent messages user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.\",\n      \"user_sentiment\": \"Positive\",\n      \"chat_successful\": true,\n      \"custom_analysis_data\": {}\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a254d752-9274-4274-80e8-55f802353b19",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-chat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort_order",
+                      "value": "descending"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c974990b-5b01-4d5a-a927-fd9faa4c1075",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list-chat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort_order",
+                      "value": "descending"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "pagination_key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "73820806-85e8-431d-8520-af91dcb367b5",
+    "name": "Retell SDK Add Community Voice List Chat API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

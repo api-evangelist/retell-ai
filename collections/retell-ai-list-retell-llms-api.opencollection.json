@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice List Retell Llms API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List Retell Llms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "listRetellLLM",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/list-retell-llms",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "A limit on the number of objects to be returned. Limit can range between 1 and 1000, and the default is 1000."
+              },
+              {
+                "name": "pagination_key",
+                "value": "",
+                "type": "query",
+                "description": "The pagination key to continue fetching the next page of LLMs. Pagination key is represented by a llm id, pagination key and version pair is exclusive (not included in the fetched page). If not set, will start from the beginning."
+              },
+              {
+                "name": "pagination_key_version",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the version of the llm associated with the pagination_key. When paginating, both the pagination_key and its version must be provided to ensure consistent ordering and to fetch the next page correctly."
+              }
+            ]
+          },
+          "docs": "List all Retell LLM Response Engines that can be attached to an agent."
+        },
+        {
+          "info": {
+            "name": "listRetellLLMV2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/v2/list-retell-llms",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return."
+              },
+              {
+                "name": "sort_order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order for results."
+              },
+              {
+                "name": "pagination_key",
+                "value": "",
+                "type": "query",
+                "description": "Pagination key for fetching the next page."
+              }
+            ]
+          },
+          "docs": "List Retell LLM Response Engines with pagination"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,607 @@
+{
+  "item": [
+    {
+      "id": "4864f2db-4850-49d1-b0f3-78d16232a076",
+      "name": "List Calls",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dc1b7531-81ff-410c-9a2f-2dd126313be6",
+          "name": "list Calls",
+          "request": {
+            "name": "list Calls",
+            "description": {
+              "content": "Retrieve call details",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "list-calls"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filter_criteria\": {\n    \"call_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"agent_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"version\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"call_status\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"in_voicemail\": [\n      \"<boolean>\",\n      \"<boolean>\"\n    ],\n    \"disconnection_reason\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"from_number\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"to_number\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"batch_call_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"call_type\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"direction\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"user_sentiment\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"call_successful\": [\n      \"<boolean>\",\n      \"<boolean>\"\n    ],\n    \"start_timestamp\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"end_timestamp\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"duration_ms\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"e2e_latency_p50\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"key_0\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"dynamic_variables\": {\n      \"key_0\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_1\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_2\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50,\n  \"pagination_key\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a2595eb4-bb15-4414-a404-3e9982acec42",
+              "name": "Successfully retrieved calls.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "list-calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"call_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"agent_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"version\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"call_status\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"in_voicemail\": [\n      \"<boolean>\",\n      \"<boolean>\"\n    ],\n    \"disconnection_reason\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"from_number\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"to_number\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"batch_call_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"call_type\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"direction\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"user_sentiment\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"call_successful\": [\n      \"<boolean>\",\n      \"<boolean>\"\n    ],\n    \"start_timestamp\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"end_timestamp\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"duration_ms\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"e2e_latency_p50\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"key_0\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"dynamic_variables\": {\n      \"key_0\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_1\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50,\n  \"pagination_key\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"access_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ2aWRlbyI6eyJyb29tSm9p\",\n    \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n    \"agent_version\": 1,\n    \"call_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n    \"call_status\": \"registered\",\n    \"call_type\": \"web_call\",\n    \"agent_name\": \"My Agent\",\n    \"metadata\": {},\n    \"retell_llm_dynamic_variables\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    \"collected_dynamic_variables\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    \"custom_sip_headers\": {\n      \"X-Custom-Header\": \"Custom Value\"\n    },\n    \"data_storage_setting\": \"everything\",\n    \"opt_in_signed_url\": true,\n    \"start_timestamp\": 1703302407333,\n    \"end_timestamp\": 1703302428855,\n    \"transfer_end_timestamp\": 1703302628855,\n    \"duration_ms\": 10000,\n    \"transcript\": \"Agent: hi how are you doing?\\nUser: Doing pretty well. How are you?\\nAgent: That's great to hear! I'm doing well too, thanks! What's up?\\nUser: I don't have anything in particular.\\nAgent: Got it, just checking in!\\nUser: Alright. See you.\\nAgent: have a nice day\\n\",\n    \"transcript_object\": [\n      {\n        \"role\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"content\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"words\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"role\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"content\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"words\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"transcript_with_tool_calls\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"scrubbed_transcript_with_tool_calls\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"recording_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording.wav\",\n    \"recording_multi_channel_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording_multichannel.wav\",\n    \"scrubbed_recording_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording.wav\",\n    \"scrubbed_recording_multi_channel_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording_multichannel.wav\",\n    \"public_log_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/public_log.txt\",\n    \"knowledge_base_retrieved_contents_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/kb_retrieved_contents.txt\",\n    \"latency\": {\n      \"e2e\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"asr\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"llm\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"llm_websocket_network_rtt\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"tts\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"knowledge_base\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"s2s\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"disconnection_reason\": \"agent_hangup\",\n    \"transfer_destination\": \"+12137771234\",\n    \"call_analysis\": {\n      \"call_summary\": \"The agent called the user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.\",\n      \"in_voicemail\": false,\n      \"user_sentiment\": \"Positive\",\n      \"call_successful\": true,\n      \"custom_analysis_data\": {}\n    },\n    \"call_cost\": {\n      \"product_costs\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"total_duration_seconds\": 60,\n      \"total_duration_unit_price\": 1,\n      \"combined_cost\": 70\n    },\n    \"llm_token_usage\": {\n      \"values\": [\n        5833.117745474541,\n        5103.849074781122\n      ],\n      \"average\": 5718.595565950244,\n      \"num_requests\": 9424.870760296877\n    }\n  },\n  {\n    \"access_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ2aWRlbyI6eyJyb29tSm9p\",\n    \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n    \"agent_version\": 1,\n    \"call_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n    \"call_status\": \"registered\",\n    \"call_type\": \"web_call\",\n    \"agent_name\": \"My Agent\",\n    \"metadata\": {},\n    \"retell_llm_dynamic_variables\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    \"collected_dynamic_variables\": {\n      \"key_0\": {}\n    },\n    \"custom_sip_headers\": {\n      \"X-Custom-Header\": \"Custom Value\"\n    },\n    \"data_storage_setting\": \"everything\",\n    \"opt_in_signed_url\": true,\n    \"start_timestamp\": 1703302407333,\n    \"end_timestamp\": 1703302428855,\n    \"transfer_end_timestamp\": 1703302628855,\n    \"duration_ms\": 10000,\n    \"transcript\": \"Agent: hi how are you doing?\\nUser: Doing pretty well. How are you?\\nAgent: That's great to hear! I'm doing well too, thanks! What's up?\\nUser: I don't have anything in particular.\\nAgent: Got it, just checking in!\\nUser: Alright. See you.\\nAgent: have a nice day\\n\",\n    \"transcript_object\": [\n      {\n        \"role\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"content\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"words\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"role\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"content\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"words\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"transcript_with_tool_calls\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"scrubbed_transcript_with_tool_calls\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"recording_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording.wav\",\n    \"recording_multi_channel_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording_multichannel.wav\",\n    \"scrubbed_recording_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording.wav\",\n    \"scrubbed_recording_multi_channel_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording_multichannel.wav\",\n    \"public_log_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/public_log.txt\",\n    \"knowledge_base_retrieved_contents_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/kb_retrieved_contents.txt\",\n    \"latency\": {\n      \"e2e\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"asr\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"llm\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"llm_websocket_network_rtt\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"tts\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"knowledge_base\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"s2s\": {\n        \"p50\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p90\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p95\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"p99\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"max\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"min\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"num\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"values\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"disconnection_reason\": \"agent_hangup\",\n    \"transfer_destination\": \"+12137771234\",\n    \"call_analysis\": {\n      \"call_summary\": \"The agent called the user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.\",\n      \"in_voicemail\": false,\n      \"user_sentiment\": \"Positive\",\n      \"call_successful\": true,\n      \"custom_analysis_data\": {}\n    },\n    \"call_cost\": {\n      \"product_costs\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"total_duration_seconds\": 60,\n      \"total_duration_unit_price\": 1,\n      \"combined_cost\": 70\n    },\n    \"llm_token_usage\": {\n      \"values\": [\n        8199.071745402945,\n        8987.656079842664\n      ],\n      \"average\": 6762.450287203817,\n      \"num_requests\": 3286.8257124721044\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1b1ee92-657e-4770-8d23-3a942e1b1b14",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "list-calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"call_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"agent_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"version\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"call_status\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"in_voicemail\": [\n      \"<boolean>\",\n      \"<boolean>\"\n    ],\n    \"disconnection_reason\": [\n      \"agent_hangup\",\n      \"agent_hangup\"\n    ],\n    \"from_number\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"to_number\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"batch_call_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"call_type\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"direction\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"user_sentiment\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"call_successful\": [\n      \"<boolean>\",\n      \"<boolean>\"\n    ],\n    \"start_timestamp\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"end_timestamp\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"duration_ms\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"e2e_latency_p50\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"key_0\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"dynamic_variables\": {\n      \"key_0\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_1\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_2\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_3\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50,\n  \"pagination_key\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b75bb85b-03ce-41a6-9a7c-930cdce1d938",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "list-calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"call_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"agent_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"version\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"call_status\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"in_voicemail\": [\n      \"<boolean>\",\n      \"<boolean>\"\n    ],\n    \"disconnection_reason\": [\n      \"agent_hangup\",\n      \"agent_hangup\"\n    ],\n    \"from_number\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"to_number\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"batch_call_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"call_type\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"direction\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"user_sentiment\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"call_successful\": [\n      \"<boolean>\",\n      \"<boolean>\"\n    ],\n    \"start_timestamp\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"end_timestamp\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"duration_ms\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"e2e_latency_p50\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"key_0\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"dynamic_variables\": {\n      \"key_0\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_1\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_2\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_3\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50,\n  \"pagination_key\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "559d2396-1622-4a27-b45f-7ee55f96e188",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "list-calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"call_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"agent_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"version\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"call_status\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"in_voicemail\": [\n      \"<boolean>\",\n      \"<boolean>\"\n    ],\n    \"disconnection_reason\": [\n      \"agent_hangup\",\n      \"agent_hangup\"\n    ],\n    \"from_number\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"to_number\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"batch_call_id\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"call_type\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"direction\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"user_sentiment\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"call_successful\": [\n      \"<boolean>\",\n      \"<boolean>\"\n    ],\n    \"start_timestamp\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"end_timestamp\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"duration_ms\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"e2e_latency_p50\": {\n      \"upper_threshold\": \"<integer>\",\n      \"lower_threshold\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"key_0\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"dynamic_variables\": {\n      \"key_0\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_1\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_2\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"key_3\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50,\n  \"pagination_key\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86c5f112-fc83-40a0-9987-052e59942b34",
+          "name": "list Calls V3",
+          "request": {
+            "name": "list Calls V3",
+            "description": {
+              "content": "List calls with unified cursor pagination response.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "list-calls"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filter_criteria\": {\n    \"agent\": [\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ],\n    \"call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"batch_call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_status\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"in_voicemail\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"disconnection_reason\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"from_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"to_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_type\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"direction\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"user_sentiment\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"data_storage_setting\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"call_successful\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"start_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"end_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"duration_ms\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"combined_cost\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"e2e_latency_p50\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"tool_calls\": [\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      }\n    ],\n    \"custom_analysis_data\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"custom_attributes\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"metadata\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"dynamic_variables\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b10b5c4f-6fff-49ac-968e-5bce7d4f362e",
+              "name": "Successfully retrieved calls.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "list-calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"agent\": [\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ],\n    \"call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"batch_call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_status\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"in_voicemail\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"disconnection_reason\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"from_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"to_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_type\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"direction\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"user_sentiment\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"data_storage_setting\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"call_successful\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"start_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"end_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"duration_ms\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"combined_cost\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"e2e_latency_p50\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"tool_calls\": [\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      }\n    ],\n    \"custom_analysis_data\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"custom_attributes\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"metadata\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"dynamic_variables\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pagination_key\": \"string\",\n  \"has_more\": false,\n  \"items\": [\n    {\n      \"call_type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"access_token\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"call_type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"access_token\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "595cedae-f9fc-41aa-95f1-923aa6594bf9",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "list-calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"agent\": [\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ],\n    \"call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"batch_call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_status\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"in_voicemail\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"disconnection_reason\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"from_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"to_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_type\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"direction\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"user_sentiment\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"data_storage_setting\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"call_successful\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"start_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"end_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"duration_ms\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"combined_cost\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"e2e_latency_p50\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"tool_calls\": [\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      }\n    ],\n    \"custom_analysis_data\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"custom_attributes\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"metadata\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"dynamic_variables\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9da78c58-fcd2-4f8e-b710-5512972aa162",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "list-calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"agent\": [\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ],\n    \"call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"batch_call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_status\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"in_voicemail\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"disconnection_reason\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"from_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"to_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_type\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"direction\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"user_sentiment\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"data_storage_setting\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"call_successful\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"start_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"end_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"duration_ms\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"combined_cost\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"e2e_latency_p50\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"tool_calls\": [\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      }\n    ],\n    \"custom_analysis_data\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"custom_attributes\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"metadata\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"dynamic_variables\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fafdd287-f280-407d-bfbe-6e617e02cf8d",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "list-calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"agent\": [\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ],\n    \"call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"batch_call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_status\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"in_voicemail\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"disconnection_reason\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"from_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"to_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_type\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"direction\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"user_sentiment\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"data_storage_setting\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"call_successful\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"start_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"end_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"duration_ms\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"combined_cost\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"e2e_latency_p50\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"tool_calls\": [\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      }\n    ],\n    \"custom_analysis_data\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"custom_attributes\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"metadata\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"dynamic_variables\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Account rate limited, please throttle your requests.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c5f0f309-eec0-4c63-8b63-834cb6267fab",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "list-calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_criteria\": {\n    \"agent\": [\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"agent_id\": \"<string>\",\n        \"version\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ],\n    \"call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"batch_call_id\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_status\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"in_voicemail\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"disconnection_reason\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"from_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"to_number\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    \"call_type\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"direction\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"user_sentiment\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"data_storage_setting\": {\n      \"value\": \"<Error: Could not resolve allOf schema\"\n    },\n    \"call_successful\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<boolean>\"\n    },\n    \"start_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"end_timestamp\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"duration_ms\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"combined_cost\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"e2e_latency_p50\": {\n      \"type\": \"<string>\",\n      \"op\": \"<string>\",\n      \"value\": \"<number>\"\n    },\n    \"tool_calls\": [\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"latency_ms\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<number>\"\n        },\n        \"success\": {\n          \"type\": \"<string>\",\n          \"op\": \"<string>\",\n          \"value\": \"<boolean>\"\n        }\n      }\n    ],\n    \"custom_analysis_data\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"custom_attributes\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"metadata\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"dynamic_variables\": [\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"key\": \"<string>\",\n        \"op\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"sort_order\": \"descending\",\n  \"limit\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "29ad39c6-16e7-4edc-bef9-a0d2ee52310a",
+    "name": "Retell SDK Add Community Voice List Calls API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

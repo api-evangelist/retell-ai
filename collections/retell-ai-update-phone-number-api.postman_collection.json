@@ -1,0 +1,398 @@
+{
+  "item": [
+    {
+      "id": "17285c62-e09f-4e8d-9ff6-855bc16b260f",
+      "name": "Update Phone Number",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d758314d-99a1-4174-8c15-3c7a473cc91c",
+          "name": "update Phone Number",
+          "request": {
+            "name": "update Phone Number",
+            "description": {
+              "content": "Update agent bound to a purchased phone number",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "update-phone-number",
+                ":phone_number"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "phone_number",
+                  "description": "(Required) E.164 format of the number (+country code, then number with no space, no special characters), used as the unique identifier for phone number APIs."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    },\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    },\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    }\n  ],\n  \"inbound_sms_agents\": [\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    },\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    }\n  ],\n  \"outbound_sms_agents\": [\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    },\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    }\n  ],\n  \"nickname\": \"<string>\",\n  \"inbound_webhook_url\": \"<string>\",\n  \"inbound_sms_webhook_url\": \"<string>\",\n  \"allowed_inbound_country_list\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"allowed_outbound_country_list\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"termination_uri\": \"<string>\",\n  \"auth_username\": \"<string>\",\n  \"auth_password\": \"<string>\",\n  \"transport\": \"<string>\",\n  \"fallback_number\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7ffbd9b5-5b91-4346-b805-93591ea6839b",
+              "name": "Successfully updated an phone number object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-phone-number",
+                    ":phone_number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "phone_number",
+                      "description": "(Required) E.164 format of the number (+country code, then number with no space, no special characters), used as the unique identifier for phone number APIs."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"agent_version\": 1,\n      \"weight\": 1\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"agent_version\": 1,\n      \"weight\": 1\n    }\n  ],\n  \"nickname\": \"Frontdesk Number\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"phone_number\": \"+14157774444\",\n  \"phone_number_type\": \"retell-twilio\",\n  \"last_modification_timestamp\": 1703413636133,\n  \"phone_number_pretty\": \"+1 (415) 777-4444\",\n  \"allowed_inbound_country_list\": [\n    \"US\",\n    \"CA\",\n    \"GB\"\n  ],\n  \"allowed_outbound_country_list\": [\n    \"US\",\n    \"CA\"\n  ],\n  \"area_code\": 415,\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"inbound_sms_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"outbound_sms_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"nickname\": \"Frontdesk Number\",\n  \"inbound_webhook_url\": \"https://example.com/inbound-webhook\",\n  \"inbound_sms_webhook_url\": \"https://example.com/inbound-sms-webhook\",\n  \"sip_outbound_trunk_config\": {\n    \"termination_uri\": \"someuri.pstn.twilio.com\",\n    \"auth_username\": \"username\",\n    \"transport\": \"TCP\"\n  },\n  \"fallback_number\": \"+14155551234\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12bff3ad-dccc-4d64-a410-bb2e099e6f10",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-phone-number",
+                    ":phone_number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "phone_number",
+                      "description": "(Required) E.164 format of the number (+country code, then number with no space, no special characters), used as the unique identifier for phone number APIs."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"agent_version\": 1,\n      \"weight\": 1\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"agent_version\": 1,\n      \"weight\": 1\n    }\n  ],\n  \"nickname\": \"Frontdesk Number\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4a1331de-7bbc-464a-b3f2-d8089a61ed14",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-phone-number",
+                    ":phone_number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "phone_number",
+                      "description": "(Required) E.164 format of the number (+country code, then number with no space, no special characters), used as the unique identifier for phone number APIs."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"agent_version\": 1,\n      \"weight\": 1\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"agent_version\": 1,\n      \"weight\": 1\n    }\n  ],\n  \"nickname\": \"Frontdesk Number\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b94ca60-dc57-46e7-8ae3-7f7ac331b054",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-phone-number",
+                    ":phone_number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "phone_number",
+                      "description": "(Required) E.164 format of the number (+country code, then number with no space, no special characters), used as the unique identifier for phone number APIs."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"agent_version\": 1,\n      \"weight\": 1\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"agent_version\": 1,\n      \"weight\": 1\n    }\n  ],\n  \"nickname\": \"Frontdesk Number\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Cannot find requested asset under given api key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c06c1a5-d092-49c2-96c3-faf865158258",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-phone-number",
+                    ":phone_number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "phone_number",
+                      "description": "(Required) E.164 format of the number (+country code, then number with no space, no special characters), used as the unique identifier for phone number APIs."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"agent_version\": 1,\n      \"weight\": 1\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"agent_version\": 1,\n      \"weight\": 1\n    }\n  ],\n  \"nickname\": \"Frontdesk Number\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "00b4147a-3905-4b43-894f-60b904f0c574",
+    "name": "Retell SDK Add Community Voice Update Phone Number API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "item": [
+    {
+      "id": "3ae9b58d-45d0-4a27-bafd-131a0ffe2609",
+      "name": "Import Phone Number",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8ce60263-bfc5-4f7e-a0e4-00e5dba7d222",
+          "name": "import Phone Number",
+          "request": {
+            "name": "import Phone Number",
+            "description": {
+              "content": "Import a phone number from custom telephony & Bind agents",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "import-phone-number"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone_number\": \"<string>\",\n  \"termination_uri\": \"<string>\",\n  \"ignore_e164_validation\": \"<boolean>\",\n  \"sip_trunk_auth_username\": \"<string>\",\n  \"sip_trunk_auth_password\": \"<string>\",\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    },\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    },\n    {\n      \"agent_id\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"agent_version\": \"<integer>\"\n    }\n  ],\n  \"nickname\": \"<string>\",\n  \"inbound_webhook_url\": \"<string>\",\n  \"allowed_inbound_country_list\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"allowed_outbound_country_list\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"transport\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e9968fe5-d6ba-4c7f-8c8e-b82f87ace544",
+              "name": "Successfully imported a number.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-phone-number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phone_number\": \"+14157774444\",\n  \"termination_uri\": \"someuri.pstn.twilio.com\",\n  \"ignore_e164_validation\": true,\n  \"sip_trunk_auth_username\": \"username\",\n  \"sip_trunk_auth_password\": \"123456\",\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"nickname\": \"Frontdesk Number\",\n  \"inbound_webhook_url\": \"https://example.com/inbound-webhook\",\n  \"allowed_inbound_country_list\": [\n    \"US\",\n    \"CA\",\n    \"GB\"\n  ],\n  \"allowed_outbound_country_list\": [\n    \"US\",\n    \"CA\"\n  ],\n  \"transport\": \"TCP\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"phone_number\": \"+14157774444\",\n  \"phone_number_type\": \"retell-twilio\",\n  \"last_modification_timestamp\": 1703413636133,\n  \"phone_number_pretty\": \"+1 (415) 777-4444\",\n  \"allowed_inbound_country_list\": [\n    \"US\",\n    \"CA\",\n    \"GB\"\n  ],\n  \"allowed_outbound_country_list\": [\n    \"US\",\n    \"CA\"\n  ],\n  \"area_code\": 415,\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"inbound_sms_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"outbound_sms_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"nickname\": \"Frontdesk Number\",\n  \"inbound_webhook_url\": \"https://example.com/inbound-webhook\",\n  \"inbound_sms_webhook_url\": \"https://example.com/inbound-sms-webhook\",\n  \"sip_outbound_trunk_config\": {\n    \"termination_uri\": \"someuri.pstn.twilio.com\",\n    \"auth_username\": \"username\",\n    \"transport\": \"TCP\"\n  },\n  \"fallback_number\": \"+14155551234\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca85feb1-edfe-4c25-a8ee-69ea83f8bb61",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-phone-number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phone_number\": \"+14157774444\",\n  \"termination_uri\": \"someuri.pstn.twilio.com\",\n  \"ignore_e164_validation\": true,\n  \"sip_trunk_auth_username\": \"username\",\n  \"sip_trunk_auth_password\": \"123456\",\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"nickname\": \"Frontdesk Number\",\n  \"inbound_webhook_url\": \"https://example.com/inbound-webhook\",\n  \"allowed_inbound_country_list\": [\n    \"US\",\n    \"CA\",\n    \"GB\"\n  ],\n  \"allowed_outbound_country_list\": [\n    \"US\",\n    \"CA\"\n  ],\n  \"transport\": \"TCP\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ffc35ce-30f1-4b44-acc1-38dc49b820e7",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-phone-number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phone_number\": \"+14157774444\",\n  \"termination_uri\": \"someuri.pstn.twilio.com\",\n  \"ignore_e164_validation\": true,\n  \"sip_trunk_auth_username\": \"username\",\n  \"sip_trunk_auth_password\": \"123456\",\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"nickname\": \"Frontdesk Number\",\n  \"inbound_webhook_url\": \"https://example.com/inbound-webhook\",\n  \"allowed_inbound_country_list\": [\n    \"US\",\n    \"CA\",\n    \"GB\"\n  ],\n  \"allowed_outbound_country_list\": [\n    \"US\",\n    \"CA\"\n  ],\n  \"transport\": \"TCP\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9d695410-baf3-4b4f-8bb4-f21b42a32793",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "import-phone-number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phone_number\": \"+14157774444\",\n  \"termination_uri\": \"someuri.pstn.twilio.com\",\n  \"ignore_e164_validation\": true,\n  \"sip_trunk_auth_username\": \"username\",\n  \"sip_trunk_auth_password\": \"123456\",\n  \"inbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"outbound_agents\": [\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    },\n    {\n      \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n      \"weight\": 0.5,\n      \"agent_version\": 1\n    }\n  ],\n  \"nickname\": \"Frontdesk Number\",\n  \"inbound_webhook_url\": \"https://example.com/inbound-webhook\",\n  \"allowed_inbound_country_list\": [\n    \"US\",\n    \"CA\",\n    \"GB\"\n  ],\n  \"allowed_outbound_country_list\": [\n    \"US\",\n    \"CA\"\n  ],\n  \"transport\": \"TCP\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5a4abbfe-dfc0-49be-b3f5-a7cd5e350377",
+    "name": "Retell SDK Add Community Voice Import Phone Number API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Get Knowledge Base API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Knowledge Base",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getKnowledgeBase",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/get-knowledge-base/:knowledge_base_id",
+            "params": [
+              {
+                "name": "knowledge_base_id",
+                "value": "",
+                "type": "path",
+                "description": "The knowledge base id to retrieve."
+              }
+            ]
+          },
+          "docs": "Retrieve details of a specific knowledge base"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

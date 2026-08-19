@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice End Chat API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "End Chat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "endChat",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.retellai.com/end-chat/:chat_id",
+            "params": [
+              {
+                "name": "chat_id",
+                "value": "",
+                "type": "path",
+                "description": "Unique id of the chat to be ended"
+              }
+            ]
+          },
+          "docs": "End an ongoing chat"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

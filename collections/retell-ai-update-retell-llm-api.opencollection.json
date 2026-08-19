@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Update Retell Llm API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Update Retell Llm",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "updateRetellLLM",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.retellai.com/update-retell-llm/:llm_id",
+            "params": [
+              {
+                "name": "llm_id",
+                "value": "",
+                "type": "path",
+                "description": "Unique id of the Retell LLM Response Engine to be updated."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Optional version of the API to use for this request. Default to latest version."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Retell LLM Response Engine"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Delete Agent API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Delete Agent",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "deleteAgent",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.retellai.com/delete-agent/:agent_id",
+            "params": [
+              {
+                "name": "agent_id",
+                "value": "",
+                "type": "path",
+                "description": "Unique id of the agent to be deleted. Deletes all versions of the agent."
+              }
+            ]
+          },
+          "docs": "Delete an existing agent"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

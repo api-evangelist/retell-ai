@@ -1,0 +1,404 @@
+{
+  "item": [
+    {
+      "id": "a36aec15-bcdc-4427-ae8a-cf191b72eeca",
+      "name": "Update Call",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7f148848-5f0e-4ac2-8a28-cc760caa7769",
+          "name": "update Call Metadata",
+          "request": {
+            "name": "update Call Metadata",
+            "description": {
+              "content": "Update metadata and sensitive data storage settings for an existing call.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "update-call",
+                ":call_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "call_id",
+                  "description": "(Required) The call id of the call to be updated."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"metadata\": \"<object>\",\n  \"data_storage_setting\": \"<string>\",\n  \"override_dynamic_variables\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"custom_attributes\": {\n    \"key_0\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "23f99a50-84e5-4693-9cd2-3edd66b8565f",
+              "name": "Call metadata updated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "update-call",
+                    ":call_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "call_id",
+                      "description": "(Required) The call id of the call to be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\n    \"customer_id\": \"cust_123\",\n    \"notes\": \"Follow-up required\"\n  },\n  \"data_storage_setting\": \"everything_except_pii\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ2aWRlbyI6eyJyb29tSm9p\",\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"agent_version\": 1,\n  \"call_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n  \"call_status\": \"registered\",\n  \"call_type\": \"web_call\",\n  \"agent_name\": \"My Agent\",\n  \"metadata\": {},\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {}\n  },\n  \"collected_dynamic_variables\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"custom_sip_headers\": {\n    \"X-Custom-Header\": \"Custom Value\"\n  },\n  \"data_storage_setting\": \"everything\",\n  \"opt_in_signed_url\": true,\n  \"start_timestamp\": 1703302407333,\n  \"end_timestamp\": 1703302428855,\n  \"transfer_end_timestamp\": 1703302628855,\n  \"duration_ms\": 10000,\n  \"transcript\": \"Agent: hi how are you doing?\\nUser: Doing pretty well. How are you?\\nAgent: That's great to hear! I'm doing well too, thanks! What's up?\\nUser: I don't have anything in particular.\\nAgent: Got it, just checking in!\\nUser: Alright. See you.\\nAgent: have a nice day\\n\",\n  \"transcript_object\": [\n    {\n      \"role\": \"agent\",\n      \"content\": \"hi how are you doing?\",\n      \"words\": [\n        {\n          \"word\": \"hi\",\n          \"start\": 0.7,\n          \"end\": 1.3\n        }\n      ]\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"hi how are you doing?\",\n      \"words\": [\n        {\n          \"word\": \"hi\",\n          \"start\": 0.7,\n          \"end\": 1.3\n        }\n      ]\n    }\n  ],\n  \"transcript_with_tool_calls\": [\n    {\n      \"role\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"content\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"words\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"role\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"content\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"words\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"scrubbed_transcript_with_tool_calls\": [\n    {\n      \"role\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"content\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"words\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"role\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"content\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"words\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"recording_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording.wav\",\n  \"recording_multi_channel_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording_multichannel.wav\",\n  \"scrubbed_recording_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording.wav\",\n  \"scrubbed_recording_multi_channel_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording_multichannel.wav\",\n  \"public_log_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/public_log.txt\",\n  \"knowledge_base_retrieved_contents_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/kb_retrieved_contents.txt\",\n  \"latency\": {\n    \"e2e\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        2744.1338520401405,\n        1238.7928324919594\n      ]\n    },\n    \"asr\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        6261.940886653188,\n        4281.385832192948\n      ]\n    },\n    \"llm\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        8210.927186469828,\n        5873.749314614479\n      ]\n    },\n    \"llm_websocket_network_rtt\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        105.59592043324018,\n        1339.9757990509554\n      ]\n    },\n    \"tts\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        1065.1784022019406,\n        1742.483622526839\n      ]\n    },\n    \"knowledge_base\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        8133.221503140705,\n        9383.551665059924\n      ]\n    },\n    \"s2s\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        6145.011580718188,\n        8483.882920659586\n      ]\n    }\n  },\n  \"disconnection_reason\": \"agent_hangup\",\n  \"transfer_destination\": \"+12137771234\",\n  \"call_analysis\": {\n    \"call_summary\": \"The agent called the user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.\",\n    \"in_voicemail\": false,\n    \"user_sentiment\": \"Positive\",\n    \"call_successful\": true,\n    \"custom_analysis_data\": {}\n  },\n  \"call_cost\": {\n    \"product_costs\": [\n      {\n        \"product\": \"elevenlabs_tts\",\n        \"cost\": 60,\n        \"unit_price\": 1,\n        \"is_transfer_leg_cost\": true\n      },\n      {\n        \"product\": \"elevenlabs_tts\",\n        \"cost\": 60,\n        \"unit_price\": 1,\n        \"is_transfer_leg_cost\": false\n      }\n    ],\n    \"total_duration_seconds\": 60,\n    \"total_duration_unit_price\": 1,\n    \"combined_cost\": 70\n  },\n  \"llm_token_usage\": {\n    \"values\": [\n      7838.471864621185,\n      7765.663805044292\n    ],\n    \"average\": 2453.8428208819387,\n    \"num_requests\": 4634.7827928220295\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f72e7edd-4233-4d81-88d0-3478746980a3",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "update-call",
+                    ":call_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "call_id",
+                      "description": "(Required) The call id of the call to be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\n    \"customer_id\": \"cust_123\",\n    \"notes\": \"Follow-up required\"\n  },\n  \"data_storage_setting\": \"everything_except_pii\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "91101a27-3c64-4b45-af0c-4563b0f7611d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "update-call",
+                    ":call_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "call_id",
+                      "description": "(Required) The call id of the call to be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\n    \"customer_id\": \"cust_123\",\n    \"notes\": \"Follow-up required\"\n  },\n  \"data_storage_setting\": \"everything_except_pii\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "35cf6de4-8048-4416-beaa-d79147df02bb",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "update-call",
+                    ":call_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "call_id",
+                      "description": "(Required) The call id of the call to be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\n    \"customer_id\": \"cust_123\",\n    \"notes\": \"Follow-up required\"\n  },\n  \"data_storage_setting\": \"everything_except_pii\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Cannot find requested asset under given api key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea869671-b8a1-4c96-9252-0a79b80b3d1f",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "update-call",
+                    ":call_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "call_id",
+                      "description": "(Required) The call id of the call to be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\n    \"customer_id\": \"cust_123\",\n    \"notes\": \"Follow-up required\"\n  },\n  \"data_storage_setting\": \"everything_except_pii\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1afd2eb7-135c-4acc-9820-a243552fcd0d",
+    "name": "Retell SDK Add Community Voice Update Call API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

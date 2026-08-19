@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice List Conversation Flow Components API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List Conversation Flow Components",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "listConversationFlowComponentsV2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/v2/list-conversation-flow-components",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return."
+              },
+              {
+                "name": "sort_order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order for results."
+              },
+              {
+                "name": "pagination_key",
+                "value": "",
+                "type": "query",
+                "description": "Pagination key for fetching the next page."
+              }
+            ]
+          },
+          "docs": "List shared conversation flow components with pagination"
+        },
+        {
+          "info": {
+            "name": "listConversationFlowComponents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/list-conversation-flow-components"
+          },
+          "docs": "List shared conversation flow components"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

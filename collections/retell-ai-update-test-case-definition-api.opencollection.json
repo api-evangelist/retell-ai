@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Update Test Case Definition API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Update Test Case Definition",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "updateTestCaseDefinition",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.retellai.com/update-test-case-definition/:test_case_definition_id",
+            "params": [
+              {
+                "name": "test_case_definition_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the test case definition to update"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a test case definition"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

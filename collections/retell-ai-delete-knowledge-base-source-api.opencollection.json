@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Delete Knowledge Base Source API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Delete Knowledge Base Source",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "deleteKnowledgeBaseSource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.retellai.com/delete-knowledge-base-source/:knowledge_base_id/source/:source_id",
+            "params": [
+              {
+                "name": "knowledge_base_id",
+                "value": "",
+                "type": "path",
+                "description": "The knowledge base id to delete source from."
+              },
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path",
+                "description": "The source id to delete."
+              }
+            ]
+          },
+          "docs": "Delete an existing source from knowledge base"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

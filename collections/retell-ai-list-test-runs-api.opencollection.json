@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice List Test Runs API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List Test Runs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "listTestRuns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/list-test-runs/:test_case_batch_job_id",
+            "params": [
+              {
+                "name": "test_case_batch_job_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the batch test job"
+              }
+            ]
+          },
+          "docs": "List all test case jobs (test runs) for a batch test job"
+        },
+        {
+          "info": {
+            "name": "listTestRunsV2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/v2/list-test-runs/:test_case_batch_job_id",
+            "params": [
+              {
+                "name": "test_case_batch_job_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the batch test job"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return."
+              },
+              {
+                "name": "pagination_key",
+                "value": "",
+                "type": "query",
+                "description": "Pagination key for fetching the next page."
+              }
+            ]
+          },
+          "docs": "List test case jobs (test runs) for a batch test job with pagination"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

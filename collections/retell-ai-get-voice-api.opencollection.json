@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Get Voice API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Voice",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getVoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/get-voice/:voice_id",
+            "params": [
+              {
+                "name": "voice_id",
+                "value": "",
+                "type": "path",
+                "description": "Unique id for the voice."
+              }
+            ]
+          },
+          "docs": "Retrieve details of a specific voice"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

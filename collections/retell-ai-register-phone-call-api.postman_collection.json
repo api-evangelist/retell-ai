@@ -1,0 +1,454 @@
+{
+  "item": [
+    {
+      "id": "7eb2e5ec-be71-40c5-8c6e-fd5c61d02fb5",
+      "name": "Register Phone Call",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "940c3f09-3269-4d08-b0bf-dbb80df60766",
+          "name": "register Phone Call",
+          "request": {
+            "name": "register Phone Call",
+            "description": {
+              "content": "Register a new phone call for custom telephony",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "register-phone-call"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agent_id\": \"<string>\",\n  \"agent_version\": \"<integer>\",\n  \"agent_override\": {\n    \"agent\": {\n      \"response_engine\": {\n        \"type\": \"<string>\",\n        \"llm_id\": \"<string>\",\n        \"version\": \"<number>\"\n      },\n      \"agent_name\": \"<string>\",\n      \"version_description\": \"<string>\",\n      \"voice_id\": \"<string>\",\n      \"voice_model\": \"<string>\",\n      \"fallback_voice_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"voice_temperature\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"enable_dynamic_voice_speed\": \"<boolean>\",\n      \"enable_dynamic_responsiveness\": \"<boolean>\",\n      \"volume\": \"<number>\",\n      \"voice_emotion\": \"<string>\",\n      \"responsiveness\": \"<number>\",\n      \"interruption_sensitivity\": \"<number>\",\n      \"enable_backchannel\": \"<boolean>\",\n      \"backchannel_frequency\": \"<number>\",\n      \"backchannel_words\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"reminder_trigger_ms\": \"<number>\",\n      \"reminder_max_count\": \"<integer>\",\n      \"ambient_sound\": \"<string>\",\n      \"ambient_sound_volume\": \"<number>\",\n      \"language\": \"<string>\",\n      \"webhook_url\": \"<string>\",\n      \"webhook_events\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"webhook_timeout_ms\": \"<integer>\",\n      \"boosted_keywords\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"data_storage_setting\": \"<string>\",\n      \"data_storage_retention_days\": \"<integer>\",\n      \"opt_in_signed_url\": \"<boolean>\",\n      \"signed_url_expiration_ms\": \"<integer>\",\n      \"pronunciation_dictionary\": [\n        {\n          \"word\": \"<string>\",\n          \"alphabet\": \"<string>\",\n          \"phoneme\": \"<string>\"\n        },\n        {\n          \"word\": \"<string>\",\n          \"alphabet\": \"<string>\",\n          \"phoneme\": \"<string>\"\n        }\n      ],\n      \"end_call_after_silence_ms\": \"<integer>\",\n      \"max_call_duration_ms\": \"<integer>\",\n      \"voicemail_message\": \"<string>\",\n      \"voicemail_detection_timeout_ms\": \"<integer>\",\n      \"voicemail_option\": {\n        \"action\": {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"text\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"detection_prompt\": \"<string>\"\n      },\n      \"ivr_option\": {\n        \"action\": {\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"detection_prompt\": \"<string>\"\n      },\n      \"call_screening_option\": {\n        \"agent_identity\": \"<string>\",\n        \"call_purpose\": \"<string>\"\n      },\n      \"post_call_analysis_data\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"post_call_analysis_model\": \"<string>\",\n      \"analysis_successful_prompt\": \"<string>\",\n      \"analysis_summary_prompt\": \"<string>\",\n      \"analysis_user_sentiment_prompt\": \"<string>\",\n      \"begin_message_delay_ms\": \"<integer>\",\n      \"ring_duration_ms\": \"<integer>\",\n      \"stt_mode\": \"<string>\",\n      \"custom_stt_config\": {\n        \"provider\": \"<string>\",\n        \"endpointing_ms\": \"<integer>\"\n      },\n      \"vocab_specialization\": \"<string>\",\n      \"allow_user_dtmf\": \"<boolean>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"user_dtmf_options\": {\n        \"digit_limit\": \"<number>\",\n        \"termination_key\": \"<string>\",\n        \"timeout_ms\": \"<integer>\"\n      },\n      \"denoising_mode\": \"<string>\",\n      \"pii_config\": {\n        \"mode\": \"post_call\",\n        \"categories\": []\n      },\n      \"guardrail_config\": {\n        \"output_topics\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"input_topics\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"handbook_config\": {\n        \"default_personality\": \"<boolean>\",\n        \"natural_filler_words\": \"<boolean>\",\n        \"high_empathy\": \"<boolean>\",\n        \"echo_verification\": \"<boolean>\",\n        \"nato_phonetic_alphabet\": \"<boolean>\",\n        \"speech_normalization\": \"<boolean>\",\n        \"smart_matching\": \"<boolean>\",\n        \"ai_disclosure\": \"<boolean>\",\n        \"scope_boundaries\": \"<boolean>\"\n      },\n      \"timezone\": \"<string>\",\n      \"is_public\": \"<boolean>\"\n    },\n    \"retell_llm\": {\n      \"model\": \"<string>\",\n      \"s2s_model\": \"<string>\",\n      \"model_temperature\": \"<number>\",\n      \"model_high_priority\": \"<boolean>\",\n      \"tool_call_strict_mode\": \"<boolean>\",\n      \"knowledge_base_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"kb_config\": {\n        \"top_k\": \"<integer>\",\n        \"filter_score\": \"<number>\"\n      },\n      \"start_speaker\": \"<string>\",\n      \"begin_after_user_silence_ms\": \"<integer>\",\n      \"begin_message\": \"<string>\"\n    },\n    \"conversation_flow\": {\n      \"model_choice\": {\n        \"type\": \"<string>\",\n        \"model\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"high_priority\": \"<boolean>\"\n      },\n      \"model_temperature\": \"<number>\",\n      \"tool_call_strict_mode\": \"<boolean>\",\n      \"knowledge_base_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"kb_config\": {\n        \"top_k\": \"<integer>\",\n        \"filter_score\": \"<number>\"\n      },\n      \"start_speaker\": \"<string>\",\n      \"begin_after_user_silence_ms\": \"<integer>\"\n    }\n  },\n  \"from_number\": \"<string>\",\n  \"to_number\": \"<string>\",\n  \"direction\": \"<string>\",\n  \"metadata\": \"<object>\",\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d8189587-3254-4917-8223-4eab6842189f",
+              "name": "Successfully registered a phone call.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "register-phone-call"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"agent_version\": 1,\n  \"agent_override\": {\n    \"agent\": {\n      \"response_engine\": {\n        \"type\": \"<string>\",\n        \"llm_id\": \"<string>\",\n        \"version\": 0\n      },\n      \"agent_name\": \"Jarvis\",\n      \"version_description\": \"Customer support agent for handling product inquiries\",\n      \"voice_id\": \"retell-Cimo\",\n      \"voice_model\": \"<string>\",\n      \"fallback_voice_ids\": [\n        \"cartesia-Cimo\",\n        \"minimax-Cimo\"\n      ],\n      \"voice_temperature\": 1,\n      \"voice_speed\": 1,\n      \"enable_dynamic_voice_speed\": true,\n      \"enable_dynamic_responsiveness\": true,\n      \"volume\": 1,\n      \"voice_emotion\": \"calm\",\n      \"responsiveness\": 1,\n      \"interruption_sensitivity\": 1,\n      \"enable_backchannel\": true,\n      \"backchannel_frequency\": 0.9,\n      \"backchannel_words\": [\n        \"yeah\",\n        \"uh-huh\"\n      ],\n      \"reminder_trigger_ms\": 10000,\n      \"reminder_max_count\": 2,\n      \"ambient_sound\": \"<string>\",\n      \"ambient_sound_volume\": 1,\n      \"language\": \"en-US\",\n      \"webhook_url\": \"https://webhook-url-here\",\n      \"webhook_events\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"webhook_timeout_ms\": 10000,\n      \"boosted_keywords\": [\n        \"retell\",\n        \"kroger\"\n      ],\n      \"data_storage_setting\": \"everything\",\n      \"data_storage_retention_days\": 30,\n      \"opt_in_signed_url\": true,\n      \"signed_url_expiration_ms\": 86400000,\n      \"pronunciation_dictionary\": [\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        },\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        }\n      ],\n      \"end_call_after_silence_ms\": 600000,\n      \"max_call_duration_ms\": 3600000,\n      \"voicemail_message\": \"Hi, please give us a callback.\",\n      \"voicemail_detection_timeout_ms\": 30000,\n      \"voicemail_option\": {\n        \"action\": {\n          \"type\": \"static_text\",\n          \"text\": \"Please give us a callback tomorrow at 10am.\"\n        }\n      },\n      \"ivr_option\": {\n        \"action\": {\n          \"type\": \"hangup\"\n        }\n      },\n      \"call_screening_option\": {\n        \"agent_identity\": \"Acme Health scheduling team\",\n        \"call_purpose\": \"confirming your appointment for tomorrow\"\n      },\n      \"post_call_analysis_data\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"post_call_analysis_model\": \"gpt-4.1\",\n      \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n      \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n      \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n      \"begin_message_delay_ms\": 1000,\n      \"ring_duration_ms\": 30000,\n      \"stt_mode\": \"fast\",\n      \"custom_stt_config\": {\n        \"provider\": \"<string>\",\n        \"endpointing_ms\": \"<integer>\"\n      },\n      \"vocab_specialization\": \"general\",\n      \"allow_user_dtmf\": true,\n      \"allow_dtmf_interruption\": false,\n      \"user_dtmf_options\": {\n        \"digit_limit\": \"<number>\",\n        \"termination_key\": \"#\",\n        \"timeout_ms\": \"<integer>\"\n      },\n      \"denoising_mode\": \"noise-cancellation\",\n      \"pii_config\": {\n        \"mode\": \"post_call\",\n        \"categories\": []\n      },\n      \"guardrail_config\": {\n        \"output_topics\": [\n          \"<string>\"\n        ],\n        \"input_topics\": [\n          \"<string>\"\n        ]\n      },\n      \"handbook_config\": {\n        \"default_personality\": \"<boolean>\",\n        \"natural_filler_words\": \"<boolean>\",\n        \"high_empathy\": \"<boolean>\",\n        \"echo_verification\": \"<boolean>\",\n        \"nato_phonetic_alphabet\": \"<boolean>\",\n        \"speech_normalization\": \"<boolean>\",\n        \"smart_matching\": \"<boolean>\",\n        \"ai_disclosure\": \"<boolean>\",\n        \"scope_boundaries\": \"<boolean>\"\n      },\n      \"timezone\": \"America/New_York\",\n      \"is_public\": false\n    },\n    \"retell_llm\": {\n      \"model\": \"gpt-4.1\",\n      \"s2s_model\": \"gpt-realtime-1.5\",\n      \"model_temperature\": 0,\n      \"model_high_priority\": true,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"<string>\",\n      \"begin_after_user_silence_ms\": 2000,\n      \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\"\n    },\n    \"conversation_flow\": {\n      \"model_choice\": {\n        \"type\": \"<string>\",\n        \"model\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"high_priority\": \"<boolean>\"\n      },\n      \"model_temperature\": 0.7,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"agent\",\n      \"begin_after_user_silence_ms\": 2000\n    }\n  },\n  \"from_number\": \"+14157774444\",\n  \"to_number\": \"+12137774445\",\n  \"direction\": \"inbound\",\n  \"metadata\": \"<object>\",\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"agent_version\": 1,\n  \"call_id\": \"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6\",\n  \"call_status\": \"registered\",\n  \"call_type\": \"phone_call\",\n  \"direction\": \"inbound\",\n  \"from_number\": \"+12137771234\",\n  \"to_number\": \"+12137771235\",\n  \"telephony_identifier\": {\n    \"twilio_call_sid\": \"CA5d0d0d8047bf685c3f0ff980fe62c123\"\n  },\n  \"agent_name\": \"My Agent\",\n  \"metadata\": {},\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {}\n  },\n  \"collected_dynamic_variables\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {}\n  },\n  \"custom_sip_headers\": {\n    \"X-Custom-Header\": \"Custom Value\"\n  },\n  \"data_storage_setting\": \"everything\",\n  \"opt_in_signed_url\": true,\n  \"start_timestamp\": 1703302407333,\n  \"end_timestamp\": 1703302428855,\n  \"transfer_end_timestamp\": 1703302628855,\n  \"duration_ms\": 10000,\n  \"transcript\": \"Agent: hi how are you doing?\\nUser: Doing pretty well. How are you?\\nAgent: That's great to hear! I'm doing well too, thanks! What's up?\\nUser: I don't have anything in particular.\\nAgent: Got it, just checking in!\\nUser: Alright. See you.\\nAgent: have a nice day\\n\",\n  \"transcript_object\": [\n    {\n      \"role\": \"agent\",\n      \"content\": \"hi how are you doing?\",\n      \"words\": [\n        {\n          \"word\": \"hi\",\n          \"start\": 0.7,\n          \"end\": 1.3\n        }\n      ]\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"hi how are you doing?\",\n      \"words\": [\n        {\n          \"word\": \"hi\",\n          \"start\": 0.7,\n          \"end\": 1.3\n        }\n      ]\n    }\n  ],\n  \"transcript_with_tool_calls\": [\n    {\n      \"role\": \"agent\",\n      \"content\": \"hi how are you doing?\",\n      \"words\": [\n        {\n          \"word\": \"hi\",\n          \"start\": 0.7,\n          \"end\": 1.3\n        }\n      ]\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"hi how are you doing?\",\n      \"words\": [\n        {\n          \"word\": \"hi\",\n          \"start\": 0.7,\n          \"end\": 1.3\n        }\n      ]\n    }\n  ],\n  \"scrubbed_transcript_with_tool_calls\": [\n    {\n      \"role\": \"agent\",\n      \"content\": \"hi how are you doing?\",\n      \"words\": [\n        {\n          \"word\": \"hi\",\n          \"start\": 0.7,\n          \"end\": 1.3\n        }\n      ]\n    },\n    {\n      \"role\": \"agent\",\n      \"content\": \"hi how are you doing?\",\n      \"words\": [\n        {\n          \"word\": \"hi\",\n          \"start\": 0.7,\n          \"end\": 1.3\n        }\n      ]\n    }\n  ],\n  \"recording_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording.wav\",\n  \"recording_multi_channel_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording_multichannel.wav\",\n  \"scrubbed_recording_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording.wav\",\n  \"scrubbed_recording_multi_channel_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/recording_multichannel.wav\",\n  \"public_log_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/public_log.txt\",\n  \"knowledge_base_retrieved_contents_url\": \"https://retellai.s3.us-west-2.amazonaws.com/Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6/kb_retrieved_contents.txt\",\n  \"latency\": {\n    \"e2e\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        1678.4115048313074,\n        6337.174143351062\n      ]\n    },\n    \"asr\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        5157.371336518021,\n        2663.0805762596356\n      ]\n    },\n    \"llm\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        8629.310427466298,\n        1904.777396727032\n      ]\n    },\n    \"llm_websocket_network_rtt\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        9161.674654467222,\n        9125.336161109684\n      ]\n    },\n    \"tts\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        8542.394509537611,\n        5644.19731724072\n      ]\n    },\n    \"knowledge_base\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        1518.4867191963792,\n        6178.825573388453\n      ]\n    },\n    \"s2s\": {\n      \"p50\": 800,\n      \"p90\": 1200,\n      \"p95\": 1500,\n      \"p99\": 2500,\n      \"max\": 2700,\n      \"min\": 500,\n      \"num\": 10,\n      \"values\": [\n        7149.505168134367,\n        520.0223743658994\n      ]\n    }\n  },\n  \"disconnection_reason\": \"agent_hangup\",\n  \"transfer_destination\": \"+12137771234\",\n  \"call_analysis\": {\n    \"call_summary\": \"The agent called the user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.\",\n    \"in_voicemail\": false,\n    \"user_sentiment\": \"Positive\",\n    \"call_successful\": true,\n    \"custom_analysis_data\": {}\n  },\n  \"call_cost\": {\n    \"product_costs\": [\n      {\n        \"product\": \"elevenlabs_tts\",\n        \"cost\": 60,\n        \"unit_price\": 1,\n        \"is_transfer_leg_cost\": false\n      },\n      {\n        \"product\": \"elevenlabs_tts\",\n        \"cost\": 60,\n        \"unit_price\": 1,\n        \"is_transfer_leg_cost\": false\n      }\n    ],\n    \"total_duration_seconds\": 60,\n    \"total_duration_unit_price\": 1,\n    \"combined_cost\": 70\n  },\n  \"llm_token_usage\": {\n    \"values\": [\n      7332.491326952638,\n      6739.780570929971\n    ],\n    \"average\": 3196.123938906693,\n    \"num_requests\": 3670.3179860695477\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "277260b2-5495-43bd-b06e-39c787564ad6",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "register-phone-call"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"agent_version\": 1,\n  \"agent_override\": {\n    \"agent\": {\n      \"response_engine\": {\n        \"type\": \"<string>\",\n        \"llm_id\": \"<string>\",\n        \"version\": 0\n      },\n      \"agent_name\": \"Jarvis\",\n      \"version_description\": \"Customer support agent for handling product inquiries\",\n      \"voice_id\": \"retell-Cimo\",\n      \"voice_model\": \"<string>\",\n      \"fallback_voice_ids\": [\n        \"cartesia-Cimo\",\n        \"minimax-Cimo\"\n      ],\n      \"voice_temperature\": 1,\n      \"voice_speed\": 1,\n      \"enable_dynamic_voice_speed\": true,\n      \"enable_dynamic_responsiveness\": true,\n      \"volume\": 1,\n      \"voice_emotion\": \"calm\",\n      \"responsiveness\": 1,\n      \"interruption_sensitivity\": 1,\n      \"enable_backchannel\": true,\n      \"backchannel_frequency\": 0.9,\n      \"backchannel_words\": [\n        \"yeah\",\n        \"uh-huh\"\n      ],\n      \"reminder_trigger_ms\": 10000,\n      \"reminder_max_count\": 2,\n      \"ambient_sound\": \"<string>\",\n      \"ambient_sound_volume\": 1,\n      \"language\": \"en-US\",\n      \"webhook_url\": \"https://webhook-url-here\",\n      \"webhook_events\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"webhook_timeout_ms\": 10000,\n      \"boosted_keywords\": [\n        \"retell\",\n        \"kroger\"\n      ],\n      \"data_storage_setting\": \"everything\",\n      \"data_storage_retention_days\": 30,\n      \"opt_in_signed_url\": true,\n      \"signed_url_expiration_ms\": 86400000,\n      \"pronunciation_dictionary\": [\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        },\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        }\n      ],\n      \"end_call_after_silence_ms\": 600000,\n      \"max_call_duration_ms\": 3600000,\n      \"voicemail_message\": \"Hi, please give us a callback.\",\n      \"voicemail_detection_timeout_ms\": 30000,\n      \"voicemail_option\": {\n        \"action\": {\n          \"type\": \"static_text\",\n          \"text\": \"Please give us a callback tomorrow at 10am.\"\n        }\n      },\n      \"ivr_option\": {\n        \"action\": {\n          \"type\": \"hangup\"\n        }\n      },\n      \"call_screening_option\": {\n        \"agent_identity\": \"Acme Health scheduling team\",\n        \"call_purpose\": \"confirming your appointment for tomorrow\"\n      },\n      \"post_call_analysis_data\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"post_call_analysis_model\": \"gpt-4.1\",\n      \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n      \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n      \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n      \"begin_message_delay_ms\": 1000,\n      \"ring_duration_ms\": 30000,\n      \"stt_mode\": \"fast\",\n      \"custom_stt_config\": {\n        \"provider\": \"<string>\",\n        \"endpointing_ms\": \"<integer>\"\n      },\n      \"vocab_specialization\": \"general\",\n      \"allow_user_dtmf\": true,\n      \"allow_dtmf_interruption\": false,\n      \"user_dtmf_options\": {\n        \"digit_limit\": \"<number>\",\n        \"termination_key\": \"#\",\n        \"timeout_ms\": \"<integer>\"\n      },\n      \"denoising_mode\": \"noise-cancellation\",\n      \"pii_config\": {\n        \"mode\": \"post_call\",\n        \"categories\": []\n      },\n      \"guardrail_config\": {\n        \"output_topics\": [\n          \"<string>\"\n        ],\n        \"input_topics\": [\n          \"<string>\"\n        ]\n      },\n      \"handbook_config\": {\n        \"default_personality\": \"<boolean>\",\n        \"natural_filler_words\": \"<boolean>\",\n        \"high_empathy\": \"<boolean>\",\n        \"echo_verification\": \"<boolean>\",\n        \"nato_phonetic_alphabet\": \"<boolean>\",\n        \"speech_normalization\": \"<boolean>\",\n        \"smart_matching\": \"<boolean>\",\n        \"ai_disclosure\": \"<boolean>\",\n        \"scope_boundaries\": \"<boolean>\"\n      },\n      \"timezone\": \"America/New_York\",\n      \"is_public\": false\n    },\n    \"retell_llm\": {\n      \"model\": \"gpt-4.1\",\n      \"s2s_model\": \"gpt-realtime-1.5\",\n      \"model_temperature\": 0,\n      \"model_high_priority\": true,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"<string>\",\n      \"begin_after_user_silence_ms\": 2000,\n      \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\"\n    },\n    \"conversation_flow\": {\n      \"model_choice\": {\n        \"type\": \"<string>\",\n        \"model\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"high_priority\": \"<boolean>\"\n      },\n      \"model_temperature\": 0.7,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"agent\",\n      \"begin_after_user_silence_ms\": 2000\n    }\n  },\n  \"from_number\": \"+14157774444\",\n  \"to_number\": \"+12137774445\",\n  \"direction\": \"inbound\",\n  \"metadata\": \"<object>\",\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e3e0943-3a54-406c-90f1-bb947c68ad9b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "register-phone-call"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"agent_version\": 1,\n  \"agent_override\": {\n    \"agent\": {\n      \"response_engine\": {\n        \"type\": \"<string>\",\n        \"llm_id\": \"<string>\",\n        \"version\": 0\n      },\n      \"agent_name\": \"Jarvis\",\n      \"version_description\": \"Customer support agent for handling product inquiries\",\n      \"voice_id\": \"retell-Cimo\",\n      \"voice_model\": \"<string>\",\n      \"fallback_voice_ids\": [\n        \"cartesia-Cimo\",\n        \"minimax-Cimo\"\n      ],\n      \"voice_temperature\": 1,\n      \"voice_speed\": 1,\n      \"enable_dynamic_voice_speed\": true,\n      \"enable_dynamic_responsiveness\": true,\n      \"volume\": 1,\n      \"voice_emotion\": \"calm\",\n      \"responsiveness\": 1,\n      \"interruption_sensitivity\": 1,\n      \"enable_backchannel\": true,\n      \"backchannel_frequency\": 0.9,\n      \"backchannel_words\": [\n        \"yeah\",\n        \"uh-huh\"\n      ],\n      \"reminder_trigger_ms\": 10000,\n      \"reminder_max_count\": 2,\n      \"ambient_sound\": \"<string>\",\n      \"ambient_sound_volume\": 1,\n      \"language\": \"en-US\",\n      \"webhook_url\": \"https://webhook-url-here\",\n      \"webhook_events\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"webhook_timeout_ms\": 10000,\n      \"boosted_keywords\": [\n        \"retell\",\n        \"kroger\"\n      ],\n      \"data_storage_setting\": \"everything\",\n      \"data_storage_retention_days\": 30,\n      \"opt_in_signed_url\": true,\n      \"signed_url_expiration_ms\": 86400000,\n      \"pronunciation_dictionary\": [\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        },\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        }\n      ],\n      \"end_call_after_silence_ms\": 600000,\n      \"max_call_duration_ms\": 3600000,\n      \"voicemail_message\": \"Hi, please give us a callback.\",\n      \"voicemail_detection_timeout_ms\": 30000,\n      \"voicemail_option\": {\n        \"action\": {\n          \"type\": \"static_text\",\n          \"text\": \"Please give us a callback tomorrow at 10am.\"\n        }\n      },\n      \"ivr_option\": {\n        \"action\": {\n          \"type\": \"hangup\"\n        }\n      },\n      \"call_screening_option\": {\n        \"agent_identity\": \"Acme Health scheduling team\",\n        \"call_purpose\": \"confirming your appointment for tomorrow\"\n      },\n      \"post_call_analysis_data\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"post_call_analysis_model\": \"gpt-4.1\",\n      \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n      \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n      \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n      \"begin_message_delay_ms\": 1000,\n      \"ring_duration_ms\": 30000,\n      \"stt_mode\": \"fast\",\n      \"custom_stt_config\": {\n        \"provider\": \"<string>\",\n        \"endpointing_ms\": \"<integer>\"\n      },\n      \"vocab_specialization\": \"general\",\n      \"allow_user_dtmf\": true,\n      \"allow_dtmf_interruption\": false,\n      \"user_dtmf_options\": {\n        \"digit_limit\": \"<number>\",\n        \"termination_key\": \"#\",\n        \"timeout_ms\": \"<integer>\"\n      },\n      \"denoising_mode\": \"noise-cancellation\",\n      \"pii_config\": {\n        \"mode\": \"post_call\",\n        \"categories\": []\n      },\n      \"guardrail_config\": {\n        \"output_topics\": [\n          \"<string>\"\n        ],\n        \"input_topics\": [\n          \"<string>\"\n        ]\n      },\n      \"handbook_config\": {\n        \"default_personality\": \"<boolean>\",\n        \"natural_filler_words\": \"<boolean>\",\n        \"high_empathy\": \"<boolean>\",\n        \"echo_verification\": \"<boolean>\",\n        \"nato_phonetic_alphabet\": \"<boolean>\",\n        \"speech_normalization\": \"<boolean>\",\n        \"smart_matching\": \"<boolean>\",\n        \"ai_disclosure\": \"<boolean>\",\n        \"scope_boundaries\": \"<boolean>\"\n      },\n      \"timezone\": \"America/New_York\",\n      \"is_public\": false\n    },\n    \"retell_llm\": {\n      \"model\": \"gpt-4.1\",\n      \"s2s_model\": \"gpt-realtime-1.5\",\n      \"model_temperature\": 0,\n      \"model_high_priority\": true,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"<string>\",\n      \"begin_after_user_silence_ms\": 2000,\n      \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\"\n    },\n    \"conversation_flow\": {\n      \"model_choice\": {\n        \"type\": \"<string>\",\n        \"model\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"high_priority\": \"<boolean>\"\n      },\n      \"model_temperature\": 0.7,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"agent\",\n      \"begin_after_user_silence_ms\": 2000\n    }\n  },\n  \"from_number\": \"+14157774444\",\n  \"to_number\": \"+12137774445\",\n  \"direction\": \"inbound\",\n  \"metadata\": \"<object>\",\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01b6dc92-78dd-4797-92fb-4a53d9b88718",
+              "name": "Payment Required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "register-phone-call"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"agent_version\": 1,\n  \"agent_override\": {\n    \"agent\": {\n      \"response_engine\": {\n        \"type\": \"<string>\",\n        \"llm_id\": \"<string>\",\n        \"version\": 0\n      },\n      \"agent_name\": \"Jarvis\",\n      \"version_description\": \"Customer support agent for handling product inquiries\",\n      \"voice_id\": \"retell-Cimo\",\n      \"voice_model\": \"<string>\",\n      \"fallback_voice_ids\": [\n        \"cartesia-Cimo\",\n        \"minimax-Cimo\"\n      ],\n      \"voice_temperature\": 1,\n      \"voice_speed\": 1,\n      \"enable_dynamic_voice_speed\": true,\n      \"enable_dynamic_responsiveness\": true,\n      \"volume\": 1,\n      \"voice_emotion\": \"calm\",\n      \"responsiveness\": 1,\n      \"interruption_sensitivity\": 1,\n      \"enable_backchannel\": true,\n      \"backchannel_frequency\": 0.9,\n      \"backchannel_words\": [\n        \"yeah\",\n        \"uh-huh\"\n      ],\n      \"reminder_trigger_ms\": 10000,\n      \"reminder_max_count\": 2,\n      \"ambient_sound\": \"<string>\",\n      \"ambient_sound_volume\": 1,\n      \"language\": \"en-US\",\n      \"webhook_url\": \"https://webhook-url-here\",\n      \"webhook_events\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"webhook_timeout_ms\": 10000,\n      \"boosted_keywords\": [\n        \"retell\",\n        \"kroger\"\n      ],\n      \"data_storage_setting\": \"everything\",\n      \"data_storage_retention_days\": 30,\n      \"opt_in_signed_url\": true,\n      \"signed_url_expiration_ms\": 86400000,\n      \"pronunciation_dictionary\": [\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        },\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        }\n      ],\n      \"end_call_after_silence_ms\": 600000,\n      \"max_call_duration_ms\": 3600000,\n      \"voicemail_message\": \"Hi, please give us a callback.\",\n      \"voicemail_detection_timeout_ms\": 30000,\n      \"voicemail_option\": {\n        \"action\": {\n          \"type\": \"static_text\",\n          \"text\": \"Please give us a callback tomorrow at 10am.\"\n        }\n      },\n      \"ivr_option\": {\n        \"action\": {\n          \"type\": \"hangup\"\n        }\n      },\n      \"call_screening_option\": {\n        \"agent_identity\": \"Acme Health scheduling team\",\n        \"call_purpose\": \"confirming your appointment for tomorrow\"\n      },\n      \"post_call_analysis_data\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"post_call_analysis_model\": \"gpt-4.1\",\n      \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n      \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n      \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n      \"begin_message_delay_ms\": 1000,\n      \"ring_duration_ms\": 30000,\n      \"stt_mode\": \"fast\",\n      \"custom_stt_config\": {\n        \"provider\": \"<string>\",\n        \"endpointing_ms\": \"<integer>\"\n      },\n      \"vocab_specialization\": \"general\",\n      \"allow_user_dtmf\": true,\n      \"allow_dtmf_interruption\": false,\n      \"user_dtmf_options\": {\n        \"digit_limit\": \"<number>\",\n        \"termination_key\": \"#\",\n        \"timeout_ms\": \"<integer>\"\n      },\n      \"denoising_mode\": \"noise-cancellation\",\n      \"pii_config\": {\n        \"mode\": \"post_call\",\n        \"categories\": []\n      },\n      \"guardrail_config\": {\n        \"output_topics\": [\n          \"<string>\"\n        ],\n        \"input_topics\": [\n          \"<string>\"\n        ]\n      },\n      \"handbook_config\": {\n        \"default_personality\": \"<boolean>\",\n        \"natural_filler_words\": \"<boolean>\",\n        \"high_empathy\": \"<boolean>\",\n        \"echo_verification\": \"<boolean>\",\n        \"nato_phonetic_alphabet\": \"<boolean>\",\n        \"speech_normalization\": \"<boolean>\",\n        \"smart_matching\": \"<boolean>\",\n        \"ai_disclosure\": \"<boolean>\",\n        \"scope_boundaries\": \"<boolean>\"\n      },\n      \"timezone\": \"America/New_York\",\n      \"is_public\": false\n    },\n    \"retell_llm\": {\n      \"model\": \"gpt-4.1\",\n      \"s2s_model\": \"gpt-realtime-1.5\",\n      \"model_temperature\": 0,\n      \"model_high_priority\": true,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"<string>\",\n      \"begin_after_user_silence_ms\": 2000,\n      \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\"\n    },\n    \"conversation_flow\": {\n      \"model_choice\": {\n        \"type\": \"<string>\",\n        \"model\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"high_priority\": \"<boolean>\"\n      },\n      \"model_temperature\": 0.7,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"agent\",\n      \"begin_after_user_silence_ms\": 2000\n    }\n  },\n  \"from_number\": \"+14157774444\",\n  \"to_number\": \"+12137774445\",\n  \"direction\": \"inbound\",\n  \"metadata\": \"<object>\",\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Trial has ended, please add payment method.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ec68b3bc-6cf9-474b-ae8a-ce61df382bf9",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "register-phone-call"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"agent_version\": 1,\n  \"agent_override\": {\n    \"agent\": {\n      \"response_engine\": {\n        \"type\": \"<string>\",\n        \"llm_id\": \"<string>\",\n        \"version\": 0\n      },\n      \"agent_name\": \"Jarvis\",\n      \"version_description\": \"Customer support agent for handling product inquiries\",\n      \"voice_id\": \"retell-Cimo\",\n      \"voice_model\": \"<string>\",\n      \"fallback_voice_ids\": [\n        \"cartesia-Cimo\",\n        \"minimax-Cimo\"\n      ],\n      \"voice_temperature\": 1,\n      \"voice_speed\": 1,\n      \"enable_dynamic_voice_speed\": true,\n      \"enable_dynamic_responsiveness\": true,\n      \"volume\": 1,\n      \"voice_emotion\": \"calm\",\n      \"responsiveness\": 1,\n      \"interruption_sensitivity\": 1,\n      \"enable_backchannel\": true,\n      \"backchannel_frequency\": 0.9,\n      \"backchannel_words\": [\n        \"yeah\",\n        \"uh-huh\"\n      ],\n      \"reminder_trigger_ms\": 10000,\n      \"reminder_max_count\": 2,\n      \"ambient_sound\": \"<string>\",\n      \"ambient_sound_volume\": 1,\n      \"language\": \"en-US\",\n      \"webhook_url\": \"https://webhook-url-here\",\n      \"webhook_events\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"webhook_timeout_ms\": 10000,\n      \"boosted_keywords\": [\n        \"retell\",\n        \"kroger\"\n      ],\n      \"data_storage_setting\": \"everything\",\n      \"data_storage_retention_days\": 30,\n      \"opt_in_signed_url\": true,\n      \"signed_url_expiration_ms\": 86400000,\n      \"pronunciation_dictionary\": [\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        },\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        }\n      ],\n      \"end_call_after_silence_ms\": 600000,\n      \"max_call_duration_ms\": 3600000,\n      \"voicemail_message\": \"Hi, please give us a callback.\",\n      \"voicemail_detection_timeout_ms\": 30000,\n      \"voicemail_option\": {\n        \"action\": {\n          \"type\": \"static_text\",\n          \"text\": \"Please give us a callback tomorrow at 10am.\"\n        }\n      },\n      \"ivr_option\": {\n        \"action\": {\n          \"type\": \"hangup\"\n        }\n      },\n      \"call_screening_option\": {\n        \"agent_identity\": \"Acme Health scheduling team\",\n        \"call_purpose\": \"confirming your appointment for tomorrow\"\n      },\n      \"post_call_analysis_data\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"post_call_analysis_model\": \"gpt-4.1\",\n      \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n      \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n      \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n      \"begin_message_delay_ms\": 1000,\n      \"ring_duration_ms\": 30000,\n      \"stt_mode\": \"fast\",\n      \"custom_stt_config\": {\n        \"provider\": \"<string>\",\n        \"endpointing_ms\": \"<integer>\"\n      },\n      \"vocab_specialization\": \"general\",\n      \"allow_user_dtmf\": true,\n      \"allow_dtmf_interruption\": false,\n      \"user_dtmf_options\": {\n        \"digit_limit\": \"<number>\",\n        \"termination_key\": \"#\",\n        \"timeout_ms\": \"<integer>\"\n      },\n      \"denoising_mode\": \"noise-cancellation\",\n      \"pii_config\": {\n        \"mode\": \"post_call\",\n        \"categories\": []\n      },\n      \"guardrail_config\": {\n        \"output_topics\": [\n          \"<string>\"\n        ],\n        \"input_topics\": [\n          \"<string>\"\n        ]\n      },\n      \"handbook_config\": {\n        \"default_personality\": \"<boolean>\",\n        \"natural_filler_words\": \"<boolean>\",\n        \"high_empathy\": \"<boolean>\",\n        \"echo_verification\": \"<boolean>\",\n        \"nato_phonetic_alphabet\": \"<boolean>\",\n        \"speech_normalization\": \"<boolean>\",\n        \"smart_matching\": \"<boolean>\",\n        \"ai_disclosure\": \"<boolean>\",\n        \"scope_boundaries\": \"<boolean>\"\n      },\n      \"timezone\": \"America/New_York\",\n      \"is_public\": false\n    },\n    \"retell_llm\": {\n      \"model\": \"gpt-4.1\",\n      \"s2s_model\": \"gpt-realtime-1.5\",\n      \"model_temperature\": 0,\n      \"model_high_priority\": true,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"<string>\",\n      \"begin_after_user_silence_ms\": 2000,\n      \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\"\n    },\n    \"conversation_flow\": {\n      \"model_choice\": {\n        \"type\": \"<string>\",\n        \"model\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"high_priority\": \"<boolean>\"\n      },\n      \"model_temperature\": 0.7,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"agent\",\n      \"begin_after_user_silence_ms\": 2000\n    }\n  },\n  \"from_number\": \"+14157774444\",\n  \"to_number\": \"+12137774445\",\n  \"direction\": \"inbound\",\n  \"metadata\": \"<object>\",\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Cannot find requested asset under given api key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7bfd9c94-965c-4bcf-81fd-b45d3285e39a",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "register-phone-call"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"agent_version\": 1,\n  \"agent_override\": {\n    \"agent\": {\n      \"response_engine\": {\n        \"type\": \"<string>\",\n        \"llm_id\": \"<string>\",\n        \"version\": 0\n      },\n      \"agent_name\": \"Jarvis\",\n      \"version_description\": \"Customer support agent for handling product inquiries\",\n      \"voice_id\": \"retell-Cimo\",\n      \"voice_model\": \"<string>\",\n      \"fallback_voice_ids\": [\n        \"cartesia-Cimo\",\n        \"minimax-Cimo\"\n      ],\n      \"voice_temperature\": 1,\n      \"voice_speed\": 1,\n      \"enable_dynamic_voice_speed\": true,\n      \"enable_dynamic_responsiveness\": true,\n      \"volume\": 1,\n      \"voice_emotion\": \"calm\",\n      \"responsiveness\": 1,\n      \"interruption_sensitivity\": 1,\n      \"enable_backchannel\": true,\n      \"backchannel_frequency\": 0.9,\n      \"backchannel_words\": [\n        \"yeah\",\n        \"uh-huh\"\n      ],\n      \"reminder_trigger_ms\": 10000,\n      \"reminder_max_count\": 2,\n      \"ambient_sound\": \"<string>\",\n      \"ambient_sound_volume\": 1,\n      \"language\": \"en-US\",\n      \"webhook_url\": \"https://webhook-url-here\",\n      \"webhook_events\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"webhook_timeout_ms\": 10000,\n      \"boosted_keywords\": [\n        \"retell\",\n        \"kroger\"\n      ],\n      \"data_storage_setting\": \"everything\",\n      \"data_storage_retention_days\": 30,\n      \"opt_in_signed_url\": true,\n      \"signed_url_expiration_ms\": 86400000,\n      \"pronunciation_dictionary\": [\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        },\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        }\n      ],\n      \"end_call_after_silence_ms\": 600000,\n      \"max_call_duration_ms\": 3600000,\n      \"voicemail_message\": \"Hi, please give us a callback.\",\n      \"voicemail_detection_timeout_ms\": 30000,\n      \"voicemail_option\": {\n        \"action\": {\n          \"type\": \"static_text\",\n          \"text\": \"Please give us a callback tomorrow at 10am.\"\n        }\n      },\n      \"ivr_option\": {\n        \"action\": {\n          \"type\": \"hangup\"\n        }\n      },\n      \"call_screening_option\": {\n        \"agent_identity\": \"Acme Health scheduling team\",\n        \"call_purpose\": \"confirming your appointment for tomorrow\"\n      },\n      \"post_call_analysis_data\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"post_call_analysis_model\": \"gpt-4.1\",\n      \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n      \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n      \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n      \"begin_message_delay_ms\": 1000,\n      \"ring_duration_ms\": 30000,\n      \"stt_mode\": \"fast\",\n      \"custom_stt_config\": {\n        \"provider\": \"<string>\",\n        \"endpointing_ms\": \"<integer>\"\n      },\n      \"vocab_specialization\": \"general\",\n      \"allow_user_dtmf\": true,\n      \"allow_dtmf_interruption\": false,\n      \"user_dtmf_options\": {\n        \"digit_limit\": \"<number>\",\n        \"termination_key\": \"#\",\n        \"timeout_ms\": \"<integer>\"\n      },\n      \"denoising_mode\": \"noise-cancellation\",\n      \"pii_config\": {\n        \"mode\": \"post_call\",\n        \"categories\": []\n      },\n      \"guardrail_config\": {\n        \"output_topics\": [\n          \"<string>\"\n        ],\n        \"input_topics\": [\n          \"<string>\"\n        ]\n      },\n      \"handbook_config\": {\n        \"default_personality\": \"<boolean>\",\n        \"natural_filler_words\": \"<boolean>\",\n        \"high_empathy\": \"<boolean>\",\n        \"echo_verification\": \"<boolean>\",\n        \"nato_phonetic_alphabet\": \"<boolean>\",\n        \"speech_normalization\": \"<boolean>\",\n        \"smart_matching\": \"<boolean>\",\n        \"ai_disclosure\": \"<boolean>\",\n        \"scope_boundaries\": \"<boolean>\"\n      },\n      \"timezone\": \"America/New_York\",\n      \"is_public\": false\n    },\n    \"retell_llm\": {\n      \"model\": \"gpt-4.1\",\n      \"s2s_model\": \"gpt-realtime-1.5\",\n      \"model_temperature\": 0,\n      \"model_high_priority\": true,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"<string>\",\n      \"begin_after_user_silence_ms\": 2000,\n      \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\"\n    },\n    \"conversation_flow\": {\n      \"model_choice\": {\n        \"type\": \"<string>\",\n        \"model\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"high_priority\": \"<boolean>\"\n      },\n      \"model_temperature\": 0.7,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"agent\",\n      \"begin_after_user_silence_ms\": 2000\n    }\n  },\n  \"from_number\": \"+14157774444\",\n  \"to_number\": \"+12137774445\",\n  \"direction\": \"inbound\",\n  \"metadata\": \"<object>\",\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Account rate limited, please throttle your requests.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "913e34a1-b868-4f52-9f14-b002d1cfd8fc",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "register-phone-call"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"agent_version\": 1,\n  \"agent_override\": {\n    \"agent\": {\n      \"response_engine\": {\n        \"type\": \"<string>\",\n        \"llm_id\": \"<string>\",\n        \"version\": 0\n      },\n      \"agent_name\": \"Jarvis\",\n      \"version_description\": \"Customer support agent for handling product inquiries\",\n      \"voice_id\": \"retell-Cimo\",\n      \"voice_model\": \"<string>\",\n      \"fallback_voice_ids\": [\n        \"cartesia-Cimo\",\n        \"minimax-Cimo\"\n      ],\n      \"voice_temperature\": 1,\n      \"voice_speed\": 1,\n      \"enable_dynamic_voice_speed\": true,\n      \"enable_dynamic_responsiveness\": true,\n      \"volume\": 1,\n      \"voice_emotion\": \"calm\",\n      \"responsiveness\": 1,\n      \"interruption_sensitivity\": 1,\n      \"enable_backchannel\": true,\n      \"backchannel_frequency\": 0.9,\n      \"backchannel_words\": [\n        \"yeah\",\n        \"uh-huh\"\n      ],\n      \"reminder_trigger_ms\": 10000,\n      \"reminder_max_count\": 2,\n      \"ambient_sound\": \"<string>\",\n      \"ambient_sound_volume\": 1,\n      \"language\": \"en-US\",\n      \"webhook_url\": \"https://webhook-url-here\",\n      \"webhook_events\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"webhook_timeout_ms\": 10000,\n      \"boosted_keywords\": [\n        \"retell\",\n        \"kroger\"\n      ],\n      \"data_storage_setting\": \"everything\",\n      \"data_storage_retention_days\": 30,\n      \"opt_in_signed_url\": true,\n      \"signed_url_expiration_ms\": 86400000,\n      \"pronunciation_dictionary\": [\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        },\n        {\n          \"word\": \"actually\",\n          \"alphabet\": \"ipa\",\n          \"phoneme\": \"ˈæktʃuəli\"\n        }\n      ],\n      \"end_call_after_silence_ms\": 600000,\n      \"max_call_duration_ms\": 3600000,\n      \"voicemail_message\": \"Hi, please give us a callback.\",\n      \"voicemail_detection_timeout_ms\": 30000,\n      \"voicemail_option\": {\n        \"action\": {\n          \"type\": \"static_text\",\n          \"text\": \"Please give us a callback tomorrow at 10am.\"\n        }\n      },\n      \"ivr_option\": {\n        \"action\": {\n          \"type\": \"hangup\"\n        }\n      },\n      \"call_screening_option\": {\n        \"agent_identity\": \"Acme Health scheduling team\",\n        \"call_purpose\": \"confirming your appointment for tomorrow\"\n      },\n      \"post_call_analysis_data\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"post_call_analysis_model\": \"gpt-4.1\",\n      \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n      \"analysis_summary_prompt\": \"Summarize the outcome of the conversation in two sentences.\",\n      \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n      \"begin_message_delay_ms\": 1000,\n      \"ring_duration_ms\": 30000,\n      \"stt_mode\": \"fast\",\n      \"custom_stt_config\": {\n        \"provider\": \"<string>\",\n        \"endpointing_ms\": \"<integer>\"\n      },\n      \"vocab_specialization\": \"general\",\n      \"allow_user_dtmf\": true,\n      \"allow_dtmf_interruption\": false,\n      \"user_dtmf_options\": {\n        \"digit_limit\": \"<number>\",\n        \"termination_key\": \"#\",\n        \"timeout_ms\": \"<integer>\"\n      },\n      \"denoising_mode\": \"noise-cancellation\",\n      \"pii_config\": {\n        \"mode\": \"post_call\",\n        \"categories\": []\n      },\n      \"guardrail_config\": {\n        \"output_topics\": [\n          \"<string>\"\n        ],\n        \"input_topics\": [\n          \"<string>\"\n        ]\n      },\n      \"handbook_config\": {\n        \"default_personality\": \"<boolean>\",\n        \"natural_filler_words\": \"<boolean>\",\n        \"high_empathy\": \"<boolean>\",\n        \"echo_verification\": \"<boolean>\",\n        \"nato_phonetic_alphabet\": \"<boolean>\",\n        \"speech_normalization\": \"<boolean>\",\n        \"smart_matching\": \"<boolean>\",\n        \"ai_disclosure\": \"<boolean>\",\n        \"scope_boundaries\": \"<boolean>\"\n      },\n      \"timezone\": \"America/New_York\",\n      \"is_public\": false\n    },\n    \"retell_llm\": {\n      \"model\": \"gpt-4.1\",\n      \"s2s_model\": \"gpt-realtime-1.5\",\n      \"model_temperature\": 0,\n      \"model_high_priority\": true,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"<string>\",\n      \"begin_after_user_silence_ms\": 2000,\n      \"begin_message\": \"Hey I am a virtual assistant calling from Retell Hospital.\"\n    },\n    \"conversation_flow\": {\n      \"model_choice\": {\n        \"type\": \"<string>\",\n        \"model\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"high_priority\": \"<boolean>\"\n      },\n      \"model_temperature\": 0.7,\n      \"tool_call_strict_mode\": true,\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      },\n      \"start_speaker\": \"agent\",\n      \"begin_after_user_silence_ms\": 2000\n    }\n  },\n  \"from_number\": \"+14157774444\",\n  \"to_number\": \"+12137774445\",\n  \"direction\": \"inbound\",\n  \"metadata\": \"<object>\",\n  \"retell_llm_dynamic_variables\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8699eb3b-5839-4e5c-8520-817575cd96fd",
+    "name": "Retell SDK Add Community Voice Register Phone Call API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

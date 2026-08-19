@@ -1,0 +1,458 @@
+{
+  "item": [
+    {
+      "id": "9f0536bc-edaa-474a-845e-abda22a536da",
+      "name": "Update Conversation Flow Component",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "150227f3-141d-4814-b2f4-588ccbd9e799",
+          "name": "update Conversation Flow Component",
+          "request": {
+            "name": "update Conversation Flow Component",
+            "description": {
+              "content": "Update an existing shared conversation flow component",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "update-conversation-flow-component",
+                ":conversation_flow_component_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "conversation_flow_component_id",
+                  "description": "(Required) ID of the component to update"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"tools\": [\n    {\n      \"name\": \"<string>\",\n      \"tool_id\": \"<string>\",\n      \"type\": \"<string>\",\n      \"url\": \"<string>\",\n      \"description\": \"<string>\",\n      \"method\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\"\n      },\n      \"query_params\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"parameters\": {\n        \"type\": \"<string>\",\n        \"properties\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_2\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"required\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      },\n      \"response_variables\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      },\n      \"speak_during_execution\": \"<boolean>\",\n      \"speak_after_execution\": \"<boolean>\",\n      \"execution_message_description\": \"<string>\",\n      \"execution_message_type\": \"<string>\",\n      \"timeout_ms\": \"<integer>\",\n      \"args_at_root\": \"<boolean>\",\n      \"enable_typing_sound\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"tool_id\": \"<string>\",\n      \"type\": \"<string>\",\n      \"url\": \"<string>\",\n      \"description\": \"<string>\",\n      \"method\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"query_params\": {\n        \"key_0\": \"<string>\"\n      },\n      \"parameters\": {\n        \"type\": \"<string>\",\n        \"properties\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_2\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_3\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"required\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      },\n      \"response_variables\": {\n        \"key_0\": \"<string>\"\n      },\n      \"speak_during_execution\": \"<boolean>\",\n      \"speak_after_execution\": \"<boolean>\",\n      \"execution_message_description\": \"<string>\",\n      \"execution_message_type\": \"<string>\",\n      \"timeout_ms\": \"<integer>\",\n      \"args_at_root\": \"<boolean>\",\n      \"enable_typing_sound\": \"<boolean>\"\n    }\n  ],\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"query_params\": {\n        \"key_0\": \"<string>\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\"\n      },\n      \"query_params\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ],\n  \"nodes\": [\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"kb_config\": {\n        \"top_k\": \"<integer>\",\n        \"filter_score\": \"<number>\"\n      }\n    },\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"kb_config\": {\n        \"top_k\": \"<integer>\",\n        \"filter_score\": \"<number>\"\n      }\n    }\n  ],\n  \"start_node_id\": \"<string>\",\n  \"begin_tag_display_position\": {\n    \"x\": \"<number>\",\n    \"y\": \"<number>\"\n  },\n  \"notes\": [\n    {\n      \"id\": \"<string>\",\n      \"content\": \"<string>\",\n      \"display_position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"size\": {\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"content\": \"<string>\",\n      \"display_position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"size\": {\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "577a0726-de1f-46c1-b1fb-65d4eef9d495",
+              "name": "Successfully updated conversation flow component",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-conversation-flow-component",
+                    ":conversation_flow_component_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_flow_component_id",
+                      "description": "(Required) ID of the component to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Customer Information Collector\",\n  \"tools\": [\n    {\n      \"type\": \"custom\",\n      \"name\": \"get_customer_info\",\n      \"description\": \"Get customer information from database\",\n      \"tool_id\": \"tool_001\",\n      \"url\": \"https://api.example.com/customer\",\n      \"method\": \"GET\"\n    }\n  ],\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ],\n  \"nodes\": [\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    },\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    }\n  ],\n  \"start_node_id\": \"collect_info\",\n  \"begin_tag_display_position\": {\n    \"x\": 100,\n    \"y\": 200\n  },\n  \"notes\": [\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    },\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"conversation_flow_component_id\": \"string\",\n  \"name\": \"Customer Information Collector\",\n  \"nodes\": [\n    {\n      \"type\": \"conversation\",\n      \"instruction\": {\n        \"type\": \"prompt\",\n        \"text\": \"Ask the customer for their name and contact information.\"\n      }\n    }\n  ],\n  \"user_modified_timestamp\": 4445,\n  \"tools\": [\n    {\n      \"type\": \"custom\",\n      \"name\": \"get_customer_info\",\n      \"description\": \"Get customer information from database\",\n      \"tool_id\": \"tool_001\",\n      \"url\": \"https://api.example.com/customer\",\n      \"method\": \"GET\"\n    }\n  ],\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ],\n  \"start_node_id\": \"collect_info\",\n  \"begin_tag_display_position\": {\n    \"x\": 100,\n    \"y\": 200\n  },\n  \"notes\": [\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    },\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    }\n  ],\n  \"linked_conversation_flow_ids\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c5ddf3e5-7945-4494-a3bd-7523e3331e62",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-conversation-flow-component",
+                    ":conversation_flow_component_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_flow_component_id",
+                      "description": "(Required) ID of the component to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Customer Information Collector\",\n  \"tools\": [\n    {\n      \"type\": \"custom\",\n      \"name\": \"get_customer_info\",\n      \"description\": \"Get customer information from database\",\n      \"tool_id\": \"tool_001\",\n      \"url\": \"https://api.example.com/customer\",\n      \"method\": \"GET\"\n    }\n  ],\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ],\n  \"nodes\": [\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    },\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    }\n  ],\n  \"start_node_id\": \"collect_info\",\n  \"begin_tag_display_position\": {\n    \"x\": 100,\n    \"y\": 200\n  },\n  \"notes\": [\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    },\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "57dec6fb-ed98-4422-bca8-47810f756345",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-conversation-flow-component",
+                    ":conversation_flow_component_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_flow_component_id",
+                      "description": "(Required) ID of the component to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Customer Information Collector\",\n  \"tools\": [\n    {\n      \"type\": \"custom\",\n      \"name\": \"get_customer_info\",\n      \"description\": \"Get customer information from database\",\n      \"tool_id\": \"tool_001\",\n      \"url\": \"https://api.example.com/customer\",\n      \"method\": \"GET\"\n    }\n  ],\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ],\n  \"nodes\": [\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    },\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    }\n  ],\n  \"start_node_id\": \"collect_info\",\n  \"begin_tag_display_position\": {\n    \"x\": 100,\n    \"y\": 200\n  },\n  \"notes\": [\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    },\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3da10d52-690a-45ab-ad4d-5f6370172b22",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-conversation-flow-component",
+                    ":conversation_flow_component_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_flow_component_id",
+                      "description": "(Required) ID of the component to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Customer Information Collector\",\n  \"tools\": [\n    {\n      \"type\": \"custom\",\n      \"name\": \"get_customer_info\",\n      \"description\": \"Get customer information from database\",\n      \"tool_id\": \"tool_001\",\n      \"url\": \"https://api.example.com/customer\",\n      \"method\": \"GET\"\n    }\n  ],\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ],\n  \"nodes\": [\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    },\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    }\n  ],\n  \"start_node_id\": \"collect_info\",\n  \"begin_tag_display_position\": {\n    \"x\": 100,\n    \"y\": 200\n  },\n  \"notes\": [\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    },\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"The requested resource was not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e820a5a6-ef7f-4af7-ad37-15b1470ce53a",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-conversation-flow-component",
+                    ":conversation_flow_component_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_flow_component_id",
+                      "description": "(Required) ID of the component to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Customer Information Collector\",\n  \"tools\": [\n    {\n      \"type\": \"custom\",\n      \"name\": \"get_customer_info\",\n      \"description\": \"Get customer information from database\",\n      \"tool_id\": \"tool_001\",\n      \"url\": \"https://api.example.com/customer\",\n      \"method\": \"GET\"\n    }\n  ],\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ],\n  \"nodes\": [\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    },\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    }\n  ],\n  \"start_node_id\": \"collect_info\",\n  \"begin_tag_display_position\": {\n    \"x\": 100,\n    \"y\": 200\n  },\n  \"notes\": [\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    },\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Account rate limited, please throttle your requests.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82d334d4-d20d-440c-a7e7-166a7e2bdd0c",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-conversation-flow-component",
+                    ":conversation_flow_component_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_flow_component_id",
+                      "description": "(Required) ID of the component to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Customer Information Collector\",\n  \"tools\": [\n    {\n      \"type\": \"custom\",\n      \"name\": \"get_customer_info\",\n      \"description\": \"Get customer information from database\",\n      \"tool_id\": \"tool_001\",\n      \"url\": \"https://api.example.com/customer\",\n      \"method\": \"GET\"\n    }\n  ],\n  \"mcps\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"Authorization\": \"Bearer 1234567890\"\n      },\n      \"query_params\": {\n        \"index\": \"1\",\n        \"key\": \"value\"\n      },\n      \"timeout_ms\": \"<integer>\"\n    }\n  ],\n  \"nodes\": [\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    },\n    {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"instruction\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"type\": \"<string>\",\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"global_node_setting\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"display_position\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"model_choice\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"interruption_sensitivity\": \"<number>\",\n      \"responsiveness\": \"<number>\",\n      \"voice_speed\": \"<number>\",\n      \"allow_dtmf_interruption\": \"<boolean>\",\n      \"skip_response_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"always_edge\": {\n        \"transition_condition\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"edges\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transition_condition\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_conversation_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"finetune_transition_examples\": [\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transcript\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"destination_node_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"knowledge_base_ids\": [\n        \"kb_001\",\n        \"kb_002\"\n      ],\n      \"kb_config\": {\n        \"top_k\": 3,\n        \"filter_score\": 0.6\n      }\n    }\n  ],\n  \"start_node_id\": \"collect_info\",\n  \"begin_tag_display_position\": {\n    \"x\": 100,\n    \"y\": 200\n  },\n  \"notes\": [\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    },\n    {\n      \"id\": \"note_abc123\",\n      \"content\": \"Remember to handle edge cases here.\",\n      \"display_position\": {\n        \"x\": 300,\n        \"y\": 150\n      },\n      \"size\": {\n        \"width\": 200,\n        \"height\": 100\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "80ce1097-88fe-4004-9350-027e66ddf178",
+    "name": "Retell SDK Add Community Voice Update Conversation Flow Component API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

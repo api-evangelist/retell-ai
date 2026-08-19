@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Delete Conversation Flow Component API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Delete Conversation Flow Component",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "deleteConversationFlowComponent",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.retellai.com/delete-conversation-flow-component/:conversation_flow_component_id",
+            "params": [
+              {
+                "name": "conversation_flow_component_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the component to delete"
+              }
+            ]
+          },
+          "docs": "Delete a shared conversation flow component. When deleting a shared component, creates local copies for all linked conversation flows."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

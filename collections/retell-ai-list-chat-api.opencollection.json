@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice List Chat API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List Chat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "listChat",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/list-chat",
+            "params": [
+              {
+                "name": "sort_order",
+                "value": "",
+                "type": "query",
+                "description": "The chats will be sorted by `start_timestamp`, whether to return the chats in ascending or descending order."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit the number of chats returned. Default 50, Max 1000. To retrieve more than 1000, use pagination_key to continue fetching the next page."
+              },
+              {
+                "name": "pagination_key",
+                "value": "",
+                "type": "query",
+                "description": "The pagination key to continue fetching the next page of chats. Pagination key is represented by a chat id here, and it's exclusive (not included in the fetched chats). The last chat id from the list chats is usually used as pagination key here. If not set, will start from the beginning."
+              }
+            ]
+          },
+          "docs": "List all chats"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

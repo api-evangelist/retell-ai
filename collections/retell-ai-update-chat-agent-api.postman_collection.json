@@ -1,0 +1,495 @@
+{
+  "item": [
+    {
+      "id": "c65bdbdb-c238-4209-aede-8cfcb1a8e7ab",
+      "name": "Update Chat Agent",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8572fb1a-1dde-44cb-884d-8dac4f7ffa08",
+          "name": "update Chat Agent",
+          "request": {
+            "name": "update Chat Agent",
+            "description": {
+              "content": "Update an existing chat agent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "update-chat-agent",
+                ":agent_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<integer>",
+                  "description": "Optional version of the API to use for this request. Default to latest version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agent_id",
+                  "description": "(Required) Unique id of the chat agent to be updated."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": \"<number>\"\n  },\n  \"agent_name\": \"<string>\",\n  \"auto_close_message\": \"<string>\",\n  \"end_chat_after_silence_ms\": \"<integer>\",\n  \"language\": \"<string>\",\n  \"webhook_url\": \"<string>\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": \"<integer>\",\n  \"data_storage_setting\": \"<string>\",\n  \"data_storage_retention_days\": \"<integer>\",\n  \"opt_in_signed_url\": \"<boolean>\",\n  \"signed_url_expiration_ms\": \"<integer>\",\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"examples\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"examples\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    }\n  ],\n  \"post_chat_analysis_model\": \"<string>\",\n  \"analysis_successful_prompt\": \"<string>\",\n  \"analysis_summary_prompt\": \"<string>\",\n  \"analysis_user_sentiment_prompt\": \"<string>\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"<string>\",\n  \"is_public\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d91e3140-a98e-4283-b976-6eb3f4dca726",
+              "name": "Successfully updated the chat agent.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-chat-agent",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the chat agent to be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    },\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"agent_id\": \"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD\",\n  \"last_modification_timestamp\": 1703413636133,\n  \"version\": 0,\n  \"base_version\": 12,\n  \"assigned_tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"is_published\": false,\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    {\n      \"type\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"name\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"examples\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"required\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"conditional_prompt\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "820856dc-4287-4610-9588-5664242a7f6c",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-chat-agent",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the chat agent to be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    },\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f1313b7b-7729-4e4c-8ea4-d204c0908183",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-chat-agent",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the chat agent to be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    },\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72d78069-4e22-4f5c-9180-550386b61519",
+              "name": "Precondition Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-chat-agent",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the chat agent to be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    },\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Precondition failed for conditional update.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bac8058c-eb29-42f1-b0a9-5d5641f91ad7",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-chat-agent",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the chat agent to be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    },\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Cannot find requested asset under given api key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "175f03ef-4671-4b27-b34d-faf65d12d7ec",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update-chat-agent",
+                    ":agent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agent_id",
+                      "description": "(Required) Unique id of the chat agent to be updated."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response_engine\": {\n    \"type\": \"<string>\",\n    \"llm_id\": \"<string>\",\n    \"version\": 0\n  },\n  \"agent_name\": \"Jarvis\",\n  \"auto_close_message\": \"Thank you for chatting. The conversation has ended.\",\n  \"end_chat_after_silence_ms\": 3600000,\n  \"language\": \"en-US\",\n  \"webhook_url\": \"https://webhook-url-here\",\n  \"webhook_events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webhook_timeout_ms\": 10000,\n  \"data_storage_setting\": \"everything\",\n  \"data_storage_retention_days\": 30,\n  \"opt_in_signed_url\": true,\n  \"signed_url_expiration_ms\": 86400000,\n  \"post_chat_analysis_data\": [\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    },\n    {\n      \"type\": \"string\",\n      \"name\": \"customer_name\",\n      \"description\": \"The name of the customer.\",\n      \"examples\": [\n        \"John Doe\",\n        \"Jane Smith\"\n      ],\n      \"required\": \"<boolean>\",\n      \"conditional_prompt\": \"<string>\"\n    }\n  ],\n  \"post_chat_analysis_model\": \"gpt-4.1-mini\",\n  \"analysis_successful_prompt\": \"The agent finished the task and the call was complete without being cutoff.\",\n  \"analysis_summary_prompt\": \"Summarize the call in a few sentences.\",\n  \"analysis_user_sentiment_prompt\": \"Evaluate the user's sentiment based on their tone and satisfaction level.\",\n  \"pii_config\": {\n    \"mode\": \"post_call\",\n    \"categories\": []\n  },\n  \"guardrail_config\": {\n    \"output_topics\": [\n      \"<string>\"\n    ],\n    \"input_topics\": [\n      \"<string>\"\n    ]\n  },\n  \"handbook_config\": {\n    \"default_personality\": \"<boolean>\",\n    \"high_empathy\": \"<boolean>\",\n    \"ai_disclosure\": \"<boolean>\",\n    \"scope_boundaries\": \"<boolean>\"\n  },\n  \"timezone\": \"America/New_York\",\n  \"is_public\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d787ed7e-8e4f-48e2-a8a0-a69c4664a3ef",
+    "name": "Retell SDK Add Community Voice Update Chat Agent API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}

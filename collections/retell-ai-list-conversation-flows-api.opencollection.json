@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice List Conversation Flows API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List Conversation Flows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "listConversationFlowsV2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/v2/list-conversation-flows",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return."
+              },
+              {
+                "name": "sort_order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order for results."
+              },
+              {
+                "name": "pagination_key",
+                "value": "",
+                "type": "query",
+                "description": "Pagination key for fetching the next page."
+              }
+            ]
+          },
+          "docs": "List conversation flows with pagination"
+        },
+        {
+          "info": {
+            "name": "listConversationFlows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.retellai.com/list-conversation-flows",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit the number of conversation flows returned. Default 1000, Max 1000. To retrieve more than 1000, use pagination_key to continue fetching the next page."
+              },
+              {
+                "name": "pagination_key",
+                "value": "",
+                "type": "query",
+                "description": "The pagination key to continue fetching the next page of conversation flows. Pagination key is represented by a conversation flow id here, and it's exclusive (not included in the fetched conversation flows). The last conversation flow id from the list conversation flows is usually used as pagination key here. If not set, will start from the beginning."
+              },
+              {
+                "name": "pagination_key_version",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the version of the conversation flow associated with the pagination_key. When paginating, both the pagination_key and its version must be provided to ensure consistent ordering and to fetch the next page correctly."
+              }
+            ]
+          },
+          "docs": "List all conversation flows that can be attached to an agent."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

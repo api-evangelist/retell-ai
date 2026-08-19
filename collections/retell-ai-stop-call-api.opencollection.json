@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Retell SDK Add Community Voice Stop Call API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stop Call",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "stopCall",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.retellai.com/v2/stop-call/:call_id",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path",
+                "description": "The call id of the ongoing call to be stopped."
+              }
+            ]
+          },
+          "docs": "Stop an ongoing call."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

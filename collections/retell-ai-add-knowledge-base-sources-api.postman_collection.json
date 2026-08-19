@@ -1,0 +1,610 @@
+{
+  "item": [
+    {
+      "id": "7c1ac45f-92f8-4857-8e9b-2844a04aea19",
+      "name": "Add Knowledge Base Sources",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "273e0771-9614-4fbd-bc53-4ae648498a4c",
+          "name": "add Knowledge Base Sources",
+          "request": {
+            "name": "add Knowledge Base Sources",
+            "description": {
+              "content": "Add sources to a knowledge base",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "add-knowledge-base-sources",
+                ":knowledge_base_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "knowledge_base_id",
+                  "description": "(Required) The knowledge base id to delete source from."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "knowledge_base_texts",
+                  "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                  "type": "text",
+                  "description": "Texts to add to the knowledge base."
+                },
+                {
+                  "key": "knowledge_base_files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB."
+                },
+                {
+                  "key": "knowledge_base_urls",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "URLs to be scraped and added to the knowledge base. Must be valid urls."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c677e24b-3054-41bd-8763-d1321e38854d",
+              "name": "Successfully created a new knowledge base.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add-knowledge-base-sources",
+                    ":knowledge_base_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "knowledge_base_id",
+                      "description": "(Required) The knowledge base id to delete source from."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"knowledge_base_id\": \"knowledge_base_a456426614174000\",\n  \"knowledge_base_name\": \"Sample KB\",\n  \"status\": \"in_progress\",\n  \"max_chunk_size\": 2000,\n  \"min_chunk_size\": 400,\n  \"knowledge_base_sources\": [\n    {\n      \"type\": \"document\",\n      \"source_id\": \"string\",\n      \"filename\": \"string\",\n      \"file_url\": \"string\",\n      \"file_size\": 5958.900639423179\n    },\n    {\n      \"type\": \"document\",\n      \"source_id\": \"string\",\n      \"filename\": \"string\",\n      \"file_url\": \"string\",\n      \"file_size\": true\n    }\n  ],\n  \"enable_auto_refresh\": true,\n  \"last_refreshed_timestamp\": 1703413636133\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8e3605d2-940c-48b4-b820-742e25cf2ee3",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add-knowledge-base-sources",
+                    ":knowledge_base_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "knowledge_base_id",
+                      "description": "(Required) The knowledge base id to delete source from."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Invalid request format, please check API reference.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0ce65f2a-819b-4e5f-95a5-97605bd3edac",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add-knowledge-base-sources",
+                    ":knowledge_base_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "knowledge_base_id",
+                      "description": "(Required) The knowledge base id to delete source from."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"API key is missing or invalid.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9453e1d7-4c07-4e2f-9ebf-a5f7c54fc02b",
+              "name": "Payment Required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add-knowledge-base-sources",
+                    ":knowledge_base_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "knowledge_base_id",
+                      "description": "(Required) The knowledge base id to delete source from."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Trial has ended, please add payment method.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "22f444ed-7ddf-4399-8e47-7439f2180c91",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add-knowledge-base-sources",
+                    ":knowledge_base_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "knowledge_base_id",
+                      "description": "(Required) The knowledge base id to delete source from."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"Account rate limited, please throttle your requests.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "54aa99be-333c-4bd9-88ed-01e848dfc0bb",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add-knowledge-base-sources",
+                    ":knowledge_base_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "knowledge_base_id",
+                      "description": "(Required) The knowledge base id to delete source from."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "Texts to add to the knowledge base.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_texts",
+                      "value": "[{\"title\":\"<string>\",\"text\":\"<string>\"},{\"title\":\"<string>\",\"text\":\"<string>\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to add to the knowledge base. Limit to 25 files, where each file is limited to 50MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "URLs to be scraped and added to the knowledge base. Must be valid urls.",
+                        "type": "text/plain"
+                      },
+                      "key": "knowledge_base_urls",
+                      "value": "[\"https://www.example.com\",\"https://www.retellai.com\"]",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"message\": \"An unexpected server error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.retellai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "02191cfb-7283-4f25-bd32-83b86e817ffa",
+    "name": "Retell SDK Add Community Voice Add Knowledge Base Sources API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: Retell Support\n Email: support@retellai.com",
+      "type": "text/plain"
+    }
+  }
+}
