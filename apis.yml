@@ -21,6 +21,12 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/retell-ai.png
 tags:
+  - Artificial Intelligence
+  - Voice
+  - Agents
+  - Real-Time
+  - Conversational
+tags_raw:
   - AI
   - Voice
   - Agents
@@ -110,6 +116,8 @@ apis:
   humanURL: https://docs.retellai.com/api-references
   baseURL: https://api.retellai.com
   tags:
+  - '#CreateAgent'
+  tags_raw:
   - Create Agent
   properties:
   - type: OpenAPI
