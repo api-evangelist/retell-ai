@@ -6,6 +6,18 @@ description: >-
   Retell AI provides voice AI infrastructure for building conversational agents with low-latency turn detection,
   interruption handling, tool calling, knowledge bases, and conversation flows. The Retell SDK exposes a published
   OpenAPI spec covering agents, calls, voices, knowledge bases, conversation flows, batches, and chat agents.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
@@ -1468,6 +1480,9 @@ apis:
   - type: Pricing
     url: https://www.retellai.com/pricing
 common:
+  - type: CapabilityMap
+    url: capabilities/retell-ai-capability-edges.yml
+    name: Retell AI Business Capability Map
   - type: AgenticAccess
     url: agentic-access/retell-ai-agentic-access.yml
   - type: DomainSecurity
