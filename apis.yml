@@ -128,7 +128,7 @@ apis:
   humanURL: https://docs.retellai.com/api-references
   baseURL: https://api.retellai.com
   tags:
-  - '#CreateAgent'
+  - Create Agent
   tags_raw:
   - Create Agent
   properties:
