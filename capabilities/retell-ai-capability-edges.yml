@@ -11,8 +11,56 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 2
+edge_count: 7
 edges:
+- tag: Create Agent
+  spec_file: retell-ai-create-agent-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: POST /create-agent  createAgent; schemas AgentRequest, ResponseEngineRetellLm, PostCallAnalysisData,
+    GuardrailConfig
+  reason: Defines a conversational AI agent including its LLM response engine, guardrails and post-call
+    analysis — configuration and lifecycle of an AI model/agent, which maps to Artificial Intelligence
+    Management. Not a domain business capability despite the telephony flavour.
+  recovered_from: sweep-20260828T235257Z-edges.json
+- tag: Create Retell Llm
+  spec_file: retell-ai-create-retell-llm-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: POST /create-retell-llm createRetellLLM; schemas CustomTool, MCPTool, EndCallTool, PostCallAnalysisSetting,
+    LLMModel-style tool definitions
+  reason: Defines and configures an LLM response engine with tool calling and analysis settings — direct
+    AI/ML model configuration and lifecycle work, matching Artificial Intelligence Management. Clear AI
+    artefact, but the sub-capability framing (model lifecycle vs. product engineering) leaves some ambiguity.
+  recovered_from: sweep-20260828T235257Z-edges.json
+- tag: Get Agent
+  spec_file: retell-ai-get-agent-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: GET /get-agent/{agent_id} getAgent; schemas ResponseEngineRetellLm, ResponseEngineCustomLm,
+    GuardrailConfig, PostCallAnalysisData
+  reason: '''Agent'' here is an AI agent configuration bound to an LLM response engine with guardrails
+    and post-call analysis config — AI/ML model and responsible-AI configuration, not a human service
+    agent. Homograph resolved by the schema names.'
+  recovered_from: sweep-20260828T235257Z-edges.json
+- tag: Get Retell Llm
+  spec_file: retell-ai-get-retell-llm-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: GET /get-retell-llm/{llm_id} getRetellLLM; schemas CustomTool, MCPTool, PostCallAnalysisSetting,
+    WarmTransferPrompt, Tool
+  reason: Retrieves an LLM configuration including prompts, tool definitions and analysis settings — plainly
+    management of an AI/LLM model configuration, mapping to Artificial Intelligence Management (model
+    lifecycle/LLMOps).
+  recovered_from: sweep-20260828T235257Z-edges.json
 - tag: List Test Case Definitions
   spec_file: retell-ai-list-test-case-definitions-api-openapi.yml
   capability_id: BC-4200.50
@@ -35,3 +83,15 @@ edges:
   reason: Returns executions of test case batch jobs against agent definitions — automated test execution
     and results review, i.e. software quality engineering. Held at 0.7 as it is a single listing surface
     within a broader devtool.
+- tag: Update Test Case Definition
+  spec_file: retell-ai-update-test-case-definition-api-openapi.yml
+  capability_id: BC-4200.50
+  capability_id_l1: BC-4200
+  capability_name: Software Quality Engineering
+  confidence: 0.7
+  evidence: PUT /update-test-case-definition/{test_case_definition_id}  updateTestCaseDefinition; schemas
+    TestCaseDefinition, TestCaseDefinitionInput, ToolMock, ToolMockInputMatchRule
+  reason: The surface maintains test case definitions with tool mocks and match rules — automated test
+    suite stewardship for agent behaviour, which maps to Software Quality Engineering. Not 0.95 because
+    only one operation is visible and the test target is an AI agent rather than a conventional codebase.
+  recovered_from: sweep-20260828T235257Z-edges.json
