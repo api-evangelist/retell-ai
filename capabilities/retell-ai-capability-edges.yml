@@ -1,0 +1,37 @@
+slug: retell-ai
+provider: Retell AI
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Telecommunications
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: List Test Case Definitions
+  spec_file: retell-ai-list-test-case-definitions-api-openapi.yml
+  capability_id: BC-4200.50
+  capability_id_l1: BC-4200
+  capability_name: Software Quality Engineering
+  confidence: 0.7
+  evidence: GET /list-test-case-definitions listTestCaseDefinitions; schemas TestCaseDefinition, TestCaseDefinitionInput,
+    ToolMock, ToolMockInputMatchRule
+  reason: The surface manages automated test case definitions with tool mocks used to validate agent behaviour,
+    which is test-suite stewardship within software quality engineering. Confidence moderate because it
+    is a read-only listing operation.
+- tag: List Test Runs
+  spec_file: retell-ai-list-test-runs-api-openapi.yml
+  capability_id: BC-4200.50
+  capability_id_l1: BC-4200
+  capability_name: Software Quality Engineering
+  confidence: 0.7
+  evidence: GET /list-test-runs/{test_case_batch_job_id} listTestRuns; schemas TestCaseJob, TestCaseDefinition,
+    ToolMock
+  reason: Returns executions of test case batch jobs against agent definitions — automated test execution
+    and results review, i.e. software quality engineering. Held at 0.7 as it is a single listing surface
+    within a broader devtool.
