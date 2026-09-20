@@ -1,143 +1,154 @@
-specification: API Commons Plans
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
-provider: Retell AI
-providerId: retell-ai
-created: '2026-05-08'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-08, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-08'
-reconciled: true
-tags:
-- AI
-- Voice
-- Agents
-- Realtime
-- Conversational
-- Plans
-description: >-
-  Retell AI uses a usage-based pay-as-you-go model with $10 in free credits, plus optional
-  enterprise contracts. Voice agent pricing is component-based: a flat Retell infrastructure
-  fee plus pass-through TTS, LLM, and telephony charges. Chat agents are priced per message.
-notes: Reconciled from Retell's published pricing page (May 2026); component prices vary by selected provider.
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://www.retellai.com/pricing
 sources:
 - https://www.retellai.com/pricing
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T120546
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+published: true
+note: Per-minute usage pricing for voice agents plus per-message chat pricing, component pricing (LLM,
+  TTS, telephony, add-ons) and monthly subscription items; Enterprise is custom/contact sales.
+plan_count: 20
+currency: USD
 plans:
-- id: retell-ai-pay-as-you-go
-  name: Pay-as-you-go
-  type: usage
-  description: $0 to start with $10 free credits; pay only for what you use.
-  entries:
-  - label: Retell Voice Infrastructure
-    name: voice_infra
-    type: per_minute
-    metric: minute
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: 0.055 USD/min
-    userMultiplied: false
-  - label: Text-to-Speech (pass-through)
-    name: tts
-    type: per_minute
-    metric: minute
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: 0.015 USD/min (varies by provider)
-    userMultiplied: false
-  - label: LLM (pass-through)
-    name: llm
-    type: per_minute
-    metric: minute
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: 0.003 - 0.080 USD/min (varies by model)
-    userMultiplied: false
-  - label: Telephony (pass-through)
-    name: telephony
-    type: per_minute
-    metric: minute
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: 0.00 - 0.015 USD/min (country-dependent)
-    userMultiplied: false
-  - label: Voice Agent Bundled Range
-    name: voice_agent_range
-    type: per_minute
-    metric: minute
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: 0.07 - 0.31 USD/min
-    userMultiplied: false
-  - label: Chat Agent
-    name: chat_agent
-    type: per_message
-    metric: message
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: 0.002+ USD/msg
-    userMultiplied: false
-  - label: Concurrent Call Slot (additional)
-    name: concurrency_addon
-    type: subscription
-    metric: concurrent_call
-    limit: -1
-    timeFrame: month
-    geo: global
-    unit: 1
-    price: 8.00 USD/concurrency/month
-    userMultiplied: false
-  elements:
-  - name: 20 free concurrent calls
-  - name: First 10 knowledge bases free
-  - name: First 100 minutes of AI Quality Assurance free
-- id: retell-ai-trial
-  name: Free Trial
-  type: free
-  description: $10 in free credits at signup with no annual contract.
-  entries:
-  - label: Trial Credits
-    name: trial_credits
-    type: flat
-    metric: USD
-    limit: 10
-    timeFrame: trial
-    geo: global
-    unit: 1
-    price: 0 USD
-    userMultiplied: false
-  elements:
-  - name: 20 free concurrent calls
-- id: retell-ai-enterprise
-  name: Enterprise
-  type: enterprise
-  description: Custom contracts for high-volume customers.
-  entries:
-  - label: Enterprise Contract
-    name: enterprise
-    type: flat
-    metric: contract
-    limit: -1
-    timeFrame: annual
-    geo: global
-    unit: 1
-    price: contact sales
-    userMultiplied: false
-  elements:
-  - name: Volume discounts
-  - name: Dedicated support
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+- name: Pay as you go
+  price_text: $0.07-$0.31 / min for AI Voice Agents
+  currency: USD
+  period: per-use
+  unit: minute
+  included_quota: Full Platform Access, Pre-built Agent Templates, Call Analytics and Transcripts, Simulation
+    Testing, Webhooks and API Access, 20 Free Concurrent Calls, Community and Email Support; $10 in free
+    credits
+  overage: $0.002+ / msg for AI Chat Agents
+- name: Enterprise Plan
+  price_text: Custom Pricing for AI Voice Agents
+  period: none
+  included_quota: Everything from pay as you go, plus dedicated implementation support (add-on), custom
+    MSA/DPA, RBAC, dedicated stable server (add-on), custom SSO, high cap on concurrent calls, 24/7 support
+- name: Retell Voice Infra
+  price_text: $0.055/minute
+  price: 0.055
+  currency: USD
+  period: per-use
+  unit: minute
+- name: Retell Platform Voices (TTS)
+  price_text: $0.015/minute
+  price: 0.015
+  currency: USD
+  period: per-use
+  unit: minute
+- name: Elevenlabs Voices (TTS)
+  price_text: $0.040/minute
+  price: 0.04
+  currency: USD
+  period: per-use
+  unit: minute
+- name: LLM GPT 5.5 (Standard)
+  price_text: $0.16/minute
+  price: 0.16
+  currency: USD
+  period: per-use
+  unit: minute
+  overage: $0.32/minute Fast Tier
+- name: Telephony call rates (US Twilio)
+  price_text: $ 0.015 /min
+  price: 0.015
+  currency: USD
+  period: per-use
+  unit: minute
+  included_quota: No Charge for Sip Trunking/Custom Telephony
+- name: Knowledge Base add-on
+  price_text: +$0.005/minute
+  price: 0.005
+  currency: USD
+  period: per-use
+  unit: minute
+- name: Batch Call add-on
+  price_text: +$0.005/dial
+  price: 0.005
+  currency: USD
+  period: per-use
+  unit: dial
+- name: Branded Call add-on
+  price_text: +$0.10/outbound call
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: outbound call
+- name: PII Removal add-on
+  price_text: +$0.01/min
+  price: 0.01
+  currency: USD
+  period: per-use
+  unit: minute
+- name: AI Quality Assurance
+  price_text: $0.10/min
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: minute
+  included_quota: First 100 minutes free
+- name: SMS
+  price_text: $0.01/Msg
+  price: 0.01
+  currency: USD
+  period: per-use
+  unit: message
+- name: Chat Agent GPT 5.5
+  price_text: $0.05/AI msg
+  price: 0.05
+  currency: USD
+  period: per-use
+  unit: AI msg
+- name: Retell Phone Numbers
+  price_text: $2.00/month
+  price: 2
+  currency: USD
+  period: month
+  unit: phone number
+  included_quota: No Charge for custom phone numbers
+- name: Retell SMS subscription
+  price_text: $20.00/month
+  price: 20
+  currency: USD
+  period: month
+  included_quota: No charge for custom telephony SMS
+- name: Concurrency (Active Calls)
+  price_text: $8.00/Concurrency/month
+  price: 8
+  currency: USD
+  period: month
+  unit: concurrent call
+  included_quota: Free for first 20 concurrency (active calls)
+- name: Knowledge Base subscription
+  price_text: $8.00/Knowledge Base/month
+  price: 8
+  currency: USD
+  period: month
+  unit: knowledge base
+  included_quota: First 10 knowledge bases free
+- name: Verified Phone Number
+  price_text: $10.00/Phone number/month
+  price: 10
+  currency: USD
+  period: month
+  unit: phone number
+  included_quota: One-time $10 fee
+- name: Speech-to-speech GPT Realtime
+  price_text: $0.345/minute
+  price: 0.345
+  currency: USD
+  period: per-use
+  unit: minute
+rate_limit_statements:
+- 20 Free Concurrent Calls
+- 20 included, more available on demand
+- No Cap on Concurrent Calls
+- Every account includes 20 concurrent calls for free. Need more? Additional capacity is $8 per concurrent
+  call per month.
+- Enterprise plans offer custom concurrency starting at 50+ calls.
