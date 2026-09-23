@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice List Export Requests API
+  title: Retell SDK List Export Requests API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -70,36 +70,10 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - List Export Requests
+      summary: List export requests V2
+      x-summary-source: derived
 components:
   responses:
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
     BadRequest:
       description: Bad Request
       content:
@@ -114,6 +88,34 @@ components:
               message:
                 type: string
                 example: Invalid request format, please check API reference.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
     InternalServerError:
       description: Internal Server Error
       content:
@@ -128,16 +130,6 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
-  schemas:
-    PaginatedResponseBase:
-      type: object
-      properties:
-        pagination_key:
-          type: string
-          description: Pagination key for the next page.
-        has_more:
-          type: boolean
-          description: Whether more results are available.
   parameters:
     SortOrderParam:
       in: query
@@ -163,6 +155,16 @@ components:
         default: 50
         maximum: 1000
       description: Maximum number of items to return.
+  schemas:
+    PaginatedResponseBase:
+      type: object
+      properties:
+        pagination_key:
+          type: string
+          description: Pagination key for the next page.
+        has_more:
+          type: boolean
+          description: Whether more results are available.
   securitySchemes:
     api_key:
       type: http

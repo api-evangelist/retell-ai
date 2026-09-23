@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice Publish Agent Version API
+  title: Retell SDK Publish Agent Version API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -51,7 +51,22 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - Publish Agent Version
+      summary: Publish agent version
+      x-summary-source: derived
 components:
+  schemas:
+    PublishAgentVersionRequest:
+      type: object
+      required:
+      - version
+      properties:
+        version:
+          type: integer
+          minimum: 0
+          example: 15
+        version_description:
+          type: string
+          example: Hotfix for transfer timeout
   responses:
     Unauthorized:
       description: Unauthorized
@@ -81,20 +96,6 @@ components:
               message:
                 type: string
                 example: Invalid request format, please check API reference.
-    NotFound:
-      description: Not Found
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: The requested resource was not found.
     UnprocessableContent:
       description: Unprocessable Content
       content:
@@ -109,6 +110,20 @@ components:
               message:
                 type: string
                 example: Cannot find requested asset under given api key.
+    NotFound:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: The requested resource was not found.
     InternalServerError:
       description: Internal Server Error
       content:
@@ -123,19 +138,6 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
-  schemas:
-    PublishAgentVersionRequest:
-      type: object
-      required:
-      - version
-      properties:
-        version:
-          type: integer
-          minimum: 0
-          example: 15
-        version_description:
-          type: string
-          example: Hotfix for transfer timeout
   securitySchemes:
     api_key:
       type: http

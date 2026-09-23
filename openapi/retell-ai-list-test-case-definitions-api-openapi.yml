@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice List Test Case Definitions API
+  title: Retell SDK List Test Case Definitions API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -61,6 +61,8 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - List Test Case Definitions
+      summary: List test case definitions
+      x-summary-source: derived
   /v2/list-test-case-definitions:
     get:
       description: List test case definitions with pagination
@@ -111,36 +113,15 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - List Test Case Definitions
+      summary: List test case definitions V2
+      x-summary-source: derived
 components:
   schemas:
-    ResponseEngineConversationFlow:
-      type: object
-      required:
-      - type
-      - conversation_flow_id
-      properties:
-        type:
-          type: string
-          enum:
-          - conversation-flow
-          description: type of the Response Engine.
-        conversation_flow_id:
-          type: string
-          description: ID of the Conversation Flow Response Engine.
-        version:
-          type: number
-          example: 0
-          description: Version of the Conversation Flow Response Engine.
-          nullable: true
-    PaginatedResponseBase:
-      type: object
-      properties:
-        pagination_key:
-          type: string
-          description: Pagination key for the next page.
-        has_more:
-          type: boolean
-          description: Whether more results are available.
+    RetellResponseEngine:
+      oneOf:
+      - $ref: '#/components/schemas/ResponseEngineRetellLm'
+      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
+      description: Response engine for test cases. Custom LLM is not supported.
     ToolMock:
       type: object
       required:
@@ -159,39 +140,10 @@ components:
           maxLength: 15000
           description: The output of the tool call that will be fed into the LLM. Should be a JSON string.
         result:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
           description: For tool calls like transfer_call that require a boolean result. Optional for most tools.
-    TestCaseDefinitionInput:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the test case definition
-        response_engine:
-          $ref: '#/components/schemas/RetellResponseEngine'
-          description: Response engine to use for the test case. Custom LLM is not supported.
-        user_prompt:
-          type: string
-          description: User prompt to simulate in the test case
-        metrics:
-          type: array
-          items:
-            type: string
-          description: Array of metric names to evaluate
-        dynamic_variables:
-          type: object
-          additionalProperties:
-            type: string
-          description: Dynamic variables to inject into the response engine
-        tool_mocks:
-          type: array
-          items:
-            $ref: '#/components/schemas/ToolMock'
-          description: Mock tool calls for testing
-        llm_model:
-          $ref: '#/components/schemas/LLMModel'
-          description: LLM model to use for simulation
     TestCaseDefinition:
       allOf:
       - $ref: '#/components/schemas/TestCaseDefinitionInput'
@@ -223,6 +175,48 @@ components:
           user_modified_timestamp:
             type: integer
             description: Timestamp when the test case definition was last modified (milliseconds since epoch)
+    LLMModel:
+      type: string
+      enum:
+      - gpt-4.1
+      - gpt-4.1-mini
+      - gpt-4.1-nano
+      - gpt-5
+      - gpt-5-mini
+      - gpt-5-nano
+      - gpt-5.1
+      - gpt-5.2
+      - gpt-5.4
+      - gpt-5.4-mini
+      - gpt-5.4-nano
+      - gpt-5.5
+      - claude-4.5-sonnet
+      - claude-4.6-sonnet
+      - claude-4.5-haiku
+      - gemini-2.5-flash-lite
+      - gemini-3.0-flash
+      - gemini-3.1-flash-lite
+      description: Available LLM models for agents.
+    ResponseEngineConversationFlow:
+      type: object
+      required:
+      - type
+      - conversation_flow_id
+      properties:
+        type:
+          type: string
+          enum:
+          - conversation-flow
+          description: type of the Response Engine.
+        conversation_flow_id:
+          type: string
+          description: ID of the Conversation Flow Response Engine.
+        version:
+          type:
+          - number
+          - 'null'
+          example: 0
+          description: Version of the Conversation Flow Response Engine.
     ToolMockInputMatchRule:
       oneOf:
       - type: object
@@ -248,28 +242,15 @@ components:
             type: object
             additionalProperties: true
             description: Arguments to match. Only provided fields will be checked
-    LLMModel:
-      type: string
-      enum:
-      - gpt-4.1
-      - gpt-4.1-mini
-      - gpt-4.1-nano
-      - gpt-5
-      - gpt-5-mini
-      - gpt-5-nano
-      - gpt-5.1
-      - gpt-5.2
-      - gpt-5.4
-      - gpt-5.4-mini
-      - gpt-5.4-nano
-      - gpt-5.5
-      - claude-4.5-sonnet
-      - claude-4.6-sonnet
-      - claude-4.5-haiku
-      - gemini-2.5-flash-lite
-      - gemini-3.0-flash
-      - gemini-3.1-flash-lite
-      description: Available LLM models for agents.
+    PaginatedResponseBase:
+      type: object
+      properties:
+        pagination_key:
+          type: string
+          description: Pagination key for the next page.
+        has_more:
+          type: boolean
+          description: Whether more results are available.
     ResponseEngineRetellLm:
       type: object
       required:
@@ -285,44 +266,42 @@ components:
           type: string
           description: id of the Retell LLM Response Engine.
         version:
-          type: number
+          type:
+          - number
+          - 'null'
           example: 0
           description: Version of the Retell LLM Response Engine.
-          nullable: true
-    RetellResponseEngine:
-      oneOf:
-      - $ref: '#/components/schemas/ResponseEngineRetellLm'
-      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
-      description: Response engine for test cases. Custom LLM is not supported.
+    TestCaseDefinitionInput:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the test case definition
+        response_engine:
+          $ref: '#/components/schemas/RetellResponseEngine'
+          description: Response engine to use for the test case. Custom LLM is not supported.
+        user_prompt:
+          type: string
+          description: User prompt to simulate in the test case
+        metrics:
+          type: array
+          items:
+            type: string
+          description: Array of metric names to evaluate
+        dynamic_variables:
+          type: object
+          additionalProperties:
+            type: string
+          description: Dynamic variables to inject into the response engine
+        tool_mocks:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolMock'
+          description: Mock tool calls for testing
+        llm_model:
+          $ref: '#/components/schemas/LLMModel'
+          description: LLM model to use for simulation
   responses:
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
     BadRequest:
       description: Bad Request
       content:
@@ -337,6 +316,34 @@ components:
               message:
                 type: string
                 example: Invalid request format, please check API reference.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
     InternalServerError:
       description: Internal Server Error
       content:

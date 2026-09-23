@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice Delete Conversation Flow API
+  title: Retell SDK Delete Conversation Flow API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -43,36 +43,10 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - Delete Conversation Flow
+      summary: Delete conversation flow
+      x-summary-source: derived
 components:
   responses:
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
     BadRequest:
       description: Bad Request
       content:
@@ -87,6 +61,20 @@ components:
               message:
                 type: string
                 example: Invalid request format, please check API reference.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
     NotFound:
       description: Not Found
       content:
@@ -101,6 +89,20 @@ components:
               message:
                 type: string
                 example: The requested resource was not found.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
     InternalServerError:
       description: Internal Server Error
       content:

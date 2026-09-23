@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice Create Batch Test API
+  title: Retell SDK Create Batch Test API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -60,8 +60,34 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - Create Batch Test
+      summary: Create batch test
+      x-summary-source: derived
 components:
   schemas:
+    RetellResponseEngine:
+      oneOf:
+      - $ref: '#/components/schemas/ResponseEngineRetellLm'
+      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
+      description: Response engine for test cases. Custom LLM is not supported.
+    ResponseEngine:
+      oneOf:
+      - $ref: '#/components/schemas/ResponseEngineRetellLm'
+      - $ref: '#/components/schemas/ResponseEngineCustomLm'
+      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
+    ResponseEngineCustomLm:
+      type: object
+      required:
+      - type
+      - llm_websocket_url
+      properties:
+        type:
+          type: string
+          enum:
+          - custom-llm
+          description: type of the Response Engine.
+        llm_websocket_url:
+          type: string
+          description: LLM websocket url of the custom LLM.
     ResponseEngineConversationFlow:
       type: object
       required:
@@ -77,24 +103,31 @@ components:
           type: string
           description: ID of the Conversation Flow Response Engine.
         version:
-          type: number
+          type:
+          - number
+          - 'null'
           example: 0
           description: Version of the Conversation Flow Response Engine.
-          nullable: true
-    ResponseEngineCustomLm:
+    ResponseEngineRetellLm:
       type: object
       required:
       - type
-      - llm_websocket_url
+      - llm_id
       properties:
         type:
           type: string
           enum:
-          - custom-llm
+          - retell-llm
           description: type of the Response Engine.
-        llm_websocket_url:
+        llm_id:
           type: string
-          description: LLM websocket url of the custom LLM.
+          description: id of the Retell LLM Response Engine.
+        version:
+          type:
+          - number
+          - 'null'
+          example: 0
+          description: Version of the Retell LLM Response Engine.
     TestCaseBatchJob:
       type: object
       required:
@@ -141,38 +174,9 @@ components:
         user_modified_timestamp:
           type: integer
           description: Timestamp when the batch job was last modified (milliseconds since epoch)
-    ResponseEngine:
-      oneOf:
-      - $ref: '#/components/schemas/ResponseEngineRetellLm'
-      - $ref: '#/components/schemas/ResponseEngineCustomLm'
-      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
-    ResponseEngineRetellLm:
-      type: object
-      required:
-      - type
-      - llm_id
-      properties:
-        type:
-          type: string
-          enum:
-          - retell-llm
-          description: type of the Response Engine.
-        llm_id:
-          type: string
-          description: id of the Retell LLM Response Engine.
-        version:
-          type: number
-          example: 0
-          description: Version of the Retell LLM Response Engine.
-          nullable: true
-    RetellResponseEngine:
-      oneOf:
-      - $ref: '#/components/schemas/ResponseEngineRetellLm'
-      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
-      description: Response engine for test cases. Custom LLM is not supported.
   responses:
-    TooManyRequests:
-      description: Too Many Requests
+    BadRequest:
+      description: Bad Request
       content:
         application/json:
           schema:
@@ -184,7 +188,7 @@ components:
                 - error
               message:
                 type: string
-                example: Account rate limited, please throttle your requests.
+                example: Invalid request format, please check API reference.
     Unauthorized:
       description: Unauthorized
       content:
@@ -213,8 +217,8 @@ components:
               message:
                 type: string
                 example: Trial has ended, please add payment method.
-    BadRequest:
-      description: Bad Request
+    TooManyRequests:
+      description: Too Many Requests
       content:
         application/json:
           schema:
@@ -226,7 +230,7 @@ components:
                 - error
               message:
                 type: string
-                example: Invalid request format, please check API reference.
+                example: Account rate limited, please throttle your requests.
     InternalServerError:
       description: Internal Server Error
       content:

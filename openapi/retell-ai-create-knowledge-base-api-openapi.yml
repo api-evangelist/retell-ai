@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice Create Knowledge Base API
+  title: Retell SDK Create Knowledge Base API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -46,8 +46,33 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - Create Knowledge Base
+      summary: Create knowledge base
+      x-summary-source: derived
 components:
   schemas:
+    KnowledgeBaseSourceDocument:
+      type: object
+      required:
+      - type
+      - source_id
+      - filename
+      - file_url
+      - file_size
+      properties:
+        type:
+          type: string
+          enum:
+          - document
+          description: Type of the knowledge base source.
+        source_id:
+          type: string
+          description: Unique id of the knowledge base source.
+        filename:
+          type: string
+          description: Filename of the document.
+        file_url:
+          type: string
+          description: URL of the document stored.
     KnowledgeBaseRequest:
       type: object
       required:
@@ -120,29 +145,6 @@ components:
         url:
           type: string
           description: URL used to be scraped and added to the knowledge base.
-    KnowledgeBaseSourceDocument:
-      type: object
-      required:
-      - type
-      - source_id
-      - filename
-      - file_url
-      - file_size
-      properties:
-        type:
-          type: string
-          enum:
-          - document
-          description: Type of the knowledge base source.
-        source_id:
-          type: string
-          description: Unique id of the knowledge base source.
-        filename:
-          type: string
-          description: Filename of the document.
-        file_url:
-          type: string
-          description: URL of the document stored.
     KnowledgeBaseResponse:
       type: object
       required:
@@ -214,8 +216,8 @@ components:
           type: string
           description: URL of the text content stored.
   responses:
-    TooManyRequests:
-      description: Too Many Requests
+    BadRequest:
+      description: Bad Request
       content:
         application/json:
           schema:
@@ -227,7 +229,7 @@ components:
                 - error
               message:
                 type: string
-                example: Account rate limited, please throttle your requests.
+                example: Invalid request format, please check API reference.
     Unauthorized:
       description: Unauthorized
       content:
@@ -256,8 +258,8 @@ components:
               message:
                 type: string
                 example: Trial has ended, please add payment method.
-    BadRequest:
-      description: Bad Request
+    TooManyRequests:
+      description: Too Many Requests
       content:
         application/json:
           schema:
@@ -269,7 +271,7 @@ components:
                 - error
               message:
                 type: string
-                example: Invalid request format, please check API reference.
+                example: Account rate limited, please throttle your requests.
     InternalServerError:
       description: Internal Server Error
       content:

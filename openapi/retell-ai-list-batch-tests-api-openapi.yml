@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice List Batch Tests API
+  title: Retell SDK List Batch Tests API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -66,6 +66,8 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - List Batch Tests
+      summary: List batch tests
+      x-summary-source: derived
   /v2/list-batch-tests:
     get:
       description: List batch test jobs with pagination
@@ -121,50 +123,10 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - List Batch Tests
+      summary: List batch tests V2
+      x-summary-source: derived
 components:
   schemas:
-    ResponseEngineConversationFlow:
-      type: object
-      required:
-      - type
-      - conversation_flow_id
-      properties:
-        type:
-          type: string
-          enum:
-          - conversation-flow
-          description: type of the Response Engine.
-        conversation_flow_id:
-          type: string
-          description: ID of the Conversation Flow Response Engine.
-        version:
-          type: number
-          example: 0
-          description: Version of the Conversation Flow Response Engine.
-          nullable: true
-    PaginatedResponseBase:
-      type: object
-      properties:
-        pagination_key:
-          type: string
-          description: Pagination key for the next page.
-        has_more:
-          type: boolean
-          description: Whether more results are available.
-    ResponseEngineCustomLm:
-      type: object
-      required:
-      - type
-      - llm_websocket_url
-      properties:
-        type:
-          type: string
-          enum:
-          - custom-llm
-          description: type of the Response Engine.
-        llm_websocket_url:
-          type: string
-          description: LLM websocket url of the custom LLM.
     TestCaseBatchJob:
       type: object
       required:
@@ -211,6 +173,45 @@ components:
         user_modified_timestamp:
           type: integer
           description: Timestamp when the batch job was last modified (milliseconds since epoch)
+    ResponseEngine:
+      oneOf:
+      - $ref: '#/components/schemas/ResponseEngineRetellLm'
+      - $ref: '#/components/schemas/ResponseEngineCustomLm'
+      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
+    ResponseEngineCustomLm:
+      type: object
+      required:
+      - type
+      - llm_websocket_url
+      properties:
+        type:
+          type: string
+          enum:
+          - custom-llm
+          description: type of the Response Engine.
+        llm_websocket_url:
+          type: string
+          description: LLM websocket url of the custom LLM.
+    ResponseEngineConversationFlow:
+      type: object
+      required:
+      - type
+      - conversation_flow_id
+      properties:
+        type:
+          type: string
+          enum:
+          - conversation-flow
+          description: type of the Response Engine.
+        conversation_flow_id:
+          type: string
+          description: ID of the Conversation Flow Response Engine.
+        version:
+          type:
+          - number
+          - 'null'
+          example: 0
+          description: Version of the Conversation Flow Response Engine.
     ResponseEngineRetellLm:
       type: object
       required:
@@ -226,30 +227,21 @@ components:
           type: string
           description: id of the Retell LLM Response Engine.
         version:
-          type: number
+          type:
+          - number
+          - 'null'
           example: 0
           description: Version of the Retell LLM Response Engine.
-          nullable: true
-    ResponseEngine:
-      oneOf:
-      - $ref: '#/components/schemas/ResponseEngineRetellLm'
-      - $ref: '#/components/schemas/ResponseEngineCustomLm'
-      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
+    PaginatedResponseBase:
+      type: object
+      properties:
+        pagination_key:
+          type: string
+          description: Pagination key for the next page.
+        has_more:
+          type: boolean
+          description: Whether more results are available.
   responses:
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
     Unauthorized:
       description: Unauthorized
       content:
@@ -278,6 +270,20 @@ components:
               message:
                 type: string
                 example: Invalid request format, please check API reference.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
     InternalServerError:
       description: Internal Server Error
       content:

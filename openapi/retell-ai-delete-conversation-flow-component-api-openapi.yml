@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice Delete Conversation Flow Component API
+  title: Retell SDK Delete Conversation Flow Component API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -41,22 +41,10 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - Delete Conversation Flow Component
+      summary: Delete conversation flow component
+      x-summary-source: derived
 components:
   responses:
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: An unexpected server error occurred.
     TooManyRequests:
       description: Too Many Requests
       content:
@@ -71,20 +59,6 @@ components:
               message:
                 type: string
                 example: Account rate limited, please throttle your requests.
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
     NotFound:
       description: Not Found
       content:
@@ -99,6 +73,34 @@ components:
               message:
                 type: string
                 example: The requested resource was not found.
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
   securitySchemes:
     api_key:
       type: http

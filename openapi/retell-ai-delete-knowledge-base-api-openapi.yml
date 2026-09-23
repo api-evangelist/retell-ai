@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice Delete Knowledge Base API
+  title: Retell SDK Delete Knowledge Base API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -42,8 +42,24 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - Delete Knowledge Base
+      summary: Delete knowledge base
+      x-summary-source: derived
 components:
   responses:
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
     UnprocessableContent:
       description: Unprocessable Content
       content:
@@ -72,20 +88,6 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
     Unauthorized:
       description: Unauthorized
       content:

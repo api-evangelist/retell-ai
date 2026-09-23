@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice Get Mcp Tools API
+  title: Retell SDK Get Mcp Tools API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -70,22 +70,10 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - Get Mcp Tools
+      summary: Get MCP tools
+      x-summary-source: derived
 components:
   responses:
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
     BadRequest:
       description: Bad Request
       content:
@@ -100,6 +88,20 @@ components:
               message:
                 type: string
                 example: Invalid request format, please check API reference.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
     UnprocessableContent:
       description: Unprocessable Content
       content:

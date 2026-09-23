@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice Delete Knowledge Base Source API
+  title: Retell SDK Delete Knowledge Base Source API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -53,83 +53,10 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - Delete Knowledge Base Source
+      summary: Delete knowledge base source
+      x-summary-source: derived
 components:
-  responses:
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
-    UnprocessableContent:
-      description: Unprocessable Content
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Cannot find requested asset under given api key.
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: An unexpected server error occurred.
   schemas:
-    KnowledgeBaseSourceUrl:
-      type: object
-      required:
-      - type
-      - source_id
-      - url
-      properties:
-        type:
-          type: string
-          enum:
-          - url
-          description: Type of the knowledge base source.
-        source_id:
-          type: string
-          description: Unique id of the knowledge base source.
-        url:
-          type: string
-          description: URL used to be scraped and added to the knowledge base.
     KnowledgeBaseSourceDocument:
       type: object
       required:
@@ -153,6 +80,24 @@ components:
         file_url:
           type: string
           description: URL of the document stored.
+    KnowledgeBaseSourceUrl:
+      type: object
+      required:
+      - type
+      - source_id
+      - url
+      properties:
+        type:
+          type: string
+          enum:
+          - url
+          description: Type of the knowledge base source.
+        source_id:
+          type: string
+          description: Unique id of the knowledge base source.
+        url:
+          type: string
+          description: URL used to be scraped and added to the knowledge base.
     KnowledgeBaseResponse:
       type: object
       required:
@@ -223,6 +168,63 @@ components:
         content_url:
           type: string
           description: URL of the text content stored.
+  responses:
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
+    UnprocessableContent:
+      description: Unprocessable Content
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Cannot find requested asset under given api key.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
   securitySchemes:
     api_key:
       type: http

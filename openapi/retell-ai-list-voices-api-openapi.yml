@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice List Voices API
+  title: Retell SDK List Voices API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -36,6 +36,8 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - List Voices
+      summary: List voices
+      x-summary-source: derived
 components:
   schemas:
     VoiceResponse:

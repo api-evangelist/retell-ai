@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice End Chat API
+  title: Retell SDK End Chat API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -42,22 +42,10 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - End Chat
+      summary: End chat
+      x-summary-source: derived
 components:
   responses:
-    BadRequest:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Invalid request format, please check API reference.
     UnprocessableContent:
       description: Unprocessable Content
       content:
@@ -86,6 +74,20 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Invalid request format, please check API reference.
     Unauthorized:
       description: Unauthorized
       content:

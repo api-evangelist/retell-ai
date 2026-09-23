@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Retell SDK Add Community Voice Get Concurrency API
+  title: Retell SDK Get Concurrency API
   version: 3.0.0
   contact:
     name: Retell Support
@@ -68,6 +68,8 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       tags:
       - Get Concurrency
+      summary: Get concurrency
+      x-summary-source: derived
 components:
   responses:
     InternalServerError:
