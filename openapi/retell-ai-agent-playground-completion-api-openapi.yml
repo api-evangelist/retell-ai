@@ -139,61 +139,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ChatMessageInput:
-      description: Same shape as chat completion messages. message_id and created_timestamp are optional — server generates them if omitted.
-      oneOf:
-      - $ref: '#/components/schemas/MessageBase'
-      - $ref: '#/components/schemas/ToolCallInvocationMessageBase'
-      - $ref: '#/components/schemas/ToolCallResultMessageBase'
-      - $ref: '#/components/schemas/NodeTransitionMessageBase'
-      - $ref: '#/components/schemas/StateTransitionMessageBase'
-    ToolMock:
-      type: object
-      required:
-      - tool_name
-      - input_match_rule
-      - output
-      properties:
-        tool_name:
-          type: string
-          description: Name of the tool to mock
-        input_match_rule:
-          $ref: '#/components/schemas/ToolMockInputMatchRule'
-          description: Rule for matching tool calls
-        output:
-          type: string
-          maxLength: 15000
-          description: The output of the tool call that will be fed into the LLM. Should be a JSON string.
-        result:
-          type:
-          - boolean
-          - 'null'
-          description: For tool calls like transfer_call that require a boolean result. Optional for most tools.
-    ToolMockInputMatchRule:
-      oneOf:
-      - type: object
-        required:
-        - type
-        properties:
-          type:
-            type: string
-            enum:
-            - any
-            description: Match any input of the tool
-      - type: object
-        required:
-        - type
-        - args
-        properties:
-          type:
-            type: string
-            enum:
-            - partial_match
-            description: Match only calls with specific arguments
-          args:
-            type: object
-            additionalProperties: true
-            description: Arguments to match. Only provided fields will be checked
     NodeTransitionMessageBase:
       type: object
       required:
@@ -232,9 +177,68 @@ components:
           type: integer
           description: Create timestamp of the message
           example: 1703302428855
-    ToolCallResultMessage:
+    StateTransitionMessage:
       allOf:
-      - $ref: '#/components/schemas/ToolCallResultMessageBase'
+      - $ref: '#/components/schemas/StateTransitionMessageBase'
+      - required:
+        - message_id
+        - created_timestamp
+    ToolMock:
+      type: object
+      required:
+      - tool_name
+      - input_match_rule
+      - output
+      properties:
+        tool_name:
+          type: string
+          description: Name of the tool to mock
+        input_match_rule:
+          $ref: '#/components/schemas/ToolMockInputMatchRule'
+          description: Rule for matching tool calls
+        output:
+          type: string
+          maxLength: 15000
+          description: The output of the tool call that will be fed into the LLM. Should be a JSON string.
+        result:
+          type:
+          - boolean
+          - 'null'
+          description: For tool calls like transfer_call that require a boolean result. Optional for most tools.
+    MessageOrToolCall:
+      oneOf:
+      - $ref: '#/components/schemas/Message'
+      - $ref: '#/components/schemas/ToolCallInvocationMessage'
+      - $ref: '#/components/schemas/ToolCallResultMessage'
+      - $ref: '#/components/schemas/NodeTransitionMessage'
+      - $ref: '#/components/schemas/StateTransitionMessage'
+    StateTransitionMessageBase:
+      type: object
+      required:
+      - role
+      properties:
+        message_id:
+          type: string
+          example: Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6
+          description: Unique id of the message
+        role:
+          type: string
+          enum:
+          - state_transition
+          description: This is a state transition.
+        former_state_name:
+          type: string
+          description: Former state name
+        new_state_name:
+          type: string
+          description: New state name
+        created_timestamp:
+          type: integer
+          description: Create timestamp of the message
+          example: 1703302428855
+    ToolCallInvocationMessage:
+      allOf:
+      - $ref: '#/components/schemas/ToolCallInvocationMessageBase'
       - required:
         - message_id
         - created_timestamp
@@ -259,42 +263,6 @@ components:
           type: string
           description: Content of the message
           example: hi how are you doing?
-        created_timestamp:
-          type: integer
-          description: Create timestamp of the message
-          example: 1703302428855
-    StateTransitionMessage:
-      allOf:
-      - $ref: '#/components/schemas/StateTransitionMessageBase'
-      - required:
-        - message_id
-        - created_timestamp
-    NodeTransitionMessage:
-      allOf:
-      - $ref: '#/components/schemas/NodeTransitionMessageBase'
-      - required:
-        - message_id
-        - created_timestamp
-    StateTransitionMessageBase:
-      type: object
-      required:
-      - role
-      properties:
-        message_id:
-          type: string
-          example: Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6
-          description: Unique id of the message
-        role:
-          type: string
-          enum:
-          - state_transition
-          description: This is a state transition.
-        former_state_name:
-          type: string
-          description: Former state name
-        new_state_name:
-          type: string
-          description: New state name
         created_timestamp:
           type: integer
           description: Create timestamp of the message
@@ -332,19 +300,6 @@ components:
           type: integer
           description: Create timestamp of the message
           example: 1703302428855
-    MessageOrToolCall:
-      oneOf:
-      - $ref: '#/components/schemas/Message'
-      - $ref: '#/components/schemas/ToolCallInvocationMessage'
-      - $ref: '#/components/schemas/ToolCallResultMessage'
-      - $ref: '#/components/schemas/NodeTransitionMessage'
-      - $ref: '#/components/schemas/StateTransitionMessage'
-    ToolCallInvocationMessage:
-      allOf:
-      - $ref: '#/components/schemas/ToolCallInvocationMessageBase'
-      - required:
-        - message_id
-        - created_timestamp
     ToolCallResultMessageBase:
       type: object
       required:
@@ -374,83 +329,58 @@ components:
           type: integer
           description: Create timestamp of the message
           example: 1703302428855
+    ToolCallResultMessage:
+      allOf:
+      - $ref: '#/components/schemas/ToolCallResultMessageBase'
+      - required:
+        - message_id
+        - created_timestamp
+    NodeTransitionMessage:
+      allOf:
+      - $ref: '#/components/schemas/NodeTransitionMessageBase'
+      - required:
+        - message_id
+        - created_timestamp
+    ToolMockInputMatchRule:
+      oneOf:
+      - type: object
+        required:
+        - type
+        properties:
+          type:
+            type: string
+            enum:
+            - any
+            description: Match any input of the tool
+      - type: object
+        required:
+        - type
+        - args
+        properties:
+          type:
+            type: string
+            enum:
+            - partial_match
+            description: Match only calls with specific arguments
+          args:
+            type: object
+            additionalProperties: true
+            description: Arguments to match. Only provided fields will be checked
     Message:
       allOf:
       - $ref: '#/components/schemas/MessageBase'
       - required:
         - message_id
         - created_timestamp
+    ChatMessageInput:
+      description: Same shape as chat completion messages. message_id and created_timestamp are optional — server generates them if omitted.
+      oneOf:
+      - $ref: '#/components/schemas/MessageBase'
+      - $ref: '#/components/schemas/ToolCallInvocationMessageBase'
+      - $ref: '#/components/schemas/ToolCallResultMessageBase'
+      - $ref: '#/components/schemas/NodeTransitionMessageBase'
+      - $ref: '#/components/schemas/StateTransitionMessageBase'
   responses:
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
-    UnprocessableContent:
-      description: Unprocessable Content
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Cannot find requested asset under given api key.
-    BadRequest:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Invalid request format, please check API reference.
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: An unexpected server error occurred.
     PaymentRequired:
       description: Payment Required
       content:
@@ -465,6 +395,76 @@ components:
               message:
                 type: string
                 example: Trial has ended, please add payment method.
+    UnprocessableContent:
+      description: Unprocessable Content
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Cannot find requested asset under given api key.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Invalid request format, please check API reference.
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
   securitySchemes:
     api_key:
       type: http

@@ -51,8 +51,8 @@ paths:
       x-summary-source: derived
 components:
   responses:
-    Unauthorized:
-      description: Unauthorized
+    PaymentRequired:
+      description: Payment Required
       content:
         application/json:
           schema:
@@ -64,7 +64,7 @@ components:
                 - error
               message:
                 type: string
-                example: API key is missing or invalid.
+                example: Trial has ended, please add payment method.
     BadRequest:
       description: Bad Request
       content:
@@ -93,8 +93,8 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
-    PaymentRequired:
-      description: Payment Required
+    Unauthorized:
+      description: Unauthorized
       content:
         application/json:
           schema:
@@ -106,52 +106,45 @@ components:
                 - error
               message:
                 type: string
-                example: Trial has ended, please add payment method.
+                example: API key is missing or invalid.
   schemas:
-    NullableLLMModel:
-      type:
-      - string
-      - 'null'
-      enum:
-      - gpt-4.1
-      - gpt-4.1-mini
-      - gpt-4.1-nano
-      - gpt-5
-      - gpt-5-mini
-      - gpt-5-nano
-      - gpt-5.1
-      - gpt-5.2
-      - gpt-5.4
-      - gpt-5.4-mini
-      - gpt-5.4-nano
-      - gpt-5.5
-      - claude-4.5-sonnet
-      - claude-4.6-sonnet
-      - claude-4.5-haiku
-      - gemini-2.5-flash-lite
-      - gemini-3.0-flash
-      - gemini-3.1-flash-lite
-      - null
-      description: Available LLM models for agents.
-    ResponseEngine:
-      oneOf:
-      - $ref: '#/components/schemas/ResponseEngineRetellLm'
-      - $ref: '#/components/schemas/ResponseEngineCustomLm'
-      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
-    ResponseEngineCustomLm:
+    GuardrailConfig:
       type: object
-      required:
-      - type
-      - llm_websocket_url
       properties:
-        type:
-          type: string
-          enum:
-          - custom-llm
-          description: type of the Response Engine.
-        llm_websocket_url:
-          type: string
-          description: LLM websocket url of the custom LLM.
+        output_topics:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            enum:
+            - harassment
+            - self_harm
+            - sexual_exploitation
+            - violence
+            - defense_and_national_security
+            - illicit_and_harmful_activity
+            - gambling
+            - regulated_professional_advice
+            - child_safety_and_exploitation
+          uniqueItems: true
+          description: Selected prohibited agent topic categories to check. When agent messages contain these topics, they will be replaced with a placeholder message.
+        input_topics:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            enum:
+            - platform_integrity_jailbreaking
+          uniqueItems: true
+          description: Selected prohibited user topic categories to check. When user messages contain these topics, the agent will respond with a placeholder message instead of processing the request.
+    AnalysisData:
+      oneOf:
+      - $ref: '#/components/schemas/StringAnalysisData'
+      - $ref: '#/components/schemas/EnumAnalysisData'
+      - $ref: '#/components/schemas/BooleanAnalysisData'
+      - $ref: '#/components/schemas/NumberAnalysisData'
     ResponseEngineConversationFlow:
       type: object
       required:
@@ -172,6 +165,161 @@ components:
           - 'null'
           example: 0
           description: Version of the Conversation Flow Response Engine.
+    Language:
+      type: string
+      example: en-US
+      enum:
+      - en-US
+      - en-IN
+      - en-GB
+      - en-AU
+      - en-NZ
+      - de-DE
+      - es-ES
+      - es-419
+      - hi-IN
+      - fr-FR
+      - fr-CA
+      - ja-JP
+      - pt-PT
+      - pt-BR
+      - zh-CN
+      - ru-RU
+      - it-IT
+      - ko-KR
+      - nl-NL
+      - nl-BE
+      - pl-PL
+      - tr-TR
+      - vi-VN
+      - ro-RO
+      - bg-BG
+      - ca-ES
+      - th-TH
+      - da-DK
+      - fi-FI
+      - el-GR
+      - hu-HU
+      - id-ID
+      - no-NO
+      - sk-SK
+      - sv-SE
+      - lt-LT
+      - lv-LV
+      - cs-CZ
+      - ms-MY
+      - af-ZA
+      - ar-SA
+      - az-AZ
+      - bs-BA
+      - cy-GB
+      - fa-IR
+      - fil-PH
+      - gl-ES
+      - he-IL
+      - hr-HR
+      - hy-AM
+      - is-IS
+      - kk-KZ
+      - kn-IN
+      - mk-MK
+      - mr-IN
+      - ne-NP
+      - sl-SI
+      - sr-RS
+      - sw-KE
+      - ta-IN
+      - ur-IN
+      - yue-CN
+      - uk-UA
+      description: Specifies what language (and dialect) the agent will operate in. For instance, selecting `en-GB` optimizes speech recognition for British English and indexes knowledge bases with English. If unset, will use default value `en-US`. This enum does not include the legacy scalar value `multi`.
+    PIIConfig:
+      type: object
+      required:
+      - mode
+      - categories
+      properties:
+        mode:
+          type: string
+          enum:
+          - post_call
+          default: post_call
+          description: The processing mode for PII scrubbing. Currently only post-call is supported.
+        categories:
+          type: array
+          items:
+            type: string
+            enum:
+            - person_name
+            - address
+            - email
+            - phone_number
+            - ssn
+            - passport
+            - driver_license
+            - credit_card
+            - bank_account
+            - password
+            - pin
+            - medical_id
+            - date_of_birth
+            - customer_account_number
+          uniqueItems: true
+          default: []
+          description: List of PII categories to scrub from transcripts and recordings.
+    ResponseEngine:
+      oneOf:
+      - $ref: '#/components/schemas/ResponseEngineRetellLm'
+      - $ref: '#/components/schemas/ResponseEngineCustomLm'
+      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
+    NumberAnalysisData:
+      type: object
+      required:
+      - type
+      - name
+      - description
+      properties:
+        type:
+          type: string
+          enum:
+          - number
+          description: Type of the variable to extract.
+          example: number
+        name:
+          type: string
+          description: Name of the variable.
+          example: order_count
+          minLength: 1
+        description:
+          type: string
+          description: Description of the variable.
+          example: How many the customer intend to order.
+        required:
+          type: boolean
+          description: Whether this data is required. If true and the data is not extracted, the call will be marked as unsuccessful.
+        conditional_prompt:
+          type: string
+          description: Optional instruction to help decide whether this field needs to be populated in the analysis. If not set, the field is always included. If required is true, this is ignored.
+    ResponseEngineRetellLm:
+      type: object
+      required:
+      - type
+      - llm_id
+      properties:
+        type:
+          type: string
+          enum:
+          - retell-llm
+          description: type of the Response Engine.
+        llm_id:
+          type: string
+          description: id of the Retell LLM Response Engine.
+        version:
+          type:
+          - number
+          - 'null'
+          example: 0
+          description: Version of the Retell LLM Response Engine.
     BooleanAnalysisData:
       type: object
       required:
@@ -200,85 +348,6 @@ components:
         conditional_prompt:
           type: string
           description: Optional instruction to help decide whether this field needs to be populated in the analysis. If not set, the field is always included. If required is true, this is ignored.
-    ChatPresetAnalysisData:
-      type: object
-      required:
-      - type
-      - name
-      description: System preset for post-chat analysis (chat agents). Use in post_chat_analysis_data to override prompts or mark fields optional.
-      properties:
-        type:
-          type: string
-          enum:
-          - system-presets
-          description: Identifies this item as a system preset.
-        name:
-          type: string
-          enum:
-          - chat_summary
-          - chat_successful
-          - user_sentiment
-          description: Preset identifier for chat agent analysis.
-          example: chat_summary
-        description:
-          type: string
-          minLength: 1
-          description: Prompt or description for this preset.
-        required:
-          type: boolean
-          description: If false, this field is optional in the analysis. If true or unset, the field is required.
-        conditional_prompt:
-          type: string
-          description: Optional instruction to help decide whether this field needs to be populated. If not set, the field is always included.
-    StringAnalysisData:
-      type: object
-      required:
-      - type
-      - name
-      - description
-      properties:
-        type:
-          type: string
-          enum:
-          - string
-          description: Type of the variable to extract.
-          example: string
-        name:
-          type: string
-          description: Name of the variable.
-          example: customer_name
-          minLength: 1
-        description:
-          type: string
-          description: Description of the variable.
-          example: The name of the customer.
-        examples:
-          type: array
-          items:
-            type: string
-          description: Examples of the variable value to teach model the style and syntax.
-          example:
-          - John Doe
-          - Jane Smith
-        required:
-          type: boolean
-          description: Whether this data is required. If true and the data is not extracted, the call will be marked as unsuccessful.
-        conditional_prompt:
-          type: string
-          description: Optional instruction to help decide whether this field needs to be populated in the analysis. If not set, the field is always included. If required is true, this is ignored.
-    LanguageLegacy:
-      oneOf:
-      - $ref: '#/components/schemas/Language'
-      - type: string
-        enum:
-        - multi
-      example: en-US
-      description: Legacy single-string language format. Accepts any concrete locale from `Language`, plus the special scalar value `multi` for multilingual support. If unset, will use default value `en-US`.
-    PostChatAnalysisData:
-      oneOf:
-      - $ref: '#/components/schemas/AnalysisData'
-      - $ref: '#/components/schemas/ChatPresetAnalysisData'
-      description: Post-chat analysis item (custom data or chat preset). Use for chat agent post_chat_analysis_data; validates only chat presets (chat_summary, chat_successful, user_sentiment).
     ChatHandbookConfig:
       type: object
       description: Behavior presets for chat agents. Voice-only presets are excluded.
@@ -295,6 +364,60 @@ components:
         scope_boundaries:
           type: boolean
           description: Stay within prompt/context scope, don't invent details.
+    ChatAgentResponse:
+      allOf:
+      - type: object
+        required:
+        - agent_id
+        properties:
+          agent_id:
+            type: string
+            example: oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD
+            description: Unique id of chat agent.
+          version:
+            type: integer
+            example: 0
+            description: The version of the chat agent.
+          base_version:
+            type:
+            - integer
+            - 'null'
+            example: 12
+            description: Version that this draft was based on. Null for initial versions.
+          assigned_tags:
+            type: array
+            items:
+              type: string
+            description: Tags assigned to this chat agent version. Preferred tag is listed first.
+          is_published:
+            type: boolean
+            example: false
+            description: Whether the chat agent is published.
+      - $ref: '#/components/schemas/ChatAgentRequest'
+        required:
+        - response_engine
+      - type: object
+        required:
+        - last_modification_timestamp
+        properties:
+          last_modification_timestamp:
+            type: integer
+            example: 1703413636133
+            description: Last modification timestamp (milliseconds since epoch). Either the time of last update or creation if no updates available.
+    ResponseEngineCustomLm:
+      type: object
+      required:
+      - type
+      - llm_websocket_url
+      properties:
+        type:
+          type: string
+          enum:
+          - custom-llm
+          description: type of the Response Engine.
+        llm_websocket_url:
+          type: string
+          description: LLM websocket url of the custom LLM.
     ChatAgentRequest:
       type: object
       properties:
@@ -431,7 +554,15 @@ components:
           - 'null'
           example: false
           description: Whether the agent is public. When set to true, the agent is available for public agent preview link.
-    NumberAnalysisData:
+    LanguageLegacy:
+      oneOf:
+      - $ref: '#/components/schemas/Language'
+      - type: string
+        enum:
+        - multi
+      example: en-US
+      description: Legacy single-string language format. Accepts any concrete locale from `Language`, plus the special scalar value `multi` for multilingual support. If unset, will use default value `en-US`.
+    StringAnalysisData:
       type: object
       required:
       - type
@@ -441,58 +572,87 @@ components:
         type:
           type: string
           enum:
-          - number
+          - string
           description: Type of the variable to extract.
-          example: number
+          example: string
         name:
           type: string
           description: Name of the variable.
-          example: order_count
+          example: customer_name
           minLength: 1
         description:
           type: string
           description: Description of the variable.
-          example: How many the customer intend to order.
+          example: The name of the customer.
+        examples:
+          type: array
+          items:
+            type: string
+          description: Examples of the variable value to teach model the style and syntax.
+          example:
+          - John Doe
+          - Jane Smith
         required:
           type: boolean
           description: Whether this data is required. If true and the data is not extracted, the call will be marked as unsuccessful.
         conditional_prompt:
           type: string
           description: Optional instruction to help decide whether this field needs to be populated in the analysis. If not set, the field is always included. If required is true, this is ignored.
-    PIIConfig:
+    NullableLLMModel:
+      type:
+      - string
+      - 'null'
+      enum:
+      - gpt-4.1
+      - gpt-4.1-mini
+      - gpt-4.1-nano
+      - gpt-5
+      - gpt-5-mini
+      - gpt-5-nano
+      - gpt-5.1
+      - gpt-5.2
+      - gpt-5.4
+      - gpt-5.4-mini
+      - gpt-5.4-nano
+      - gpt-5.5
+      - claude-4.5-sonnet
+      - claude-4.6-sonnet
+      - claude-4.5-haiku
+      - gemini-2.5-flash-lite
+      - gemini-3.0-flash
+      - gemini-3.1-flash-lite
+      - null
+      description: Available LLM models for agents.
+    ChatPresetAnalysisData:
       type: object
       required:
-      - mode
-      - categories
+      - type
+      - name
+      description: System preset for post-chat analysis (chat agents). Use in post_chat_analysis_data to override prompts or mark fields optional.
       properties:
-        mode:
+        type:
           type: string
           enum:
-          - post_call
-          default: post_call
-          description: The processing mode for PII scrubbing. Currently only post-call is supported.
-        categories:
-          type: array
-          items:
-            type: string
-            enum:
-            - person_name
-            - address
-            - email
-            - phone_number
-            - ssn
-            - passport
-            - driver_license
-            - credit_card
-            - bank_account
-            - password
-            - pin
-            - medical_id
-            - date_of_birth
-            - customer_account_number
-          uniqueItems: true
-          default: []
-          description: List of PII categories to scrub from transcripts and recordings.
+          - system-presets
+          description: Identifies this item as a system preset.
+        name:
+          type: string
+          enum:
+          - chat_summary
+          - chat_successful
+          - user_sentiment
+          description: Preset identifier for chat agent analysis.
+          example: chat_summary
+        description:
+          type: string
+          minLength: 1
+          description: Prompt or description for this preset.
+        required:
+          type: boolean
+          description: If false, this field is optional in the analysis. If true or unset, the field is required.
+        conditional_prompt:
+          type: string
+          description: Optional instruction to help decide whether this field needs to be populated. If not set, the field is always included.
     EnumAnalysisData:
       type: object
       required:
@@ -529,171 +689,11 @@ components:
         conditional_prompt:
           type: string
           description: Optional instruction to help decide whether this field needs to be populated in the analysis. If not set, the field is always included. If required is true, this is ignored.
-    GuardrailConfig:
-      type: object
-      properties:
-        output_topics:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            enum:
-            - harassment
-            - self_harm
-            - sexual_exploitation
-            - violence
-            - defense_and_national_security
-            - illicit_and_harmful_activity
-            - gambling
-            - regulated_professional_advice
-            - child_safety_and_exploitation
-          uniqueItems: true
-          description: Selected prohibited agent topic categories to check. When agent messages contain these topics, they will be replaced with a placeholder message.
-        input_topics:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            enum:
-            - platform_integrity_jailbreaking
-          uniqueItems: true
-          description: Selected prohibited user topic categories to check. When user messages contain these topics, the agent will respond with a placeholder message instead of processing the request.
-    ResponseEngineRetellLm:
-      type: object
-      required:
-      - type
-      - llm_id
-      properties:
-        type:
-          type: string
-          enum:
-          - retell-llm
-          description: type of the Response Engine.
-        llm_id:
-          type: string
-          description: id of the Retell LLM Response Engine.
-        version:
-          type:
-          - number
-          - 'null'
-          example: 0
-          description: Version of the Retell LLM Response Engine.
-    AnalysisData:
+    PostChatAnalysisData:
       oneOf:
-      - $ref: '#/components/schemas/StringAnalysisData'
-      - $ref: '#/components/schemas/EnumAnalysisData'
-      - $ref: '#/components/schemas/BooleanAnalysisData'
-      - $ref: '#/components/schemas/NumberAnalysisData'
-    ChatAgentResponse:
-      allOf:
-      - type: object
-        required:
-        - agent_id
-        properties:
-          agent_id:
-            type: string
-            example: oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD
-            description: Unique id of chat agent.
-          version:
-            type: integer
-            example: 0
-            description: The version of the chat agent.
-          base_version:
-            type:
-            - integer
-            - 'null'
-            example: 12
-            description: Version that this draft was based on. Null for initial versions.
-          assigned_tags:
-            type: array
-            items:
-              type: string
-            description: Tags assigned to this chat agent version. Preferred tag is listed first.
-          is_published:
-            type: boolean
-            example: false
-            description: Whether the chat agent is published.
-      - $ref: '#/components/schemas/ChatAgentRequest'
-        required:
-        - response_engine
-      - type: object
-        required:
-        - last_modification_timestamp
-        properties:
-          last_modification_timestamp:
-            type: integer
-            example: 1703413636133
-            description: Last modification timestamp (milliseconds since epoch). Either the time of last update or creation if no updates available.
-    Language:
-      type: string
-      example: en-US
-      enum:
-      - en-US
-      - en-IN
-      - en-GB
-      - en-AU
-      - en-NZ
-      - de-DE
-      - es-ES
-      - es-419
-      - hi-IN
-      - fr-FR
-      - fr-CA
-      - ja-JP
-      - pt-PT
-      - pt-BR
-      - zh-CN
-      - ru-RU
-      - it-IT
-      - ko-KR
-      - nl-NL
-      - nl-BE
-      - pl-PL
-      - tr-TR
-      - vi-VN
-      - ro-RO
-      - bg-BG
-      - ca-ES
-      - th-TH
-      - da-DK
-      - fi-FI
-      - el-GR
-      - hu-HU
-      - id-ID
-      - no-NO
-      - sk-SK
-      - sv-SE
-      - lt-LT
-      - lv-LV
-      - cs-CZ
-      - ms-MY
-      - af-ZA
-      - ar-SA
-      - az-AZ
-      - bs-BA
-      - cy-GB
-      - fa-IR
-      - fil-PH
-      - gl-ES
-      - he-IL
-      - hr-HR
-      - hy-AM
-      - is-IS
-      - kk-KZ
-      - kn-IN
-      - mk-MK
-      - mr-IN
-      - ne-NP
-      - sl-SI
-      - sr-RS
-      - sw-KE
-      - ta-IN
-      - ur-IN
-      - yue-CN
-      - uk-UA
-      description: Specifies what language (and dialect) the agent will operate in. For instance, selecting `en-GB` optimizes speech recognition for British English and indexes knowledge bases with English. If unset, will use default value `en-US`. This enum does not include the legacy scalar value `multi`.
+      - $ref: '#/components/schemas/AnalysisData'
+      - $ref: '#/components/schemas/ChatPresetAnalysisData'
+      description: Post-chat analysis item (custom data or chat preset). Use for chat agent post_chat_analysis_data; validates only chat presets (chat_summary, chat_successful, user_sentiment).
   securitySchemes:
     api_key:
       type: http

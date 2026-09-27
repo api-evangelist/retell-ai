@@ -46,20 +46,6 @@ paths:
       x-summary-source: derived
 components:
   responses:
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
     UnprocessableContent:
       description: Unprocessable Content
       content:
@@ -74,20 +60,6 @@ components:
               message:
                 type: string
                 example: Cannot find requested asset under given api key.
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: An unexpected server error occurred.
     Unauthorized:
       description: Unauthorized
       content:
@@ -102,6 +74,34 @@ components:
               message:
                 type: string
                 example: API key is missing or invalid.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
   securitySchemes:
     api_key:
       type: http

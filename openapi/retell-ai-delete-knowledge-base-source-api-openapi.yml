@@ -57,47 +57,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    KnowledgeBaseSourceDocument:
-      type: object
-      required:
-      - type
-      - source_id
-      - filename
-      - file_url
-      - file_size
-      properties:
-        type:
-          type: string
-          enum:
-          - document
-          description: Type of the knowledge base source.
-        source_id:
-          type: string
-          description: Unique id of the knowledge base source.
-        filename:
-          type: string
-          description: Filename of the document.
-        file_url:
-          type: string
-          description: URL of the document stored.
-    KnowledgeBaseSourceUrl:
-      type: object
-      required:
-      - type
-      - source_id
-      - url
-      properties:
-        type:
-          type: string
-          enum:
-          - url
-          description: Type of the knowledge base source.
-        source_id:
-          type: string
-          description: Unique id of the knowledge base source.
-        url:
-          type: string
-          description: URL used to be scraped and added to the knowledge base.
     KnowledgeBaseResponse:
       type: object
       required:
@@ -146,6 +105,24 @@ components:
           type: integer
           example: 1703413636133
           description: Last refreshed timestamp (milliseconds since epoch). Only applicable when enable_auto_refresh is true.
+    KnowledgeBaseSourceUrl:
+      type: object
+      required:
+      - type
+      - source_id
+      - url
+      properties:
+        type:
+          type: string
+          enum:
+          - url
+          description: Type of the knowledge base source.
+        source_id:
+          type: string
+          description: Unique id of the knowledge base source.
+        url:
+          type: string
+          description: URL used to be scraped and added to the knowledge base.
     KnowledgeBaseSourceText:
       type: object
       required:
@@ -168,21 +145,30 @@ components:
         content_url:
           type: string
           description: URL of the text content stored.
+    KnowledgeBaseSourceDocument:
+      type: object
+      required:
+      - type
+      - source_id
+      - filename
+      - file_url
+      - file_size
+      properties:
+        type:
+          type: string
+          enum:
+          - document
+          description: Type of the knowledge base source.
+        source_id:
+          type: string
+          description: Unique id of the knowledge base source.
+        filename:
+          type: string
+          description: Filename of the document.
+        file_url:
+          type: string
+          description: URL of the document stored.
   responses:
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
     UnprocessableContent:
       description: Unprocessable Content
       content:
@@ -197,20 +183,6 @@ components:
               message:
                 type: string
                 example: Cannot find requested asset under given api key.
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
     InternalServerError:
       description: Internal Server Error
       content:
@@ -225,6 +197,34 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
   securitySchemes:
     api_key:
       type: http

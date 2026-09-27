@@ -101,55 +101,21 @@ components:
           type: integer
           description: Create timestamp of the message
           example: 1703302428855
-    ToolCallInvocationMessageBase:
-      type: object
-      required:
-      - role
-      - tool_call_id
-      - name
-      - arguments
-      properties:
-        message_id:
-          type: string
-          example: Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6
-          description: Unique id of the message
-        role:
-          type: string
-          enum:
-          - tool_call_invocation
-          description: This is a tool call invocation.
-        tool_call_id:
-          type: string
-          description: Tool call id, globally unique.
-        name:
-          type: string
-          description: Name of the function in this tool call.
-        arguments:
-          type: string
-          description: Arguments for this tool call, it's a stringified JSON object.
-        thought_signature:
-          type: string
-          description: Optional thought signature from Google Gemini thinking models. This is used internally to maintain reasoning chain in multi-turn function calling.
-        created_timestamp:
-          type: integer
-          description: Create timestamp of the message
-          example: 1703302428855
-    MessageOrToolCall:
-      oneOf:
-      - $ref: '#/components/schemas/Message'
-      - $ref: '#/components/schemas/ToolCallInvocationMessage'
-      - $ref: '#/components/schemas/ToolCallResultMessage'
-      - $ref: '#/components/schemas/NodeTransitionMessage'
-      - $ref: '#/components/schemas/StateTransitionMessage'
-    ToolCallInvocationMessage:
-      allOf:
-      - $ref: '#/components/schemas/ToolCallInvocationMessageBase'
-      - required:
-        - message_id
-        - created_timestamp
     ToolCallResultMessage:
       allOf:
       - $ref: '#/components/schemas/ToolCallResultMessageBase'
+      - required:
+        - message_id
+        - created_timestamp
+    StateTransitionMessage:
+      allOf:
+      - $ref: '#/components/schemas/StateTransitionMessageBase'
+      - required:
+        - message_id
+        - created_timestamp
+    ToolCallInvocationMessage:
+      allOf:
+      - $ref: '#/components/schemas/ToolCallInvocationMessageBase'
       - required:
         - message_id
         - created_timestamp
@@ -178,39 +144,46 @@ components:
           type: integer
           description: Create timestamp of the message
           example: 1703302428855
-    ProductCost:
-      type: object
-      required:
-      - product
-      - cost
-      properties:
-        product:
-          type: string
-          description: Product name that has a cost associated with it.
-          example: elevenlabs_tts
-        unit_price:
-          type: number
-          description: Unit price of the product in cents per second.
-          example: 1
-        cost:
-          type: number
-          description: Cost for the product in cents for the duration of the call.
-          example: 60
-        is_transfer_leg_cost:
-          type: boolean
-          description: True if this cost item is for a transfer segment.
-    StateTransitionMessage:
+    NodeTransitionMessage:
       allOf:
-      - $ref: '#/components/schemas/StateTransitionMessageBase'
+      - $ref: '#/components/schemas/NodeTransitionMessageBase'
       - required:
         - message_id
         - created_timestamp
-    ToolCallResultMessageBase:
+    ChatAnalysis:
+      type: object
+      properties:
+        chat_summary:
+          type: string
+          example: The agent messages user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.
+          description: A high level summary of the chat.
+        user_sentiment:
+          type: string
+          enum:
+          - Negative
+          - Positive
+          - Neutral
+          - Unknown
+          example: Positive
+          description: Sentiment of the user in the chat.
+        chat_successful:
+          type: boolean
+          example: true
+          description: Whether the agent seems to have a successful chat with the user, where the agent finishes the task, and the call was complete without being cutoff.
+        custom_analysis_data:
+          type: object
+          description: Custom analysis data that was extracted based on the schema defined in chat agent post chat analysis data. Can be empty if nothing is specified.
+    MessageOrToolCall:
+      oneOf:
+      - $ref: '#/components/schemas/Message'
+      - $ref: '#/components/schemas/ToolCallInvocationMessage'
+      - $ref: '#/components/schemas/ToolCallResultMessage'
+      - $ref: '#/components/schemas/NodeTransitionMessage'
+      - $ref: '#/components/schemas/StateTransitionMessage'
+    StateTransitionMessageBase:
       type: object
       required:
       - role
-      - tool_call_id
-      - content
       properties:
         message_id:
           type: string
@@ -219,24 +192,21 @@ components:
         role:
           type: string
           enum:
-          - tool_call_result
-          description: This is the result of a tool call.
-        tool_call_id:
+          - state_transition
+          description: This is a state transition.
+        former_state_name:
           type: string
-          description: Tool call id, globally unique.
-        content:
+          description: Former state name
+        new_state_name:
           type: string
-          description: Result of the tool call, can be a string, a stringified json, etc.
-        successful:
-          type: boolean
-          description: Whether the tool call was successful.
+          description: New state name
         created_timestamp:
           type: integer
           description: Create timestamp of the message
           example: 1703302428855
-    NodeTransitionMessage:
+    Message:
       allOf:
-      - $ref: '#/components/schemas/NodeTransitionMessageBase'
+      - $ref: '#/components/schemas/MessageBase'
       - required:
         - message_id
         - created_timestamp
@@ -356,33 +326,13 @@ components:
         chat_analysis:
           description: Post chat analysis that includes information such as sentiment, status, summary, and custom defined data to extract. Available after chat ends. Subscribe to `chat_analyzed` webhook event type to receive it once ready.
           $ref: '#/components/schemas/ChatAnalysis'
-    ChatAnalysis:
-      type: object
-      properties:
-        chat_summary:
-          type: string
-          example: The agent messages user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.
-          description: A high level summary of the chat.
-        user_sentiment:
-          type: string
-          enum:
-          - Negative
-          - Positive
-          - Neutral
-          - Unknown
-          example: Positive
-          description: Sentiment of the user in the chat.
-        chat_successful:
-          type: boolean
-          example: true
-          description: Whether the agent seems to have a successful chat with the user, where the agent finishes the task, and the call was complete without being cutoff.
-        custom_analysis_data:
-          type: object
-          description: Custom analysis data that was extracted based on the schema defined in chat agent post chat analysis data. Can be empty if nothing is specified.
-    StateTransitionMessageBase:
+    ToolCallInvocationMessageBase:
       type: object
       required:
       - role
+      - tool_call_id
+      - name
+      - arguments
       properties:
         message_id:
           type: string
@@ -391,24 +341,74 @@ components:
         role:
           type: string
           enum:
-          - state_transition
-          description: This is a state transition.
-        former_state_name:
+          - tool_call_invocation
+          description: This is a tool call invocation.
+        tool_call_id:
           type: string
-          description: Former state name
-        new_state_name:
+          description: Tool call id, globally unique.
+        name:
           type: string
-          description: New state name
+          description: Name of the function in this tool call.
+        arguments:
+          type: string
+          description: Arguments for this tool call, it's a stringified JSON object.
+        thought_signature:
+          type: string
+          description: Optional thought signature from Google Gemini thinking models. This is used internally to maintain reasoning chain in multi-turn function calling.
         created_timestamp:
           type: integer
           description: Create timestamp of the message
           example: 1703302428855
-    Message:
-      allOf:
-      - $ref: '#/components/schemas/MessageBase'
-      - required:
-        - message_id
-        - created_timestamp
+    ToolCallResultMessageBase:
+      type: object
+      required:
+      - role
+      - tool_call_id
+      - content
+      properties:
+        message_id:
+          type: string
+          example: Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6
+          description: Unique id of the message
+        role:
+          type: string
+          enum:
+          - tool_call_result
+          description: This is the result of a tool call.
+        tool_call_id:
+          type: string
+          description: Tool call id, globally unique.
+        content:
+          type: string
+          description: Result of the tool call, can be a string, a stringified json, etc.
+        successful:
+          type: boolean
+          description: Whether the tool call was successful.
+        created_timestamp:
+          type: integer
+          description: Create timestamp of the message
+          example: 1703302428855
+    ProductCost:
+      type: object
+      required:
+      - product
+      - cost
+      properties:
+        product:
+          type: string
+          description: Product name that has a cost associated with it.
+          example: elevenlabs_tts
+        unit_price:
+          type: number
+          description: Unit price of the product in cents per second.
+          example: 1
+        cost:
+          type: number
+          description: Cost for the product in cents for the duration of the call.
+          example: 60
+        is_transfer_leg_cost:
+          type: boolean
+          description: True if this cost item is for a transfer segment.
   responses:
     Unauthorized:
       description: Unauthorized

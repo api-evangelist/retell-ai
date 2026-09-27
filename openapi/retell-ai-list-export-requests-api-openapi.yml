@@ -73,6 +73,31 @@ paths:
       summary: List export requests V2
       x-summary-source: derived
 components:
+  parameters:
+    LimitParam:
+      in: query
+      name: limit
+      schema:
+        type: integer
+        default: 50
+        maximum: 1000
+      description: Maximum number of items to return.
+    SortOrderParam:
+      in: query
+      name: sort_order
+      schema:
+        type: string
+        enum:
+        - ascending
+        - descending
+        default: descending
+      description: Sort order for results.
+    PaginationKeyParam:
+      in: query
+      name: pagination_key
+      schema:
+        type: string
+      description: Pagination key for fetching the next page.
   responses:
     BadRequest:
       description: Bad Request
@@ -88,6 +113,20 @@ components:
               message:
                 type: string
                 example: Invalid request format, please check API reference.
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
     Unauthorized:
       description: Unauthorized
       content:
@@ -116,45 +155,6 @@ components:
               message:
                 type: string
                 example: Account rate limited, please throttle your requests.
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: An unexpected server error occurred.
-  parameters:
-    SortOrderParam:
-      in: query
-      name: sort_order
-      schema:
-        type: string
-        enum:
-        - ascending
-        - descending
-        default: descending
-      description: Sort order for results.
-    PaginationKeyParam:
-      in: query
-      name: pagination_key
-      schema:
-        type: string
-      description: Pagination key for fetching the next page.
-    LimitParam:
-      in: query
-      name: limit
-      schema:
-        type: integer
-        default: 50
-        maximum: 1000
-      description: Maximum number of items to return.
   schemas:
     PaginatedResponseBase:
       type: object
