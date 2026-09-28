@@ -16,10 +16,17 @@ deployment:
 tools_count: 3
 tools:
 - name: list_api_endpoints
-  description: ''
+  description: List the available Retell API endpoints. Returns each endpoint's name, HTTP method, path,
+    and a short summary. Optionally pass "search" to filter. Then call get_api_endpoint_schema for an
+    endpoint's arguments, and invoke_api_endpoint to cal
 - name: get_api_endpoint_schema
-  description: ''
+  description: Get the full JSON Schema (draft 2020-12) for a Retell API endpoint's arguments. Call this
+    before invoke_api_endpoint. "endpoint" is a name from list_api_endpoints (e.g. "listCallsV3", "getAgent").
 - name: invoke_api_endpoint
-  description: ''
+  description: Call a Retell API endpoint. Provide "endpoint" (from list_api_endpoints) and "arguments"
+    matching the schema from get_api_endpoint_schema — include any path/query parameters and, where the
+    endpoint takes a body, a "requestBody" object. Pass
 tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
