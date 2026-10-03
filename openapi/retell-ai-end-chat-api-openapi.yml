@@ -46,8 +46,8 @@ paths:
       x-summary-source: derived
 components:
   responses:
-    UnprocessableContent:
-      description: Unprocessable Content
+    InternalServerError:
+      description: Internal Server Error
       content:
         application/json:
           schema:
@@ -59,7 +59,7 @@ components:
                 - error
               message:
                 type: string
-                example: Cannot find requested asset under given api key.
+                example: An unexpected server error occurred.
     BadRequest:
       description: Bad Request
       content:
@@ -88,8 +88,8 @@ components:
               message:
                 type: string
                 example: API key is missing or invalid.
-    InternalServerError:
-      description: Internal Server Error
+    UnprocessableContent:
+      description: Unprocessable Content
       content:
         application/json:
           schema:
@@ -101,7 +101,7 @@ components:
                 - error
               message:
                 type: string
-                example: An unexpected server error occurred.
+                example: Cannot find requested asset under given api key.
   securitySchemes:
     api_key:
       type: http

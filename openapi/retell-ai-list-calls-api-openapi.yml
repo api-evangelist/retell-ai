@@ -297,6 +297,120 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    V2CallResponse:
+      oneOf:
+      - $ref: '#/components/schemas/V2WebCallResponse'
+      - $ref: '#/components/schemas/V2PhoneCallResponse'
+    V2PhoneCallResponse:
+      allOf:
+      - type: object
+        required:
+        - call_type
+        - from_number
+        - to_number
+        - direction
+        properties:
+          call_type:
+            type: string
+            enum:
+            - phone_call
+            example: phone_call
+            description: Type of the call. Used to distinguish between web call and phone call.
+          from_number:
+            type: string
+            example: '+12137771234'
+            description: The caller number.
+          to_number:
+            type: string
+            example: '+12137771235'
+            description: The callee number.
+          direction:
+            type: string
+            enum:
+            - inbound
+            - outbound
+            example: inbound
+            description: Direction of the phone call.
+          telephony_identifier:
+            type: object
+            description: Telephony identifier of the call, populated when available. Tracking purposes only.
+            properties:
+              twilio_call_sid:
+                type: string
+                example: CA5d0d0d8047bf685c3f0ff980fe62c123
+                description: Twilio call sid.
+      - $ref: '#/components/schemas/V2CallBase'
+    ProductCost:
+      type: object
+      required:
+      - product
+      - cost
+      properties:
+        product:
+          type: string
+          description: Product name that has a cost associated with it.
+          example: elevenlabs_tts
+        unit_price:
+          type: number
+          description: Unit price of the product in cents per second.
+          example: 1
+        cost:
+          type: number
+          description: Cost for the product in cents for the duration of the call.
+          example: 60
+        is_transfer_leg_cost:
+          type: boolean
+          description: True if this cost item is for a transfer segment.
+    DTMFUtterance:
+      type: object
+      required:
+      - role
+      - digit
+      properties:
+        role:
+          type: string
+          enum:
+          - dtmf
+          description: Digit pressed by the user from their phone keypad.
+        digit:
+          type: string
+          description: The digit pressed by the user. Will be a single digit string like "1", "2", "3", "*", "#" etc.
+          example: '1'
+    DisconnectionReason:
+      type: string
+      enum:
+      - user_hangup
+      - agent_hangup
+      - call_transfer
+      - voicemail_reached
+      - ivr_reached
+      - inactivity
+      - max_duration_reached
+      - concurrency_limit_reached
+      - no_valid_payment
+      - scam_detected
+      - dial_busy
+      - dial_failed
+      - dial_no_answer
+      - invalid_destination
+      - telephony_provider_permission_denied
+      - telephony_provider_unavailable
+      - sip_routing_error
+      - marked_as_spam
+      - user_declined
+      - error_llm_websocket_open
+      - error_llm_websocket_lost_connection
+      - error_llm_websocket_runtime
+      - error_llm_websocket_corrupt_payload
+      - error_no_audio_received
+      - error_asr
+      - error_retell
+      - error_unknown
+      - error_user_not_joined
+      - registered_call_timeout
+      - transfer_bridged
+      - transfer_cancelled
+      - manual_stopped
     ToolCallResultUtterance:
       type: object
       required:
@@ -318,40 +432,70 @@ components:
         successful:
           type: boolean
           description: Whether the tool call was successful.
-    CallAnalysis:
+    BooleanFilter:
       type: object
+      required:
+      - type
+      - op
+      - value
       properties:
-        call_summary:
-          type: string
-          example: The agent called the user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.
-          description: A high level summary of the call.
-        in_voicemail:
-          type: boolean
-          example: false
-          description: Whether the call is entered voicemail.
-        user_sentiment:
+        type:
           type: string
           enum:
-          - Negative
-          - Positive
-          - Neutral
-          - Unknown
-          example: Positive
-          description: Sentiment of the user in the call.
-        call_successful:
+          - boolean
+        op:
+          type: string
+          enum:
+          - eq
+        value:
           type: boolean
-          example: true
-          description: Whether the agent seems to have a successful call with the user, where the agent finishes the task, and the call was complete without being cutoff.
-        custom_analysis_data:
-          type: object
-          description: Custom analysis data that was extracted based on the schema defined in agent post call analysis data. Can be empty if nothing is specified.
-    UtteranceOrToolCall:
-      oneOf:
-      - $ref: '#/components/schemas/Utterance'
-      - $ref: '#/components/schemas/ToolCallInvocationUtterance'
-      - $ref: '#/components/schemas/ToolCallResultUtterance'
-      - $ref: '#/components/schemas/NodeTransitionUtterance'
-      - $ref: '#/components/schemas/DTMFUtterance'
+    Utterance:
+      type: object
+      required:
+      - role
+      - content
+      - words
+      properties:
+        role:
+          type: string
+          enum:
+          - agent
+          - user
+          - transfer_target
+          description: Documents whether this utterance is spoken by agent or user.
+          example: agent
+        content:
+          type: string
+          description: Transcript of the utterances.
+          example: hi how are you doing?
+        words:
+          type: array
+          example:
+          - word: hi
+            start: 0.7
+            end: 1.3
+          description: Array of words in the utterance with the word timestamp. Useful for understanding what word was spoken at what time. Note that the word timestamp is not guaranteed to be accurate, it's more like an approximation.
+          items:
+            type: object
+            properties:
+              word:
+                type: string
+                description: Word transcript (with punctuation if applicable).
+              start:
+                type: number
+                description: Start time of the word in the call in second. This is relative audio time, not wall time.
+              end:
+                type: number
+                description: End time of the word in the call in second. This is relative audio time, not wall time.
+    PaginatedResponseBase:
+      type: object
+      properties:
+        pagination_key:
+          type: string
+          description: Pagination key for the next page.
+        has_more:
+          type: boolean
+          description: Whether more results are available.
     CallFilter:
       type: object
       description: Filter criteria for calls. All conditions are implicitly connected with AND.
@@ -500,81 +644,100 @@ components:
                   type: string
                   description: The dynamic variable name to filter on.
           description: Filter by dynamic variables.
-    DisconnectionReason:
-      type: string
-      enum:
-      - user_hangup
-      - agent_hangup
-      - call_transfer
-      - voicemail_reached
-      - ivr_reached
-      - inactivity
-      - max_duration_reached
-      - concurrency_limit_reached
-      - no_valid_payment
-      - scam_detected
-      - dial_busy
-      - dial_failed
-      - dial_no_answer
-      - invalid_destination
-      - telephony_provider_permission_denied
-      - telephony_provider_unavailable
-      - sip_routing_error
-      - marked_as_spam
-      - user_declined
-      - error_llm_websocket_open
-      - error_llm_websocket_lost_connection
-      - error_llm_websocket_runtime
-      - error_llm_websocket_corrupt_payload
-      - error_no_audio_received
-      - error_asr
-      - error_retell
-      - error_unknown
-      - error_user_not_joined
-      - registered_call_timeout
-      - transfer_bridged
-      - transfer_cancelled
-      - manual_stopped
-    ToolCallFilter:
+    CallAnalysis:
       type: object
-      required:
-      - name
       properties:
-        name:
+        call_summary:
           type: string
-          description: The tool call name to filter on.
-        latency_ms:
-          oneOf:
-          - $ref: '#/components/schemas/NumberFilter'
-          - $ref: '#/components/schemas/RangeFilter'
-          description: Filter by tool call latency in milliseconds.
-        success:
-          $ref: '#/components/schemas/BooleanFilter'
-          description: Filter by tool call success status.
-    DTMFUtterance:
+          example: The agent called the user to ask question about his purchase inquiry. The agent asked several questions regarding his preference and asked if user would like to book an appointment. The user happily agreed and scheduled an appointment next Monday 10am.
+          description: A high level summary of the call.
+        in_voicemail:
+          type: boolean
+          example: false
+          description: Whether the call is entered voicemail.
+        user_sentiment:
+          type: string
+          enum:
+          - Negative
+          - Positive
+          - Neutral
+          - Unknown
+          example: Positive
+          description: Sentiment of the user in the call.
+        call_successful:
+          type: boolean
+          example: true
+          description: Whether the agent seems to have a successful call with the user, where the agent finishes the task, and the call was complete without being cutoff.
+        custom_analysis_data:
+          type: object
+          description: Custom analysis data that was extracted based on the schema defined in agent post call analysis data. Can be empty if nothing is specified.
+    ValueFilter:
+      oneOf:
+      - $ref: '#/components/schemas/StringFilter'
+      - $ref: '#/components/schemas/NumberFilter'
+      - $ref: '#/components/schemas/BooleanFilter'
+      - $ref: '#/components/schemas/RangeFilter'
+      - $ref: '#/components/schemas/EnumFilter'
+      - $ref: '#/components/schemas/PresentFilter'
+    V2WebCallResponse:
+      allOf:
+      - type: object
+        required:
+        - call_type
+        - access_token
+        properties:
+          call_type:
+            type: string
+            enum:
+            - web_call
+            example: web_call
+            description: Type of the call. Used to distinguish between web call and phone call.
+          access_token:
+            type: string
+            example: eyJhbGciOiJIUzI1NiJ9.eyJ2aWRlbyI6eyJyb29tSm9p
+            description: Access token to enter the web call room. This needs to be passed to your frontend to join the call.
+      - $ref: '#/components/schemas/V2CallBase'
+    UtteranceOrToolCall:
+      oneOf:
+      - $ref: '#/components/schemas/Utterance'
+      - $ref: '#/components/schemas/ToolCallInvocationUtterance'
+      - $ref: '#/components/schemas/ToolCallResultUtterance'
+      - $ref: '#/components/schemas/NodeTransitionUtterance'
+      - $ref: '#/components/schemas/DTMFUtterance'
+    NodeTransitionUtterance:
       type: object
       required:
       - role
-      - digit
+      - former_node_id
+      - former_node_name
+      - new_node_id
+      - new_node_name
       properties:
         role:
           type: string
           enum:
-          - dtmf
-          description: Digit pressed by the user from their phone keypad.
-        digit:
+          - node_transition
+          description: This is result of a node transition
+        former_node_id:
           type: string
-          description: The digit pressed by the user. Will be a single digit string like "1", "2", "3", "*", "#" etc.
-          example: '1'
-    PaginatedResponseBase:
-      type: object
-      properties:
-        pagination_key:
+          description: Former node id
+        former_node_name:
           type: string
-          description: Pagination key for the next page.
-        has_more:
-          type: boolean
-          description: Whether more results are available.
+          description: Former node name
+        new_node_id:
+          type: string
+          description: New node id
+        new_node_name:
+          type: string
+          description: New node name
+        transition_type:
+          type: string
+          enum:
+          - global
+          - global_go_back
+          - interrupt_go_back
+          - normal
+          description: How this node was reached. "global" means a global node transition, "global_go_back" means returning from a global node, "interrupt_go_back" means going back due to user interruption, and "normal" means a regular edge transition.
     CallLatency:
       type: object
       properties:
@@ -611,280 +774,6 @@ components:
           items:
             type: number
           description: All the latency data points in the call, measured in milliseconds.
-    V2CallResponse:
-      oneOf:
-      - $ref: '#/components/schemas/V2WebCallResponse'
-      - $ref: '#/components/schemas/V2PhoneCallResponse'
-    ValueFilter:
-      oneOf:
-      - $ref: '#/components/schemas/StringFilter'
-      - $ref: '#/components/schemas/NumberFilter'
-      - $ref: '#/components/schemas/BooleanFilter'
-      - $ref: '#/components/schemas/RangeFilter'
-      - $ref: '#/components/schemas/EnumFilter'
-      - $ref: '#/components/schemas/PresentFilter'
-    AgentFilter:
-      type: object
-      required:
-      - agent_id
-      properties:
-        agent_id:
-          type: string
-          minLength: 1
-          description: The agent ID to filter on.
-        version:
-          type: array
-          items:
-            type: number
-          description: Specific versions to filter on. If not provided, all versions are included.
-    EnumFilter:
-      type: object
-      required:
-      - type
-      - op
-      - value
-      properties:
-        type:
-          type: string
-          enum:
-          - enum
-        op:
-          type: string
-          enum:
-          - in
-          description: 'in: value is one of the listed values'
-        value:
-          type: array
-          items:
-            type: string
-    RangeFilter:
-      type: object
-      required:
-      - type
-      - op
-      - value
-      properties:
-        type:
-          type: string
-          enum:
-          - range
-        op:
-          type: string
-          enum:
-          - bt
-          description: 'bt: between'
-        value:
-          type: array
-          minItems: 2
-          maxItems: 2
-          items:
-            type: number
-          description: '[lower_bound, upper_bound]'
-    CustomFieldFilter:
-      description: A filter on a custom field, identified by key.
-      allOf:
-      - $ref: '#/components/schemas/ValueFilter'
-      - type: object
-        required:
-        - key
-        properties:
-          key:
-            type: string
-            description: The field name to filter on.
-    ProductCost:
-      type: object
-      required:
-      - product
-      - cost
-      properties:
-        product:
-          type: string
-          description: Product name that has a cost associated with it.
-          example: elevenlabs_tts
-        unit_price:
-          type: number
-          description: Unit price of the product in cents per second.
-          example: 1
-        cost:
-          type: number
-          description: Cost for the product in cents for the duration of the call.
-          example: 60
-        is_transfer_leg_cost:
-          type: boolean
-          description: True if this cost item is for a transfer segment.
-    NumberFilter:
-      type: object
-      required:
-      - type
-      - op
-      - value
-      properties:
-        type:
-          type: string
-          enum:
-          - number
-        op:
-          type: string
-          enum:
-          - eq
-          - ne
-          - gt
-          - ge
-          - lt
-          - le
-          description: 'eq: equal, ne: not equal, gt: greater than, ge: greater than or equal, lt: less than, le: less than or equal'
-        value:
-          type: number
-    StringFilter:
-      type: object
-      required:
-      - type
-      - op
-      - value
-      properties:
-        type:
-          type: string
-          enum:
-          - string
-        op:
-          type: string
-          enum:
-          - eq
-          - ne
-          - sw
-          - ew
-          - co
-          description: 'eq: equal, ne: not equal, sw: starts with, ew: ends with, co: contains'
-        value:
-          type: string
-    NodeTransitionUtterance:
-      type: object
-      required:
-      - role
-      - former_node_id
-      - former_node_name
-      - new_node_id
-      - new_node_name
-      properties:
-        role:
-          type: string
-          enum:
-          - node_transition
-          description: This is result of a node transition
-        former_node_id:
-          type: string
-          description: Former node id
-        former_node_name:
-          type: string
-          description: Former node name
-        new_node_id:
-          type: string
-          description: New node id
-        new_node_name:
-          type: string
-          description: New node name
-        transition_type:
-          type: string
-          enum:
-          - global
-          - global_go_back
-          - interrupt_go_back
-          - normal
-          description: How this node was reached. "global" means a global node transition, "global_go_back" means returning from a global node, "interrupt_go_back" means going back due to user interruption, and "normal" means a regular edge transition.
-    BooleanFilter:
-      type: object
-      required:
-      - type
-      - op
-      - value
-      properties:
-        type:
-          type: string
-          enum:
-          - boolean
-        op:
-          type: string
-          enum:
-          - eq
-        value:
-          type: boolean
-    V2PhoneCallResponse:
-      allOf:
-      - type: object
-        required:
-        - call_type
-        - from_number
-        - to_number
-        - direction
-        properties:
-          call_type:
-            type: string
-            enum:
-            - phone_call
-            example: phone_call
-            description: Type of the call. Used to distinguish between web call and phone call.
-          from_number:
-            type: string
-            example: '+12137771234'
-            description: The caller number.
-          to_number:
-            type: string
-            example: '+12137771235'
-            description: The callee number.
-          direction:
-            type: string
-            enum:
-            - inbound
-            - outbound
-            example: inbound
-            description: Direction of the phone call.
-          telephony_identifier:
-            type: object
-            description: Telephony identifier of the call, populated when available. Tracking purposes only.
-            properties:
-              twilio_call_sid:
-                type: string
-                example: CA5d0d0d8047bf685c3f0ff980fe62c123
-                description: Twilio call sid.
-      - $ref: '#/components/schemas/V2CallBase'
-    Utterance:
-      type: object
-      required:
-      - role
-      - content
-      - words
-      properties:
-        role:
-          type: string
-          enum:
-          - agent
-          - user
-          - transfer_target
-          description: Documents whether this utterance is spoken by agent or user.
-          example: agent
-        content:
-          type: string
-          description: Transcript of the utterances.
-          example: hi how are you doing?
-        words:
-          type: array
-          example:
-          - word: hi
-            start: 0.7
-            end: 1.3
-          description: Array of words in the utterance with the word timestamp. Useful for understanding what word was spoken at what time. Note that the word timestamp is not guaranteed to be accurate, it's more like an approximation.
-          items:
-            type: object
-            properties:
-              word:
-                type: string
-                description: Word transcript (with punctuation if applicable).
-              start:
-                type: number
-                description: Start time of the word in the call in second. This is relative audio time, not wall time.
-              end:
-                type: number
-                description: End time of the word in the call in second. This is relative audio time, not wall time.
     ToolCallInvocationUtterance:
       type: object
       required:
@@ -910,6 +799,22 @@ components:
         thought_signature:
           type: string
           description: Optional thought signature from Google Gemini thinking models. This is used internally to maintain reasoning chain in multi-turn function calling.
+    ToolCallFilter:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: The tool call name to filter on.
+        latency_ms:
+          oneOf:
+          - $ref: '#/components/schemas/NumberFilter'
+          - $ref: '#/components/schemas/RangeFilter'
+          description: Filter by tool call latency in milliseconds.
+        success:
+          $ref: '#/components/schemas/BooleanFilter'
+          description: Filter by tool call success status.
     V2CallBase:
       type: object
       required:
@@ -1147,39 +1052,6 @@ components:
             num_requests:
               type: number
               description: Number of requests made to the LLM.
-    V2WebCallResponse:
-      allOf:
-      - type: object
-        required:
-        - call_type
-        - access_token
-        properties:
-          call_type:
-            type: string
-            enum:
-            - web_call
-            example: web_call
-            description: Type of the call. Used to distinguish between web call and phone call.
-          access_token:
-            type: string
-            example: eyJhbGciOiJIUzI1NiJ9.eyJ2aWRlbyI6eyJyb29tSm9p
-            description: Access token to enter the web call room. This needs to be passed to your frontend to join the call.
-      - $ref: '#/components/schemas/V2CallBase'
-    V3CallResponse:
-      allOf:
-      - $ref: '#/components/schemas/V2CallResponse'
-      - type: object
-        description: V3 list calls response. Transcript fields are intentionally omitted.
-        not:
-          anyOf:
-          - required:
-            - transcript
-          - required:
-            - transcript_object
-          - required:
-            - transcript_with_tool_calls
-          - required:
-            - scrubbed_transcript_with_tool_calls
     PresentFilter:
       type: object
       required:
@@ -1196,7 +1068,149 @@ components:
           - pr
           - np
           description: 'pr: present (has value), np: not present'
+    StringFilter:
+      type: object
+      required:
+      - type
+      - op
+      - value
+      properties:
+        type:
+          type: string
+          enum:
+          - string
+        op:
+          type: string
+          enum:
+          - eq
+          - ne
+          - sw
+          - ew
+          - co
+          description: 'eq: equal, ne: not equal, sw: starts with, ew: ends with, co: contains'
+        value:
+          type: string
+    CustomFieldFilter:
+      description: A filter on a custom field, identified by key.
+      allOf:
+      - $ref: '#/components/schemas/ValueFilter'
+      - type: object
+        required:
+        - key
+        properties:
+          key:
+            type: string
+            description: The field name to filter on.
+    NumberFilter:
+      type: object
+      required:
+      - type
+      - op
+      - value
+      properties:
+        type:
+          type: string
+          enum:
+          - number
+        op:
+          type: string
+          enum:
+          - eq
+          - ne
+          - gt
+          - ge
+          - lt
+          - le
+          description: 'eq: equal, ne: not equal, gt: greater than, ge: greater than or equal, lt: less than, le: less than or equal'
+        value:
+          type: number
+    EnumFilter:
+      type: object
+      required:
+      - type
+      - op
+      - value
+      properties:
+        type:
+          type: string
+          enum:
+          - enum
+        op:
+          type: string
+          enum:
+          - in
+          description: 'in: value is one of the listed values'
+        value:
+          type: array
+          items:
+            type: string
+    V3CallResponse:
+      allOf:
+      - $ref: '#/components/schemas/V2CallResponse'
+      - type: object
+        description: V3 list calls response. Transcript fields are intentionally omitted.
+        not:
+          anyOf:
+          - required:
+            - transcript
+          - required:
+            - transcript_object
+          - required:
+            - transcript_with_tool_calls
+          - required:
+            - scrubbed_transcript_with_tool_calls
+    AgentFilter:
+      type: object
+      required:
+      - agent_id
+      properties:
+        agent_id:
+          type: string
+          minLength: 1
+          description: The agent ID to filter on.
+        version:
+          type: array
+          items:
+            type: number
+          description: Specific versions to filter on. If not provided, all versions are included.
+    RangeFilter:
+      type: object
+      required:
+      - type
+      - op
+      - value
+      properties:
+        type:
+          type: string
+          enum:
+          - range
+        op:
+          type: string
+          enum:
+          - bt
+          description: 'bt: between'
+        value:
+          type: array
+          minItems: 2
+          maxItems: 2
+          items:
+            type: number
+          description: '[lower_bound, upper_bound]'
   responses:
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
     TooManyRequests:
       description: Too Many Requests
       content:
@@ -1239,20 +1253,6 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
   securitySchemes:
     api_key:
       type: http

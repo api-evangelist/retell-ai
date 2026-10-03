@@ -99,6 +99,20 @@ components:
         type: string
       description: Pagination key for fetching the next page.
   responses:
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
     BadRequest:
       description: Bad Request
       content:
@@ -127,20 +141,6 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
     TooManyRequests:
       description: Too Many Requests
       content:

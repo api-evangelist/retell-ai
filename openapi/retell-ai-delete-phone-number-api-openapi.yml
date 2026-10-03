@@ -45,34 +45,6 @@ paths:
       x-summary-source: derived
 components:
   responses:
-    UnprocessableContent:
-      description: Unprocessable Content
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Cannot find requested asset under given api key.
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
     InternalServerError:
       description: Internal Server Error
       content:
@@ -87,6 +59,34 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
+    UnprocessableContent:
+      description: Unprocessable Content
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Cannot find requested asset under given api key.
   securitySchemes:
     api_key:
       type: http

@@ -50,6 +50,51 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    KnowledgeBaseSourceText:
+      type: object
+      required:
+      - type
+      - source_id
+      - title
+      - content_url
+      properties:
+        type:
+          type: string
+          enum:
+          - text
+          description: Type of the knowledge base source.
+        source_id:
+          type: string
+          description: Unique id of the knowledge base source.
+        title:
+          type: string
+          description: Title of the text.
+        content_url:
+          type: string
+          description: URL of the text content stored.
+    KnowledgeBaseSourceDocument:
+      type: object
+      required:
+      - type
+      - source_id
+      - filename
+      - file_url
+      - file_size
+      properties:
+        type:
+          type: string
+          enum:
+          - document
+          description: Type of the knowledge base source.
+        source_id:
+          type: string
+          description: Unique id of the knowledge base source.
+        filename:
+          type: string
+          description: Filename of the document.
+        file_url:
+          type: string
+          description: URL of the document stored.
     KnowledgeBaseResponse:
       type: object
       required:
@@ -116,52 +161,21 @@ components:
         url:
           type: string
           description: URL used to be scraped and added to the knowledge base.
-    KnowledgeBaseSourceText:
-      type: object
-      required:
-      - type
-      - source_id
-      - title
-      - content_url
-      properties:
-        type:
-          type: string
-          enum:
-          - text
-          description: Type of the knowledge base source.
-        source_id:
-          type: string
-          description: Unique id of the knowledge base source.
-        title:
-          type: string
-          description: Title of the text.
-        content_url:
-          type: string
-          description: URL of the text content stored.
-    KnowledgeBaseSourceDocument:
-      type: object
-      required:
-      - type
-      - source_id
-      - filename
-      - file_url
-      - file_size
-      properties:
-        type:
-          type: string
-          enum:
-          - document
-          description: Type of the knowledge base source.
-        source_id:
-          type: string
-          description: Unique id of the knowledge base source.
-        filename:
-          type: string
-          description: Filename of the document.
-        file_url:
-          type: string
-          description: URL of the document stored.
   responses:
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
     UnprocessableContent:
       description: Unprocessable Content
       content:
@@ -190,20 +204,6 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
     TooManyRequests:
       description: Too Many Requests
       content:

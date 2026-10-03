@@ -64,20 +64,6 @@ components:
               message:
                 type: string
                 example: API key is missing or invalid.
-    UnprocessableContent:
-      description: Unprocessable Content
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Cannot find requested asset under given api key.
     BadRequest:
       description: Bad Request
       content:
@@ -92,6 +78,20 @@ components:
               message:
                 type: string
                 example: Invalid request format, please check API reference.
+    UnprocessableContent:
+      description: Unprocessable Content
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Cannot find requested asset under given api key.
     InternalServerError:
       description: Internal Server Error
       content:
