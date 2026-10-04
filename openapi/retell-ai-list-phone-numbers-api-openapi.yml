@@ -70,61 +70,16 @@ paths:
       summary: List phone numbers
       x-summary-source: derived
 components:
-  parameters:
-    LimitParam:
-      in: query
-      name: limit
-      schema:
-        type: integer
-        default: 50
-        maximum: 1000
-      description: Maximum number of items to return.
-    SortOrderParam:
-      in: query
-      name: sort_order
-      schema:
-        type: string
-        enum:
-        - ascending
-        - descending
-        default: descending
-      description: Sort order for results.
-    PaginationKeyParam:
-      in: query
-      name: pagination_key
-      schema:
-        type: string
-      description: Pagination key for fetching the next page.
-  responses:
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: An unexpected server error occurred.
   schemas:
+    PaginatedResponseBase:
+      type: object
+      properties:
+        pagination_key:
+          type: string
+          description: Pagination key for the next page.
+        has_more:
+          type: boolean
+          description: Whether more results are available.
     PhoneNumberResponse:
       type: object
       required:
@@ -252,15 +207,6 @@ components:
           - 'null'
           example: '+14155551234'
           description: Enterprise only. Phone number to transfer inbound calls to when organization is in outage mode. Can be either a Retell phone number or an external number. Cannot be the same as this phone number, and cannot be a number that already has its own fallback configured (prevents nested forwarding).
-    PaginatedResponseBase:
-      type: object
-      properties:
-        pagination_key:
-          type: string
-          description: Pagination key for the next page.
-        has_more:
-          type: boolean
-          description: Whether more results are available.
     AgentWeight:
       type: object
       required:
@@ -290,6 +236,60 @@ components:
         pattern: ^[a-z0-9_-]+$
         example: prod
       description: Agent version reference. Supports a numeric version (for example 3) or a tag/environment name (for example "prod"). When a tag is provided, resolution uses that exact tag assignment (including its dynamic variables). If the tag exists but is currently unassigned, it resolves to latest. When a numeric version (or latest) is provided, resolution applies dynamic variables from the preferred tag for that resolved version (most recently assigned), if any.
+  parameters:
+    PaginationKeyParam:
+      in: query
+      name: pagination_key
+      schema:
+        type: string
+      description: Pagination key for fetching the next page.
+    SortOrderParam:
+      in: query
+      name: sort_order
+      schema:
+        type: string
+        enum:
+        - ascending
+        - descending
+        default: descending
+      description: Sort order for results.
+    LimitParam:
+      in: query
+      name: limit
+      schema:
+        type: integer
+        default: 50
+        maximum: 1000
+      description: Maximum number of items to return.
+  responses:
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
   securitySchemes:
     api_key:
       type: http

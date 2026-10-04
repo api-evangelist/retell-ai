@@ -71,20 +71,6 @@ paths:
       x-summary-source: derived
 components:
   responses:
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
     BadRequest:
       description: Bad Request
       content:
@@ -99,20 +85,6 @@ components:
               message:
                 type: string
                 example: Invalid request format, please check API reference.
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: An unexpected server error occurred.
     TooManyRequests:
       description: Too Many Requests
       content:
@@ -127,6 +99,34 @@ components:
               message:
                 type: string
                 example: Account rate limited, please throttle your requests.
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
   schemas:
     VoiceResponse:
       type: object

@@ -50,28 +50,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    KnowledgeBaseSourceText:
-      type: object
-      required:
-      - type
-      - source_id
-      - title
-      - content_url
-      properties:
-        type:
-          type: string
-          enum:
-          - text
-          description: Type of the knowledge base source.
-        source_id:
-          type: string
-          description: Unique id of the knowledge base source.
-        title:
-          type: string
-          description: Title of the text.
-        content_url:
-          type: string
-          description: URL of the text content stored.
     KnowledgeBaseSourceDocument:
       type: object
       required:
@@ -95,6 +73,28 @@ components:
         file_url:
           type: string
           description: URL of the document stored.
+    KnowledgeBaseSourceText:
+      type: object
+      required:
+      - type
+      - source_id
+      - title
+      - content_url
+      properties:
+        type:
+          type: string
+          enum:
+          - text
+          description: Type of the knowledge base source.
+        source_id:
+          type: string
+          description: Unique id of the knowledge base source.
+        title:
+          type: string
+          description: Title of the text.
+        content_url:
+          type: string
+          description: URL of the text content stored.
     KnowledgeBaseResponse:
       type: object
       required:
@@ -162,6 +162,34 @@ components:
           type: string
           description: URL used to be scraped and added to the knowledge base.
   responses:
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
     Unauthorized:
       description: Unauthorized
       content:
@@ -190,34 +218,6 @@ components:
               message:
                 type: string
                 example: Cannot find requested asset under given api key.
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: An unexpected server error occurred.
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
   securitySchemes:
     api_key:
       type: http

@@ -63,83 +63,27 @@ paths:
       summary: Create batch test
       x-summary-source: derived
 components:
-  responses:
-    PaymentRequired:
-      description: Payment Required
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Trial has ended, please add payment method.
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: API key is missing or invalid.
-    BadRequest:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Invalid request format, please check API reference.
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: An unexpected server error occurred.
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
   schemas:
-    ResponseEngine:
-      oneOf:
-      - $ref: '#/components/schemas/ResponseEngineRetellLm'
-      - $ref: '#/components/schemas/ResponseEngineCustomLm'
-      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
+    ResponseEngineRetellLm:
+      type: object
+      required:
+      - type
+      - llm_id
+      properties:
+        type:
+          type: string
+          enum:
+          - retell-llm
+          description: type of the Response Engine.
+        llm_id:
+          type: string
+          description: id of the Retell LLM Response Engine.
+        version:
+          type:
+          - number
+          - 'null'
+          example: 0
+          description: Version of the Retell LLM Response Engine.
     ResponseEngineConversationFlow:
       type: object
       required:
@@ -160,6 +104,11 @@ components:
           - 'null'
           example: 0
           description: Version of the Conversation Flow Response Engine.
+    ResponseEngine:
+      oneOf:
+      - $ref: '#/components/schemas/ResponseEngineRetellLm'
+      - $ref: '#/components/schemas/ResponseEngineCustomLm'
+      - $ref: '#/components/schemas/ResponseEngineConversationFlow'
     TestCaseBatchJob:
       type: object
       required:
@@ -225,26 +174,77 @@ components:
         llm_websocket_url:
           type: string
           description: LLM websocket url of the custom LLM.
-    ResponseEngineRetellLm:
-      type: object
-      required:
-      - type
-      - llm_id
-      properties:
-        type:
-          type: string
-          enum:
-          - retell-llm
-          description: type of the Response Engine.
-        llm_id:
-          type: string
-          description: id of the Retell LLM Response Engine.
-        version:
-          type:
-          - number
-          - 'null'
-          example: 0
-          description: Version of the Retell LLM Response Engine.
+  responses:
+    PaymentRequired:
+      description: Payment Required
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Trial has ended, please add payment method.
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Invalid request format, please check API reference.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: An unexpected server error occurred.
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: API key is missing or invalid.
   securitySchemes:
     api_key:
       type: http

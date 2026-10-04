@@ -61,20 +61,6 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
-    BadRequest:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Invalid request format, please check API reference.
     Unauthorized:
       description: Unauthorized
       content:
@@ -103,6 +89,20 @@ components:
               message:
                 type: string
                 example: Cannot find requested asset under given api key.
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Invalid request format, please check API reference.
   securitySchemes:
     api_key:
       type: http
