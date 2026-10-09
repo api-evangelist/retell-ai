@@ -157,3 +157,173 @@ rate_limit_statements:
 - Every account includes 20 concurrent calls for free. Need more? Additional capacity is $8 per concurrent
   call per month.
 - Enterprise plans offer custom concurrency starting at 50+ calls.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  - subscription
+  units:
+  - compute
+  - message
+  - request
+  plans:
+  - name: Pay as you go
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Enterprise Plan
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: Retell Voice Infra
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Retell Platform Voices (TTS)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Elevenlabs Voices (TTS)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: LLM GPT 5.5 (Standard)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Telephony call rates (US Twilio)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Knowledge Base add-on
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Batch Call add-on
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Branded Call add-on
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: PII Removal add-on
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: AI Quality Assurance
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: SMS
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - message
+    periods:
+    - other
+  - name: Chat Agent GPT 5.5
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Retell Phone Numbers
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Retell SMS subscription
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Concurrency (Active Calls)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - month
+  - name: Knowledge Base subscription
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Verified Phone Number
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Speech-to-speech GPT Realtime
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
