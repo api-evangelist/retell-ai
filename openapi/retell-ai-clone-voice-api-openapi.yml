@@ -89,34 +89,6 @@ components:
               message:
                 type: string
                 example: Trial has ended, please add payment method.
-    BadRequest:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Invalid request format, please check API reference.
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
     InternalServerError:
       description: Internal Server Error
       content:
@@ -131,6 +103,34 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Invalid request format, please check API reference.
     Unauthorized:
       description: Unauthorized
       content:

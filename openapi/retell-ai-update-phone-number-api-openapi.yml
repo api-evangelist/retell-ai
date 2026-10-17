@@ -159,20 +159,6 @@ paths:
       x-summary-source: derived
 components:
   responses:
-    BadRequest:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Invalid request format, please check API reference.
     InternalServerError:
       description: Internal Server Error
       content:
@@ -187,6 +173,20 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Invalid request format, please check API reference.
     Unauthorized:
       description: Unauthorized
       content:
@@ -216,6 +216,24 @@ components:
                 type: string
                 example: Cannot find requested asset under given api key.
   schemas:
+    AgentWeight:
+      type: object
+      required:
+      - agent_id
+      - weight
+      properties:
+        agent_id:
+          type: string
+          minLength: 1
+          example: oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD
+        agent_version:
+          $ref: '#/components/schemas/AgentVersionReference'
+        weight:
+          type: number
+          example: 0.5
+          maximum: 1
+          description: The weight of the agent. When used in a list of agents, the total weights must add up to 1.
+          exclusiveMinimum: 0
     PhoneNumberResponse:
       type: object
       required:
@@ -343,24 +361,6 @@ components:
           - 'null'
           example: '+14155551234'
           description: Enterprise only. Phone number to transfer inbound calls to when organization is in outage mode. Can be either a Retell phone number or an external number. Cannot be the same as this phone number, and cannot be a number that already has its own fallback configured (prevents nested forwarding).
-    AgentWeight:
-      type: object
-      required:
-      - agent_id
-      - weight
-      properties:
-        agent_id:
-          type: string
-          minLength: 1
-          example: oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD
-        agent_version:
-          $ref: '#/components/schemas/AgentVersionReference'
-        weight:
-          type: number
-          example: 0.5
-          maximum: 1
-          description: The weight of the agent. When used in a list of agents, the total weights must add up to 1.
-          exclusiveMinimum: 0
     AgentVersionReference:
       oneOf:
       - type: integer

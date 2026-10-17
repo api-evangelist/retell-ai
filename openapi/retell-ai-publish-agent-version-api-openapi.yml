@@ -54,48 +54,7 @@ paths:
       summary: Publish agent version
       x-summary-source: derived
 components:
-  schemas:
-    PublishAgentVersionRequest:
-      type: object
-      required:
-      - version
-      properties:
-        version:
-          type: integer
-          minimum: 0
-          example: 15
-        version_description:
-          type: string
-          example: Hotfix for transfer timeout
   responses:
-    BadRequest:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Invalid request format, please check API reference.
-    NotFound:
-      description: Not Found
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: The requested resource was not found.
     InternalServerError:
       description: Internal Server Error
       content:
@@ -110,6 +69,20 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Invalid request format, please check API reference.
     Unauthorized:
       description: Unauthorized
       content:
@@ -138,6 +111,33 @@ components:
               message:
                 type: string
                 example: Cannot find requested asset under given api key.
+    NotFound:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: The requested resource was not found.
+  schemas:
+    PublishAgentVersionRequest:
+      type: object
+      required:
+      - version
+      properties:
+        version:
+          type: integer
+          minimum: 0
+          example: 15
+        version_description:
+          type: string
+          example: Hotfix for transfer timeout
   securitySchemes:
     api_key:
       type: http

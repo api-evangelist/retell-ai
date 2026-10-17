@@ -73,45 +73,7 @@ paths:
       summary: List export requests V2
       x-summary-source: derived
 components:
-  schemas:
-    PaginatedResponseBase:
-      type: object
-      properties:
-        pagination_key:
-          type: string
-          description: Pagination key for the next page.
-        has_more:
-          type: boolean
-          description: Whether more results are available.
   responses:
-    BadRequest:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Invalid request format, please check API reference.
-    TooManyRequests:
-      description: Too Many Requests
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                enum:
-                - error
-              message:
-                type: string
-                example: Account rate limited, please throttle your requests.
     InternalServerError:
       description: Internal Server Error
       content:
@@ -126,6 +88,34 @@ components:
               message:
                 type: string
                 example: An unexpected server error occurred.
+    TooManyRequests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Account rate limited, please throttle your requests.
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                - error
+              message:
+                type: string
+                example: Invalid request format, please check API reference.
     Unauthorized:
       description: Unauthorized
       content:
@@ -140,13 +130,17 @@ components:
               message:
                 type: string
                 example: API key is missing or invalid.
+  schemas:
+    PaginatedResponseBase:
+      type: object
+      properties:
+        pagination_key:
+          type: string
+          description: Pagination key for the next page.
+        has_more:
+          type: boolean
+          description: Whether more results are available.
   parameters:
-    PaginationKeyParam:
-      in: query
-      name: pagination_key
-      schema:
-        type: string
-      description: Pagination key for fetching the next page.
     SortOrderParam:
       in: query
       name: sort_order
@@ -157,6 +151,12 @@ components:
         - descending
         default: descending
       description: Sort order for results.
+    PaginationKeyParam:
+      in: query
+      name: pagination_key
+      schema:
+        type: string
+      description: Pagination key for fetching the next page.
     LimitParam:
       in: query
       name: limit
